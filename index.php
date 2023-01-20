@@ -8,8 +8,9 @@
                 <?php
             
                 include 'config.php';
-                $namn = 'SELECT * FROM dummy WHERE name="Adam"';
-                echo $namn;
+                $sql = "SELECT * FROM dummy WHERE name='Adam'";
+                $result = $conn->query($sql);
+                echo $result;
                 ?>
 
             
