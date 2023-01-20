@@ -12,6 +12,7 @@ function OpenCon()
  
 function CloseCon($conn)
  {
+  echo"FAILED TO CONNECT";
  $conn -> close();
  }
    
