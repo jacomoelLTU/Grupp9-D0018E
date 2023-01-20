@@ -4,7 +4,9 @@
 
             <h1>
                 <?php
-                echo "MINI blocket";
+                include 'config.php';
+                $namn = 'SELECT * FROM dummy';
+                echo $namn;
                 ?>
 
             </h1>
