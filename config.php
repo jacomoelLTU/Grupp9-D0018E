@@ -1,14 +1,18 @@
 <?php
-$servername = "130.240.200.101";
-$username = "root";
-$password = "12345678";
-
-try {
-  $conn = new PDO("mysql:host=$servername;dbname=ecomercesite", $username, $password);
-  // set the PDO error mode to exception
-  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  echo "Connected successfully";
-} catch(PDOException $e) {
-  echo "Connection failed: " . $e->getMessage();
-}
+function OpenCon()
+ {
+ $dbhost = "130.240.200.101";
+ $dbuser = "root";
+ $dbpass = "12345678";
+ $db = "ecomercesite";
+ $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
+ 
+ return $conn;
+ }
+ 
+function CloseCon($conn)
+ {
+ $conn -> close();
+ }
+   
 ?>
