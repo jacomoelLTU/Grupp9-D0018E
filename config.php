@@ -1,11 +1,13 @@
 <?php
-
- $dbhost = "130.240.200.101";
- $dbuser = "root";
- $dbpass = "12345678";
- $db = "ecomercesite";
- $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
- echo"UPPKOPPLAD";
- return $conn;
-
+$servername = "130.240.200.101";
+$username = "root";
+$password = "12345678";
+$db = "ecomercesite";
+// Create connection
+$conn = mysqli_connect($servername, $username, $password,$db);
+// Check connection
+if (!$conn) {
+   die("Connection failed: " . mysqli_connect_error());
+}
+echo "Connected successfully";
 ?>
