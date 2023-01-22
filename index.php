@@ -8,9 +8,14 @@
                 <?php
             
                 include 'config.php';
-                $sql = "SELECT * FROM dummy WHERE name='Adam'";
-                $result = $conn->query($sql);
-                echo $result;
+                $sql = "SELECT * FROM dummy";
+                $result = $mysqli_query->query($conn, $sql);
+                $resultControll = mysqli_fetch_assoc($result);
+                if($resultControll > 0){
+                    while($row = mysqli_fetch_assoc($result)){
+                        echo $row['user_id'];
+                    }
+                }
                 ?>
 
             
