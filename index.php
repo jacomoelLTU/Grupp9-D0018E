@@ -13,7 +13,7 @@
                 $resultControll = mysqli_fetch_assoc($result);
                 if($resultControll > 0){
                     while($row = mysqli_fetch_assoc($result)){
-                        echo $row['user_id'];
+                        echo $row['name'];
                     }
                 }
                 ?>
