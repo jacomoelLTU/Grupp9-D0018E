@@ -1,3 +1,16 @@
 <?php
-  $dbh = new PDO('mysql:host=localhost;dbname=ecomercesite', 'root','',array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"));
+$host = "localhost";
+$username = "root";
+$password = "mysql123";
+$db = "ecomercesite";
+// Create connection
+echo"1";
+$conn = new mysqli($host, $username, $password, $db);
+// Check connection
+echo"2";
+if (!$conn) {
+  echo"3";
+   die("Connection failed: " . mysqli_connect_error());
+}
+echo "Connected successfully";
 ?>
