@@ -2,10 +2,7 @@
     <html>
         <body>
                 <?php 
-                echo "Här under borde det dyka upp ett namn [Adam]\n";
-                ?>
-            
-                <?php
+                echo "Här under borde det dyka upp ett namn:\n";
             
                 include 'config.php';
                 $query = $sql->prepare('SELECT * FROM dummy');
