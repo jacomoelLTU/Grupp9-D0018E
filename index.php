@@ -8,14 +8,12 @@
                 <?php
             
                 include 'config.php';
-                $sql = "SELECT * FROM dummy";
-                $result = $mysqli_query->query($conn, $sql);
-                $resultControll = mysqli_num_rows($result);
-                if($resultControll > 0){
-                    while($row = mysqli_fetch_assoc($result)){
-                        echo $row['name'];
-                    }
-                }
+                $query = $sql->prepare('SELECT * FROM dummy');
+                $query->execute();
+
+                $result = $query->fetchAll();
+                foreach($result as $r);
+                echo $r['name'];
                 ?>
 
             
