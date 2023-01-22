@@ -10,7 +10,8 @@
 
                 $result = $query->fetchAll();
                 foreach($result as $r){
-                    echo $r['name'];
+                    echo $r['name']; #Det vill inte printas ut... här de blir fel
+                    
                 }
                 ?>
 
