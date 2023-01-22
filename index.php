@@ -2,7 +2,7 @@
     <html>
         <body>
                 <?php 
-                echo "hejhejhej";
+                echo "Här under borde det dyka upp ett namn [Adam]\n";
                 ?>
             
                 <?php
