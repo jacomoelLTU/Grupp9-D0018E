@@ -5,13 +5,13 @@
                 echo "Här under borde det dyka upp ett namn:\n";
             
                 include 'config.php';
-                $query = $sql->prepare('SELECT * FROM dummy');
+                $query = $sql->prepare('SELECT * FROM user');
                 $query->execute();
 
                 $result = $query->fetchAll();
                 foreach($result as $r){
-                    echo $r['name']; #Det vill inte printas ut... här de blir fel
-                    
+                    echo $r['user_id']; #Det vill inte printas ut... här de blir fel
+
                 }
                 ?>
 
