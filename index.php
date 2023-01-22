@@ -9,7 +9,12 @@
                 $result = $conn->query($query);
                 if($result->num_rows > 0){
                     while($row = $result->fetch_assoc()){
-                        echo "\n". $row['user_name'];
+                        echo "\n Printar en row: |".$row['user_id'].
+                                                "|".$row['user_name'].
+                                                "|".$row['user_firstname'].
+                                                "|".$row['user_surname'].
+                                                "|".$row['user_email'].
+                                                "|";
                     }
                 }
                 else{
