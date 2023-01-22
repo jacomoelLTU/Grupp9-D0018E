@@ -5,11 +5,15 @@
                 echo "Här under borde det dyka upp ett namn:\n";
             
                 include 'config.php';
-                $query = $sql('SELECT * FROM user');
-                $result = $query->fetchAll();
-                foreach($result as $r){
-                    echo $r['user_id']; #Det vill inte printas ut... här de blir fel
-
+                $query = 'SELECT * FROM user';
+                $result = $conn->query($query);
+                if($result->num_rows > 0){
+                    while($row = $result->fetch_assoc()){
+                        echo $row["user_id"];
+                    }
+                }
+                else{
+                    echo "Tablet är tomt.";
                 }
                 ?>
 
