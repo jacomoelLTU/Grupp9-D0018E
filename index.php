@@ -9,8 +9,9 @@
                 $query->execute();
 
                 $result = $query->fetchAll();
-                foreach($result as $r);
-                echo $r['name'];
+                foreach($result as $r){
+                    echo $r['name'];
+                }
                 ?>
 
             
