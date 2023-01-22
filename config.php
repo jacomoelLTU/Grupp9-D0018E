@@ -1,7 +1,7 @@
 <?php
 $host = "130.240.200.101";
 $username = "root";
-$password = "12345678";
+$password = "";
 $db = "ecomercesite";
 // Create connection
 echo"1";
