@@ -6,12 +6,14 @@ body{
 #header{
     font-size:20px;
     background-color: aqua;
+    height:10%;
 
 }
 ul{
     margin:0;
     padding:0;
     border:0;
+    align-self: center;
 }
 
 ul#menu li{ 
