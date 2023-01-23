@@ -1,7 +1,7 @@
 #header{
     font-size:20px;
-    color:aqua;
+    background-color: aqua;
 }
-ul#menu li{
+ul#menu li{ 
     display: inline;
 }
