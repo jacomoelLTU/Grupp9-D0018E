@@ -2,7 +2,7 @@
     <html>
         <body>
             <link rel="stylesheet" type="text/css" href="header.css">
-            <div class="header">
+            <div id="header">
                 <ul>
                     <li><a href="admin.php">Admin page</a></li>
                     <li>Alternativ2</li>
