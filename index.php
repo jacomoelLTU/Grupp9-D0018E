@@ -3,7 +3,7 @@
         <body>
             <link rel="stylesheet" type="text/css" href="header.css">
             <div id="header">
-                <ul>
+                <ul id="menu">
                     <li><a href="admin.php">Admin page</a></li>
                     <li>Alternativ2</li>
                     <li>Alternativ3</li>
