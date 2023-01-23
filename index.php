@@ -1,9 +1,9 @@
 <!DOCTYPE html>
     <html>
-    <?php include 'config.php'; ?>
+    <?php include 'functions/config.php'; ?>
 
         <body>
-            <link rel="stylesheet" type="text/css" href="header.css">
+            <link rel="stylesheet" type="text/css" href="CSS/header.css">
             <div id="header">
                 <ul id="menu">
                     <li><a href="#">Alternativ1</a></li> <!-- Fixa sådana att samma sida updaterar sitt content ist för att laddda helt ny fil. -->
@@ -11,6 +11,8 @@
                     <li><a href="#">Alternativ3</a></li>
                 </ul>
             </div>
-            <?php include 'posts.php'; ?> <!-- Döljer innehållet, bra för säkerhet -->
+            <div id="middle">
+            <?php include 'functions/posts.php'; ?> <!-- Döljer innehållet, bra för säkerhet -->
+            </div>
         </body>
-</html>
+    </html>
