@@ -12,6 +12,7 @@
                 </ul>
             </div>
             <div id="middle">
+                <link rel="stylesheet" type="text/css" href="CSS/middle.css">
                 <?php include 'functions/posts.php'; ?> <!-- Döljer innehållet, bra för säkerhet -->
             </div>
         </body>
