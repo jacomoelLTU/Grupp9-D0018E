@@ -1,6 +1,7 @@
 <!DOCTYPE html>
     <html>
         <body>
+            <link rel="stylesheet" type="text/css" href="header.css">
             <div class="header">
                 <ul>
                     <li><a href="admin.php">Admin page</a></li>
