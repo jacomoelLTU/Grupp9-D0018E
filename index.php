@@ -12,8 +12,8 @@
                     <li><a href="#">Alternativ4</a></li>
                 </ul>
                 <ul id="login">
-                    <p><a href="#">Log in</a></p>
-                    <p><a href="#">Sign Up</a></p>
+                    <li><a href="#">Log in</a></li>
+                    <li><a href="#">Sign Up</a></li>
                 </ul>
             </div>
             <div id="middle">

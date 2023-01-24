@@ -20,13 +20,7 @@ ul#menu li{
     display: inline;
 }
 
-.topright {
-    float: right;
-    top: 10px;
-    right: 10px;
-}
-
-.topright li{
-    display: inline;
+ul#login li{
+    text-align: right;
 }
 
