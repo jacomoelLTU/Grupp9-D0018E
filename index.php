@@ -11,6 +11,10 @@
                     <li><a href="#">Alternativ3</a></li>
                     <li><a href="#">Alternativ4</a></li>
                 </ul>
+                <ul id="login">
+                    <li><a href="#">Log in</a></li>
+                    <li><a href="#">Sign Up</a></li>
+                </ul>
             </div>
             <div id="middle">
                 <link rel="stylesheet" type="text/css" href="CSS/middle.css">
