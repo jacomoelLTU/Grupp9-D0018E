@@ -22,7 +22,7 @@ ul#menu li{
     margin: 0;
 }
 
-#login li{
+#header .login li{
     display: inline;
     position: absolute;
     top: 1%;
