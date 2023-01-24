@@ -18,4 +18,5 @@ ul{
 
 ul#menu li{ 
     display: inline;
+    padding: 10%;
 }
