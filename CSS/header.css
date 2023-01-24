@@ -18,5 +18,6 @@ ul{
 
 ul#menu li{ 
     display: inline;
-    padding: 10%;
+    padding: 0;
+    margin: 0;
 }
