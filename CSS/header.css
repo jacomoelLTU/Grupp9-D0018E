@@ -23,5 +23,8 @@ ul#menu li{
 }
 
 ul#login li{
-    float: right;
+    display: inline;
+    position: absolute;
+    top: 1%;
+    right: 1%;
 }
