@@ -3,7 +3,7 @@
 
 <?php 
 include 'forms/postForm.php';
-require 'functions/config.php';
+require 'config.php';
 
 // if ($_SERVER['REQUEST_METHOD'] == "POST") {
     //get values from input
