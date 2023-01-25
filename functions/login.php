@@ -1,5 +1,4 @@
 <?php 
-include 'config.php';
 
 //This checks that the method we are using realy are POST. Good security thing.
 if($_SERVER['REQUEST_METHOD'] == "POST"){
