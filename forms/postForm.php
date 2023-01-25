@@ -11,10 +11,9 @@
         <!-- Text Fields -->
         <form action="../functions/posts.php" method="post">
             Title: <input type="text" name="post_title"><br> 
-            Description: <textarea rows = "5" cols = "60" name = "description" placeholder="Enter description here..."></textarea><br>
-            <input type="text" name="post_description">
-            Price: <input type="text" name="post_price">
-            <input type="submit" class = "post-button" name = "Submit" value="Post" /><br>
+            Description: <textarea rows = "5" cols = "60" name = "post_description" placeholder="Enter description here..."></textarea><br>
+            Price: <input type="text" name="post_price"><br>
+            <input type="submit" class = "post-button" name = "Submit" value="Upload Post" /><br>
         </form>
 
         <!-- Image -->
