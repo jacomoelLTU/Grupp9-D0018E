@@ -1,6 +1,5 @@
 <?php 
 include 'config.php';
-echo"test";
 
 // $query = mysqli_query($conn, "SELECT * FROM user");
 // while ($row = mysqli_fetch_array($query)) {
@@ -28,4 +27,5 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 else{
     echo"Catched an error...";
 }
+header('../index.php');
 ?>
