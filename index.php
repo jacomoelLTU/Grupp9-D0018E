@@ -17,6 +17,12 @@
                 </ul>
                 <ul id="login">
                     <p><a href="forms/loginForm.php">Log in</a></p>
+                    <?php 
+                session_start();
+                if(isset($_SESSION['loggedin'])){
+                    echo"Inloggad som:". $_SESSION['username'];
+                } 
+            ?>
                     <p><a href="../forms/signup.php">Sign Up</a></p>
                     <p><a href="../forms/postForm.php">Make a post!</a></p>
                 </ul>
@@ -25,7 +31,5 @@
             <div id="middle">
                 <?php include 'functions/posts.php'; ?> <!-- Döljer innehållet, bra för säkerhet -->
             </div>
-            <?php session_start();if(isset($_SESSION['loggedin'])){echo"Inloggad som:". $_SESSION['username'];} ?>
-            
         </body>
     </html>
