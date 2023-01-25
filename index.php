@@ -25,8 +25,8 @@
 
                 </ul>
             </div>
+            <link rel="stylesheet" type="text/css" href="CSS/middle.css">
             <div id="middle">
-                <link rel="stylesheet" type="text/css" href="CSS/middle.css">
                 <?php include 'functions/posts.php'; ?> <!-- Döljer innehållet, bra för säkerhet -->
             </div>
             <?php if(isset($_SESSION['logedin'])){echo"Inloggad som:". $_SESSION['username'];} ?>
