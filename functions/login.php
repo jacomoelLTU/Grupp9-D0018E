@@ -4,9 +4,9 @@ include 'config.php';
 
 //if($_SERVER['REQUEST_METHOD'] == "POST"){
     //Use the $_REQUEST to save form data that has been submitet. 
-    $usrn = $_REQUEST['username'];
+   // $usrn = $_REQUEST['username'];
     //For now we use pwd in clear text, need to implement hashed pwd!
-    $pwd  = $_REQUEST['password'];
+    //$pwd  = $_REQUEST['password'];
     
     $query->prepare("SELECT 'user_name', 'user_pwd' FROM user WHERE 'user_name'=:'username'");
     $query->bindvalue('user_name', $usrn_db);
