@@ -1,6 +1,10 @@
 <!DOCTYPE html>
     <html>
     <?php include 'functions/config.php'; ?>
+        
+        <head> 
+        <meta charset="UTF-8">
+        </head>
 
         <body>
             <link rel="stylesheet" type="text/css" href="CSS/header.css">
@@ -13,8 +17,12 @@
                     <li><a href="#">Alternativ4</a></li>
                 </ul>
                 <ul id="login">
+                    <p><a href="#">Log in</a></p>
+                    <p><a href="/functions/signup.php">Sign Up</a></p>
+
                     <li><a href="#">Log in</a></li>
                     <li><a href="#">Sign Up</a></li>
+
                 </ul>
             </div>
             <div id="middle">

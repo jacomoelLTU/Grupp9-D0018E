@@ -24,7 +24,7 @@
 
                     <input type="submit" class = "login-button" name = "Submit" value="Register" />
                     <p class = "link"><a href="index.php">Click to view login page</a></p>
-                    
+
                 </form>
     
 
