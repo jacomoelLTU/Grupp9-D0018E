@@ -8,8 +8,9 @@
         $usrn = $_POST['username'];
         $pwd  = $_POST['password'];
         
-        // $query = "SELECT * FROM user WHERE user_name=$usrn and 'user_pwd'=$pwd";
-        // $stmt = $conn->query($query);
+        $stmt = $query->prepare("SELECT user_name, user_pwd FROM user WHERE user_name=$usrn AND user_pwd=$pwd");
+        $stmt->bind_param("ss", $usrn, $pwd); //bind_param("S-tringS-tring, $var1, $var2  ")
+        $stmt->execute();
         echo $usrn." with pwd:".$pwd;
     }
 
