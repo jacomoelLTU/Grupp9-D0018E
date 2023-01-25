@@ -5,7 +5,7 @@
         <body>
             <link rel="stylesheet" type="text/css" href="CSS/header.css">
             <div id="header">
-            <?php include 'forms/loginForm.html'?>
+            <?php include 'forms/loginForm.html'; ?>
                 <ul id="menu">
                     <li><a href="#">Alternativ1</a></li> <!-- Fixa sådana att samma sida updaterar sitt content ist för att laddda helt ny fil. -->
                     <li><a href="#">Alternativ2</a></li>

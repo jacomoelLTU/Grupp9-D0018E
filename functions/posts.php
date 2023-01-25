@@ -19,6 +19,7 @@ else{
 <!-- POST action to mysql -->
 <?php 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
     //get values from input
     $post_title = $_POST['post_title'];
     $post_description = $_POST['post_description'];
