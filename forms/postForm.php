@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" type="text/css" href="CSS/posts.css">
+<?php include 'functions/config.php'; ?>
 
 <h1>Make a Post</h1>
 
