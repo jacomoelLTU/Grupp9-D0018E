@@ -1,5 +1,7 @@
 <!-- POST action to mysql -->
-<?php 
+
+<?php include 'functions/postForm.php';
+ 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     //get values from input
