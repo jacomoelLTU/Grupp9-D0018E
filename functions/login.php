@@ -12,9 +12,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     $query->bindvalue('user_name', $usrn_db);
     $query->bindvalue('user_pwd', $pwd_db);
     if($usrn_db == $usrn && $pwd == $pwd_db){ //For now we use pwd in clear text, need to implement hashed pwd!
-        session_start();
-        $_SESSION['username'] = $usrn_db;
-        $_SESSION['logedin']  = true;
+        // session_start();
+        // $_SESSION['username'] = $usrn_db;
+        // $_SESSION['logedin']  = true;
         
     }
     else{
