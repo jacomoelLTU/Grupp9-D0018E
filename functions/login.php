@@ -14,6 +14,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     
     $query = mysqli_prepare($conn, "SELECT user_name, user_pwd FROM user WHERE user_name=:username");
     $query->bind_param($usrn_db, 'user_name', $pwd_db, 'user_pwd');
+    $query->execute(); 
     if($usrn_db == $usrn && $pwd == $pwd_db){ //For now we use pwd in clear text, need to implement hashed pwd!
         session_start();
         $_SESSION['username'] = $usrn_db;
