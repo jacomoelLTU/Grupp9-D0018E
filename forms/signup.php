@@ -29,7 +29,7 @@
                     <input type = "text" class = "SinUp-input" name = "userSurname" placeholder = "Surname"/>
 
                     <input type="submit" class = "login-button" name = "Submit" value="Register" />
-                    <p class = "link"><a href="login.php">Click to view login page</a></p>
+                    <p class = "link"><a href="loginForm.php">Click to view login page</a></p>
 
                 </form>
     
