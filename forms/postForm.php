@@ -10,10 +10,10 @@
         <!-- Form for post -->
         <!-- Text Fields -->
         <form action="../functions/posts.php" method="post">
-            Title: <input type="text" name="post_title"><br> 
-            Description: <textarea rows = "5" cols = "60" name = "post_description" placeholder="Enter description here..."></textarea><br>
-            Price: <input type="text" name="post_price"><br>
-            <input type="submit" class = "post-button" name = "Submit" value="Upload Post" /><br>
+            Title: <input type="text" name="post_title" placeholder="Enter title"><br> 
+            Description: <br><textarea rows = "5" cols = "60" name = "post_description" placeholder="Enter description here..."></textarea><br>
+            Price: <input type="text" name="post_price" placeholder="Enter price"><br>
+            <input type="submit" class = "post-button" name = "Submit" value="Upload Post"/><br>
         </form>
 
         <!-- Image -->
