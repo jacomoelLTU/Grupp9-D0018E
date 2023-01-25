@@ -1,4 +1,6 @@
 <?php 
+    ini_set('display_errors', 1); 
+    error_reporting(-1);
     include 'config.php';
     //First we need to check that all values of the form is given.
     if(!isset($_POST['username']) || !isset($_POST['password'])){
@@ -17,10 +19,10 @@
                 session_start();
                 $_SESSION['username'] = $usrn_db;
                 $_SESSION['loggedin'] = true;
-                header('../index.php');
-                
+            
             }
         }
     }
     header('../index.php');
+
 ?>
