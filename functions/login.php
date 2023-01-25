@@ -1,36 +1,27 @@
 <?php 
 include 'config.php';
 
-// $query = mysqli_query($conn, "SELECT * FROM user");
-// while ($row = mysqli_fetch_array($query)) {
-//     echo $row['user_name'];
-//     }
-//This checks that the method we are using realy are POST. Good security thing.
-if($_SERVER['REQUEST_METHOD'] == "POST"){
-    //Use the $_REQUEST to save form data that has been submitet. 
-    $usrn = $_REQUEST['username'];
-    //For now we use pwd in clear text, need to implement hashed pwd!
-    $pwd  = $_REQUEST['password'];
-    
-    $query = mysqli_prepare($conn, "SELECT user_name, user_pwd FROM user WHERE user_name=:username");
-	$query->execute(array('user_name'=>$usrn_db));	
-	
-	$result = $stmt->fetchAll();
-	foreach($result as $row){
-        if(password_verify($pwd_db, $row['password'])){
-        session_start();
-        $_SESSION['username'] = $usrn_db;
-        $_SESSION['inloggad'] = true;
-
-        header('Location:../Start.php');	
+if (!isset($_POST['username'], $_POST['password']) ) {
+	exit('Fill in all the forms...');
+}
+if ($stmt = $con->prepare('SELECT user_name, user_password FROM user WHERE username = ?')) {
+	$stmt->bind_param('s', $_POST['username']);
+	$stmt->execute();
+	$stmt->store_result(); //store_result makes it possible to check if account exists in db
+   
+    if ($stmt->num_rows > 0) {
+        $stmt->bind_result($usrn_db, $pwd_db);
+        $stmt->fetch();
+        if (password_verify($_POST['password'], $pwd_db)) {
+            $_SESSION['user'] = $_POST['username'];
+            $_SESSION['loggedin'] = true;
+        } else {
+            echo 'Wrong credentials...';
         }
-        else{
-            echo"Username or password is wrong...";
-        }
+    } else {
+        echo 'Wrong credentials...';
     }
-}
-else{
-    echo"Catched an error...";
-}
 
+}
+header('../index.php');
 ?>
