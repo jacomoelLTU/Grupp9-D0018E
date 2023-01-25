@@ -7,9 +7,10 @@ include 'config.php';
 //     //For now we use pwd in clear text, need to implement hashed pwd!
 //     $pwd  = $_REQUEST['password'];
     
-    $query->prepare("SELECT 'user_name', 'user_pwd' FROM user WHERE 'user_name'=:'username'");
-    $query->bindvalue('user_name', $usrn_db);
-    $query->bindvalue('user_pwd', $pwd_db);
+    $sql = $query->prepare("SELECT 'user_name', 'user_pwd' FROM user WHERE 'user_name'=:'username'");
+    $sql->bindvalue('user_name', $usrn_db);
+    $sql->bindvalue('user_pwd', $pwd_db);
+    $sql->execute();
     echo $usrn_db;
 //     if($usrn_db == $usrn && $pwd == $pwd_db){ //For now we use pwd in clear text, need to implement hashed pwd!
 //         session_start();
