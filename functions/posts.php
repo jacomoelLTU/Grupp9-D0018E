@@ -16,16 +16,6 @@ else{
 }
 ?>
 
-<!-- Form for post action -->
-<form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
-  Title: <input type="text" name="post_title">
-  Description: <input type="text" name="post_description">
-  Price: <input type="text" name="post_price">
-  Image: <input type="image" name="post_img">
-
-  <input type="submit">
-</form>
-
 <!-- POST action to mysql -->
 <?php 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
