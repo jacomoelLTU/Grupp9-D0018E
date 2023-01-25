@@ -18,11 +18,11 @@ require 'config.php';
     // }
     
     //get user id from db (to +1 )
-    $post_userid = "SELECT post_userid FROM post";
-    $post_userid_result = $conn->query($post_userid);
+    //$post_userid = "SELECT post_userid FROM post";
+    //$post_userid_result = $conn->query($post_userid);
 
     //query
-    $sql = "INSERT INTO post (post_userid, post_title, post_description, post_price, post_img) VALUES ('2', '$post_title', '$post_description', '$post_price', '$post_img')";
+    $sql = "INSERT INTO post (post_title, post_description, post_price, post_img) VALUES ('$post_title', '$post_description', '$post_price', '$post_img')";
 
     //insert in mysql
     $rs = mysqli_query($conn, $sql);
