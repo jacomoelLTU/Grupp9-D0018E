@@ -1,10 +1,15 @@
 <!-- POST action to mysql -->
 
+
 <?php 
 include 'forms/postForm.php';
+require 'functions/config.php';
 
 // if ($_SERVER['REQUEST_METHOD'] == "POST") {
     //get values from input
+
+
+
     $post_title = $_POST['post_title'];
     $post_description = $_POST['post_description'];
     $post_price = $_POST['post_price'];
