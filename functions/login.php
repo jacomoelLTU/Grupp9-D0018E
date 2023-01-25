@@ -7,7 +7,7 @@ include 'config.php';
 //     //For now we use pwd in clear text, need to implement hashed pwd!
 //     $pwd  = $_REQUEST['password'];
     
-    $sql = $query->prepare("SELECT 'user_name', 'user_pwd' FROM user WHERE 'user_name'=:'username'");
+    $sql = $query->prepare("SELECT user_name, user_pwd FROM user WHERE user_name=:username");
     $sql->bindvalue('user_name', $usrn_db);
     $sql->bindvalue('user_pwd', $pwd_db);
     $sql->execute();
