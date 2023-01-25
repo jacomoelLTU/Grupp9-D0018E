@@ -19,11 +19,10 @@
             <form action="../functions/upload.php" method="post" enctype="multipart/form-data">
                 Select image to upload:
                 <input type="file" name="post_img" id="post_img">
-                <input type="submit" value="Upload Image" name="submit">
             </form>
 
             <!-- Upload Button -->
-            <input type="submit" class = "post-button" name = "Submit" value="Upload Post"/><br>
+            <input type="submit" class = "post_button" name = "Submit" value="Upload Post"/><br>
         </form> 
         
     </div>

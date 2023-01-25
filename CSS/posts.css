@@ -14,6 +14,7 @@ h1 {
 }
 
 .post_button {
+    float: right;
     height: 50px;
     width: 100px;
 }
