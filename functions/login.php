@@ -19,7 +19,7 @@
                 session_start();
                 $_SESSION['username'] = $usrn_db;
                 $_SESSION['loggedin'] = true;
-                printf("Error: %s.\n", $stmt->error);
+                printf("Error: %s.\n", $query->error);
             }
         }
     }
