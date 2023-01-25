@@ -13,7 +13,7 @@
                 </ul>
                 <ul id="login">
                     <p><a href="#">Log in</a></p>
-                    <p><a href="#">Sign Up</a></p>
+                    <p><a href="/functions/signup.php">Sign Up</a></p>
                 </ul>
             </div>
             <div id="middle">
