@@ -13,13 +13,8 @@
                     <li><a href="#">Alternativ4</a></li>
                 </ul>
                 <ul id="login">
-<<<<<<< HEAD
-                    <p><a href="#">Log in</a></p>
-                    <p><a href="/functions/signup.php">Sign Up</a></p>
-=======
                     <li><a href="#">Log in</a></li>
                     <li><a href="#">Sign Up</a></li>
->>>>>>> c64f0f783ec6dd064f6b31d4d14a1f66d573db0b
                 </ul>
             </div>
             <div id="middle">
