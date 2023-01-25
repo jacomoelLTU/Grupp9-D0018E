@@ -22,7 +22,7 @@ require 'config.php';
     $post_userid_result = $conn->query($post_userid);
 
     //query
-    $sql = "INSERT INTO post (post_userid, post_title, post_description, post_price, post_img) VALUES ('$post_userid_result+1', '$post_title', '$post_description', '$post_price', '$post_img')";
+    $sql = "INSERT INTO post (post_userid, post_title, post_description, post_price, post_img) VALUES ('0', '$post_title', '$post_description', '$post_price', '$post_img')";
 
     //insert in mysql
     $rs = mysqli_query($conn, $sql);
