@@ -15,7 +15,7 @@
 
                 <form class = "SignUpStyle" action ="registerUser.php" method = "post">
 
-                    <h1 class="SignUpHeader"> Provide user infromation to register </h1>
+                    <h1 class="SignUpHeader"> Provide user information to register </h1>
                     <input type = "text" class = "SignUp-input" name = "Username" placeholder = "userName"/> 
                     <input type = "text" class = "SignUp-input" name = "Password" placeholder = "passWord"/>
                     <input type = "text" class = "SignUp-input"  name = "Email Adress" placeholder = "userEmail"/>
