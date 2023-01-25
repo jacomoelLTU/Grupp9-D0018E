@@ -2,6 +2,10 @@
 include 'config.php';
 echo"test";
 
+$query = mysqli_query($conn, "SELECT * FROM user");
+while ($row = mysqli_fetch_array($query)) {
+    echo $row['user_name'];
+    }
 // //This checks that the method we are using realy are POST. Good security thing.
 // if($_SERVER['REQUEST_METHOD'] == "POST"){
 //     //Use the $_REQUEST to save form data that has been submitet. 
