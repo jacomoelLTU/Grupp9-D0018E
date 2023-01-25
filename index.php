@@ -9,7 +9,6 @@
         <body>
             <link rel="stylesheet" type="text/css" href="CSS/header.css">
             <div id="header">
-            <?php include 'forms/loginForm.php'; ?>
                 <ul id="menu">
                     <li><a href="#">Alternativ1</a></li> <!-- Fixa sådana att samma sida updaterar sitt content ist för att laddda helt ny fil. -->
                     <li><a href="#">Alternativ2</a></li>
@@ -17,7 +16,7 @@
                     <li><a href="#">Alternativ4</a></li>
                 </ul>
                 <ul id="login">
-                    <p><a href="#">Log in</a></p>
+                    <p><a href="forms/loginForm.php">Log in</a></p>
                     <p><a href="/functions/signup.php">Sign Up</a></p>
                 </ul>
             </div>
