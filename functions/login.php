@@ -11,7 +11,7 @@
         $pwd  = $_POST['password'];
         
         $query = mysqli_query($conn,"SELECT user_name, user_pwd FROM user WHERE user_name='$usrn' AND user_pwd='$pwd'");
-        foreach($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
+        while($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
             if(($row['user_name'] == $usrn) && ($row['user_pwd'] == $pwd)){
                 $usrn    = $row['user_name'];
                 $pwd_db  = $row['user_pwd'];
