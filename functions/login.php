@@ -13,20 +13,24 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     $pwd  = $_REQUEST['password'];
     
     $query = mysqli_prepare($conn, "SELECT user_name, user_pwd FROM user WHERE user_name=:username");
-    $query->bind_param($usrn_db, 'user_name', $pwd_db, 'user_pwd');
-    $query->execute(); 
-    if($usrn_db == $usrn && $pwd == $pwd_db){ //For now we use pwd in clear text, need to implement hashed pwd!
+	$query->execute(array('user_name'=>$usrn_db));	
+	
+	$result = $stmt->fetchAll();
+	foreach($result as $row){
+        if(password_verify($pwd_db, $row['password'])){
         session_start();
         $_SESSION['username'] = $usrn_db;
-        $_SESSION['logedin']  = true;
-        
-    }
-    else{
-        echo"Username or password is wrong...";
+        $_SESSION['inloggad'] = true;
+
+        header('Location:../Start.php');	
+        }
+        else{
+            echo"Username or password is wrong...";
+        }
     }
 }
 else{
     echo"Catched an error...";
 }
-header('../index.php');
+
 ?>
