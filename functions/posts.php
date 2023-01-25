@@ -29,7 +29,7 @@ else{
 <!-- POST action to mysql -->
 <?php 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    /
+    
     //get values from input
     $post_title = $_POST['post_title'];
     $post_description = $_POST['post_description'];
@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $post_userid_result = $conn->query($post_userid);
 
     //query
-    $sql = "INSERT INTO `post` (`post_userid`, `post_title`, `post_description`, `post_price`, `post_img`) VALUES ('$post_userid_result+1', '$post_title', '$post_description', '$post_price', '$post_img');"
+    $sql = "INSERT INTO `post` (`post_userid`, `post_title`, `post_description`, `post_price`, `post_img`) VALUES ('$post_userid_result+1', '$post_title', '$post_description', '$post_price', '$post_img')";
 
     //insert in mysql
     $rs = mysqli_query($conn, $sql);
