@@ -17,7 +17,7 @@
                 </ul>
                 <ul id="login">
                     <p><a href="forms/loginForm.php">Log in</a></p>
-                    <p><a href="/forms/signup.php">Sign Up</a></p>
+                    <p><a href="GRUPP-D0018E/forms/signup.php">Sign Up</a></p>
                 </ul>
             </div>
             <link rel="stylesheet" type="text/css" href="CSS/middle.css">
