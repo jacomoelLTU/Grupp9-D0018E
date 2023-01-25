@@ -24,4 +24,5 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 else{
     echo"Catched an error...";
 }
+header("../index.php")
 ?>
