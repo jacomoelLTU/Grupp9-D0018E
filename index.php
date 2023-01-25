@@ -22,6 +22,6 @@
                 <?php include 'functions/posts.php'; ?> <!-- Döljer innehållet, bra för säkerhet -->
             </div>
             <?php if(isset($_SESSION['logedin'])){echo"Inloggad som:". $_SESSION['username'];} ?>
-            }
+            
         </body>
     </html>
