@@ -1,9 +1,7 @@
 <!-- POST action to mysql -->
 
 <?php include 'functions/postForm.php';
- 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    
+
     //get values from input
     $post_title = $_POST['post_title'];
     $post_description = $_POST['post_description'];
@@ -19,5 +17,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     //insert in mysql
     $rs = mysqli_query($conn, $sql);
-}
 ?>
