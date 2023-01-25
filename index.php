@@ -10,6 +10,11 @@
                     <li><a href="#">Alternativ1</a></li> <!-- Fixa sådana att samma sida updaterar sitt content ist för att laddda helt ny fil. -->
                     <li><a href="#">Alternativ2</a></li>
                     <li><a href="#">Alternativ3</a></li>
+                    <li><a href="#">Alternativ4</a></li>
+                </ul>
+                <ul id="login">
+                    <li><a href="#">Log in</a></li>
+                    <li><a href="#">Sign Up</a></li>
                 </ul>
             </div>
             <div id="middle">
