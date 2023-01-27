@@ -32,14 +32,14 @@
                     require ("../functions/config.php");
 
                     //stripslashes removes backslashes, some protection agains injection i guess
-                    $userName = stripslashes($_REQUEST['userName']);
-                    $passWord = stripslashes($_REQUEST['passWord']);
-                    $userEmailAdress = stripslashes($_REQUEST['userEmailAdress']);
-                    $userFirstName = stripslashes($_REQUEST['userFirstname']);
-                    $userSurName = stripslashes($_REQUEST['userSurname']);
+                    $userName = stripslashes($_POST['userName']);
+                    $passWord = stripslashes($_POST['passWord']);
+                    $userEmailAdress = stripslashes($_POST['userEmailAdress']);
+                    $userFirstName = stripslashes($_POST['userFirstname']);
+                    $userSurName = stripslashes($_POST['userSurname']);
 
 
-                    if(isset($userName) || isset($passWord) || isset($userEmailAdress) || isset($userFirstName) || isset($userSurName)){
+                    if(!(isset($userName) || isset($passWord) || isset($userEmailAdress) || isset($userFirstName) || isset($userSurName))){
                             echo 'To register you need to provide information for all the fields in the registrationform!';
                     }
 
