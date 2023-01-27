@@ -12,7 +12,7 @@
                 <ul id="menu">
                 <script src="JS/loginButton.js"></script>
                 <div class="wrapper">
-                    <button type="button" id="btn-1" class="ripple">button</button>
+                    <button type="button" id="btn-1" class="ripple" data-ripple-color="#888">button</button>
                 </div>
                 </ul>
                 <ul id="login">
