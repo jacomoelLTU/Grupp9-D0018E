@@ -10,19 +10,16 @@
             <link rel="stylesheet" type="text/css" href="CSS/header.css">
             <div id="header">
                 <ul id="menu">
-                    <li><a href="#">Alternativ1</a></li> <!-- Fixa sådana att samma sida updaterar sitt content ist för att laddda helt ny fil. -->
-                    <li><a href="#">Alternativ2</a></li>
-                    <li><a href="#">Alternativ3</a></li>
-                    <li><a href="#">Alternativ4</a></li>
+                <button class="ripple">Button</button>
                 </ul>
                 <ul id="login">
                     <p><a href="forms/loginForm.php">Log in</a></p>
                     <?php 
-                session_start();
-                if(isset($_SESSION['loggedin'])){
-                    echo"Inloggad som:". $_SESSION['username'];
-                } 
-            ?>
+                        session_start();
+                        if(isset($_SESSION['loggedin'])){
+                            echo"Inloggad som:". $_SESSION['username'];
+                        } 
+                    ?>
                     <p><a href="../forms/signUpForm.html">Sign Up</a></p>
                     <p><a href="../forms/postForm.php">Make a post!</a></p>
                 </ul>
