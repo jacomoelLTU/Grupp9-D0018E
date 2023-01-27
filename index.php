@@ -13,7 +13,6 @@
                 <script src="JS/loginButton.js"></script>
                 <div class="wrapper">
                     <button type="button" id="btn-1" class="ripple">button</button>
-                    <div class="ripple" style="width: 300px; height: 100px; background: #ddd;"></div>
                 </div>
                 </ul>
                 <ul id="login">
