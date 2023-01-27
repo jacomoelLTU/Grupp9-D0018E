@@ -10,7 +10,7 @@
             <link rel="stylesheet" type="text/css" href="CSS/header.css">
             <div id="header">
                 <ul id="menu">
-                <?php include 'JS/loginButton.js'?>
+                <script src="JS/loginButton.js"></script>
                 <div class="wrapper">
                     <button type="button" id="btn-1" class="ripple">button</button>
                     <button type="button" id="btn-2" class="ripple" data-ripple-color="#888">button</button>
