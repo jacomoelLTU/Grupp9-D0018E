@@ -51,4 +51,10 @@ button {
     background: #ddd;
     color: #222;
 }
+@keyframes ripple {
+    100% {
+        transform: translate(-50%, -50%) scale(100);
+        opacity: 0;
+    }
+}
 /* end button */
