@@ -25,7 +25,7 @@
                     $userSurName = stripslashes($_REQUEST['userSurname']);
 
 
-                    if(empty($userName) || empty($passWord) || empty($userEmailAdress) || empty($userFirstName) || empty($userSurName)){
+                    if(isset($userName) || isset($passWord) || isset($userEmailAdress) || isset($userFirstName) || isset($userSurName)){
                             echo 'To register you need to provide information for all the fields in the registrationform!';
                     }
 
