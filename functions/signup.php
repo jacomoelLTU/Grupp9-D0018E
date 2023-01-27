@@ -44,7 +44,7 @@
                         
                         mysqli_query($conn, $sql_insertUser);
 
-                        echo 'you have now signed up';
+                        header('Location:../forms/loginForm.php');
 
                     }
                  ?>
