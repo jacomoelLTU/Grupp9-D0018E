@@ -27,34 +27,3 @@ ul#login li{
     right: 10px;
 }
 
-
-/* For buttons */
-button {
-    margin: 25px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    cursor: pointer;
-    padding: 8px 15px;
-    text-transform: uppercase;
-    border-radius: 3px;
-    outline: none;
-    position: relative;
-    overflow: hidden;
-    box-sizing: border-box;
-    height: 35px;
-    width: 85px;
-}
-
-#btn-1 {
-    border: 0;
-    background: #ddd;
-    color: #222;
-}
-@keyframes ripple {
-    100% {
-        transform: translate(-50%, -50%) scale(100);
-        opacity: 0.5;
-    }
-}
-/* end button */
