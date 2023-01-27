@@ -9,17 +9,17 @@
 
             <link rel="stylesheet" type="text/css" href="CSS/header.css">
             <div id="header">
-                
-                <ul id="menu">
-                    
-                </ul>
-                <ul id="login">
+                <ul id="login"> 
                     <p>
                     Click here to <a href="forms/loginForm.php">Log in</a>!
                     Click here to <a href="../forms/signUpForm.html">Sign Up</a>!
                     </p>
-                    <div id=""><a href="../forms/postForm.php">Make a post!</a></center>
                 </ul>
+                <div id="form-main-content">
+                    <p>
+                    Click here to <a href="../forms/postForm.php">Make a post</a>!
+                    </p>
+                </div>
             </div>
 
 
