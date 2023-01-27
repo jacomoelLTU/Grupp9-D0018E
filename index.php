@@ -23,7 +23,7 @@
                     echo"Inloggad som:". $_SESSION['username'];
                 } 
             ?>
-                    <p><a href="../forms/signup.php">Sign Up</a></p>
+                    <p><a href="../forms/signUpForm.html">Sign Up</a></p>
                     <p><a href="../forms/postForm.php">Make a post!</a></p>
                 </ul>
             </div>
