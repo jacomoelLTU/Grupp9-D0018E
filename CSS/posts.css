@@ -10,6 +10,18 @@ h1{
     align-self: center;
 }
 
+#title{
+    padding: 10px;
+}
+
+#description{
+
+}
+
+#price{
+
+}
+
 .posts{
     border: 5px solid;
     margin: auto;
