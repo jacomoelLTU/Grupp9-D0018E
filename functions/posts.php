@@ -1,6 +1,4 @@
 <!-- POST action to mysql -->
-
-
 <?php 
 // include 'forms/postForm.php';
 require 'config.php';
