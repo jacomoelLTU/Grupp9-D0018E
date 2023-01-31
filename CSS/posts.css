@@ -4,11 +4,12 @@ h1 {
     font-size: 100px;
     text-align: center;
     background-color: rgb(15, 215, 102);
+    width: 500px;
 }
 
 #posts{
     padding: 0;
-    display:inline-block;
+    display: inline-block;
     background-color: orange;
     font-size: medium;
 }
@@ -17,5 +18,6 @@ h1 {
     float: right;
     height: 50px;
     width: 100px;
+    margin-right: 5px;
 }
 
