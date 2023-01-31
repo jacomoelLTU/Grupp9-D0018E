@@ -1,5 +1,5 @@
 body {
-    background-color: lightblue;
+    background-color: rgb(15, 215, 102);
     font-size: medium;
     column-rule: 1px solid black;
   }
@@ -11,6 +11,7 @@ h1 {
 #postForm {
     padding: 0;
     display:inline-block
+    
 }
 
 .post_button {
