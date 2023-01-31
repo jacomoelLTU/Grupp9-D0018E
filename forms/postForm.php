@@ -9,10 +9,8 @@
     <h1>Make a Post</h1>
 
     <body>
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         <link rel="stylesheet" type="text/css" href="../CSS/posts.css">
-        <div class="posts">
-            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaaa
+        <div id="posts">
 
             <!-- Form for post -->
             <!-- Text Fields -->
