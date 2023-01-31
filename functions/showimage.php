@@ -9,6 +9,6 @@ $sql = "SELECT post_img FROM post WHERE id=$id";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
 header("Content-type: image/jpeg");
-echo $row['content'];
+echo $row['post_img'];
 
 ?>
