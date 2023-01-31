@@ -13,14 +13,6 @@ if(isset($_POST["submit"]) && !empty($_FILES["file"]["name"])){
         echo "File is an image - " . $check["mime"] . ".";
         $uploadOk = 1;
 
-        //
-        $image = $_FILES["post_img"]["tmp_name"]; 
-        $imgContent = addslashes(file_get_contents($image)); 
-         
-        // Insert image content into database 
-        $insert = $conn->query("INSERT into post (post_img) VALUES ('$imgContent', NOW())");
-        //
-
     } else {
         echo "File is not an image.";
         $uploadOk = 0;
