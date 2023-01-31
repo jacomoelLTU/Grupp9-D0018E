@@ -4,6 +4,7 @@ h1{
     background-color: rgb(15, 215, 102);
     width: 200px;
     height: 140px;
+    align-self: center;
 }
 
 #posts{
@@ -11,6 +12,8 @@ h1{
     display: inline-block;
     background-color: orange;
     font-size: medium;
+    align-self: center;
+    font-weight: bold;
 }
 
 .post_button {
