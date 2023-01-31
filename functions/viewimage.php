@@ -10,6 +10,6 @@ $result = $conn->query("SELECT post_img FROM post ORDER BY post_userid DESC");
 
 <div class="gallery"> 
     <?php while($row = $result->fetch_assoc()){ ?> 
-        <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_decode($row['post_img']); ?>" /> 
+        <img src="data:image/jpg;charset=utf8;base64,<?php echo($row['post_img']); ?>" /> 
     <?php } ?> 
 </div> 
