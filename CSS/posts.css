@@ -30,6 +30,10 @@ h1{
     border-radius: 8px;
 }
 
+#images{
+    display: inline-block;
+}
+
 .posts{
     border: 5px solid;
     margin: auto;
@@ -48,7 +52,7 @@ h1{
     width: 100px;
     margin-right: 5px;
     margin-bottom: 5px;
-    border: 2px #2091c1 solid;
+    border: 1px rgb(53, 141, 53) solid;
     border-radius: 8px;
     background-color: lightgreen;
     cursor: pointer;

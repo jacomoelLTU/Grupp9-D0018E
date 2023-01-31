@@ -16,14 +16,11 @@ include '../functions/viewimage.php';
             <p id="description"> Description <br><textarea rows = "5" cols = "60" name = "post_description" placeholder="Enter description here..." required></textarea></p>
             <p id="price"> Price <input type="text" name="post_price" placeholder="Enter price" required></p>
             <input type="submit" class = "post_button" name = "Submit" value="Upload Post"/><br>
-            <!-- Image -->
-            <form action="../functions/upload.php" method="post" enctype="multipart/form-data">
+            <!-- Images -->
+            <div id="images"><form action="../functions/upload.php" method="post" enctype="multipart/form-data">
                 Select image to upload
                 <input type="file" name="post_img" id="post_img">
-            </form>
-
-            <!-- Upload Button -->
-            
+            </form></div>
         </form>   
     </div>  
 </body>
