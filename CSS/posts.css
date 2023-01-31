@@ -12,13 +12,13 @@ h1{
 
 #title{
     padding: 10px;
-    border: 1px #2091c1 solid;
+    border: 0px #2091c1 solid;
     border-radius: 8px;
 }
 
 #description{
     padding: 10px;
-    border: 1px #2091c1 solid;
+    border: 0px #2091c1 solid;
     border-radius: 8px;
 
 }
@@ -26,7 +26,7 @@ h1{
 #price{
     padding: 15px;
     display: inline-block;
-    border: 1px #2091c1 solid;
+    border: 0px #2091c1 solid;
     border-radius: 8px;
 }
 
@@ -35,7 +35,8 @@ h1{
 }
 
 .posts{
-    border: 5px solid;
+    border: 3px solid;
+    border-radius: 3px;
     margin: auto;
     display: flex;
     justify-content: center;
