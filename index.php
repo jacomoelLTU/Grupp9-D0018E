@@ -23,7 +23,7 @@
 
             <link rel="stylesheet" type="text/css" href="CSS/middle.css">
             <div id="middle">
-                <?php include 'functions/posts.php'; ?> <!-- Döljer innehållet, bra för säkerhet -->
+                <center>Här är middle!</center>
             </div>
             
         
