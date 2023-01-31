@@ -7,7 +7,7 @@
         <body>
             <link rel="stylesheet" type="text/css" href="CSS/header.css">
             <div id="header">
-                <?php if(isset($_SESSION['loggedin'])){echo'<nav id="userpage">Click for <a href ="forms/userpage.php" alt="">Profile</a>';}?>
+                <?php session_start(); if(isset($_SESSION['loggedin'])){echo'<nav id="userpage">Click for <a href ="forms/userpage.php" alt="">Profile</a>';}?>
                 <ul id="login"> 
                     <p>
                     <?php include 'forms/loginCheck.php';?>
