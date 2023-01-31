@@ -48,9 +48,9 @@ h1{
     width: 100px;
     margin-right: 5px;
     margin-bottom: 5px;
-    border: 2px;
+    border: 2px #2091c1 solid;
     border-radius: 8px;
-    background-color: white;
+    background-color: lightgreen;
     cursor: pointer;
 }
 
