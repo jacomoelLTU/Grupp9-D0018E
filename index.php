@@ -1,12 +1,10 @@
 <!DOCTYPE html>
     <html>
-    <?php include 'functions/config.php';  ?>
-        
+    <?php include 'functions/config.php';?>
      <head> 
         <meta charset="UTF-8">
     </head>    
         <body>
-
             <link rel="stylesheet" type="text/css" href="CSS/header.css">
             <div id="header">
                 <ul id="login"> 
