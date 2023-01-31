@@ -9,10 +9,11 @@ h1 {
     background-color: rgb(15, 215, 102);
 }
 
-#posts{
+.posts{
     padding: 0;
     display:inline-block;
     background-color: orange;
+    text-emphasis-color: blue;
 }
 
 .post_button {

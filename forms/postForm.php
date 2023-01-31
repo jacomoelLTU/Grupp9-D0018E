@@ -1,6 +1,6 @@
 <!DOCTYPE html>
     <html>
-    
+    <meta charset="UTF-8">
     <?php 
     include '../functions/config.php';
     include '../functions/upload.php'; 
@@ -11,7 +11,7 @@
     <body>
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         <link rel="stylesheet" type="text/css" href="CSS/posts.css">
-        <div id="posts">
+        <div class="posts">
             AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaaa
 
             <!-- Form for post -->
