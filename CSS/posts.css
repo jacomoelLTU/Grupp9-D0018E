@@ -37,7 +37,7 @@ h1{
 
 #preview{
     padding-top: 5%;
-    border: 2px solid;
+    border: 2px #3f494d solid;
     min-height: 200px;
     color: lightgrey;
 }
