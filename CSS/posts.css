@@ -1,3 +1,8 @@
+.background{
+    background: lightblue;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+
 h1{  
     font-size: 30px;
     text-align: center;
@@ -5,20 +10,16 @@ h1{
     align-self: center;
 }
 
-.background{
-    background: lightblue;
-}
-
 .posts{
-    /* padding: 0; */
     border: 5px solid;
     margin: auto;
     display: flex;
     justify-content: center;
     background-color: orange;
-    font-size: medium;
+    font-size: 15;
     align-self: center;
     font-weight: bold;
+    padding: 10px;
 }
 
 .post_button {
