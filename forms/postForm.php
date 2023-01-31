@@ -3,11 +3,11 @@ include '../functions/config.php';
 include '../functions/upload.php';
 include '../functions/viewimage.php';  
 ?>
-<body>
+<div class="background">
     <h1>Make a Post</h1>
 
     <link rel="stylesheet" type="text/css" href="../CSS/posts.css">
-    <div id="posts">
+    <div class="posts">
 
         <!-- Form for post -->
         <!-- Text Fields -->
@@ -26,4 +26,4 @@ include '../functions/viewimage.php';
             
         </form>   
     </div>  
-</body>
+</div>
