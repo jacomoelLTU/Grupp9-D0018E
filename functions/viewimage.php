@@ -1,12 +1,11 @@
-
 <?php
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 include 'config.php';
 
-$result = $conn->query("SELECT post_img FROM post WHERE post_userid=6"); 
-// RDER BY post_userid DESC"
+$result = $conn->query("SELECT post_img FROM post ORDER BY post_userid DESC"); 
+
 ?>
 
 <div class="gallery"> 
