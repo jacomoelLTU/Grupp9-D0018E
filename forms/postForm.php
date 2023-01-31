@@ -9,6 +9,7 @@ include '../functions/upload.php';
 <h1>Make a Post</h1>
 
 <body>
+    <link rel="stylesheet" type="text/css" href="CSS/posts.css">
     <div id="postForm">
 
         <!-- Form for post -->

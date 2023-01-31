@@ -8,10 +8,9 @@ h1 {
     font-size: large;
 }
 
-#postForm {
+#postForm{
     padding: 0;
     display:inline-block
-    
 }
 
 .post_button {
