@@ -8,7 +8,7 @@
             <link rel="stylesheet" type="text/css" href="CSS/header.css">
             <div id="header">
                 <?php 
-                echo $_SESSION['loggedin'];
+                echo "inloggad=".$_SESSION['loggedin'];
                 if(isset($_SESSION['loggedin'])){echo'<nav id="userpage">Click for <a href ="forms/userpage.php" alt="">Profile</a>';}
                 ?>
                 
