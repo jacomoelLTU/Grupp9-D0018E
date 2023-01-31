@@ -6,8 +6,6 @@ h1{
     font-size: 30px;
     text-align: center;
     background-color: rgb(15, 215, 102);
-    width: 200px;
-    height: 140px;
     align-self: center;
 }
 
@@ -25,6 +23,7 @@ h1{
     height: 50px;
     width: 100px;
     margin-right: 5px;
+    margin-bottom: 5px;
 }
 
 textarea{
