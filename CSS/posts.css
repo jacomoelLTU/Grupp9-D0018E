@@ -18,7 +18,7 @@ h1{
 
 #description{
     padding: 10px;
-    border: 1px #2091c1 solid;
+    border: 0px #2091c1 solid;
     border-radius: 8px;
 
 }
@@ -61,7 +61,7 @@ h1{
 .post_button {
     float: middle;
     height: 50px;
-    width: 100px;
+    width: 150px;
     margin-right: 5px;
     margin-bottom: 5px;
     border: 1px rgb(53, 141, 53) solid;
