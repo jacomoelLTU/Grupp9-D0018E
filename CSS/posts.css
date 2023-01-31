@@ -19,7 +19,7 @@ h1{
 }
 
 #price{
-
+    display: inline-block;
 }
 
 .posts{
@@ -29,7 +29,6 @@ h1{
     justify-content: center;
     background-color: orange;
     font-size: 15px;
-    align-self: center;
     font-weight: bold;
     padding: 10px;
 }
