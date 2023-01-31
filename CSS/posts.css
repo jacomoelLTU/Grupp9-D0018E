@@ -18,7 +18,6 @@ h1{
 }
 
 #description{
-    float: left;
     padding: 10px;
     border: 0px #2091c1 solid;
     border-radius: 8px;
@@ -26,7 +25,6 @@ h1{
 }
 
 #price{
-    float: left;
     padding: 15px;
     display: inline-block;
     border: 0px #2091c1 solid;
