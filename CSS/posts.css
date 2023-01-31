@@ -32,12 +32,14 @@ h1{
 
 #images{
     display: inline-block;
+    padding: 15px;
 }
 
 #preview{
     padding-top: 5%;
     border: 2px solid;
     min-height: 200px;
+    color: lightgrey;
 }
 
 .posts{
