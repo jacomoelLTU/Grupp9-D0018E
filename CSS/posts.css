@@ -13,16 +13,19 @@ h1{
 #title{
     padding: 10px;
     border: 1px solid;
+    border-radius: 8px;
 }
 
 #description{
-    border: 1px;
+    border: 1px solid;
+    border-radius: 8px;
 
 }
 
 #price{
     display: inline-block;
-    border: 1px;
+    border: 1px solid;
+    border-radius: 8px;
 }
 
 .posts{
@@ -33,7 +36,7 @@ h1{
     background-color: orange;
     font-size: 15px;
     font-weight: bold;
-    color: #082532
+    color: #082532;
     padding: 10px;
 }
 
