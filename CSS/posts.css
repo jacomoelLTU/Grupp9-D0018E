@@ -17,12 +17,14 @@ h1{
 }
 
 #description{
+    padding: 10px;
     border: 1px solid;
     border-radius: 8px;
 
 }
 
 #price{
+    padding: 10px;
     display: inline-block;
     border: 1px solid;
     border-radius: 8px;
