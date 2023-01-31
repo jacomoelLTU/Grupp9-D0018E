@@ -7,6 +7,7 @@
         <body>
             <link rel="stylesheet" type="text/css" href="CSS/header.css">
             <div id="header">
+                <nav id="userpage">Click for <a href ="functions/userpage.php" alt="">Profile</a>
                 <ul id="login"> 
                     <p>
                     <?php include 'forms/loginCheck.php';?>
