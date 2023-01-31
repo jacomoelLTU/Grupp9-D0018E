@@ -1,17 +1,18 @@
-body {
-    background-color: rgb(15, 215, 102);
-    font-size: medium;
-    column-rule: 1px solid black;
-  }
+body{
+    margin:0;
+    padding:0;
+    border:0;
+}
 
 h1 {  
     font-size: large;
     background-color: rgb(15, 215, 102);
 }
 
-#postForm{
+#posts{
     padding: 0;
-    display:inline-block
+    display:inline-block;
+    background-color: orange;
 }
 
 .post_button {
@@ -19,3 +20,4 @@ h1 {
     height: 50px;
     width: 100px;
 }
+
