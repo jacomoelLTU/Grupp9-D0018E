@@ -2,7 +2,7 @@
 
 
 <?php 
-include 'forms/postForm.php';
+// include 'forms/postForm.php';
 require 'config.php';
 
 // if ($_SERVER['REQUEST_METHOD'] == "POST") {
