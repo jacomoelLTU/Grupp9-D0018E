@@ -20,7 +20,9 @@ include '../functions/viewimage.php';
             <div id="images"><form action="../functions/upload.php" method="post" enctype="multipart/form-data">
                 Select image to upload
                 <input type="file" name="post_img" id="post_img">
-            </form></div>
+            </form>
+            <div id="preview">Preview of your post</div>
+        </div>
         </form>   
     </div>  
 </body>

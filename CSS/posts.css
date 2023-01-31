@@ -34,6 +34,10 @@ h1{
     display: inline-block;
 }
 
+#preview{
+    border: 2px solid;
+}
+
 .posts{
     border: 3px solid;
     border-radius: 3px;
