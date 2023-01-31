@@ -1,4 +1,4 @@
-.background{
+body{
     background: lightblue;
     font-family: "Lucida Console", "Courier New", monospace;
 }
@@ -19,7 +19,7 @@ h1{
     font-size: 15;
     align-self: center;
     font-weight: bold;
-    padding: 10px;
+    padding: 20px;
 }
 
 .post_button {
@@ -28,6 +28,13 @@ h1{
     width: 100px;
     margin-right: 5px;
     margin-bottom: 5px;
+    border: 2px;
+    border-radius: 8px;
+}
+
+.post_button:hover{
+    background-color: #4CAF50;
+    color: #A7F2B6;
 }
 
 textarea{

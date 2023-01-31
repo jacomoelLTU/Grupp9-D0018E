@@ -3,7 +3,7 @@ include '../functions/config.php';
 include '../functions/upload.php';
 include '../functions/viewimage.php';  
 ?>
-<div class="background">
+<body>
     <h1>Make a Post</h1>
 
     <link rel="stylesheet" type="text/css" href="../CSS/posts.css">
@@ -26,4 +26,4 @@ include '../functions/viewimage.php';
             
         </form>   
     </div>  
-</div>
+</body>
