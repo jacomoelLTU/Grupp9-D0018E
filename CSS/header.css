@@ -14,6 +14,7 @@ p{
     height:10%;
 
 }
+/* LOGIN, REGISTER, LOGOUT */
 ul{
     text-align: center;
     margin:0;
@@ -29,4 +30,6 @@ ul#login li{
     float: right;
     text-align: right;
 }
-
+nav.userpage{
+   float: left; 
+}
