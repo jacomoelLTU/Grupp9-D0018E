@@ -10,7 +10,7 @@
                 <ul id="login"> 
                     <p>
                     <?php include 'forms/loginCheck.php';?>
-                    Click here to <a href="../forms/signUpForm.html">Sign Up</a>!
+                    Click here to <a href="../forms/signUpForm.html" >Sign Up</a>!
                     </p>
                 </ul>
                 <div id="form-main-content">
