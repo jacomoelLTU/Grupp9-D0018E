@@ -12,14 +12,17 @@ h1{
 
 #title{
     padding: 10px;
+    border: 1px solid;
 }
 
 #description{
+    border: 1px;
 
 }
 
 #price{
     display: inline-block;
+    border: 1px;
 }
 
 .posts{
@@ -30,6 +33,7 @@ h1{
     background-color: orange;
     font-size: 15px;
     font-weight: bold;
+    color: grey;
     padding: 10px;
 }
 
@@ -42,6 +46,7 @@ h1{
     border: 2px;
     border-radius: 8px;
     background-color: white;
+    cursor: pointer;
 }
 
 .post_button:hover{
