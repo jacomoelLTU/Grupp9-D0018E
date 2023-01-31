@@ -1,10 +1,10 @@
 <?php 
 include '../functions/config.php';
 include '../functions/upload.php';
-include '../functions/upload.php';  
+include '../functions/viewimage.php';  
 ?>
 <body>
-    <h1>Make a Post</h1> 8439
+    <h1>Make a Post</h1>
 
     <link rel="stylesheet" type="text/css" href="../CSS/posts.css">
     <div id="posts">
