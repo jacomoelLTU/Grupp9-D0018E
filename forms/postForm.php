@@ -1,7 +1,6 @@
 <?php 
 include '../functions/config.php';
 include '../functions/upload.php';
-include '../functions/posts.php';
 ?>
 
 <h1>Make a Post</h1>
