@@ -1,6 +1,6 @@
 <!DOCTYPE html>
     <html>
-    <?php include 'functions/config.php'; include 'functions/loginCheck.php' ?>
+    <?php include 'functions/config.php';  ?>
         
      <head> 
         <meta charset="UTF-8">
@@ -11,7 +11,7 @@
             <div id="header">
                 <ul id="login"> 
                     <p>
-                    Click here to <a href="forms/loginForm.php">Log in</a>!
+                    <?php include 'forms/loginCheck.php';?>
                     Click here to <a href="../forms/signUpForm.html">Sign Up</a>!
                     </p>
                 </ul>
