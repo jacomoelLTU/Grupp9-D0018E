@@ -33,9 +33,9 @@ h1{
 .posts{
     border: 5px solid;
     margin: auto;
-    display: flex;
+    /* display: flex; */
     justify-content: center;
-    background-color: ;
+    background-color: white;
     font-size: 15px;
     font-weight: bold;
     color: #3f494d;
