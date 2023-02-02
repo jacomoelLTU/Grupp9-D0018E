@@ -25,7 +25,7 @@ require 'config.php';
     //query
 session_start();
 $usrid = $_SESSION['username'];
-$uid = "SELECT id FROM user WHERE user_id:=$usrid";
+$uid = "SELECT id FROM user WHERE user_name:=$usrid";
     $sql = "INSERT INTO post (post_userid, post_title, post_description, post_img) VALUES ('$uid', '$post_title', '$post_description', '$post_img')";
 
     //insert in mysql
