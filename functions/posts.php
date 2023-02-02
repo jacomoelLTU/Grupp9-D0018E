@@ -8,7 +8,6 @@ require 'config.php';
 
     $post_title = $_POST['post_title'];
     $post_description = $_POST['post_description'];
-    $post_price = $_POST['post_price'];
     $post_img = $_POST['post_img'];
 
     // if(empty($post_title) || (empty($post_description) || (empty($post_price) {

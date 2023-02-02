@@ -8,8 +8,7 @@ include '../functions/viewimage.php';
 
     <link rel="stylesheet" type="text/css" href="../CSS/posts.css">
     <div class="posts">
-        <form action="../functions/viewimage.php";>
-            testing
+        <form action="../functions/viewimage.php">
         </form>
         <!-- Form for post -->
         <!-- Text Fields -->

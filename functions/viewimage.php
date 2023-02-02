@@ -8,10 +8,10 @@ $result= mysqli_query($conn, $query);
 ?>
 
 <?php
-     while($row = mysqli_fetch_assoc($result))
-     {
-        echo $row['post_img'];
-        echo $row['post_title']; 
-     } 
+    while($row = mysqli_fetch_assoc($result))
+    {
+    echo '<h2>'.$row['post_img'].'</h2>';
+    echo $row['post_title']; 
+    } 
 ?>
 
