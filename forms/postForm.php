@@ -8,6 +8,9 @@ include '../functions/viewimage.php';
 
     <link rel="stylesheet" type="text/css" href="../CSS/posts.css">
     <div class="posts">
+        <form action="../functions/viewimage.php";>
+            testing
+        </form>
         <!-- Form for post -->
         <!-- Text Fields -->
         <form action="../functions/posts.php" method="post">
