@@ -5,7 +5,11 @@ if(!isset($_SESSION['loggedin'])){
 }
 else{
    echo"Logged in as: ".$_SESSION['username'].", 
-    <nav id='userpage'>Click for <a href ='userpage.php' alt=''>Profile</a>
-    Click here to <a href='../functions/logout.php'>Logout</a>";
+    <nav id='userpage'>
+        <div id='clickable'>    
+            Click for <a href ='userpage.php' alt=''>Profile</a>
+            and here to <a href='../functions/logout.php'>Logout</a>
+        </div>
+    </nav>";
 }
 ?>

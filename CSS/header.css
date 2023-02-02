@@ -30,6 +30,10 @@ ul#login li{
     float: right;
     text-align: right;
 }
-nav.userpage{
-   float: left; 
+nav#userpage{
+    float: left; 
+    font-size:12px;
+}
+nav#userpage#clickable{
+   font-size:10px;
 }
