@@ -10,10 +10,13 @@
                 <?php 
                 session_name('userpage');
                 session_start();
+                ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
                 echo "inloggad=".$_SESSION['loggedin'];
                 if(isset($_SESSION['loggedin'])){echo'<nav id="userpage">Click for <a href ="forms/userpage.php" alt="">Profile</a>';}
                 ?>
-                
+
                 <ul id="login"> 
                     <p>
                     <?php include 'forms/loginCheck.php';?>
