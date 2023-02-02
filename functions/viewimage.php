@@ -10,6 +10,7 @@ $result= mysqli_query($conn, $query);
 <?php
     while($row = mysqli_fetch_assoc($result))
     {
+    echo "this is typing";
     echo '<h2>'.$row['post_img'].'</h2>';
     echo $row['post_title']; 
     } 
