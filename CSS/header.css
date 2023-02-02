@@ -29,10 +29,10 @@ ul#login li{
     float: right;
     text-align: right;
 }
-nav#userpage{
+divv#userpage{
     float: left; 
     font-size:18px;
 }
-nav#userpage#clickable{
+div#userpage#clickable{
    font-size:14px;
 }
