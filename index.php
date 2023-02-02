@@ -10,12 +10,12 @@
                 <?php 
                 include 'forms/loginCheck.php';
                 ?>
-            </div>
-            <ul id="login"> 
+                <ul id="login"> 
                     <p>
                     Click here to <a href="../forms/signUpForm.html" >Sign Up</a>!
                     </p>
-            </ul>
+                </ul>
+            </div>
 
 
             <link rel="stylesheet" type="text/css" href="CSS/middle.css">
