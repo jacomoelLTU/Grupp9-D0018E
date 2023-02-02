@@ -32,7 +32,7 @@ ul#login li{
 #userpage{
     float: left; 
     font-size:18px;
-    width:20%;
+    word-wrap: break-word;
 }
 #userpage#clickable{
    font-size:14px;
