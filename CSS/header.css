@@ -32,8 +32,8 @@ ul#login li{
 }
 nav#userpage{
     float: left; 
-    font-size:12px;
+    font-size:18px;
 }
 nav#userpage#clickable{
-   font-size:10px;
+   font-size:14px;
 }
