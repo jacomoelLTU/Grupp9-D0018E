@@ -38,6 +38,6 @@ ul#login li{
 }
 /* Profilepage */
 #profileContainer img{
-    width:(100px +10%);
-    height:(100px +10%);
+    width:100px;
+    height:100px;
 }
