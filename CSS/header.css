@@ -30,9 +30,7 @@ ul#login li{
     text-align: right;
 }
 #userpage{
-    float: left; 
     font-size:18px;
-    word-wrap: break-word;
 }
 #userpage#clickable{
    font-size:14px;
