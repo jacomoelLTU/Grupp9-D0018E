@@ -8,10 +8,6 @@
             <link rel="stylesheet" type="text/css" href="CSS/header.css">
             <div id="header">
                 <?php 
-                session_name('userpage');
-                session_start();
-                ini_set('display_errors', 1);
-
                 include 'forms/loginCheck.php';
                 ?>
                 
