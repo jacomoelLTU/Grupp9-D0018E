@@ -14,7 +14,6 @@
                 $usrn_db = $row['user_name'];
                 $pwd_db  = $row['user_pwd'];
                 
-                session_start();
                 $_SESSION['username'] = $usrn_db;
                 $_SESSION['loggedin'] = true;
                 header('Location:../index.php');
