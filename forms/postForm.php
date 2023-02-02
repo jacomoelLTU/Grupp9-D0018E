@@ -16,7 +16,7 @@ include '../functions/viewimage.php';
         <form action="../functions/posts.php" method="post">
             <p id="title"> Title <input type="text" name="post_title" placeholder="Enter title" required></p> 
             <p id="description"> Description <br><textarea rows = "5" cols = "40" name = "post_description" placeholder="Enter description here..." required></textarea></p>
-            <p id="price"> Price <input type="text" name="post_price" placeholder="Enter price" required></p>
+            <!-- <p id="price"> Price <input type="text" name="post_price" placeholder="Enter price" required></p> -->
             <input type="submit" class = "post_button" name = "Submit" value="Upload Post"/><br>
             <!-- Images -->
             <div id="images"><form action="../functions/upload.php" method="post" enctype="multipart/form-data">

@@ -21,7 +21,7 @@ require 'config.php';
 
     //query
     
-    $sql = "INSERT INTO post (post_title, post_description, post_price, post_img) VALUES ('$post_title', '$post_description', '$post_price', '$post_img')";
+    $sql = "INSERT INTO post (post_title, post_description, post_img) VALUES ('$post_title', '$post_description', '$post_img')";
 
     //insert in mysql
     $rs = mysqli_query($conn, $sql);
