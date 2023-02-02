@@ -19,8 +19,10 @@ require 'config.php';
     //$post_userid_result = $conn->query($post_userid);
 
     //query
-    
-    $sql = "INSERT INTO post (post_userid, post_title, post_description, post_img) VALUES ('16', '$post_title', '$post_description', '$post_img')";
+session_start();
+$usrid = $_SESSION['username'];
+$uid = "SELECT id FROM user WHERE user_id:=$usrid";
+    $sql = "INSERT INTO post (post_userid, post_title, post_description, post_img) VALUES ('$uid', '$post_title', '$post_description', '$post_img')";
 
     //insert in mysql
     $rs = mysqli_query($conn, $sql);
