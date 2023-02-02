@@ -4,7 +4,7 @@ if(isset($_SESSION['loggedin'])){
     <nav id='userpage'>Click for <a href ='userpage.php' alt=''>Profile</a>
     Click here to <a href='../functions/logout.php'>Logout</a>";
 }
-if(!isset($_SESSION['loggedin'])){
+else{
     echo"Click here to <a href='../forms/loginForm.php'>Login</a>";
 }
 ?>

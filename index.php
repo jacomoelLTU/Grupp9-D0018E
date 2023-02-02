@@ -11,9 +11,7 @@
                 session_name('userpage');
                 session_start();
                 ini_set('display_errors', 1);
-                if(isset($_SESSION['loggedin'])){
-                    echo"INLOGGAD SOM FAN";
-                }
+
                 include 'forms/loginCheck.php';
                 ?>
                 
