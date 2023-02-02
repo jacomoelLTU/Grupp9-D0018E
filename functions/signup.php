@@ -6,15 +6,12 @@
 
     include 'config.php';
 
-
-
                     //stripslashes removes backslashes, some protection agains injection i guess
                     $userName = stripslashes($_POST['userName']);
                     $passWord = stripslashes($_POST['passWord']);
                     $userEmailAdress = stripslashes($_POST['userEmailAdress']);
                     $userFirstName = stripslashes($_POST['userFirstname']);
                     $userSurName = stripslashes($_POST['userSurname']);
-
 
                     if(!(isset($userName) || isset($passWord) || isset($userEmailAdress) || isset($userFirstName) || isset($userSurName))){
                             echo 'To register you need to provide information for all the fields in the registrationform!';
@@ -33,18 +30,18 @@
                         echo 'Emailadress is already beeing used for an existing account.';
                     }
                     else {
-                        $userName = mysqli_real_escape_string($conn, $userName);
-                        $passWord = mysqli_real_escape_string($conn, $passWord);
-                        $userEmailAdress = mysqli_real_escape_string($conn, $userEmailAdress);
-                        $userFirstName = mysqli_real_escape_string($conn, $userEmailAdress);
-                        $userSurName = mysqli_real_escape_string($conn, $userSurName);
+                        // $userName = mysqli_real_escape_string($conn, $userName);
+                        // $passWord = mysqli_real_escape_string($conn, $passWord);
+                        // $userEmailAdress = mysqli_real_escape_string($conn, $userEmailAdress);
+                        // $userFirstName = mysqli_real_escape_string($conn, $userEmailAdress);
+                        // $userSurName = mysqli_real_escape_string($conn, $userSurName);
 
                         $sql_insertUser = "INSERT into user (user_name, user_pwd, user_firstname, user_surname, user_email)
                                         VALUES ('$userName', '". md5($passWord)."', '$userFirstName', '$userSurName','$userEmailAdress')";
                         
                         mysqli_query($conn, $sql_insertUser);
 
-                        header('Location:../forms/loginForm.php');
-
+                        header('Location:../forms/loginForm.php?msg');
+                        
                     }
                  ?>

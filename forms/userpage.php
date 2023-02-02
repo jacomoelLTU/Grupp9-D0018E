@@ -1,8 +1,8 @@
 Click to go to <a href="../index.php">homepage</a>! 
 <div id="profileContainer">
-    <img src="../pictures/profilePictureTemplate.jpg">
+    <img style="width:100px; height:100px;" src="../pictures/profilePictureTemplate.jpg">
     <p>
-    This is <?php $_SESSION['username']?>'s page. 
+    This is <?php session_start(); echo$_SESSION['username'];?>'s page. 
     </p>
 </div>
 

@@ -3,20 +3,19 @@ body{
     padding:0;
     border:0;
 }
-p{
-    border:0;
-    margin:0;
-    padding:0;
-}
 #header{
     font-size:20px;
     background-color: lightblue;
-    height:10%;
 
+}
+p{
+    margin: 0;
+    padding: 0;
+    border: 0;
 }
 /* LOGIN, REGISTER, LOGOUT */
 ul{
-    text-align: center;
+    text-align: right;
     margin:0;
     padding:0;
     border:0;
@@ -30,6 +29,11 @@ ul#login li{
     float: right;
     text-align: right;
 }
-nav.userpage{
-   float: left; 
+#clickable{
+   font-size:14px;
+    display:inline;
 }
+#userpage{
+    font-size:16px;
+}
+/* Profilepage */
