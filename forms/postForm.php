@@ -21,7 +21,7 @@ include '../functions/viewimage.php';
                 Select image to upload
                 <input type="file" name="post_img" id="post_img">
             </form>
-            Preview of your Post <br>
+            Preview of your post <br>
             <div id="preview">Your images should be here</div>
         </div>
         </form>   

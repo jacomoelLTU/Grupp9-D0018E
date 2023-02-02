@@ -4,12 +4,20 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 include 'config.php';
 
-$result = $conn->query("SELECT post_img FROM post ORDER BY post_userid DESC"); 
+$query = "SELECT post_img FROM post ORDER BY post_userid DESC";
+
+$result= mysqli_query($conn, $query);
 
 ?>
 
+
 <div class="gallery"> 
-    <?php while($row = $result->fetch_assoc()){ ?> 
-        <img src="data:image/jpg;charset=utf8;base64,<?php echo $row['post_img']; ?>" /> 
-    <?php } ?> 
+<?php
+     while($row = mysqli_fetch_assoc($result))
+     {
+        echo $row['post_img'];
+        echo $row['post_title']; 
+     } 
+     ?>
 </div> 
+
