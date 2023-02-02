@@ -11,23 +11,21 @@
                 include 'forms/loginCheck.php';
                 ?>
                 
-                
-
                 <ul id="login"> 
                     <p>
                     Click here to <a href="../forms/signUpForm.html" >Sign Up</a>!
                     </p>
                 </ul>
-                <div id="form-main-content">
-                    <p>
-                    Click here to <a href="../forms/postForm.php">Make a post</a>!
-                    </p>
-                </div>
             </div>
 
 
             <link rel="stylesheet" type="text/css" href="CSS/middle.css">
             <div id="middle">
+                <div id="form-main-content">
+                    <p>
+                    Click here to <a href="../forms/postForm.php">Make a post</a>!
+                    </p>
+                </div>
                 <center>Här är middle!</center>
             </div>
             
