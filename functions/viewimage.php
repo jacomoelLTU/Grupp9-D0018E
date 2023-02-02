@@ -5,11 +5,9 @@ error_reporting(E_ALL);
 include 'config.php';
 
 $query = "SELECT post_img FROM post ORDER BY post_userid DESC";
-
 $result= mysqli_query($conn, $query);
 
 ?>
-
 
 <div class="gallery"> 
 <?php
@@ -18,6 +16,6 @@ $result= mysqli_query($conn, $query);
         echo $row['post_img'];
         echo $row['post_title']; 
      } 
-     ?>
+?>
 </div> 
 
