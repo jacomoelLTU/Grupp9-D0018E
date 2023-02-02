@@ -31,7 +31,8 @@ ul#login li{
 }
 #userpage{
     font-size:18px;
+    white-space: nowrap;
 }
-#userpage#clickable{
+#clickable{
    font-size:14px;
 }
