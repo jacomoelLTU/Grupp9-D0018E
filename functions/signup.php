@@ -33,11 +33,11 @@
                         echo 'Emailadress is already beeing used for an existing account.';
                     }
                     else {
-                        $userName = mysqli_real_escape_string($conn, $userName);
-                        $passWord = mysqli_real_escape_string($conn, $passWord);
-                        $userEmailAdress = mysqli_real_escape_string($conn, $userEmailAdress);
-                        $userFirstName = mysqli_real_escape_string($conn, $userEmailAdress);
-                        $userSurName = mysqli_real_escape_string($conn, $userSurName);
+                        // $userName = mysqli_real_escape_string($conn, $userName);
+                        // $passWord = mysqli_real_escape_string($conn, $passWord);
+                        // $userEmailAdress = mysqli_real_escape_string($conn, $userEmailAdress);
+                        // $userFirstName = mysqli_real_escape_string($conn, $userEmailAdress);
+                        // $userSurName = mysqli_real_escape_string($conn, $userSurName);
 
                         $sql_insertUser = "INSERT into user (user_name, user_pwd, user_firstname, user_surname, user_email)
                                         VALUES ('$userName', '". md5($passWord)."', '$userFirstName', '$userSurName','$userEmailAdress')";
