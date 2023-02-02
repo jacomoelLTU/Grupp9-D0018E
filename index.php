@@ -11,15 +11,13 @@
                 session_name('userpage');
                 session_start();
                 ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-                echo "inloggad=".$_SESSION['loggedin'];
-                if(isset($_SESSION['loggedin'])){echo'<nav id="userpage">Click for <a href ="forms/userpage.php" alt="">Profile</a>';}
+                include 'forms/loginCheck.php';
                 ?>
+                
+                
 
                 <ul id="login"> 
                     <p>
-                    <?php include 'forms/loginCheck.php';?>
                     Click here to <a href="../forms/signUpForm.html" >Sign Up</a>!
                     </p>
                 </ul>
