@@ -20,6 +20,7 @@ require 'config.php';
     //$post_userid_result = $conn->query($post_userid);
 
     //query
+    
     $sql = "INSERT INTO post (post_title, post_description, post_price, post_img) VALUES ('$post_title', '$post_description', '$post_price', '$post_img')";
 
     //insert in mysql
