@@ -6,8 +6,10 @@ body{
 h1{  
     font-size: 40px;
     text-align: center;
-    background-color: rgb(15, 215, 102);
+    background-color: rgb(175, 177, 176);
     align-self: center;
+    margin: 0;
+    padding: 0;
 }
 
 #title{
@@ -25,7 +27,7 @@ h1{
 #price{
     padding: 15px;
     display: inline-block;
-    border: 0px #2091c1 solid;
+    border: 0px #c6dde8 solid;
     border-radius: 8px;
 }
 

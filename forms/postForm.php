@@ -9,7 +9,6 @@ include '../functions/upload.php';
     <link rel="stylesheet" type="text/css" href="../CSS/posts.css">
     <div class="posts">
         <form action="../functions/viewimage.php">
-            Images should go here for testing
         </form>
         
         <!-- Text Fields -->
