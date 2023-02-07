@@ -5,6 +5,6 @@ Click to go to <a href="../index.php">homepage</a>!
     This is <?php session_start(); echo$_SESSION['username'];?>'s page. 
     </p>
 </div>
-
+<input type="submit" name="Show Posts", value="showposts">
 <?php
 ?>
