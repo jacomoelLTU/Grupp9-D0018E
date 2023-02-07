@@ -14,7 +14,7 @@
             if(($row['user_name'] == $usrn) && ($row['user_pwd'] == $pwd)){
                 $usrn_db   = $row['user_name'];
                 $pwd_db    = $row['user_pwd'];
-                $userid_db = $row['user_id'];
+                $usrid_db = $row['user_id'];
 
                 session_start();
                 $_SESSION['username'] = $usrn_db;
