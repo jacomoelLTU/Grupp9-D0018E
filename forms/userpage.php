@@ -5,7 +5,6 @@ Click to go to <a href="../index.php">homepage</a>!
     This is <?php session_start(); echo$_SESSION['username'];?>'s page. 
     </p>
 </div>
-<input type="submit" name="submit", value="Submit">
 <?php
 $months= array(
     "January",
@@ -26,3 +25,6 @@ if($_POST['submit'] === 'Submit'){
      }
     }
 ?>
+<form method="post">
+    <input type="submit" name="submit", value="Submit">
+</form>
