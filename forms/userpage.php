@@ -19,7 +19,7 @@ $months= array(
     "October",
     "November",
     "December" );
-if($_POST['submit'] == 'Show Posts'){
+if($_POST['submit'] === 'Show Posts'){
     foreach ($months as $month) {
         echo $month . "<br>"; 
      }
