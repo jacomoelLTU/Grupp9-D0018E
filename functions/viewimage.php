@@ -3,13 +3,16 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 include 'config.php';
-
-$result = $conn->query("SELECT post_img FROM post ORDER BY post_userid DESC"); 
-
+$query = "SELECT post_img FROM post ORDER BY post_userid DESC";
+$result= mysqli_query($conn, $query);
 ?>
 
-<div class="gallery"> 
-    <?php while($row = $result->fetch_assoc()){ ?> 
-        <img src="data:image/jpg;charset=utf8;base64,<?php echo $row['post_img']; ?>" /> 
-    <?php } ?> 
-</div> 
+<?php
+    while($row = mysqli_fetch_assoc($result))
+    {
+    echo "this is typing";
+    echo '<h2>'.$row['post_img'].'</h2>';
+    echo $row['post_title']; 
+    } 
+?>
+
