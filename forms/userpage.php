@@ -6,23 +6,8 @@ Click to go to <a href="../index.php">homepage</a>!
     </p>
 </div>
 <?php
-$months= array(
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December" );
 if($_POST['submit'] === 'Submit'){
-    foreach ($months as $month) {
-        echo $month . "<br>"; 
-     }
+    include 'userPosts';
     }
 ?>
 <form method="post">
