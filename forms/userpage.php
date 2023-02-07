@@ -5,7 +5,7 @@ Click to go to <a href="../index.php">homepage</a>!
     This is <?php session_start(); echo$_SESSION['username'];?>'s page. 
     </p>
 </div>
-<input type="submit" name="showposts", value="Show Posts">
+<input type="submit" name="submit", value="Submit">
 <?php
 $months= array(
     "January",
@@ -20,7 +20,7 @@ $months= array(
     "October",
     "November",
     "December" );
-if($_POST['submit'] === 'Show Posts'){
+if($_POST['submit'] === 'Submit'){
     foreach ($months as $month) {
         echo $month . "<br>"; 
      }
