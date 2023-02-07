@@ -8,7 +8,7 @@ Click to go to <a href="../index.php">homepage</a>!
 <?php
 if($_POST['submit'] === 'Submit'){
     echo"Print some links:";
-    include 'userPosts.php';
+    include '../functions/userposts.php';
     }
 ?>
 <form method="post">
