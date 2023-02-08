@@ -9,19 +9,22 @@
         $usrn = $_POST['username'];
         $pwd  = md5($_POST['password']);
         
-        $query = mysqli_query($conn,"SELECT user_name, user_pwd FROM user WHERE user_name='$usrn' AND user_pwd='$pwd'");
+        $query = mysqli_query($conn,"SELECT user_name, user_pwd, user_id FROM user WHERE user_name='$usrn' AND user_pwd='$pwd'");
         while($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
             if(($row['user_name'] == $usrn) && ($row['user_pwd'] == $pwd)){
-                $usrn_db = $row['user_name'];
-                $pwd_db  = $row['user_pwd'];
-                
+                $usrn_db   = $row['user_name'];
+                $pwd_db    = $row['user_pwd'];
+                $usrid_db = $row['user_id'];
+
                 session_start();
                 $_SESSION['username'] = $usrn_db;
+                $_SESSION['userid']   = $usrid_db;
                 $_SESSION['loggedin'] = true;
+
                 header('Location:../index.php');
             }
             else{
-                  header('Location:../forms/signupForm.php');
+                  header('Location:../pages/signupForm.php');
 
             }
         }
