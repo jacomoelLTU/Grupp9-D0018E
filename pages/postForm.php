@@ -5,13 +5,13 @@ include '../functions/viewimage.php';
  
 ?>
 Click to go to <a href="../index.php">homepage</a>! 
-
+<form action="../functions/viewimage.php">
 <body>
     <h1>Make a Post</h1>
 
     <link rel="stylesheet" type="text/css" href="../CSS/posts.css">
     <div class="posts">
-        <form action="../functions/viewimage.php">
+        
         </form>
         
         <!-- Text Fields -->
