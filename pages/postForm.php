@@ -16,7 +16,7 @@ include '../functions/upload.php';
             <p id="title"> Title <input type="text" name="post_title" placeholder="Enter title" required></p> 
             <p id="description"> Description <br><textarea rows = "5" cols = "40" name = "post_description" placeholder="Enter description here..." required></textarea></p>
             <p id="price"> Quantity <input type="text" name="product_quantity" placeholder="Enter title" required></p> 
-            <p id="price"> Title <input type="text" name="product_price" placeholder="Enter title" required></p> 
+            <p id="price"> Title <input type="text" name="product_price" placeholder="Enter quantity" required></p> 
             <input type="submit" class = "post_button" name = "Submit" value="Upload Post"/><br>
             
             <!-- Images -->
