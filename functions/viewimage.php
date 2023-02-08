@@ -11,8 +11,8 @@ $result = mysqli_query($conn, $query);
     while($record = mysqli_fetch_assoc($result))
     {
     echo "this is typing";
-    echo '<h1>'.$record['post_title'].'</h1>';
-    echo '<img>'.$record['post_img'].'</img>';
+    echo '<h2>'.$record['post_title'].'</h1>';
+    echo '<img src="post/>'.$record['post_img'].'"</img>';
     } 
 ?>
 
