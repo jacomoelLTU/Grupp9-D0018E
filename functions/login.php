@@ -24,7 +24,7 @@
                 header('Location:../index.php');
             }
             else{
-                  header('Location:../forms/signupForm.php');
+                  header('Location:../pages/signupForm.php');
 
             }
         }

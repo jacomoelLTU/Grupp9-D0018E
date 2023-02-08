@@ -41,7 +41,7 @@
                         
                         mysqli_query($conn, $sql_insertUser);
 
-                        header('Location:../forms/loginForm.php?msg');
+                        header('Location:../pages/loginForm.php?msg');
                         
                     }
                  ?>
