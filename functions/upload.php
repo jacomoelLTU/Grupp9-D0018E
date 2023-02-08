@@ -11,7 +11,7 @@ if(isset($_POST["submit"]) && !empty($_FILES["file"]["name"])){
     $check = getimagesize($_FILES["post_img"]["tmp_name"]);
     if($check !== false) {
         echo "File is an image - " . $check["mime"] . ".";
-        $uploadOk = 1;
+        $uploadOk = 0;
 
     } else {
         echo "File is not an image.";
