@@ -1,21 +1,25 @@
 <?php
-// $target_dir = "uploads/";
-$target_file = basename($_FILES["post_img"]["name"]);
-$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+include 'config.php';
 
-// Check if image file is a actual image or fake image
-if(isset($_POST["submit"]) && !empty($_FILES["file"]["name"])){
+$statusmsg = "";
+//if upload button is pressed
+if (isset($_POST['upload'])) {
+    // the path to store the uploaded image
+    $target_dir = "../uploads/";
+    $filename = basename($_FILES["file"]["name"]);
+    $target_path = $target_dir . $filename;
+    $filetype = pathinfo($target_path, PATHINFO_EXTENSION);
 
-    // Allow certain file formats
-    $allowTypes = array('jpg','png','jpeg','gif','pdf');
-    $check = getimagesize($_FILES["post_img"]["tmp_name"]);
-    if($check !== false) {
-        echo "File is an image - " . $check["mime"] . ".";
-        $uploadOk = 0;
+    $allowtypes = array('jpg', 'png', 'jpeg', 'gif', 'pdf');
 
-    } else {
-        echo "File is not an image.";
-        $uploadOk = 0;
-  }
+    if (in_array($filetype, $allowtypes)) {
+        $sql = "INSERT INTO post (post_img) VALUES ('$filename)";
+        mysqli_query($conn, $sql);
+
+        //move uploaded image to the folder
+        if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_path)) {
+            $statusmsg = "Image uploaded successfully";
+        }
+    }
 }
 ?>
