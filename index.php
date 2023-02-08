@@ -23,7 +23,7 @@
                 <div id="form-main-content">
                     <p>
                     Click here to <a href="../pages/postForm.php">Make a post</a>!
-                    Click here to <a href="../pages/postForm.php">view image</a>!
+                    Click here to <a href="../pages/printimage.php">view image</a>!
                     </p>
                 </div>
                 <center>Här är middle!</center>
