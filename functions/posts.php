@@ -4,30 +4,28 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-// include 'pages/postForm.php';
 require 'config.php';
 
 // if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    
     //get values from input
-
     $post_title = $_POST['post_title'];
     $post_description = $_POST['post_description'];
+    $product_price = $_POST['product_price'];
     $post_img = $_POST['post_img'];
+    $product_quantity = $_POST['product_quantity'];
 
-    // if(empty($post_title) || (empty($post_description) || (empty($post_price) {
-    //     echo "You did not fill out the required fields."
-    // }
-    
-    //get user id from db (to +1 )
-    //$post_userid = "SELECT post_userid FROM post";
-    //$post_userid_result = $conn->query($post_userid);
+    //session for current user
+    session_start();
+    $usrid = $_SESSION['username'];
+    $uid = "SELECT user_id FROM user WHERE user_name='$usrid'";
 
     //query
-session_start();
-$uid = $_SESSION['userid'];
-    $sql = "INSERT INTO post (post_userid, post_title, post_description, post_img) VALUES ('$uid', '$post_title', '$post_description', '$post_img')";
+    $sql_post = "INSERT INTO post (post_userid, post_title, post_description, post_img) VALUES ('$uid', '$post_title', '$post_description', '$post_img')";
+    $sql_product = "INSERT INTO product (product_postid, product_price, product_quantity) VALUES ('$uid', '$product_price', '$product_quantity')";
+    
+    //insert into mysql
+    $rs_post = mysqli_query($conn, $sql_post);
+    $rs_product = mysqli_query($conn, $sql_product);
 
-    //insert in mysql
-    $rs = mysqli_query($conn, $sql);
-// }
 ?>
