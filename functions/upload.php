@@ -13,12 +13,17 @@ if (isset($_POST['upload'])) {
     $allowtypes = array('jpg', 'png', 'jpeg', 'gif', 'pdf');
 
     if (in_array($filetype, $allowtypes)) {
-        $sql = "INSERT INTO post (post_img) VALUES ('$filename)";
-        mysqli_query($conn, $sql);
+        //$sql = "INSERT INTO post (post_img) VALUES ('$filename)";
+        //mysqli_query($conn, $sql);
 
-        //move uploaded image to the folder
+        //move uploaded image
         if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_path)) {
-            $statusmsg = "Image uploaded successfully";
+            $insert = $conn->query("INSERT into post (post_img) VALUES ('".$fileName."')");
+            if($insert){
+                $statusMsg = "The file ".$fileName. " has been uploaded successfully.";
+            }else{
+                $statusMsg = "File upload failed, please try again.";
+            } 
         }
     }
 }
