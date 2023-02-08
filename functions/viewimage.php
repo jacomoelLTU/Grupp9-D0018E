@@ -12,7 +12,7 @@ $result = mysqli_query($conn, $query);
     {
     echo "this is typing";
     echo '<h1>'.$record['post_title'].'</h1>';
-    echo '<h2>'.$record['post_img'].'</h2>';
+    echo '<img>'.$record['post_img'].'</img>';
     } 
 ?>
 
