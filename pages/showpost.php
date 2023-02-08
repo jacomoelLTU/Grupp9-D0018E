@@ -1,6 +1,7 @@
 <?php
 ?>
 <link rel="stylesheet" type="text/css" href="../CSS/showpost.css">
+<a href="../index.php">To home</a>
 <center>
 <div id="postContainer">
   <div id="grid-item">Post Title:       <?php echo $_GET['postTitle'];       ?></div>
