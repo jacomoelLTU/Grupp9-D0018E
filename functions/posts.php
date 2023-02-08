@@ -17,8 +17,7 @@ require 'config.php';
 
     //session for current user
     session_start();
-    $usrid = $_SESSION['username'];
-    $uid = "SELECT user_id FROM user WHERE user_name='$usrid'";
+    $uid = $_SESSION['userid'];
     $postid = "SELECT post_id FROM post WHERE post_userid='$uid'";
 
     //query
