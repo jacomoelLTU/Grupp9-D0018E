@@ -19,7 +19,7 @@ require 'config.php';
     session_start();
     $uid = $_SESSION['userid'];
     $postid = "SELECT post_id FROM post WHERE post_userid='$uid' AND post_title='$post_title'";
-
+    
     //query
     $sql_post = "INSERT INTO post (post_userid, post_title, post_description, post_img) VALUES ('$uid', '$post_title', '$post_description', '$post_img')";
     $sql_product = "INSERT INTO product (product_postid, product_price, product_quantity) VALUES ('$postid', '$product_price', '$product_quantity')";

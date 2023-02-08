@@ -3,6 +3,8 @@ include '../functions/config.php';
 include '../functions/upload.php';
  
 ?>
+Click to go to <a href="../index.php">homepage</a>! 
+
 <body>
     <h1>Make a Post</h1>
 
