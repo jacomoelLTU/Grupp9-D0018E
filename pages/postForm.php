@@ -1,13 +1,7 @@
 <?php 
 include '../functions/config.php';
 include '../functions/upload.php';
-include '../functions/viewimage.php';
 ?>
-
-<?php
-if(!empty($statusmsg)){ ?>
-    <p class="status_msg"><?php echo $statusmsg; ?></p> 
-<?php } ?>
 
 Click to go to <a href="../index.php">homepage</a>! 
 <body>
