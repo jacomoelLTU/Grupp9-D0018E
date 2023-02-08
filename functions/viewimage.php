@@ -11,7 +11,7 @@ $result = mysqli_query($conn, $query);
     while($record = mysqli_fetch_assoc($result))
     {
 
-    $imageURL = 'uploads/'.$record["file_name"];
+    $imageURL = 'uploads/'.$record["post_img"];
     ?> <img src="<?php echo $imageURL; ?>" alt="" /> <?php
 
     echo "this is typing";
