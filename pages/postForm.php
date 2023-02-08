@@ -23,7 +23,7 @@ Click to go to <a href="../index.php">homepage</a>!
             <div id="images"><form action="../functions/upload.php" method="post" enctype="multipart/form-data">
                 Select image to upload
                 <input type="file" name="post_img" id="post_img">
-                <input type="submit" class = "post_button" name = "submit" value="Upload Post"/><br>
+                <input type="submit" class = "post_button" name = "upload" value="Upload Post"/><br>
             </form>
             Preview of your post <br>
             <div id="preview">Your images should be here</div>
