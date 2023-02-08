@@ -11,12 +11,12 @@ $result = mysqli_query($conn, $query);
     while($record = mysqli_fetch_assoc($result))
     {
 
-    $imageURL = 'uploads/'.$record["post_img"];
-    ?><img src="<?php echo $imageURL; ?>" alt="" /><?php
+    $imageURL = 'uploads/'.$record["file_name"];
+    ?> <img src="<?php echo $imageURL; ?>" alt="" /> <?php
 
     echo "this is typing";
     echo "<h2>".$record['post_title']."</h1>";
-    echo "<img src='images/>".$record['post_img']."'</img>";
+    echo "<img src='uploads/>".$record['post_img']."'</img>";
     } 
 ?>
 
