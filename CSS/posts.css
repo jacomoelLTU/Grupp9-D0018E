@@ -43,6 +43,7 @@ h1{
     min-width: 200px;
     color: black;
     float: right;
+    clear: both;
 }
 
 .posts{
