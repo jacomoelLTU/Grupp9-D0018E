@@ -28,6 +28,15 @@
                 </div>
                 <center>Här är middle!</center>
             </div>
+
+        <div id = "cart">
+            <a href = "cartpage.php"><img src = "pictures/cartIcon.png"/>
+            <?php
+                echo 'cart item count';
+            ?>
+
+
+        </div>
             
         
         </body>
