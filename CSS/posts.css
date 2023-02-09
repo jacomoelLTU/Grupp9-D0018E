@@ -42,7 +42,7 @@ h1{
     min-height: 400px;
     min-width: 400px;
     color: black;
-    float: middle;
+    float: left;
 }
 
 .posts{
@@ -78,9 +78,4 @@ h1{
 
 textarea{
     resize: none;
-}
-
-.isseymiyake {
-    width: 400px;
-    height: auto;
 }
