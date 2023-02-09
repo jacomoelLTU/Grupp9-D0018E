@@ -3,7 +3,6 @@
     border: 2px #3f494d solid;
     min-height: 400px;
     min-width: 400px;
-    color: black;
     float: middle;
     border: 3px solid;
     border-radius: 3px;
@@ -11,4 +10,8 @@
     display: flex;
     justify-content: center;
     width: fit-content;
+}
+
+#textdiv{
+    color: black;
 }
