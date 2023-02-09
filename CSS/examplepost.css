@@ -1,0 +1,8 @@
+#preview{
+    padding-top: 5%;
+    border: 2px #3f494d solid;
+    min-height: 400px;
+    min-width: 400px;
+    color: black;
+    float: left;
+}
