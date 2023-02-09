@@ -27,13 +27,11 @@ Click to go to <a href="../index.php">homepage</a>!
             </form>
             Example how a post could look <br>
             <div id="preview">
-                <div id="isseymiyake">
-                <img src = "../pictures/isseymiyakebomber.jpg"/>
-                </div>
-            Title: Issey Miyake Bomber <br>
-            Description: Issey Miyake AW88/89 reversible staff bomber jacka med print av Tomio Mohri. Köpt på grailed. Skick 9/10. Går för ca 13000kr.<br>
-            Quantity: 1<br>
-            Price: 12000kr 
+                <img src = "../pictures/isseymiyakebomber.jpg" class="isseymiyake"/>
+                Title: Issey Miyake Bomber <br>
+                Description: Issey Miyake AW88/89 reversible staff bomber jacka med print av Tomio Mohri. Köpt på grailed. Skick 9/10. Går för ca 13000kr.<br>
+                Quantity: 1<br>
+                Price: 12000kr 
             </div>
         </div>
         </form>   
