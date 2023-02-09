@@ -30,7 +30,7 @@
             </div>
 
         <div id = "cart">
-            <a href = "cartpage.php"><img src = "pictures/cartIcon.png"/>
+            <a href = "pages/cartpage.php"><img src = "pictures/cartIcon.png"/>
             <?php
                 echo 'cart item count';
             ?>
