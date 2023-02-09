@@ -26,7 +26,13 @@ Click to go to <a href="../index.php">homepage</a>!
                 <input type="submit" class = "post_button" name = "upload" value="Upload Post"/><br>
             </form>
             Preview of your post <br>
-            <div id="preview">Your images should be here</div>
+            <div id="preview">
+            <img src = "../pictures/isseymiyakebomber.jpg"/>
+            Title: Issey Miyake Bomber 
+            Description: Issey Miyake AW88/89 reversible staff bomber jacka med print av Tomio Mohri. Köpt på grailed. Skick 9/10. Går för ca 13000kr.
+            Quantity: 1
+            Price: 12000kr 
+            </div>
         </div>
         </form>   
     </div>  
