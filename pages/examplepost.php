@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="../CSS/makeapost.css">
+<link rel="stylesheet" type="text/css" href="../CSS/examplepost.css">
 Example how a post could look 
 <div id="preview">
     <img src = "../pictures/isseymiyakebomber.jpg" width = "400px" height="auto"/><br>
