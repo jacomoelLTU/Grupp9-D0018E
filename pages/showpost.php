@@ -15,20 +15,3 @@
   <div id="grid-item">Post ...7</div>
 </div>
 </center>
-
-<?php if (isset($_GET['error'])): ?>
-    <p><?php echo $_GET['error']; ?></p>
-<?php endif ?>
-
-<form action="../functions/uploadimg.php"
-    method="post"
-    enctype="multipart/form-data">
-
-    <input type="file" 
-            name="my_image">
-
-    <input type="submit" 
-            name="submit"
-            value="Upload">
-
-</form>
