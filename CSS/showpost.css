@@ -1,0 +1,19 @@
+#postContainer{
+    padding:6px;
+    border: 1px solid black;
+    
+    display:inline-grid; /*Inline grid gör att bordern wrappar runt contentet*/
+    grid-template-columns: auto auto auto;
+    column-gap: 10px;
+    row-gap   : 10px;
+   
+   
+
+}
+#grid-item{
+   
+    text-align: center;
+    border: 1px solid black;
+    height:150px;
+    width: 150px;
+}
