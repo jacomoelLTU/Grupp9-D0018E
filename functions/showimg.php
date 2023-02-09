@@ -7,14 +7,14 @@ include 'config.php';
  
 // Get image data from database 
 $result = mysqli_query($conn,"SELECT post_img FROM post ORDER BY post_id DESC"); 
-?>
 
-<?php if($result->num_rows > 0){ ?> 
-    <div class="gallery"> 
-        <?php while($row=mysqli_fetch_array($result, MYSQLI_ASSOC)){ ?> 
-            <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['post_image']); ?>" /> 
-        <?php } ?> 
-    </div> 
-<?php }else{ ?> 
-    <p class="status error">Image(s) not found...</p> 
-<?php } ?>
+  while ($row=mysqli_fetch_array($query, MYSQLI_ASSOC)) {
+      echo '<tr>';
+      echo '<td>' . $row['post_id'] . '</td>';
+      echo '<td>' . $row['post_title'] . '</td>';
+      echo '<td>' .
+      '<img src = "data:image/png;base64,' . base64_encode($row['post_img']) . '" width = "50px" height = "50px"/>'
+      . '</td>';
+      echo '</tr>';
+  }
+  ?>
