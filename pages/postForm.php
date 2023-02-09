@@ -25,7 +25,7 @@ Click to go to <a href="../index.php">homepage</a>!
                 <input type="file" name="post_img" id="post_img">
                 <input type="submit" class = "post_button" name = "upload" value="Upload Post"/><br>
             </form>
-            Example how a post could look <br>
+            <br>Example how a post could look <br>
             <div id="preview">
                 <img src = "../pictures/isseymiyakebomber.jpg" width = "400px" height="auto"/><br>
                 Title: Issey Miyake Bomber <br>
