@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 include 'config.php'; 
  
 // Get image data from database 
-$query = mysqli_query($conn,"SELECT post_img FROM post ORDER BY post_id DESC"); 
+$query = mysqli_query($conn,"SELECT * FROM post ORDER BY post_id DESC"); 
 
   while ($row=mysqli_fetch_array($query, MYSQLI_ASSOC)) {
       echo '<tr>';
