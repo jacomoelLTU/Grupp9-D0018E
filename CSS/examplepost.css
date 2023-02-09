@@ -4,5 +4,11 @@
     min-height: 400px;
     min-width: 400px;
     color: black;
-    float: left;
+    float: middle;
+    border: 3px solid;
+    border-radius: 3px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    width: fit-content;
 }
