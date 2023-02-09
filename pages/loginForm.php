@@ -15,3 +15,9 @@
         <input type="submit">
     </form>
 </div>
+
+<ul id="login"> 
+    <p>
+    No account? Click here to <a href="../pages/signUpForm.php" >Sign Up</a>!
+    </p>
+</ul>

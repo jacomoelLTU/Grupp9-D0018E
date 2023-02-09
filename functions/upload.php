@@ -5,7 +5,8 @@ $statusmsg = "";
 //if upload button is pressed
 if (isset($_POST['upload'])) {
     // the path to store the uploaded image
-    $target_dir = "../uploads/";
+    $target_dir = "";
+    
     $filename = basename($_FILES["file"]["name"]);
     $target_path = $target_dir . $filename;
     $filetype = pathinfo($target_path, PATHINFO_EXTENSION);
