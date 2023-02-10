@@ -6,7 +6,7 @@
         
     </head>    
         <body>
-            <link rel="stylesheet" type="text/css" href="CSS/header.css">
+            <link rel="stylesheet" type="text/css" href="CSS/index.css">
             <div id="header">
 
             </div><!--header ends-->

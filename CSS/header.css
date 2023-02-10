@@ -36,4 +36,10 @@ ul#login li{
 #userpage{
     font-size:16px;
 }
+
+#rightChild{
+    position: fixed; 
+    right: 0px; 
+    top: 0px;
+}
 /* Profilepage */
