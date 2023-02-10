@@ -10,5 +10,6 @@
 
 #cartIcon{
     position: absolute;
-    right: 0;    
+    right: 0px; 
+    top: 10px;   
 }
