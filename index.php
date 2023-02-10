@@ -7,10 +7,6 @@
     </head>    
         <body>
             <link rel="stylesheet" type="text/css" href="CSS/header.css">
-
-            <a href = "pages/cartpage.php"><img src = "pictures/cartIcon.png" width="40" height="40"/></a>
-            <p> <?php echo 'cart items var'?> <p>
-            
             <div id="header">
                 <?php 
                 include 'pages/loginCheck.php';
@@ -37,7 +33,7 @@
             </div>
 
         
-        <div  id = "cartIcon">
+        <div id = "cartIcon">
             <a href = "pages/cartpage.php"><img src = "pictures/cartIcon.png" width="40" height="40"/></a>
             <p> <?php echo 'cart items var'?> <p>
         </div>
