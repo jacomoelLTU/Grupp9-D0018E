@@ -7,3 +7,8 @@
     border-radius: 20%;
     align-self: center;
 }
+
+#cart {
+    width: 24px;
+    height: 24;
+}
