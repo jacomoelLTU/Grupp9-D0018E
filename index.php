@@ -33,8 +33,8 @@
             </div>
 
         <link rel="stylesheet" type="text/css" href="CSS/middle.css">
-        <div  id = "cartIcon_css" type = "cart" name = "cartButton">
-            <a href = "pages/cartpage.php"><img src = "pictures/cartIcon.png"/>
+        <div  id = "cartIcon"><!-- parent div to cartIcon -->
+            <a href = "pages/cartpage.php"><img src = "pictures/cartIcon.png"/></a>
             <?php
                 echo 'cart item count';
             ?>
