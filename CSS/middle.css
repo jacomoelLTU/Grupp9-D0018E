@@ -8,7 +8,6 @@
     align-self: center;
 }
 
-#cartIcon_img{
-    width: 10px;
-    height: 10px;
+#cartIcon{
+    position: relative; right: 5px; top: 5px;
 }
