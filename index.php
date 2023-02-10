@@ -11,11 +11,12 @@
                 <?php 
                 include 'pages/loginCheck.php';
                 ?>
-                <ul id="login"> 
-                    <p>
-                    Click here to <a href="../pages/signUpForm.php" >Sign Up</a>!
-                    </p>
-                </ul>
+                    <p> Click here to <a href="../pages/signUpForm.php" >Sign Up</a>! </p>
+
+                    <a id = "cartIconLink" href = "pages/cartpage.php"><img src = "pictures/cartIcon.png" width="40" height="40"/> </a>
+                    <p> <?php echo 'cart items var'?> <p>
+
+    
             </div>
 
 
@@ -33,8 +34,8 @@
             </div>
 
         
-        <div id = "cartIcon">
-            <a href = "pages/cartpage.php"><img src = "pictures/cartIcon.png" width="40" height="40"/></a>
+        <div class = "cartIcon">
+            <a id = "cartIconLink" href = "pages/cartpage.php"><img src = "pictures/cartIcon.png" width="40" height="40"/></a>
             <p> <?php echo 'cart items var'?> <p>
         </div>
             
