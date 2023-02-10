@@ -3,6 +3,7 @@
     <?php include 'functions/config.php';?>
      <head> 
         <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="CSS/middle.css">
     </head>    
         <body>
             <link rel="stylesheet" type="text/css" href="CSS/header.css">
@@ -30,7 +31,7 @@
                 <center>Här är middle!</center>
             </div>
 
-        <link rel="stylesheet" type="text/css" href="CSS/middle.css">
+        
         <div  id = "cart" type = "cart" name = "cartButton">
             <a href = "pages/cartpage.php"><img src = "pictures/cartIcon.png"/>
             <?php
