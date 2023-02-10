@@ -21,7 +21,7 @@
             </div>
 
             <!-- cart div below -->
-            <div id = "rightChild">
+            <div id = "cartIcon">
                 <a id = "cartIconLink" href = "pages/cartpage.php"><img src = "pictures/cartIcon.png" width="40" height="40"/></a>
                 <p> <?php echo 'cart items var'?> <p>
             </div>
