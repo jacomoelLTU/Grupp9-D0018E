@@ -32,9 +32,11 @@
                 <center>Här är middle!</center>
             </div>
 
-        <link rel="stylesheet" type="text/css" href="CSS/middle.css">
-        <div  id = "cartIcon"><!-- parent div to cartIcon -->
-            <a href = "pages/cartpage.php"><img src = "pictures/cartIcon.png" width="40" height="40"/><?php echo 'cart item count';?></a>
+        
+        <div  id = "cartIcon">
+            <a href = "pages/cartpage.php"><img src = "pictures/cartIcon.png" width="40" height="40"/></a>
+             <?php //echo 'cart item count';?>
+             <p>cart item count</p>
         </div>
             
         
