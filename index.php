@@ -6,7 +6,6 @@
         
     </head>    
         <body>
-            <link rel="stylesheet" type="text/css" href="CSS/index.css">
             <body>
             <link rel="stylesheet" type="text/css" href="CSS/header.css">
             <div id="header">
@@ -21,10 +20,12 @@
             </div>
 
             <!-- cart div below -->
+            <link rel="stylesheet" type="text/css" href="CSS/middle.css">
             <div id = "cartIcon">
                 <a id = "cartIconLink" href = "pages/cartpage.php"><img src = "pictures/cartIcon.png" width="40" height="40"/></a>
                 <p> <?php echo 'cart items var'?> <p>
-            </div>
+            </div>            
+
 
             <link rel="stylesheet" type="text/css" href="CSS/middle.css">
             <div id="middle">
