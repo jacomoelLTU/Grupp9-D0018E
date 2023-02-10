@@ -35,8 +35,9 @@
         
         <div  id = "cartIcon">
             <a href = "pages/cartpage.php"><img src = "pictures/cartIcon.png" width="40" height="40"/></a>
-             <?php //echo 'cart item count';?>
-             <p>cart item count</p>
+            <div> 
+            <?php 'cart items var'?>
+            </div>
         </div>
             
         
