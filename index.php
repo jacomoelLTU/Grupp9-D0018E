@@ -17,19 +17,13 @@
                     </p>
                 </ul>
 
+                <link rel="stylesheet" type="text/css" href="CSS/middle.css">
+                <div id = "cartIcon">
                 <a id = "cartIconLink" href = "pages/cartpage.php"><img src = "pictures/cartIcon.png" width="40" height="40"/></a>
                 <p> <?php echo 'cart items var'?> <p>
-
+            </div>  
             </div>
-
-            <!-- cart div below -->
-            <link rel="stylesheet" type="text/css" href="CSS/middle.css">
-            <div id = "cartIcon">
-                <a id = "cartIconLink" href = "pages/cartpage.php"><img src = "pictures/cartIcon.png" width="40" height="40"/></a>
-                <p> <?php echo 'cart items var'?> <p>
-            </div>           
-
-
+         
             <link rel="stylesheet" type="text/css" href="CSS/middle.css">
             <div id="middle">
                 <div id="form-main-content">
