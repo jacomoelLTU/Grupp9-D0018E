@@ -8,7 +8,7 @@
     align-self: center;
 }
 
-#cartIcon_css{
+#cartIcon>img{
     width: 10px;
     height: 10px;
 }
