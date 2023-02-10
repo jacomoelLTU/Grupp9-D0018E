@@ -30,13 +30,12 @@
                 <center>Här är middle!</center>
             </div>
 
-        <div id = "cart" type = "cart" name = "cartButton">
+        <link rel="stylesheet" type="text/css" href="CSS/middle.css">
+        <div  id = "cart" type = "cart" name = "cartButton">
             <a href = "pages/cartpage.php"><img src = "pictures/cartIcon.png"/>
             <?php
                 echo 'cart item count';
             ?>
-
-
         </div>
             
         
