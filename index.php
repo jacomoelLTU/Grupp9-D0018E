@@ -6,7 +6,7 @@
         <link rel="stylesheet" type="text/css" href="CSS/middle.css">
     </head>    
         <body>
-            <link rel="stylesheet" type="text/css" href="CSS/header.css">
+            <!-- <link rel="stylesheet" type="text/css" href="CSS/header.css"> -->
             <div id="header">
                 <?php 
                 include 'pages/loginCheck.php';
@@ -19,7 +19,7 @@
             </div>
 
 
-            <link rel="stylesheet" type="text/css" href="CSS/middle.css">
+            <!-- <link rel="stylesheet" type="text/css" href="CSS/middle.css"> -->
             <div id="middle">
                 <div id="form-main-content">
                     <p>
