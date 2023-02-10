@@ -16,6 +16,10 @@
                     Click here to <a href="../pages/signUpForm.php" >Sign Up</a>!
                     </p>
                 </ul>
+
+                <a id = "cartIconLink" href = "pages/cartpage.php"><img src = "pictures/cartIcon.png" width="40" height="40"/></a>
+                <p> <?php echo 'cart items var'?> <p>
+
             </div>
 
             <!-- cart div below -->
