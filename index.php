@@ -7,27 +7,18 @@
     </head>    
         <body>
             <link rel="stylesheet" type="text/css" href="CSS/index.css">
+            <body>
+            <link rel="stylesheet" type="text/css" href="CSS/header.css">
             <div id="header">
-
-            </div><!--header ends-->
-
-                <div id = "parentDiv">
-    
-                    <!-- the login check emiwik did, left child -->
-                    <?php 
-                    include 'pages/loginCheck.php';
-                    ?>
-                    
-                    <div id = "midChild">
-                        <p> Click here to <a href="../pages/signUpForm.php" >Sign Up!</a></p>
-                    </div>
-
-                    <div id = "rightChild">
-                        <a id = "cartIconLink" href = "pages/cartpage.php"><img src = "pictures/cartIcon.png" width="40" height="40"/></a>
-                        <p> <?php echo 'cart items var'?> <p>
-                    </div>
-
-                </div>
+                <?php 
+                include 'pages/loginCheck.php';
+                ?>
+                <ul id="login"> 
+                    <p>
+                    Click here to <a href="../pages/signUpForm.php" >Sign Up</a>!
+                    </p>
+                </ul>
+            </div>
 
             <link rel="stylesheet" type="text/css" href="CSS/middle.css">
             <div id="middle">
@@ -40,6 +31,11 @@
 
                 </div>
                 <center>Här är middle!</center>
+            </div>
+
+            <div id = "rightChild">
+                <a id = "cartIconLink" href = "pages/cartpage.php"><img src = "pictures/cartIcon.png" width="40" height="40"/></a>
+                <p> <?php echo 'cart items var'?> <p>
             </div>
                     
         </body>
