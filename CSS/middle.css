@@ -13,3 +13,8 @@
     right: 0px; 
     top: 100px;   
 }
+
+#cartIconCount{
+    position: relative;
+    text-align: center;
+}
