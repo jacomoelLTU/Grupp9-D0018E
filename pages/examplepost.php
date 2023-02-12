@@ -3,12 +3,11 @@
 Example how a post could look 
 <div id="preview">
     <img src = "../pictures/isseymiyakebomber.jpg" width = "400px" height="auto"/>
-    
-    <div id = "addToCartParentDiv">
-        <button id = "addtoCartButtonChild" value = "Add to cart"></button>
-    </div>
-
 </div> 
+
+<div id = "addToCartParentDiv">
+    <button id = "addtoCartButton" value = "Add to cart"></button>
+</div>
 
 <div id="textdiv">
     Title: Issey Miyake Bomber <br>
@@ -17,6 +16,3 @@ Example how a post could look
     Price: 12000kr 
 </div>
 
-<div id = "addToCartParentDiv">
-<button id = "addtoCartButtonChild" value = "Add to cart"></button>
-</div>

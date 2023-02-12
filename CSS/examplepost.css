@@ -16,7 +16,10 @@
     color: black;
 }
 
+#addtoCartParentDiv{
+    float: middle;
+}
+
 #addtoCartButton{
-    position: relative;
-    align-items: bottom;
+    position: inherit;
 }
