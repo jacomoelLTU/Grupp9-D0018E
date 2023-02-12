@@ -17,9 +17,9 @@
 }
 
 #addtoCartParentDiv{
-    float: middle;
+    position: inherit;
 }
 
 #addtoCartButton{
-    position: inherit;
+    float: middle;
 }
