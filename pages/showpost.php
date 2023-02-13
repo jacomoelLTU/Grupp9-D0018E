@@ -8,10 +8,10 @@
   <div id="grid-Desc">Post Description: <?php echo $_GET['postDescription']; ?></div>
   <div id="grid-Image">
     <!-- För att lägga till alla bilder som är uppladdade på posten kan vi ha som whileloopen i php som printar ut img strängarna med rätt värden. -->
-    <!-- <div id="img-container">
+    <div id="img-container">
       <img src="../pictures/profilePictureTemplate.jpg" class="img1">
       <img src="../pictures/img2.png" class="img2">
-    </div> -->
+    </div>
   </div>
   <div id="grid-B">B</div>
   <div id="grid-C">C</div>
