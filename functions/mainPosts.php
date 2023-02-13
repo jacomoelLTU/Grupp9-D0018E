@@ -9,7 +9,7 @@ while($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
     $type = "<p style='color:lightgreen;'>[".$row['post_type']."]</p>"; 
    }
    else{
-        $type = "<p style='color:lightseegreen;'>[".$row['post_type']."]</p>"; 
+        $type = "<p style='color:lightseagreen;'>[".$row['post_type']."]</p>"; 
    }
     echo $type." Click for post: ".$row['post_title'].": <a href ='showpost.php?postId=".$row['post_id']."&postTitle=".$row['post_title']."&postDescription=".$row['post_description']."'>Show post</a><br>";
 }
