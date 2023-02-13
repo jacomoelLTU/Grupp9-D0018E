@@ -30,9 +30,9 @@ include '../functions/config.php';
 $postId = $_GET['postId'];
 
 $query = mysqli_query($conn, "SELECT * FROM post WHERE post_id='$postId'");
-$_SESSION['cartURL'] = "?postId=".$row['post_id']."&postTitle=".$row['post_title'].""; 
 
 if($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
+    $_SESSION['cartURL'] = "?postId=".$row['post_id']."&postTitle=".$row['post_title'].""; 
     echo"Click to add to cart and go to cart: <a href ='cartpage.php".$_SESSION['cartURL']."'>add to cart</a><br>";
 }
 ?>
