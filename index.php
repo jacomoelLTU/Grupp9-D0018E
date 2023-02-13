@@ -11,14 +11,6 @@
                 <?php 
                 include 'pages/loginCheck.php';
                 ?>
-
-                <ul id="login"> 
-                    <p>
-                    Click here to <a href="../pages/signUpForm.php" >Sign Up</a>!
-                    </p>
-                </ul>
-
-                <link rel="stylesheet" type="text/css" href="CSS/middle.css">
                 <div id = "cartIcon">
                     <!-- Added php so that it can change the url to current cartURL session -->
                     <?php
@@ -27,6 +19,14 @@
                     ?>
                     <p> <?php echo 'cart items var'?> <p>        
                 </div>  
+                <ul id="login"> 
+                    <p>
+                    Click here to <a href="../pages/signUpForm.php" >Sign Up</a>!
+                    </p>
+                </ul>
+
+                <link rel="stylesheet" type="text/css" href="CSS/middle.css">
+
                 
             </div>
          
