@@ -1,4 +1,4 @@
-<div id="mainPost-content" style="border: 1px solid black;">
+<div id="mainPost-content">
      <?php
      ini_set('display_errors', 1);
      ini_set('display_startup_errors', 1);
