@@ -31,7 +31,7 @@
             </div>
          
             <link rel="stylesheet" type="text/css" href="CSS/middle.css">
-            <div id="middle">
+            <middle>
                 <div id="form-main-content">
                     <p>
                     Click here to <a href="../pages/postForm.php">Make a post</a>!
@@ -40,8 +40,8 @@
                     </p>
 
                 </div>
-                <center>Här är middle!</center>
-            </div>
-                    
+                <center<h3 style="color:red;">>Här kommer posts som fan:</h3></center>
+                <?php include 'funtions/mainPosts.php';?>
+             </div>        
         </body>
     </html>
