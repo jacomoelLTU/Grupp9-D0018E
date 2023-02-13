@@ -1,5 +1,5 @@
 #grid-Title       { grid-area: GT; }
-#grid-Desc { grid-area: GD; }
+#grid-Desc        { grid-area: GD; }
 #grid-A { grid-area: A; }
 #grid-B { grid-area: B; }
 #grid-C { grid-area: C; }
@@ -11,15 +11,16 @@
 #postContainer{
     padding:6px;
     border: 1px solid black;
-    
-    display:inline-grid; /*Inline grid gör att bordern wrappar runt contentet*/
+    width:100vw;                                 /*vw = relative to 1% of thw width of viewport*/
+    height:100vh;
+    display:inline-grid;                         /*Inline grid gör att bordern wrappar runt contentet*/
     grid-template-columns: auto auto auto;
     column-gap: 10px;
     row-gap   : 10px;
    
-    grid-template-columns: repeat(4, (100%/4)); /* Väljer hur många cols på griden*/
-    grid-template-rows:    repeat(4, 150px);        /* VÄLJER HUR MÅNGA ROWS */
-    grid-template-areas: /*Detta ger oss en overlay för hur våran grid formas tänk en karta, ex: 5X4 våran tile map är 20 tiles vi kan handhava*/
+    grid-template-columns: repeat(4, (100%/4));  /* Väljer hur många cols på griden*/
+    grid-template-rows:    repeat(4, 150px);     /* VÄLJER HUR MÅNGA ROWS */
+    grid-template-areas:                         /*Detta ger oss en overlay för hur våran grid formas tänk en karta, ex: 5X4 våran tile map är 20 tiles vi kan handhava*/
     'GT GT GD GD'
     'A  A  A  A '
     'F  C  D  E '
