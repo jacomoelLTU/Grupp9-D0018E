@@ -23,8 +23,6 @@
                     <!-- Added php so that it can change the url to current cartURL session -->
                     <?php
                         session_start();
-                        echo $_SESSION['cartURL'];
-                        echo $_SESSION["cartURL"];
                         echo '<a id = "cartIconLink" href = "pages/cartpage.php'.$_SESSION["cartURL"].'"><img src = "pictures/cartIcon.png" width="40" height="40"/></a>';
                     ?>
                     <p> <?php echo 'cart items var'?> <p>        
