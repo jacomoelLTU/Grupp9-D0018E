@@ -1,6 +1,6 @@
-#grid-Title       { grid-area: GT; font-size: 20px;}
-#grid-Desc        { grid-area: GD; font-style: italic;}
-#grid-A { grid-area: A; }
+#grid-Title       { grid-area: PT; font-size: 20px;}
+#grid-Desc        { grid-area: PD; font-style: italic;}
+#grid-Image       { grid-area: PI;}
 #grid-B { grid-area: B; }
 #grid-C { grid-area: C; }
 #grid-D { grid-area: D; }
@@ -20,10 +20,10 @@
     grid-template-columns: repeat(4, (100%/4));  /* Väljer hur många cols på griden*/
     grid-template-rows:    repeat(4, 150px);     /* VÄLJER HUR MÅNGA ROWS */
     grid-template-areas:                         /*Detta ger oss en overlay för hur våran grid formas tänk en karta, ex: 5X4 våran tile map är 20 tiles vi kan handhava*/
-    'GT GT GT GT'
-    'GD GD A  A '
-    'F  C  D  E '
-    'F  B  G  G ';
+    'PI PI PT PT'
+    'PI PI B  C '
+    'PD PD D  E '
+    'PD PD F  G ';
    
 
 }
