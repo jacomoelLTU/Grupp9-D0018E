@@ -18,3 +18,8 @@
     position: relative;
     text-align: center;
 }
+/* For mainPost.php */
+#mainPost{
+    border: 1px solid black;
+}
+/* ---------- */
