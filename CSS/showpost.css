@@ -4,8 +4,9 @@
              display:flex; 
              justify-content:center; 
              align-items:center;
-             max-height:98%;
-            
+}
+#grid-Image img{
+    max-height:98%;
 }
 #grid-B { grid-area: B; }
 #grid-C { grid-area: C; }
