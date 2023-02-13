@@ -7,7 +7,7 @@
   <div id="grid-Title">Post Title:       <?php echo $_GET['postTitle'];       ?></div>
   <div id="grid-Desc">Post Description: <?php echo $_GET['postDescription']; ?></div>
   <div id="grid-Imgage">
-    <img style="width:100px; height:100px;" src="../pictures/profilePictureTemplate.jpg">
+    <img src="../pictures/profilePictureTemplate.jpg">
   </div>
   <div id="grid-B">B</div>
   <div id="grid-C">C</div>
