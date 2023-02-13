@@ -11,6 +11,6 @@ while($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
    else{
         $type = "<p style='color:lightseagreen;'>[".$row['post_type']."]</p>"; 
    }
-    echo $type." Click for post: ".$row['post_title'].": <a href ='showpost.php?postId=".$row['post_id']."&postTitle=".$row['post_title']."&postDescription=".$row['post_description']."'>Show post</a><br>";
+    echo $type." Click for post: ".$row['post_title'].": <a href ='functions/showpost.php?postId=".$row['post_id']."&postTitle=".$row['post_title']."&postDescription=".$row['post_description']."'>Show post</a><br>";
 }
 ?>
