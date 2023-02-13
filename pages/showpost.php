@@ -21,3 +21,16 @@
   <div id="grid-G">G</div>
 </div>
 </center>
+
+<?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+include 'config.php';
+$postId = $_GET['postId'];
+
+$query = mysqli_query($conn, "SELECT * FROM post WHERE post_id='$postId'");
+if($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
+    echo"Click to add to cart and go to cart: <a href ='cartpage.php?postId=".$row['post_id']."&postTitle=".$row['post_title']."'>add to cart</a><br>";
+}
+?>
