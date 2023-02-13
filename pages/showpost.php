@@ -32,6 +32,7 @@ $postId = $_GET['postId'];
 $query = mysqli_query($conn, "SELECT * FROM post WHERE post_id='$postId'");
 
 if($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
+    session_start();
     $_SESSION['cartURL'] = "?postId=".$row['post_id']."&postTitle=".$row['post_title'].""; 
     echo"Click to add to cart and go to cart: <a href ='cartpage.php".$_SESSION['cartURL']."'>add to cart</a><br>";
 }
