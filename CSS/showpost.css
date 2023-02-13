@@ -1,6 +1,6 @@
 #grid-Title       { grid-area: PT; font-size: 20px;}
 #grid-Desc        { grid-area: PD; font-style: italic;}
-#grid-Image       { grid-area: PI;}
+#grid-Image       { grid-area: PI; display:flex; justify-content:center; align-items:center;}
 #grid-B { grid-area: B; }
 #grid-C { grid-area: C; }
 #grid-D { grid-area: D; }
