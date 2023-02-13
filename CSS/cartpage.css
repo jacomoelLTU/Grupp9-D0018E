@@ -1,0 +1,27 @@
+#cartHeader{
+    text-align: center;
+    font-size: 15px;
+}
+
+#cartBackToHome{
+    text-align: center;
+    font-size: 12px;
+}
+
+#buttons{
+    text-align: center;
+}
+
+#checkoutButton{
+    padding: 16px 32px;
+    font-size: 10px;
+    display: inline-block;
+    text-align: center;
+}
+
+#cancelButton{
+    padding: 16px 32px;
+    font-size: 10px;
+    display: inline-block;
+    text-align: center;
+}
