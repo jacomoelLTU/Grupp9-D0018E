@@ -6,7 +6,6 @@ body{
 #header{
     font-size:20px;
     background-color: lightblue;
-    padding-bottom: 20px;
 
 }
 p{
@@ -39,9 +38,4 @@ ul#login li{
     font-size:16px;
 }
 
-#cartIcon{
-    position: fixed;
-    top: 0;
-    right: 0;    
-}
 /* Profilepage */

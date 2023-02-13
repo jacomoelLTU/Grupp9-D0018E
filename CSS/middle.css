@@ -12,7 +12,10 @@
     position: relative;
     float:right;
 }
+#cartIcon img{
+    max-height: 100px;
 
+}
 #cartIconCount{
     position: relative;
     text-align: center;
