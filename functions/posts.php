@@ -27,6 +27,6 @@ require 'config.php';
    // $sql_product = "INSERT INTO product (product_postid, product_price, product_quantity) VALUES ('$postid', '$product_price', '$product_quantity')";
     
     //insert into mysql
-        $rs_post = mysqli_query($conn, $sql_post);
+     //   $rs_post = mysqli_query($conn, $sql_post);
        // $rs_product = mysqli_query($conn, $sql_product);
 ?>
