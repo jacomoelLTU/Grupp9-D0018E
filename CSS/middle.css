@@ -9,11 +9,12 @@
 }
 
 #cartIcon{
-    position: relative;
-    float:right;
+    height:auto;
+    overflow:auto;
 }
 #cartIcon img{
-    max-height: 100px;
+    float:right;
+    height:auto;
 
 }
 #cartIconCount{
