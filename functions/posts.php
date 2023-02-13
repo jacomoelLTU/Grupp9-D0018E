@@ -11,10 +11,10 @@ require 'config.php';
     //get values from input
     $post_title = $_POST['post_title'];
     $post_description = $_POST['post_description'];
-    $product_price = $_POST['product_price'];
     $post_img = $_POST['post_img'];
     $post_type = $_POST['post_type'];
 
+    $product_price = $_POST['product_price'];
     $product_quantity = $_POST['product_quantity'];
 
     //session for current user
@@ -28,5 +28,5 @@ require 'config.php';
     
     //insert into mysql
         $rs_post = mysqli_query($conn, $sql_post);
-        $rs_product = mysqli_query($conn, $sql_product);
+       // $rs_product = mysqli_query($conn, $sql_product);
 ?>
