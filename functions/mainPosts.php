@@ -16,8 +16,7 @@
                .$type." Click for post: ".$row['post_title']
                .": <a href ='pages/showpost.php?postId=".$row['post_id']
                ."&postTitle=".$row['post_title']."&postDescription="
-               .$row['post_description']."'>Show post</a>
-          </div><br>";
+               .$row['post_description']."'>Show post</a></div><br>";
      }
      ?>
 </div>
