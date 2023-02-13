@@ -4,22 +4,20 @@
              display:flex; 
              justify-content:center; 
              align-items:center;
-}
-#img-container img{
-    max-height:98%;
+
 }
 #img-container {
-    width:100%;
-    overflow:hidden;
-    position: relative;
+    display:block;
+    position: relative; /*Position relative makes it so > img can inherit width/height of parent div*/
 }
-/* Här kommer vi behöva lägga till css automatiskt för att få det kopplat till tillagda imgaes från db. */
-#img1{
+#img-container > img{
     position: absolute;
+    display: block;
+    max-height:100px;
     z-index: 2;
     transition: .4s;
-    transform-origin: 50%,50%;
 }
+
 
 #grid-B { grid-area: B; }
 #grid-C { grid-area: C; }
