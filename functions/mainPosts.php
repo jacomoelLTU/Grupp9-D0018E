@@ -12,11 +12,14 @@
      else{
           $type = "<p style='color:lightseagreen;'>[".$row['post_type']."]</p>"; 
      }
-     echo "<div id='postItem'>"
-               .$type." Click for post: ".$row['post_title']
-               .": <a href ='pages/showpost.php?postId=".$row['post_id']
-               ."&postTitle=".$row['post_title']."&postDescription="
-               .$row['post_description']."'>Show post</a></div>";
-     }
+     echo "<div id='postItem'>
+               <center>"
+                    .$type." Click for post: ".$row['post_title']
+                    .": <a href ='pages/showpost.php?postId=".$row['post_id']
+                    ."&postTitle=".$row['post_title']."&postDescription="
+                    .$row['post_description']."'>Show post</a>
+               </center>
+          </div>";
+          }
      ?>
 </div>
