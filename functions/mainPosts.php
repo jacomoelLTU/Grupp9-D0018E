@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 include 'config.php';
 $query = mysqli_query($conn, "SELECT * FROM post");
 while($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
-   if($row['post_type' == "informative"]){
+   if($row['post_type'] == "informative"){
     $type = "<style='color:lightgreen;'>[".$row['post_type']."]</style>"; 
    }
    else{
