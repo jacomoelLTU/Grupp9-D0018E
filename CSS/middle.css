@@ -21,5 +21,7 @@
 /* For mainPost.php */
 #postItem{
     border: 1px solid black;
+    background-color: antiquewhite;
+    padding:40px;
 }
 /* ---------- */
