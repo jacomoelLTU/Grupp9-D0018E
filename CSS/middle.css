@@ -9,7 +9,8 @@
 }
 
 #cartIcon{
-    padding:0;
+    position: relative;
+    float:right;
 }
 
 #cartIconCount{
