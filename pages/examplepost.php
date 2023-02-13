@@ -16,3 +16,13 @@ Example how a post could look
     Price: 12000kr 
 </div>
 
+<body onload="getRating('../functions./getRating.php')">
+    <div class="container">
+        <h2>Rating System</h2>
+        <span id="rating_list"></span>
+    </div>
+</body>
+
+<script>
+    <?php require_once("../JS/getRating.js");?>
+</script>

@@ -23,3 +23,12 @@
 #addtoCartButton{
     float: middle;
 }
+
+.rate_button {
+    float: middle;
+    height: 50px;
+    width: 150px;
+    margin: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+}
