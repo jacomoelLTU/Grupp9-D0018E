@@ -12,7 +12,6 @@
     padding:6px;
     border: 1px solid black;
     width:100vw;                                 /*vw = relative to 1% of thw width of viewport*/
-    height:100vh;
     display:inline-grid;                         /*Inline grid gör att bordern wrappar runt contentet*/
     grid-template-columns: auto auto auto;
     column-gap: 10px;
