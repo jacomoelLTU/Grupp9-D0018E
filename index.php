@@ -41,7 +41,7 @@
 
                 </div>
                 <center><h2 style="color:lightcoral;">Här kommer posts som fan:</h2></center>
-                <?php include 'funtions/mainPosts.php';?>
+                <?php include 'functions/mainPosts.php';?>
              </div>        
         </body>
     </html>
