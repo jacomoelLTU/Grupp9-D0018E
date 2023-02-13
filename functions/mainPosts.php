@@ -6,7 +6,7 @@ include 'config.php';
 $query = mysqli_query($conn, "SELECT * FROM post");
 while($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
    if($row['post_type'] == "informative"){
-    $type = "<p style='color:lightgreen;'>[".$row['post_type']."]</p>"; 
+    $type = "<p style='color:goldenrod;'>[".$row['post_type']."]</p>"; 
    }
    else{
         $type = "<p style='color:lightseagreen;'>[".$row['post_type']."]</p>"; 
