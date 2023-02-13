@@ -40,7 +40,7 @@
                     </p>
 
                 </div>
-                <center<h3 style="color:red;">>Här kommer posts som fan:</h3></center>
+                <center<h2 style="color:lightred;">Här kommer posts som fan:</h2></center>
                 <?php include 'funtions/mainPosts.php';?>
              </div>        
         </body>
