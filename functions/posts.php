@@ -13,9 +13,10 @@ require 'config.php';
     $post_description = $_POST['post_description'];
     $product_price = $_POST['product_price'];
     $post_img = $_POST['post_img'];
+    $post_type = $_POST['post_type'];
+
     $product_quantity = $_POST['product_quantity'];
-    $product_type = $_POST['post_type'];
-    
+
     //session for current user
     session_start();
     $uid = $_SESSION['userid'];
