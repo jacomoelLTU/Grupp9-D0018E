@@ -19,7 +19,6 @@
     z-index: 2;
     transition: .4s;
     transform-origin: 50%,50%;
-    width:50%;
 }
 #img-container img{
     max-height:98%;
