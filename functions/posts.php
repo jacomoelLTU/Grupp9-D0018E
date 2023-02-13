@@ -23,10 +23,10 @@ require 'config.php';
     $postid = "SELECT post_id FROM post WHERE post_userid='$uid' AND post_title='$post_title'";
     
     //query
-    $sql_post = "INSERT INTO post (post_userid, post_title, post_description, post_img, post_type) VALUES ('$uid', '$post_title', '$post_description', '$post_img, '$post_type')";
+    $sql_post = "INSERT INTO post (post_userid, post_title, post_description, post_img, post_type) VALUES ('$uid', '$post_title', '$post_description', '$post_img', '$post_type')";
    // $sql_product = "INSERT INTO product (product_postid, product_price, product_quantity) VALUES ('$postid', '$product_price', '$product_quantity')";
     
     //insert into mysql
-     //   $rs_post = mysqli_query($conn, $sql_post);
+       $rs_post = mysqli_query($conn, $sql_post);
        // $rs_product = mysqli_query($conn, $sql_product);
 ?>
