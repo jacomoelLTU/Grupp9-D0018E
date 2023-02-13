@@ -7,10 +7,8 @@
 }
 #img-container {
     width:30%;
-    float:left;
     overflow:hidden;
     position: relative;
-    margin: 0 19px;
 }
 /* Här kommer vi behöva lägga till css automatiskt för att få det kopplat till tillagda imgaes från db. */
 #img1{
