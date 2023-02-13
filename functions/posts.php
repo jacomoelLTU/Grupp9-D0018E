@@ -29,4 +29,5 @@ require 'config.php';
     //insert into mysql
        $rs_post = mysqli_query($conn, $sql_post);
        // $rs_product = mysqli_query($conn, $sql_product);
+    header('Location: ../index.php');
 ?>
