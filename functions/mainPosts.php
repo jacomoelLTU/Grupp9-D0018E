@@ -1,4 +1,4 @@
-<div id="mainPost-content" style="border: 1px solid black;">
+<div id="mainPost-content">
      <?php
      ini_set('display_errors', 1);
      ini_set('display_startup_errors', 1);
@@ -12,11 +12,14 @@
      else{
           $type = "<p style='color:lightseagreen;'>[".$row['post_type']."]</p>"; 
      }
-     echo "<div id='postItem'>"
-               .$type." Click for post: ".$row['post_title']
-               .": <a href ='pages/showpost.php?postId=".$row['post_id']
-               ."&postTitle=".$row['post_title']."&postDescription="
-               .$row['post_description']."'>Show post</a></div>";
+     echo "<center>
+               <div id='postItem'>"
+                    .$type." Click for post: ".$row['post_title']
+                    .": <a href ='pages/showpost.php?postId=".$row['post_id']
+                    ."&postTitle=".$row['post_title']."&postDescription="
+                    .$row['post_description']."'>Show post</a>
+               </div>
+          </center>";
      }
      ?>
 </div>
