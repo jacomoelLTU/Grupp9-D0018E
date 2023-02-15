@@ -4,8 +4,9 @@ include '../JS/ratingFunctions.js';
 
 session_start();
 $userId = $_SESSION['userId'];
+$productId = $_GET['productId']; //this might be wrong way to get this, temp "solution" to move on
 
-$query = "SELECT * FROM post ORDER BY id DESC";
+$query = "SELECT * FROM product ORDER BY id DESC";
 $result = mysqli_query($conn, $query);
 
 $outputString = '';
@@ -16,6 +17,7 @@ foreach ($result as $row) {
 
     // $totalRating = totalRating($row['id'], $conn);
     $averageRating = "SELECT product_rating FROM product WHERE product_id='$productId'";
+    $totalReviews = "";
 
     $outputString .= '
         <div class="row-item">
@@ -36,7 +38,7 @@ foreach ($result as $row) {
     $outputString .= '
         </ul>
         
-        <p class="review-note">Total Reviews: ' . $totalRating . '</p>
+        <p class="review-note">Total Reviews: ' . $totalReviews . '</p>
         <p class="text-address">' . $row["address"] . '</p>
         </div>
         ';
