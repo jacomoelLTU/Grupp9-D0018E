@@ -7,7 +7,7 @@
     border: 3px solid;
     border-radius: 3px;
     margin: auto;
-    display: flex;
+    display: block;
     justify-content: center;
     width: fit-content;
 }
