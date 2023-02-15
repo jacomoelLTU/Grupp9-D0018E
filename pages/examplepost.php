@@ -19,10 +19,19 @@ Example how a post could look
 <body onload="getRating('../functions./getRating.php')">
     <div class="container">
         <h2>Rating System</h2>
-        <span id="rating_list"></span>
     </div>
 </body>
 
+<!-- Har detta script här medans jag testar -->
 <script>
-    <?php require_once("../JS/getRating.js");?>
+    function getRating(url) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("post_list").innerHTML = this.responseText;
+            }
+        };
+        xhttp.open("GET", url, true);
+        xhttp.send();
+    }
 </script>
