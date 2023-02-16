@@ -39,10 +39,8 @@ mysqli_autocommit($conn, FALSE);
 
 if($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
     session_start();
-    $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-   echo $_SERVER['REQUEST_URI'];
-    // $_SESSION['cartURL'] = "?postId=".$row['post_id']."&postTitle=".$row['post_title'].""; 
-    // echo"Click to add to cart and go to cart: <a href ='cartpage.php".$_SESSION['cartURL']."'>add to cart</a><br>";
+    $_SESSION['cartURL'] = "?postId=".$row['post_id']."&postTitle=".$row['post_title'].""; 
+    echo"Click to add to cart and go to cart: <a href ='cartpage.php".$_SESSION['cartURL']."'>add to cart</a><br>";
 }
 
 
