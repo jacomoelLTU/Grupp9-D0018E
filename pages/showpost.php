@@ -61,6 +61,7 @@ error_reporting(E_ALL);
     if(!isset($objArr)){
       $_SESSION['objArr'] = array();
     }
+    echo $GLOBALS['object'];
     array_push($_SESSION['objArr'], $GLOBALS['object']); //Adds a new object to 'cart'
   }
 ?>
