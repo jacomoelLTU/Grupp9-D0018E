@@ -45,7 +45,7 @@ if($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
     $_SESSION['cartObjects'] .=$object; //Adds currentURL + $url
 
   }
-  mysqli_commit($conn, 1 ,$url.$objects);
+  mysqli_commit($conn, 1 ,$url.$object);
 
   echo"Click to add to cart and go to cart: <a href ='cartpage.php".$_SESSION['cartObjects']."'>add to cart</a><br>";
 
