@@ -10,6 +10,9 @@
         if(($row['user_name'] == $usr)){
             $role = $row['user_role'];
         }
+        else{
+            $role='banan';
+        }
     }
     if($role =='admin'){
     echo'
