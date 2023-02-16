@@ -6,8 +6,8 @@ echo"Here is you items:";
 
     foreach($_SESSION['objArr'] as $r){
         $dataArr   = parse_str($r, $output);
-        $postId    = $output['postId'];
-        $postTitle = $output['postTitle']; 
+        $productId     = $output['productId'];
+        $productPrice  = $output['productPrice']; 
         
         echo "<div id='cartItem'>".$r.
                 "<form method='post'>

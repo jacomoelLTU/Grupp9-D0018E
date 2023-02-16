@@ -31,11 +31,11 @@ error_reporting(E_ALL);
 
   mysqli_autocommit($conn, FALSE);
 
-  $query = mysqli_query($conn, "SELECT * FROM post WHERE post_id='$postId'");
+  $query = mysqli_query($conn, "SELECT * FROM product WHERE product_postid='$postId'");
   if($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
     $url="pages/showpost.php?";
-    $object="postId=".$row['post_id']."&postTitle=".$row['post_title'].""; 
-    $tempId = $row['post_id'];
+    $object="productId=".$row['product_id']."&productPrice=".$row['product_price'].""; 
+    $tempId = $row['product_id'];
   }
 
   mysqli_commit($conn, 1 ,$object);
