@@ -27,11 +27,11 @@ echo"Here is you items:";
         if(!isset($_SESSION['objArr'])){
             return;
         }
-        foreach($_SESSION['objArr'] as $r){
-            $i = array_search($p,$_SESSION['objArr']);
-            if($_SESSION['objArr($i)'] == $p){
-                echo "Deleted id: ".$i."where postId: ".$p;
-            }
+        $i = array_search($p, $_SESSION['objArr']);
+        echo$i;
+        if($_SESSION['objArr']($i) == $p){
+            echo "Deleted id: ".$i."where postId: ".$p;
         }
+    
     }
 ?>
