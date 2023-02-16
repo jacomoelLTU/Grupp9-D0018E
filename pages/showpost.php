@@ -32,21 +32,18 @@ error_reporting(E_ALL);
   mysqli_autocommit($conn, FALSE);
 
   $query = mysqli_query($conn, "SELECT * FROM post WHERE post_id='$postId'");
-
-  // $urlFlag1 ="?postId=27&postTitle=en%20fin%20post&postDescription=En%20fin%20post";
-  // $urlFlag2 ="?postId=35&postTitle=quantitypost&postDescription=nice";
-
-  // comit($conn, urlFlag2);
-
   if($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
     $url="pages/showpost.php?";
     $object="postId=".$row['post_id']."&postTitle=".$row['post_title'].""; 
+    $tempId = $row['post_id'];
   }
+
   mysqli_commit($conn, 1 ,$object);
-  
+
   if(array_key_exists('addObj', $_POST)) {
-    addObj();
+    addObj($conn, $tempId);
   }
+
   ?>
   <form method="post">
       <input type="submit" name="addObj" class="button" value="Add Item"/>
@@ -55,17 +52,18 @@ error_reporting(E_ALL);
 
     //Temporär gå till cart länk
   echo"Click to go to cart: <a href ='cartpage.php'>To Cart</a><br>";
-
+  
   mysqli_autocommit($conn, TRUE);
 
 //--------------- functions ------------
   
-  function addObj() {
-   
+  function addObj($conn, $tempId) {
     session_start();
     if(!isset($_SESSION['objArr'])){
       $_SESSION['objArr'] = array();
     }
     array_push($_SESSION['objArr'], $GLOBALS['object']); //Adds a new object to 'cart'
+    $rollBackQuery = mysqli_query($conn, "DELETE * FROM post WHERE post_id='$tempId'");
+  
   }
 ?>
