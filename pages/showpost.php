@@ -52,6 +52,9 @@ error_reporting(E_ALL);
     //Temporär gå till cart länk
   echo"Click to go to cart: <a href ='cartpage.php'>To Cart</a><br>";
 
+  foreach($_SERVER['objArr'] as $r){
+    echo "<div id='cartItem'>".$r."</div><br>";
+  }
   mysqli_autocommit($conn, TRUE);
 
 //--------------- functions ------------

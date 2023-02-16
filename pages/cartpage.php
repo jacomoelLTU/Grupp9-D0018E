@@ -13,13 +13,6 @@ include "../functions/config.php";
 <body>
 
     <!-- ROOM FO THE LIST OF ALL PRODUCTS IN THE CART -->
-<<<<<<< HEAD
-    <!-- description with seller user name , a list (1 - n) -->
-    <!-- price summary -->
-    <?php
-        
-    ?>
-=======
     <?php
         session_start();
         echo"Here is you items:";
@@ -28,7 +21,6 @@ include "../functions/config.php";
           }
     ?>
 
->>>>>>> 04a5a110f857fe5b42e36f8facd5e981441a976a
 
     <!-- this two buttons should display after rows with items in the cart -->
     <div id = "buttons">
