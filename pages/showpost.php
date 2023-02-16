@@ -23,7 +23,9 @@
 </center>
 
 <?php
-
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
   include '../functions/config.php';
   $postId = $_GET['postId'];
 
@@ -33,13 +35,13 @@
   if($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
     $url="pages/showpost.php?";
     $object="productId=".$row['product_id']."&productPrice=".$row['product_price'].""; 
-    $tempId = $row['product_id'];
+    $productId = $row['product_id'];
   }
 
   mysqli_commit($conn, 1 ,$object);
 
   if(array_key_exists('addObj', $_POST)) {
-    addObj($conn, $tempId);
+    addObj($conn, $productId, $postId);
   }
 
   ?>
@@ -54,15 +56,14 @@
 
 //--------------- functions ------------
   
-  function addObj($conn, $tempId) {
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
+  function addObj($conn, $productId, $postId) {
     session_start();
     if(!isset($_SESSION['objArr'])){
       $_SESSION['objArr'] = array();
     }
     array_push($_SESSION['objArr'], $GLOBALS['object']); //Adds a new object to 'cart'
-    mysqli_query($conn, "DELETE FROM product WHERE product_id='$tempId'");
+    mysqli_query($conn, "DELETE FROM product WHERE product_id='$productId'");
+    mysqli_query($conn, "DELETE FROM post WHERE post_id='$postId'");
+    
   }
 ?>
