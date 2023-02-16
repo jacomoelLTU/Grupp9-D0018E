@@ -1,6 +1,6 @@
 <a href="../index.php">Home</a>
 <?php
-    include 'config.php';
+    include '../functions/config.php';
     
     $usr = $_SESSION['username'];
     $sql = "SELECT user_role, user_name FROM user WHERE user_name = '$usr'";
