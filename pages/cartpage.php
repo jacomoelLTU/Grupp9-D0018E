@@ -11,11 +11,10 @@
     <!-- ROOM FO THE LIST OF ALL PRODUCTS IN THE CART -->
     <?php
         session_start();
-        echo $_SESSION['cartObjects'];
-        $objectArr=explode("{}",$_SESSION['cartObjects']);
-        foreach($objectArr as $obj){
-            echo $obj."\n";
-        }
+        $objectArr=explode("{",$_SESSION['cartObjects']);
+            foreach($objectArr as $r){
+              echo $r."\n";
+          }
     ?>
 
 
