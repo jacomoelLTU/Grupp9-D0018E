@@ -15,18 +15,18 @@ echo"Here is you items:";
               </div><br>";
         
         if(array_key_exists('delObj', $_POST)) {
-            delObj($postId);
+            delObj($r, $postId);
         }
     }
 
     //Functions ----------
     
-    function delObj($p) {
+    function delObj($r, $p) {
         session_start();
         echo $p;
-        $i = array_search($p, $_SESSION['objArr']);
-        echo$i;
-        if($_SESSION['objArr']($i) == $p){
+        $i = array_search($r, $_SESSION['objArr']);
+        echo $i;
+        if($_SESSION['objArr']($i) == $r){
             echo "Deleted id: ".$i."where postId: ".$p;
         }
     
