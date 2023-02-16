@@ -57,11 +57,12 @@ error_reporting(E_ALL);
 //--------------- functions ------------
 
   function addObj() {
-    session_start();
-    if(!isset($objArr)){
-      $_SESSION['objArr'] = array();
-    }
-    echo "Current object".$GLOBALS['object'];
-    array_push($_SESSION['objArr'], $GLOBALS['object']); //Adds a new object to 'cart'
+   echo"clicked the button!!!!!!!!!!!!!!!!";
+    // session_start();
+    // if(!isset($objArr)){
+    //   $_SESSION['objArr'] = array();
+    // }
+    // echo "Current object".$GLOBALS['object'];
+    // array_push($_SESSION['objArr'], $GLOBALS['object']); //Adds a new object to 'cart'
   }
 ?>
