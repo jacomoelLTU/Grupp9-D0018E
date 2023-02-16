@@ -1,3 +1,4 @@
+<a href="../index.php">Home</a>
 <?php
     include 'config.php';
     
@@ -26,10 +27,5 @@
 
         </form>
     ';
-    }
-    else{
-        echo'
-            <a href="../index.php">Home</a>
-        ';
     }
 ?>
