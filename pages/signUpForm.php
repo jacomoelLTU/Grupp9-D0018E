@@ -1,4 +1,6 @@
 <?php
+    include 'config.php';
+    
     $usr = $_SESSION['username'];
     $sql = "SELECT user_role, user_name FROM user WHERE user_name = '$usr'";
     $query = mysqli_query($conn, $sql); 
