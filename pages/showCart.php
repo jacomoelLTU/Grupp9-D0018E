@@ -24,9 +24,6 @@ echo"Here is you items:";
     function delObj($p) {
         session_start();
         echo $p;
-        if(!isset($_SESSION['objArr'])){
-            return;
-        }
         $i = array_search($p, $_SESSION['objArr']);
         echo$i;
         if($_SESSION['objArr']($i) == $p){
