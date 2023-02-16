@@ -24,9 +24,9 @@ $delCount = 0;
     function delObj($r, $p) {
         session_start();
         $i = array_search($r, $_SESSION['objArr']);
+        echo "This id where deleted: ".$i;
         if($_SESSION['objArr'][$i] == $r){            
             unset($_SESSION['objArr'][$i]);
-            header("Refresh:0");
         }
     
     }
