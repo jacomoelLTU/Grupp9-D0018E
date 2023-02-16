@@ -4,14 +4,10 @@
     
     $usr = $_SESSION['username'];
     $role;
-    $sql = "SELECT user_role, user_name FROM user WHERE user_name = '$usr'";
-    $query = mysqli_query($conn, $sql); 
+    $query = mysqli_query($conn,"SELECT user_role, user_name FROM user WHERE user_name = '$usr'");
     while($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
         if(($row['user_name'] == $usr)){
             $role = $row['user_role'];
-        }
-        else{
-            $role='banan';
         }
     }
     if($role =='admin'){
