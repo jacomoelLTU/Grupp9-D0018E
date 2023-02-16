@@ -11,6 +11,7 @@
     <!-- ROOM FO THE LIST OF ALL PRODUCTS IN THE CART -->
     <?php
         session_start();
+        echo $_SESSION['cartObject'];
         $objectArr=explode("{}",$_SESSION['cartObject']);
         foreach($objectArr as $obj){
             echo $obj."\n";
