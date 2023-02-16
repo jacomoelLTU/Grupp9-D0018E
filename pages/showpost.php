@@ -44,7 +44,7 @@ if($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
       $_SESSION['cartObjects']="";
     }
     $url="pages/showpost.php?";
-    $object="{postId=".$row['post_id']."&postTitle=".$row['post_title']."}"; 
+    $object="{postId=".$row['post_id']."&postTitle=".$row['post_title'].""; 
     $_SESSION['cartObjects'] .=$object; //Adds currentURL + $url
 
   }
