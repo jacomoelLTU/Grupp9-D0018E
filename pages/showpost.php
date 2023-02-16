@@ -50,7 +50,7 @@ if($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
   }
   mysqli_commit($conn, 1 ,$url.$object);
 
-  echo"Click to add to cart and go to cart: <a href ='cartpage.php".$_SESSION['cartObjects']."'>add to cart</a><br>";
+  echo"Click to add to cart and go to cart: <a href ='cartpage.php?".$_SESSION['cartObjects']."'>add to cart</a><br>";
 
   mysqli_autocommit($conn, TRUE);
 
