@@ -40,11 +40,11 @@ $query = mysqli_query($conn, "SELECT * FROM post WHERE post_id='$postId'");
 
 if($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
     session_start();
-    $url="pages/showpost.php\?";
+    $url="pages/showpost.php?";
     if(!isset($_SESSION['cartObjects'])){
       $_SESSION['cartObjects'] = $url;
     }
-    $object="\{postId=".$row['post_id']."\&postTitle=".$row['post_title']."}"; 
+    $object="{postId=".$row['post_id']."&postTitle=".$row['post_title']."}"; 
     $_SESSION['cartObjects'] .=$object; //Adds currentURL + $url
 
   }
