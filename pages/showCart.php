@@ -11,20 +11,21 @@ echo"Here is you items:";
         echo "<div id='cartItem'>".$r.
                 "<form method='post'>
                     <input type='submit' name='delObj' class='button' value='Del Item'/>
+                    <input type='hidden' name='obj' value=".$r.">
                 </form>
               </div><br>";   
     }
     if(array_key_exists('delObj', $_POST)) {
-        delObj($r, $postId);
+        delObj();
     }
 
     //Functions ----------
     
-    function delObj($r, $p) {
+    function delObj() {
         session_start();
-        $i = array_search($r, $_SESSION['objArr']);
+        $i = array_search($_POST['obj'], $_SESSION['objArr']);
         echo "This id where deleted: ". $i;
-        if($_SESSION['objArr'][$i] == $r){            
+        if($_SESSION['objArr'][$i] == $_POST['obj']){            
             unset($_SESSION['objArr'][$i]);
         }
     
