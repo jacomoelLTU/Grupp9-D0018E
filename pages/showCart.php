@@ -23,7 +23,7 @@ echo"Here is you items:";
     function delObj($r, $p) {
         session_start();
         $i = array_search($r, $_SESSION['objArr']);
-        if(parse_str($r,$p) == $GLOBALS['postId']){
+        if(parse_str($_SESSION['arrObj'[$i]],$p) == $GLOBALS['postId']){
             unset($_SESSION['objArr'][$i]);
         }
         header("Location:cartpage.php");
