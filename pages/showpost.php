@@ -41,7 +41,7 @@ $query = mysqli_query($conn, "SELECT * FROM post WHERE post_id='$postId'");
 if($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
     session_start();
     if(!isset($_SESSION['cartObjects'])){
-      $_SESSION['cartObjects'];
+      $_SESSION['cartObjects']="";
     }
     $url="pages/showpost.php?";
     $object="{postId=".$row['post_id']."&postTitle=".$row['post_title']."}"; 
