@@ -35,16 +35,16 @@ $query = mysqli_query($conn, "SELECT * FROM post WHERE post_id='$postId'");
 // $urlFlag2 ="?postId=35&postTitle=quantitypost&postDescription=nice";
 
 // comit($conn, urlFlag2);
-mysqli_autocommit($conn, FALSE);
 
 if($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
     session_start();
-    $_SESSION['cartURL'] = "?postId=".$row['post_id']."&postTitle=".$row['post_title'].""; 
-    echo"Click to add to cart and go to cart: <a href ='cartpage.php".$_SESSION['cartURL']."'>add to cart</a><br>";
-}
+    $url="?{postId=".$row['post_id']."&postTitle=".$row['post_title']."}"; 
+  }
+  mysqli_autocommit($conn, FALSE);
+  mysqli_commit($conn,"pages/showpost.php".$url);
 
+  echo"Click to add to cart and go to cart: <a href ='cartpage.php".$url."'>add to cart</a><br>";
 
-
-
+  mysqli_autocommit($conn, TRUE);
 
 ?>
