@@ -44,16 +44,26 @@ error_reporting(E_ALL);
 
   }
   mysqli_commit($conn, 1 ,$url.$object);
-echo'
-  <form action ="../functions/addToCart.php" method = "post">
-    <input type="hidden", name="objData", value="'.$object.'">
-    <input type="submit" name="addItem" value="Add To Cart">
-  </form>
-  ';
+  ?>
+  <form method="post">
+      <input type="submit" name"addObj" value="Add Item"/>
+    </form>
+  <?php
 
-  //Temporär gå till cart länk
+    //Temporär gå till cart länk
   echo"Click to go to cart: <a href ='cartpage.php'>To Cart</a><br>";
 
   mysqli_autocommit($conn, TRUE);
 
+//--------------- functions ------------
+
+  function addObj($obj) {
+    session_start();
+    if(!isset($objArr)){
+      $_SESSION['objArr'] = array();
+    }
+    else{
+        array_push($_SESSION['objArr'], $obj); //Adds a new object to 'cart'
+    }
+  }
 ?>
