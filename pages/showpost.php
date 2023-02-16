@@ -39,11 +39,15 @@ $query = mysqli_query($conn, "SELECT * FROM post WHERE post_id='$postId'");
 // comit($conn, urlFlag2);
 
 if($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
-    $url="?{postId=".$row['post_id']."&postTitle=".$row['post_title']."}"; 
-  }
-  mysqli_commit($conn, 1 ,"pages/showpost.php".$url);
+    session_start();
+    $url="pages/showpost.php?";
+    $object="{postId=".$row['post_id']."&postTitle=".$row['post_title']."}"; 
+    $_SESSION['cartObjects'] .=$object; //Adds currentURL + $url
 
-  echo"Click to add to cart and go to cart: <a href ='cartpage.php".$url."'>add to cart</a><br>";
+  }
+  mysqli_commit($conn, 1 ,$url.$objects);
+
+  echo"Click to add to cart and go to cart: <a href ='cartpage.php".$_SESSION['cartObjects']."'>add to cart</a><br>";
 
   mysqli_autocommit($conn, TRUE);
 
