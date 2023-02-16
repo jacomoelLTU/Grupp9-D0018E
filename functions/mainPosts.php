@@ -4,7 +4,7 @@
      ini_set('display_startup_errors', 1);
      error_reporting(E_ALL);
      include 'config.php';
-     $query = mysqli_query($conn, "SELECT post_title, post_description, post_type FROM post");
+     $query = mysqli_query($conn, "SELECT post_id, post_title, post_description, post_type FROM post");
      while($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
      if($row['post_type'] == "informative"){
      $type = "<p style='color:goldenrod;'>[".$row['post_type']."]</p>"; 
