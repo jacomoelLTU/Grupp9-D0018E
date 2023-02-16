@@ -23,10 +23,7 @@ echo"Here is you items:";
     function delObj($r, $p) {
         session_start();
         $i = array_search($r, $_SESSION['objArr']);
-        if($_SESSION['objArr'][$i] == $r){            
-            unset($_SESSION['objArr'][$i]);
-            header("Refresh:0");
-        }
-    
-    }
+        unset($_SESSION['objArr'][$i]);
+        header("Location:cartpage.php");
+    }   
 ?>
