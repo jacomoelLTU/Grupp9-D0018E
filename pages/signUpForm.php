@@ -1,12 +1,14 @@
 <a href="../index.php">Home</a>
 <?php
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
     include '../functions/config.php';
     
-    $usr = $_SESSION['username'];
     $sql = "SELECT user_role, user_name FROM user WHERE user_name = '$usr'";
     $query = mysqli_query($conn, $sql); 
     while($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
-        if(($row['user_name'] == $usr)){
+        if(($row['user_name'] == $_SESSION['username'])){
             $role = $row['user_role'];
         }
     }
