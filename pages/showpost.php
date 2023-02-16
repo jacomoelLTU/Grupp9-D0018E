@@ -44,12 +44,12 @@ error_reporting(E_ALL);
 
   }
   mysqli_commit($conn, 1 ,$url.$object);
-
-  ?>
+echo'
   <form action ="../functions/addToCart.php" method = "post">
+    <input type="hidden", name="objData", value="'.$object.'">
     <input type="submit" name="addItem" value="Add To Cart">
   </form>
-  <?php
+  ';
 
   //Temporär gå till cart länk
   echo"Click to go to cart: <a href ='cartpage.php'>To Cart</a><br>";

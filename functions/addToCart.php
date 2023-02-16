@@ -1,4 +1,5 @@
 <?php
+    $object = $_POST['addItem'];
     session_start();
     if(!isset($objArr)){
       $_SESSION['objArr'] = array();
