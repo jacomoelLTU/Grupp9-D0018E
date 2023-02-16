@@ -63,7 +63,6 @@ error_reporting(E_ALL);
       $_SESSION['objArr'] = array();
     }
     array_push($_SESSION['objArr'], $GLOBALS['object']); //Adds a new object to 'cart'
-    mysqli_query($conn, "DELETE FROM post WHERE post_id='$tempId'");
-  
+    mysqli_query($conn, "DELETE FROM product WHERE product_id='$tempId'");
   }
 ?>
