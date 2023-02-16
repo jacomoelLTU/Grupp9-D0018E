@@ -9,6 +9,14 @@
 <body>
 
     <!-- ROOM FO THE LIST OF ALL PRODUCTS IN THE CART -->
+    <?php
+        session_start();
+        $objectArr=explode("{}",$_SESSION['cartObject']);
+        foreach($objectArr as $obj){
+            echo $obj."\n";
+        }
+    ?>
+
 
     <!-- this two buttons should display after rows with items in the cart -->
     <div id = "buttons">
