@@ -3,12 +3,11 @@
     include '../functions/config.php';
     
     $usr = $_SESSION['username'];
-    $role = 'user';
+    $role;
     $sql = "SELECT user_role, user_name FROM user WHERE user_name = '$usr'";
     $query = mysqli_query($conn, $sql); 
     while($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
         if(($row['user_name'] == $usr)){
-           echo $row['user_name']." is: ".$row['user_role'];
             $role = $row['user_role'];
         }
     }
