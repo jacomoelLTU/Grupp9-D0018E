@@ -6,4 +6,5 @@
     else{
         array_push($_SESSION['objArr'], $object); //Adds a new object to 'cart'
     }
+    header('Location:../index.php');
 ?>
