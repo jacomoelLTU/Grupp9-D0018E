@@ -2,7 +2,9 @@
       <input type="submit" name="addObj" class="button" value="Add Item"/>
     </form>
 <?php
-
+    if(array_key_exists('addObj', $_POST)) {
+        addObj();
+    }
   function addObj() {
    echo"clicked the button!!!!!!!!!!!!!!!!";
     // session_start();
