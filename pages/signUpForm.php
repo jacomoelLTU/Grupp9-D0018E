@@ -5,6 +5,7 @@
     error_reporting(E_ALL);
     include '../functions/config.php';
     
+    session_start();
     $usr = $_SESSION['username'];
     $role;
     $query = mysqli_query($conn,"SELECT user_role, user_name FROM user WHERE user_name = '$usr'");
