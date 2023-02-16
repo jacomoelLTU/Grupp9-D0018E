@@ -1,7 +1,7 @@
 <?php
 session_start();
 echo"Here is you items:";
-$delCount = 0;
+
 
     foreach($_SESSION['objArr'] as $r){
         $dataArr   = parse_str($r, $output);
@@ -14,8 +14,7 @@ $delCount = 0;
                 </form>
               </div><br>";   
     }
-    if(array_key_exists('delObj', $_POST) && $delCount == 0) {
-        $delCount .=1;
+    if(array_key_exists('delObj', $_POST)) {
         delObj($r, $postId);
     }
 
@@ -24,9 +23,10 @@ $delCount = 0;
     function delObj($r, $p) {
         session_start();
         $i = array_search($r, $_SESSION['objArr']);
-        echo "This id where deleted: ".$i;
+        echo "This id where deleted: ". $i;
         if($_SESSION['objArr'][$i] == $r){            
             unset($_SESSION['objArr'][$i]);
+            header("Refresh:0");
         }
     
     }
