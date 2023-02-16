@@ -25,7 +25,7 @@ require 'config.php';
     
     //query
     $sql_post = "INSERT INTO post (post_userid, post_title, post_description, post_img, post_type) VALUES ('$uid', '$post_title', '$post_description', '$post_img', '$post_type')";
-    usleep(0.3);
+    //usleep(0,3);
     //insert into mysql
     $rs_post = mysqli_query($conn, $sql_post);
 
