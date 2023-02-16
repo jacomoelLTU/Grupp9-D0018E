@@ -11,6 +11,7 @@
     <!-- ROOM FO THE LIST OF ALL PRODUCTS IN THE CART -->
     <?php
         session_start();
+        echo"Here is you items:";
             foreach($_SERVER['objArr'] as $r){
               echo "<div id='cartItem'>".$r."</div><br>";
           }
