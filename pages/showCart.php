@@ -26,7 +26,6 @@ echo"Here is you items:";
         echo "This id where deleted: ". $i;
         if($_SESSION['objArr'][$i] == $r){            
             unset($_SESSION['objArr'][$i]);
-            header("Refresh:0");
         }
     
     }
