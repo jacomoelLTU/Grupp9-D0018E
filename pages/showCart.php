@@ -27,7 +27,10 @@ echo"Here is you items:";
         $i = array_search($r, $_SESSION['objArr']);
         echo $i;
         if($_SESSION['objArr'][$i] == $r){
+            
             echo "Deleted id: ".$i."where postId: ".$p;
+            unset($_SESSION['objArr'][$i]);
+            
         }
     
     }
