@@ -12,11 +12,10 @@ echo"Here is you items:";
                 "<form method='post'>
                     <input type='submit' name='delObj' class='button' value='Del Item'/>
                 </form>
-              </div><br>";
-        
-        if(array_key_exists('delObj', $_POST)) {
-            delObj($r, $postId);
-        }
+              </div><br>";   
+    }
+    if(array_key_exists('delObj', $_POST)) {
+        delObj($r, $postId);
     }
 
     //Functions ----------
