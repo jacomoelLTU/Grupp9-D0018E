@@ -26,5 +26,10 @@
 
         </form>
     ';
- }
+    }
+    else{
+        echo'
+            <a href="../index.php">Home</a>
+        ';
+    }
 ?>
