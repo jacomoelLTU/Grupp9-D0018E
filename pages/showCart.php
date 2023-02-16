@@ -13,16 +13,17 @@ echo"Here is you items:";
                     <input type='submit' name='delObj' class='button' value='Del Item'/>
                 </form>
               </div><br>";
-    
-    if(array_key_exists('delObj', $_POST)) {
-        delObj($postId);
+        
+        if(array_key_exists('delObj', $_POST)) {
+            delObj($postId);
+        }
     }
-    }
-    
+
     //Functions ----------
     
     function delObj($p) {
         session_start();
+        echo $p;
         if(!isset($_SESSION['objArr'])){
             return;
         }
