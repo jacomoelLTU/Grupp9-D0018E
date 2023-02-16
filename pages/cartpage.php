@@ -1,6 +1,10 @@
 
-<link rel="stylesheet" type="text/css" href="../CSS/cartpage.css">
+<?php
+include "../functions/config.php";
 
+?>
+
+<link rel="stylesheet" type="text/css" href="../CSS/cartpage.css">
 <div id = "cartHeader">
    <h1 id = "cartWelcome"> Welcome to your shoppingcart!</h1> 
     <p id = "cartBackToHome">Click the link to got to home page, <a href="../index.php">To home</a></p>
@@ -9,6 +13,13 @@
 <body>
 
     <!-- ROOM FO THE LIST OF ALL PRODUCTS IN THE CART -->
+<<<<<<< HEAD
+    <!-- description with seller user name , a list (1 - n) -->
+    <!-- price summary -->
+    <?php
+        
+    ?>
+=======
     <?php
         session_start();
         echo"Here is you items:";
@@ -17,12 +28,13 @@
           }
     ?>
 
+>>>>>>> 04a5a110f857fe5b42e36f8facd5e981441a976a
 
     <!-- this two buttons should display after rows with items in the cart -->
     <div id = "buttons">
         <button type = "button" onclick="alert('Continue to card payment (outside of the course goals)')" id="checkoutButton" >PayNow</button>
 
-        <!-- below should be be the button that sets of rollBack in tables when a purchase gets canled -->
+        <!-- Cancle button, initiates rollback of tables -->
         <button type="button" id="cancelButton" value="Cancel">Cancel purchase</button>
     </div>
 

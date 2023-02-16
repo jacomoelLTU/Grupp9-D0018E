@@ -22,12 +22,19 @@ require 'config.php';
     $uid = $_SESSION['userid'];
     $postid = "SELECT post_id FROM post WHERE post_userid='$uid' AND post_title='$post_title'";
     
+    
     //query
     $sql_post = "INSERT INTO post (post_userid, post_title, post_description, post_img, post_type) VALUES ('$uid', '$post_title', '$post_description', '$post_img', '$post_type')";
-   // $sql_product = "INSERT INTO product (product_postid, product_price, product_quantity) VALUES ('$postid', '$product_price', '$product_quantity')";
-    
+    usleep(0.3);
     //insert into mysql
-       $rs_post = mysqli_query($conn, $sql_post);
-       // $rs_product = mysqli_query($conn, $sql_product);
+    $rs_post = mysqli_query($conn, $sql_post);
+
+    //lägger till insert till product table med det nyss tillagda POST ID vi har
+    mysqli_query($conn, "LOCK TABLES post WRITE");
+    $query_lastPostid = mysqli_query($conn,"SELECT MAX(post_id) AS maximum FROM post");  //satement gets the just added postID
+    $sql_queryProduct = "INSERT into product (product_postid, product_price, product_quantity) VALUES ('$query_lastPostid', '$product_price', '$product_quantity')";
+    $product_insert = mysqli_query($conn, $sql_queryProduct);
+    mysqli_query($conn, "UNLOCK TABLES");
+
     header('Location: ../index.php');
 ?>
