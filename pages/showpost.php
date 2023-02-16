@@ -53,7 +53,6 @@ error_reporting(E_ALL);
     //Temporär gå till cart länk
   echo"Click to go to cart: <a href ='cartpage.php'>To Cart</a><br>";
   
-  mysqli_autocommit($conn, TRUE);
 
 //--------------- functions ------------
   
