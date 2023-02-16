@@ -31,9 +31,22 @@ $postId = $_GET['postId'];
 
 $query = mysqli_query($conn, "SELECT * FROM post WHERE post_id='$postId'");
 
+// $urlFlag1 ="?postId=27&postTitle=en%20fin%20post&postDescription=En%20fin%20post";
+// $urlFlag2 ="?postId=35&postTitle=quantitypost&postDescription=nice";
+
+// comit($conn, urlFlag2);
+mysqli_autocommit($conn, FALSE);
+
 if($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
     session_start();
-    $_SESSION['cartURL'] = "?postId=".$row['post_id']."&postTitle=".$row['post_title'].""; 
-    echo"Click to add to cart and go to cart: <a href ='cartpage.php".$_SESSION['cartURL']."'>add to cart</a><br>";
+    $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+   echo $url;
+    // $_SESSION['cartURL'] = "?postId=".$row['post_id']."&postTitle=".$row['post_title'].""; 
+    // echo"Click to add to cart and go to cart: <a href ='cartpage.php".$_SESSION['cartURL']."'>add to cart</a><br>";
 }
+
+
+
+
+
 ?>
