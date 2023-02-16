@@ -39,7 +39,7 @@ error_reporting(E_ALL);
   }
 
   mysqli_commit($conn, 1 ,$object);
-
+echo"PID OCH POSTID:".$productId." o ".$postId;
   if(array_key_exists('addObj', $_POST)) {
     addObj($conn, $productId, $postId);
   }
