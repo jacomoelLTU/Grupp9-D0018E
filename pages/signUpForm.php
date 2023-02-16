@@ -1,8 +1,5 @@
 <a href="../index.php">Home</a>
 <?php
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
     include '../functions/config.php';
     
     session_start();
@@ -31,8 +28,5 @@
 
         </form>
     ';
-    }
-    else{
-        echo $role;
     }
 ?>
