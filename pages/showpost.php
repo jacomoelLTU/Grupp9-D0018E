@@ -39,7 +39,6 @@ $query = mysqli_query($conn, "SELECT * FROM post WHERE post_id='$postId'");
 // comit($conn, urlFlag2);
 
 if($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
-    session_start();
     $url="?{postId=".$row['post_id']."&postTitle=".$row['post_title']."}"; 
   }
   mysqli_commit($conn, 1 ,"pages/showpost.php".$url);
