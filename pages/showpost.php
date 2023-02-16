@@ -26,31 +26,33 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-include '../functions/config.php';
-$postId = $_GET['postId'];
+  include '../functions/config.php';
+  $postId = $_GET['postId'];
 
-mysqli_autocommit($conn, FALSE);
+  mysqli_autocommit($conn, FALSE);
 
-$query = mysqli_query($conn, "SELECT * FROM post WHERE post_id='$postId'");
+  $query = mysqli_query($conn, "SELECT * FROM post WHERE post_id='$postId'");
 
-// $urlFlag1 ="?postId=27&postTitle=en%20fin%20post&postDescription=En%20fin%20post";
-// $urlFlag2 ="?postId=35&postTitle=quantitypost&postDescription=nice";
+  // $urlFlag1 ="?postId=27&postTitle=en%20fin%20post&postDescription=En%20fin%20post";
+  // $urlFlag2 ="?postId=35&postTitle=quantitypost&postDescription=nice";
 
-// comit($conn, urlFlag2);
+  // comit($conn, urlFlag2);
 
-if($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
-    session_start();
-    if(!isset($objArr)){
-      $_SESSION['objArr'] = array();
-    }
+  if($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
     $url="pages/showpost.php?";
     $object="postId=".$row['post_id']."&postTitle=".$row['post_title'].""; 
-    array_push($_SESSION['objArr'], $object); //Adds a new object to 'cart'
 
   }
   mysqli_commit($conn, 1 ,$url.$object);
 
-  echo"Click to add to cart and go to cart: <a href ='cartpage.php?".$_SESSION['cartObjects']."'>add to cart</a><br>";
+  ?>
+  <form action ="../functions/addToCart.php" method = "post">
+    <input type="submit" name="addItem" value="Add To Cart">
+  </form>
+  <?php
+
+  //Temporär gå till cart länk
+  echo"Click to go to cart: <a href ='cartpage.php'>add to cart</a><br>";
 
   mysqli_autocommit($conn, TRUE);
 
