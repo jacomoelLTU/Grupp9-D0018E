@@ -22,9 +22,7 @@ echo"Here is you items:";
     
     function delObj($r, $p) {
         session_start();
-        echo $p;
         $i = array_search($r, $_SESSION['objArr']);
-        echo $i;
         if($_SESSION['objArr'][$i] == $r){            
             unset($_SESSION['objArr'][$i]);
             header("Refresh:0");
