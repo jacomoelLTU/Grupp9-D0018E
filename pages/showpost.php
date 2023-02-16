@@ -45,7 +45,7 @@ error_reporting(E_ALL);
   mysqli_commit($conn, 1 ,$url.$object);
   ?>
   <form method="post">
-      <input type="submit" name="addObj" value="Add Item"/>
+      <input type="submit" name="addObj" class="button" value="Add Item"/>
     </form>
   <?php
 
