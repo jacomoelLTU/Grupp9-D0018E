@@ -23,9 +23,7 @@
 </center>
 
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+
   include '../functions/config.php';
   $postId = $_GET['postId'];
 
@@ -57,6 +55,9 @@ error_reporting(E_ALL);
 //--------------- functions ------------
   
   function addObj($conn, $tempId) {
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
     session_start();
     if(!isset($_SESSION['objArr'])){
       $_SESSION['objArr'] = array();
