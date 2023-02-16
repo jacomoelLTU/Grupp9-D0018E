@@ -29,6 +29,8 @@ error_reporting(E_ALL);
 include '../functions/config.php';
 $postId = $_GET['postId'];
 
+mysqli_autocommit($conn, FALSE);
+
 $query = mysqli_query($conn, "SELECT * FROM post WHERE post_id='$postId'");
 
 // $urlFlag1 ="?postId=27&postTitle=en%20fin%20post&postDescription=En%20fin%20post";
@@ -40,8 +42,7 @@ if($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
     session_start();
     $url="?{postId=".$row['post_id']."&postTitle=".$row['post_title']."}"; 
   }
-  mysqli_autocommit($conn, FALSE);
-  mysqli_commit($conn,"pages/showpost.php".$url);
+  mysqli_commit($conn, 1 ,"pages/showpost.php".$url);
 
   echo"Click to add to cart and go to cart: <a href ='cartpage.php".$url."'>add to cart</a><br>";
 
