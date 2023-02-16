@@ -13,7 +13,7 @@
         session_start();
         $objectArr=explode("{",$_SESSION['cartObjects']);
             foreach($objectArr as $r){
-              echo $r."\n";
+              echo "<div id='cartItem'>".$r."</div><br>";
           }
     ?>
 
