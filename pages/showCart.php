@@ -8,16 +8,15 @@ echo"Here is you items:";
         $postId    = $output['postId'];
         $postTitle = $output['postTitle']; 
         
-        echo "<div id='cartItem'>".$r.
+        echo "<div id='cartItem'>".$r." ID of post: ".$postId.
                 "<form method='post'>
                     <input type='submit' name='delObj' class='button' value='Del Item'/>
                 </form>
               </div><br>";   
-        if(array_key_exists('delObj', $_POST)) {
-            delObj($r, $postId);
-        }
     }
-
+    if(array_key_exists('delObj', $_POST)) {
+        delObj($r, $postId);
+    }
 
     //Functions ----------
     
