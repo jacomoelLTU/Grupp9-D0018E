@@ -41,12 +41,11 @@ error_reporting(E_ALL);
   if($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
     $url="pages/showpost.php?";
     $object="postId=".$row['post_id']."&postTitle=".$row['post_title'].""; 
-
   }
   mysqli_commit($conn, 1 ,$url.$object);
   ?>
   <form method="post">
-      <input type="submit" name"addObj" value="Add Item"/>
+      <input type="submit" name="addObj" value="Add Item"/>
     </form>
   <?php
 
@@ -57,13 +56,13 @@ error_reporting(E_ALL);
 
 //--------------- functions ------------
 
-  function addObj($obj) {
+  function addObj() {
     session_start();
     if(!isset($objArr)){
       $_SESSION['objArr'] = array();
     }
     else{
-        array_push($_SESSION['objArr'], $obj); //Adds a new object to 'cart'
+        array_push($_SESSION['objArr'], $GLOBALS['object']); //Adds a new object to 'cart'
     }
   }
 ?>
