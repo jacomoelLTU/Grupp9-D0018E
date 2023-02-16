@@ -42,7 +42,7 @@ error_reporting(E_ALL);
     $url="pages/showpost.php?";
     $object="postId=".$row['post_id']."&postTitle=".$row['post_title'].""; 
   }
-  mysqli_commit($conn, 1 ,$url.$object);
+  mysqli_commit($conn, 1 ,$object);
   
   if(array_key_exists('addObj', $_POST)) {
     addObj();

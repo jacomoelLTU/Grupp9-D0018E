@@ -1,4 +1,5 @@
 <?php
+include '../functions/config.php';
 session_start();
 echo"Here is you items:";
 
@@ -16,17 +17,18 @@ echo"Here is you items:";
               </div><br>";   
     }
     if(array_key_exists('delObj', $_POST)) {
-        delObj();
+        delObj($conn);
     }
 
     //Functions ----------
     
-    function delObj() {
+    function delObj($conn) {
+        
         session_start();
         $i = array_search($_POST['obj'], $_SESSION['objArr']);
-        echo "This id where deleted: ". $i;
         if($_SESSION['objArr'][$i] == $_POST['obj']){            
             unset($_SESSION['objArr'][$i]);
+            mysqli_rollback($conn,1,$_POST['obj']);
         }
     
     }
