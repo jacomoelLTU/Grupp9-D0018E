@@ -8,7 +8,7 @@
     $query = mysqli_query($conn, $sql); 
     while($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
         if(($row['user_name'] == $usr)){
-           echo "Logged in as role: ".$row['user_role'];
+           echo $row['user_name']." is: ".$row['user_role'];
             $role = $row['user_role'];
         }
     }
