@@ -16,7 +16,7 @@ include "../functions/config.php";
     <?php
         session_start();
         echo"Here is you items:";
-            foreach($_SERVER['objArr'] as $r){
+            foreach($_SESSION['objArr'] as $r){
               echo "<div id='cartItem'>".$r."</div><br>";
           }
     ?>

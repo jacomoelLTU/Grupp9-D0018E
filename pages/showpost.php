@@ -51,18 +51,16 @@ error_reporting(E_ALL);
 
     //Temporär gå till cart länk
   echo"Click to go to cart: <a href ='cartpage.php'>To Cart</a><br>";
-  if(!isset($objArr)){
-    $_SESSION['objArr'] = array();
-  }
-  foreach($_SERVER['objArr'] as $r){
-    echo "<div id='cartItem'>".$r."</div><br>";
-  }
+
   mysqli_autocommit($conn, TRUE);
 
 //--------------- functions ------------
 
   function addObj() {
     session_start();
+    if(!isset($objArr)){
+      $_SESSION['objArr'] = array();
+    }
     array_push($_SESSION['objArr'], $GLOBALS['object']); //Adds a new object to 'cart'
   }
 ?>
