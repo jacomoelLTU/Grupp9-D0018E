@@ -44,6 +44,7 @@ $outputString = '';
         
         <p class="review-note">Total Reviews: ' . $totalReviews . '</p>
         <p class="text-address">' . $row["address"] . '</p>
+        some text
         </div>
         ';
 //}
