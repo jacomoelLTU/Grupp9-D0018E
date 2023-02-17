@@ -12,11 +12,11 @@
   include 'config.php';
   mysqli_autocommit($conn, FALSE);
 
-  $query = mysqli_query($conn, "SELECT product_id, product_title FROM product");
+  $query = mysqli_query($conn, "SELECT test_id, test_title FROM test");
   while($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
   echo "<center>
             <div id='postItem'>"
-                .$row['product_id']."
+                .$row['test_title']."
             </div>
       </center>";
   }
@@ -29,7 +29,7 @@
       rollback($conn);
   }
   function delItems($conn) {
-    mysqli_query($conn, "DELETE FROM product WHERE product_id=10");
+    mysqli_query($conn, "DELETE FROM test WHERE product_id=1");
   }
   function rollback($conn) {
     mysqli_rollback($conn);
