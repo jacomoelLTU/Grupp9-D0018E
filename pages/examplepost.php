@@ -20,6 +20,7 @@ Example how a post could look
         <div class="container">
             <h2>Rating System</h2>
         </div>
+        <?php include '../functions/getRating.php';?>
     </body>
 </div> 
 
