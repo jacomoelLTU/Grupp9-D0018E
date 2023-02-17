@@ -9,13 +9,13 @@ session_start();
 $userId = $_SESSION['userId'];
 $productId = $_GET['productId']; //this might be wrong way to get this, temp "solution" to move on
 
-$query = "SELECT * FROM product ORDER BY id DESC";
+$query = "SELECT * FROM product ORDER BY product_id DESC";
 $result = mysqli_query($conn, $query);
 
 $outputString = '';
 
-foreach ($result as $row) {
-    $userRating = "SELECT rating FROM rating WHERE user_id='$userId'";
+//foreach ($result as $row) {
+    $userRating = "SELECT rating FROM rating WHERE user_id='19'";
     $ratingQuery = mysqli_query($conn, $userRating);
 
     // $totalRating = totalRating($row['id'], $conn);
@@ -46,7 +46,7 @@ foreach ($result as $row) {
         <p class="text-address">' . $row["address"] . '</p>
         </div>
         ';
-}
+//}
 
 echo $outputString;
 
