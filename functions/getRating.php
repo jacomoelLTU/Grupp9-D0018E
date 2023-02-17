@@ -12,7 +12,7 @@ $result = mysqli_query($conn, $query);
 $outputString = '';
 
 foreach ($result as $row) {
-    $userRating = "SELECT rating FROM rating WHERE user_id='$userId' AND id='$row[id]'";
+    $userRating = "SELECT rating FROM rating WHERE user_id='$userId'";
     $ratingQuery = mysqli_query($conn, $userRating);
 
     // $totalRating = totalRating($row['id'], $conn);
