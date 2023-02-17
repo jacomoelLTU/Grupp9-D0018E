@@ -30,7 +30,7 @@
       rollback($conn);
   }
   if(array_key_exists('insertItem', $_POST)) {
-    mysqli_query($conn,"INSERT INTO test (test_title) VALUES ('cake')");
+    insertItem($conn);
 }
   function delItems($conn) {
     echo"deleted cake...";
@@ -45,6 +45,7 @@
     return;
   }
   function insertItem($conn) {
+    mysqli_query($conn,"INSERT INTO test (test_title) VALUES ('cake')");
     return;
   }
 ?>
