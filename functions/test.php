@@ -29,6 +29,7 @@
       rollback($conn);
   }
   function delItems($conn) {
+    include 'config.php';
     echo"deleted cake...";
     mysqli_query($conn, "DELETE FROM test WHERE test_id=2");
   }
