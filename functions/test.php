@@ -36,18 +36,15 @@
 }
   function delItems($conn) {
     mysqli_query($conn, "DELETE FROM test WHERE MAX(test_id)");
-    header("Refresh:0");
     return;
   }
   function rollback($conn) {
     mysqli_rollback($conn);
-    header("Refresh:0");
     return;
 
   }
   function insertItem($conn) {
     mysqli_query($conn,"INSERT INTO test (test_title) VALUES ('cake')");
-    header("Refresh:0");
     return;
   }
 ?>
