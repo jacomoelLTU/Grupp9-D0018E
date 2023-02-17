@@ -10,7 +10,6 @@
   ini_set('display_startup_errors', 1);
   error_reporting(E_ALL);
   include 'config.php';
-  mysqli_autocommit($conn, FALSE);
 
   $query = mysqli_query($conn, "SELECT test_id, test_title FROM test");
   while($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
@@ -30,7 +29,7 @@
   }
   function delItems($conn) {
     echo"deleted cake...";
-    mysqli_query($conn, "DELETE FROM test WHERE test_id=1");
+    mysqli_query($conn, "DELETE FROM test WHERE test_id=2");
   }
   function rollback($conn) {
     mysqli_rollback($conn);
