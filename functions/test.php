@@ -21,8 +21,8 @@
             </div>
       </center>";
   }
-  mysqli_autocommit($conn,FALSE);
   mysqli_commit($conn);
+  mysqli_autocommit($conn,FALSE);
 
    if(array_key_exists('delItems', $_POST)) {
         delItems($conn);
@@ -44,7 +44,6 @@
   }
   function insertItem($conn) {
     mysqli_query($conn,"INSERT INTO test (test_title) VALUES ('cake')");
-    mysqli_commit($conn);
     return;
   }
 ?>
