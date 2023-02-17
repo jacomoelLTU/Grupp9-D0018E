@@ -12,7 +12,6 @@
   error_reporting(E_ALL);
   include 'config.php';
 
-  mysqli_autocommit($conn,TRUE);
 
   $query = mysqli_query($conn, "SELECT test_id, test_title FROM test");
   while($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
@@ -22,7 +21,7 @@
             </div>
       </center>";
   }
-
+  mysqli_autocommit($conn,FALSE);
   mysqli_commit($conn);
 
    if(array_key_exists('delItems', $_POST)) {
@@ -45,6 +44,7 @@
   }
   function insertItem($conn) {
     mysqli_query($conn,"INSERT INTO test (test_title) VALUES ('cake')");
+    mysqli_commit($conn);
     return;
   }
 ?>
