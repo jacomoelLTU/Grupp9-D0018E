@@ -29,7 +29,7 @@
       rollback($conn);
   }
   function delItems($conn) {
-    mysqli_query($conn, "DELETE FROM test WHERE product_id=1");
+    mysqli_query($conn, "DELETE FROM test WHERE test_id=1");
   }
   function rollback($conn) {
     mysqli_rollback($conn);
