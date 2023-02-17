@@ -1,6 +1,6 @@
 <?php
 include 'config.php';
-include '../JS/ratingFunctions.js';
+// include '../JS/ratingFunctions.js';
 
 session_start();
 $userId = $_SESSION['userId'];
