@@ -29,15 +29,15 @@
     if(array_key_exists('rollback', $_POST)) {
       rollback($conn);
   }
-  if(array_key_exists('addItem', $_POST)) {
-    rollback($conn);
+  if(array_key_exists('insertItem', $_POST)) {
+    mysqli_query($conn,"INSERT INTO test (test_title) VALUES ('cake')");
 }
   function delItems($conn) {
     echo"deleted cake...";
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
-    mysqli_query($conn, "DELETE FROM test WHERE test_id=MAX(test_id)");
+    mysqli_query($conn, "DELETE FROM test WHERE test_id=1");
     return;
   }
   function rollback($conn) {
@@ -45,7 +45,6 @@
     return;
   }
   function insertItem($conn) {
-    mysqli_query($conn,"INSERT INTO test (test_title) VALUES ('cake')");
     return;
   }
 ?>
