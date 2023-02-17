@@ -37,12 +37,15 @@
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
-    mysqli_query($conn, "DELETE FROM test WHERE test_id=2");
+    mysqli_query($conn, "DELETE FROM test WHERE test_id=MAX(test_id)");
+    return;
   }
   function rollback($conn) {
     mysqli_rollback($conn);
+    return;
   }
   function insertItem($conn) {
     mysqli_query($conn,"INSERT INTO test (test_title) VALUES ('cake')");
+    return;
   }
 ?>
