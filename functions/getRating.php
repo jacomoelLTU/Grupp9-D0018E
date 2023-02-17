@@ -1,6 +1,9 @@
+<script>
+    <?php require_once("../JS/ratingfunctions.js");?>
+</script>
+
 <?php
 include 'config.php';
-include '../JS/ratingFunctions.js';
 
 session_start();
 $userId = $_SESSION['userId'];
