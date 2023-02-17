@@ -2,7 +2,7 @@
 
 <form method="post">
   <input type="submit" name="delItems" class="button" value="Del Items"/>
-  <input type="submit" name="rollback" class="button" value="RollbacK!"/>
+  <input type="submit" name="rollback" class="button" value="Rollback!"/>
 </form>
 
 <?php
@@ -29,7 +29,7 @@
       rollback($conn);
   }
   function delItems($conn) {
-    mysqli_query($conn, "DELETE FROM product WHERE product_id='10'");
+    mysqli_query($conn, "DELETE FROM product WHERE product_id=10");
   }
   function rollback($conn) {
     mysqli_rollback($conn);
