@@ -16,7 +16,8 @@ foreach ($result as $row) {
     $ratingQuery = mysqli_query($conn, $userRating);
 
     // $totalRating = totalRating($row['id'], $conn);
-    $averageRating = "SELECT product_rating FROM product WHERE product_id='$productId'";
+    //hardcode to test
+    $averageRating = "SELECT product_rating FROM product WHERE product_id='9'";
     $totalReviews = "";
 
     $outputString .= '
