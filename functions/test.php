@@ -3,6 +3,7 @@
 <form method="post">
   <input type="submit" name="delItems" class="button" value="Del Items"/>
   <input type="submit" name="rollback" class="button" value="Rollback!"/>
+  <input type="submit" name="insertItem" class="button" value="Add cake!!"/>
 </form>
 
 <?php
@@ -28,6 +29,9 @@
     if(array_key_exists('rollback', $_POST)) {
       rollback($conn);
   }
+  if(array_key_exists('addItem', $_POST)) {
+    rollback($conn);
+}
   function delItems($conn) {
     echo"deleted cake...";
     ini_set('display_errors', 1);
@@ -37,5 +41,8 @@
   }
   function rollback($conn) {
     mysqli_rollback($conn);
+  }
+  function insertItem($conn) {
+    mysqli_query($conn,"INSERT INTO test (test_title) VALUES ('cake')");
   }
 ?>
