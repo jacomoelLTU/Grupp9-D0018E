@@ -19,6 +19,7 @@
             </div>
       </center>";
   }
+  mysqli_autocommit($conn,TRUE);
   mysqli_commit($conn);
 
    if(array_key_exists('delItems', $_POST)) {
