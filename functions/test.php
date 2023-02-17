@@ -29,8 +29,10 @@
       rollback($conn);
   }
   function delItems($conn) {
-    include 'config.php';
     echo"deleted cake...";
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
     mysqli_query($conn, "DELETE FROM test WHERE test_id=2");
   }
   function rollback($conn) {
