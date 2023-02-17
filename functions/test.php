@@ -6,14 +6,9 @@
   include 'config.php';
   $query = mysqli_query($conn, "SELECT product_id, product_title FROM product");
   while($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
-  $type = "<p style='color:goldenrod;'>[".$row['post_type']."]</p>"; 
-  }
-  else{
-      $type = "<p style='color:lightseagreen;'>[".$row['post_type']."]</p>"; 
-  }
   echo "<center>
             <div id='postItem'>"
-                .$row['product_id']." | ".$row['product_id']."
+                .$row['product_id']."
             </div>
       </center>";
   }
