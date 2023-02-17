@@ -34,7 +34,7 @@
     insertItem($conn);
 }
   function delItems($conn) {
-    mysqli_query($conn, "DELETE FROM test WHERE MAX(test_id)");
+    mysqli_query($conn, "DELETE FROM test ORDER BY test_id DESC LIMIT 1;");
     return;
   }
   function rollback($conn) {
