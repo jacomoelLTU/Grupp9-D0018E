@@ -12,6 +12,8 @@
   error_reporting(E_ALL);
   include 'config.php';
 
+  mysqli_autocommit($conn,FALSE);
+
   $query = mysqli_query($conn, "SELECT test_id, test_title FROM test");
   while($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
   echo "<center>
@@ -20,7 +22,7 @@
             </div>
       </center>";
   }
-  mysqli_autocommit($conn,TRUE);
+  
   mysqli_commit($conn);
 
    if(array_key_exists('delItems', $_POST)) {
@@ -33,19 +35,16 @@
     insertItem($conn);
 }
   function delItems($conn) {
-    echo"deleted cake...";
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
-    mysqli_query($conn, "DELETE FROM test WHERE test_id=1");
-    return;
+    mysqli_query($conn, "DELETE FROM test WHERE MAX(test_id)");
+    header("Refresh:0");
   }
   function rollback($conn) {
     mysqli_rollback($conn);
-    return;
+    header("Refresh:0");
+
   }
   function insertItem($conn) {
     mysqli_query($conn,"INSERT INTO test (test_title) VALUES ('cake')");
-    return;
+    header("Refresh:0");
   }
 ?>
