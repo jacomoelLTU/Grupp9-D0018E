@@ -12,7 +12,7 @@
   error_reporting(E_ALL);
   include 'config.php';
 
-  mysqli_autocommit($conn,FALSE);
+  mysqli_autocommit($conn,TRUE);
 
   $query = mysqli_query($conn, "SELECT test_id, test_title FROM test");
   while($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
