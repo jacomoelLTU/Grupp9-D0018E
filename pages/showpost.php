@@ -39,7 +39,7 @@ error_reporting(E_ALL);
   }
 
   mysqli_commit($conn, 1 ,$object);
-echo"PID OCH POSTID:".$productId." o ".$postId;
+  echo"PID OCH POSTID:".$productId." o ".$postId;
   if(array_key_exists('addObj', $_POST)) {
     addObj($conn, $productId, $postId);
   }
@@ -62,6 +62,7 @@ echo"PID OCH POSTID:".$productId." o ".$postId;
       $_SESSION['objArr'] = array();
     }
     array_push($_SESSION['objArr'], $GLOBALS['object']); //Adds a new object to 'cart'
+  //Här tror jag det blir problem för att det get forignkey error när man går för snabbt?
     mysqli_query($conn, "DELETE FROM product WHERE product_id='$productId'");
     mysqli_query($conn, "DELETE FROM post WHERE post_id='$postId'");
     
