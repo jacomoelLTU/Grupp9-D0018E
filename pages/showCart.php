@@ -28,7 +28,7 @@ echo"Here is you items:";
         $i = array_search($_POST['obj'], $_SESSION['objArr']);
         if($_SESSION['objArr'][$i] == $_POST['obj']){            
             unset($_SESSION['objArr'][$i]);
-            mysqli_rollback($conn,1,$_POST['obj']);
+            //mysqli_rollback($conn,1,$_POST['obj']);
         }
     
     }

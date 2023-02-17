@@ -29,7 +29,7 @@ error_reporting(E_ALL);
   include '../functions/config.php';
   $postId = $_GET['postId'];
 
-  mysqli_autocommit($conn, FALSE);
+  //mysqli_autocommit($conn, FALSE);
 
   $query = mysqli_query($conn, "SELECT * FROM product WHERE product_postid='$postId'");
   if($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
@@ -38,7 +38,7 @@ error_reporting(E_ALL);
     $productId = $row['product_id'];
   }
 
-  mysqli_commit($conn, 1 ,$object);
+  // mysqli_commit($conn, 1 ,$object);
   echo"PID OCH POSTID:".$productId." o ".$postId;
   if(array_key_exists('addObj', $_POST)) {
     addObj($conn, $productId, $postId);
