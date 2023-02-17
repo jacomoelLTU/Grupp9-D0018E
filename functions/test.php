@@ -4,6 +4,7 @@
   <input type="submit" name="delItems" class="button" value="Del Items"/>
   <input type="submit" name="rollback" class="button" value="Rollback!"/>
   <input type="submit" name="insertItem" class="button" value="Add cake!!"/>
+  <input type="submit" name="commit" class="button" value="Commit"/>
 </form>
 
 <?php
@@ -31,7 +32,10 @@
   }
   if(array_key_exists('insertItem', $_POST)) {
     insertItem($conn);
-}
+  } 
+  if(array_key_exists('commit', $_POST)) {
+    commit($conn);
+  }
   function delItems($conn) {
     mysqli_query($conn, "DELETE FROM test ORDER BY test_id DESC LIMIT 1;");
     return;
@@ -43,6 +47,10 @@
   }
   function insertItem($conn) {
     mysqli_query($conn,"INSERT INTO test (test_title) VALUES ('cake')");
+    return;
+  }
+  function commit($conn) {
+    mysqli_commit($conn);
     return;
   }
 ?>
