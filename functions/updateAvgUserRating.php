@@ -20,9 +20,9 @@ while($result){ //you might wanna use mysqli_fetch_array here or similar functio
 }
 
 //calculate average rating
-$averageRating = $totalRating / $iterations;
+$userRating = $totalRating / $iterations;
 
-$userRating = "INSERT INTO user(average_rating) VALUES ($averageRating) WHERE user_id ='$userId'"; //average_rating finns ej i user ännu
+$userRating = "INSERT INTO user(user_rating) VALUES ($userRating) WHERE user_id ='$userId'"; //average_rating finns ej i user ännu
 $insert = mysqli_query($conn, $productRating);
 
 ?>
