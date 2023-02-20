@@ -16,6 +16,7 @@ Example how a post could look
         Price: 12000kr 
     </div>
 </div> 
+<?php include '../functions/getRatingData.php'?>
 <body onload="getRating('../functions./getRatingData.php')">
     <div class="container">
         <h2>Rating System</h2>
