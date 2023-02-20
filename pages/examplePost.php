@@ -1,3 +1,8 @@
+<?php 
+include '../functions/getRatingData.php';
+include '../functions/config.php';
+?>
+
 <link rel="stylesheet" type="text/css" href="../CSS/examplePost.css">
 
 Example how a post could look 
@@ -16,7 +21,7 @@ Example how a post could look
         Price: 12000kr 
     </div>
 </div> 
-<?php include '../functions/getRatingData.php'?>
+
 <body onload="getRating('../functions./getRatingData.php')">
     <div class="container">
         <h2>Rating System</h2>
