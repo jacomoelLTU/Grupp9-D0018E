@@ -65,6 +65,6 @@ error_reporting(E_ALL);
   //Här tror jag det blir problem för att det get forignkey error när man går för snabbt?
     mysqli_query($conn, "DELETE FROM product WHERE product_id='$productId'");
     mysqli_query($conn, "DELETE FROM post WHERE post_id='$postId'");
-    
+    //Här
   }
 ?>
