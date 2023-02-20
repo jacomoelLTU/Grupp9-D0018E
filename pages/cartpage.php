@@ -4,7 +4,7 @@ include "../functions/config.php";
 
 ?>
 
-<link rel="stylesheet" type="text/css" href="../CSS/cartpage.css">
+<link rel="stylesheet" type="text/css" href="../CSS/cartPage.css">
 <div id = "cartHeader">
    <h1 id = "cartWelcome"> Welcome to your shoppingcart!</h1> 
     <p id = "cartBackToHome">Click the link to got to home page, <a href="../index.php">To home</a></p>

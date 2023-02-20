@@ -29,6 +29,7 @@
   if(array_key_exists('rollback', $_POST))  {mysqli_rollback($conn);}
   if(array_key_exists('insertItem', $_POST)){insertItem($conn);} 
   if(array_key_exists('commit', $_POST))    {mysqli_commit($conn);}
+ 
   function delItems($conn) {
     mysqli_query($conn, "DELETE FROM test ORDER BY test_id DESC LIMIT 1;");
     return;

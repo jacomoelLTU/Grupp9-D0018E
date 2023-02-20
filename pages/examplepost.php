@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="../CSS/examplepost.css">
+<link rel="stylesheet" type="text/css" href="../CSS/examplePost.css">
 
 Example how a post could look 
 <div id="preview">
