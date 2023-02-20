@@ -27,10 +27,12 @@ require 'config.php';
     $sql_post = "INSERT INTO post (post_userid, post_title, post_description, post_img, post_type) VALUES ('$uid', '$post_title', '$post_description', '$post_img', '$post_type')";
     //usleep(0,3);
     //insert into mysql
+
+    mysqli_query($conn, "LOCK TABLES product WRITE, post WRITE");
     $rs_post = mysqli_query($conn, $sql_post);
 
     //lägger till insert till product table med det nyss tillagda POST ID vi har
-    mysqli_query($conn, "LOCK TABLES product WRITE, post WRITE");
+   // mysqli_query($conn, "LOCK TABLES product WRITE, post WRITE");
     $query_lastPostid = mysqli_query($conn,"SELECT MAX(post_id) AS maximum FROM post");  //satement gets the just added postID
     $maxID = $query_lastPostid->fetch_array()[0] ?? '';
     $sql_queryProduct = "INSERT into product (product_postid, product_price, product_quantity, product_userid) VALUES ($maxID, $product_price, $product_quantity, $uid)";
