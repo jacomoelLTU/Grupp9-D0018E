@@ -5,6 +5,8 @@
 <?php
 include 'config.php';
 
+echo "Hello world!<br>";
+
 session_start();
 $userId = $_SESSION['userId'];
 $productId = $_GET['productId']; //this might be wrong way to get this, temp "solution" to move on
