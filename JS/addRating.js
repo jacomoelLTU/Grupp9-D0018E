@@ -1,4 +1,4 @@
-function addRating(post_id, ratingValue) {
+function addRating(productId, ratingValue) {
     var xhttp = new XMLHttpRequest();
 
     xhttp.onreadystatechange = function() {
