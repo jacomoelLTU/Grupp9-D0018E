@@ -1,6 +1,6 @@
-<script>
+<!-- <script>
     <?php require_once("../JS/ratingfunctions.js");?>
-</script>
+</script> -->
 
 <?php
 include 'config.php';
