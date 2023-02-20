@@ -30,8 +30,7 @@ require 'config.php';
     $rs_post = mysqli_query($conn, $sql_post);
 
     //lägger till insert till product table med det nyss tillagda POST ID vi har
-    //mysqli_query($conn, "LOCK TABLES post WRITE");
-    //mysqli_query($conn, "LOCK TABLES product WRITE");
+    mysqli_query($conn, "LOCK TABLES product WRITE, post READ");
     $query_lastPostid = mysqli_query($conn,"SELECT MAX(post_id) AS maximum FROM post");  //satement gets the just added postID
     $maxID = $query_lastPostid->fetch_array()[0] ?? '';
     $sql_queryProduct = "INSERT into product (product_postid, product_price, product_quantity, product_userid) VALUES ($maxID, $product_price, $product_quantity, $uid)";
