@@ -12,15 +12,16 @@ $productId = $_GET['productId']; //this might be wrong way to get this, temp "so
 $query = "SELECT * FROM product ORDER BY product_id DESC";
 $result = mysqli_query($conn, $query);
 
-$outputString = '';
+$outputString = 'outputstring:';
 
-foreach ($result as $row) {
+//foreach ($result as $row) {
     $userRating = "SELECT rating FROM rating WHERE user_id='19'";
     $ratingQuery = mysqli_query($conn, $userRating);
 
     // $totalRating = totalRating($row['id'], $conn);
     //hardcode to test
     $averageRating = "SELECT product_rating FROM product WHERE product_id='9'";
+    $avgRatingQuery = mysqli_query($conn, $averageRating);
     $totalReviews = "";
 
     $outputString .= '
@@ -47,7 +48,7 @@ foreach ($result as $row) {
         some text
         </div>
         ';
-}
+//}
 
 echo $outputString;
 
