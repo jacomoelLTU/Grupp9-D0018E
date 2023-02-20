@@ -19,7 +19,7 @@
                         <!-- Added php so that it can change the url to current cartURL session -->
                         <?php
                             session_start();
-                            echo '<a id = "cartIconLink" href = "pages/cartpage.php'.$_SESSION["cartURL"].'"><img src = "pictures/cartIcon.png" width="40" height="40"/></a>';
+                            echo '<a id = "cartIconLink" href = "pages/cartPage.php'.$_SESSION["cartURL"].'"><img src = "pictures/cartIcon.png" width="40" height="40"/></a>';
                         ?>
                         <?php echo 'cart items var'?>       
                     </div> 
@@ -32,8 +32,8 @@
                 <div id="form-main-content">
                     <p>
                     Click here to <a href="../pages/postForm.php">Make a post</a>!
-                    Click here to <a href="../pages/printimage.php">view image</a>!
-                    Click here for <a href="../pages/examplepost.php">post example</a>!
+                    Click here to <a href="../pages/printImage.php">view image</a>!
+                    Click here for <a href="../pages/examplePost.php">post example</a>!
                     </p>
 
                 </div>

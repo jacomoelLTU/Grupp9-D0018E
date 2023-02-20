@@ -1,6 +1,6 @@
 <?php
 ?>
-<link rel="stylesheet" type="text/css" href="../CSS/showpost.css">
+<link rel="stylesheet" type="text/css" href="../CSS/showPost.css">
 <a href="../index.php">To home</a>
 <center>
 <div id="postContainer">
@@ -33,7 +33,7 @@ error_reporting(E_ALL);
 
   $query = mysqli_query($conn, "SELECT * FROM product WHERE product_postid='$postId'");
   if($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
-    $url="pages/showpost.php?";
+    $url="pages/showPost.php?";
     $object="productId=".$row['product_id']."&productPrice=".$row['product_price'].""; 
     $productId = $row['product_id'];
   }
@@ -51,7 +51,7 @@ error_reporting(E_ALL);
   <?php
 
     //Temporär gå till cart länk
-  echo"Click to go to cart: <a href ='cartpage.php'>To Cart</a><br>";
+  echo"Click to go to cart: <a href ='cartPage.php'>To Cart</a><br>";
   
 
 //--------------- functions ------------
