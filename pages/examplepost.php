@@ -15,14 +15,13 @@ Example how a post could look
         Quantity: 1<br>
         Price: 12000kr 
     </div>
-
-    <body onload="getRating('../functions./getRating.php')">
-        <div class="container">
-            <h2>Rating System</h2>
-        </div>
-        <?php include '../functions/getRating.php';?>
-    </body>
 </div> 
+<body onload="getRating('../functions./getRatingData.php')">
+    <div class="container">
+        <h2>Rating System</h2>
+        <span id="post_list"></span>
+    </div>
+</body>
 
 <!-- Har detta script här medans jag testar -->
 <script>
