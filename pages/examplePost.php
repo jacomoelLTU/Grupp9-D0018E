@@ -1,5 +1,3 @@
-<?php include '../functions/getRatingData.php';?>
-
 <link rel="stylesheet" type="text/css" href="../CSS/examplePost.css">
 
 Example how a post could look 
@@ -19,7 +17,7 @@ Example how a post could look
     </div>
 </div> 
 
-<body onload="getRating('../functions./getRatingData.php')">
+<body onload="getRating('../functions/getRatingData.php')">
     <div class="container">
         <h2>Rating System</h2>
         <span id="post_list"></span>
