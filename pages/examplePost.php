@@ -1,7 +1,4 @@
-<?php 
-include '../functions/getRatingData.php';
-include '../functions/config.php';
-?>
+
 
 <link rel="stylesheet" type="text/css" href="../CSS/examplePost.css">
 
