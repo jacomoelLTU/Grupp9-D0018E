@@ -2,6 +2,8 @@
     <?php require_once("../JS/ratingfunctions.js");?>
 </script> -->
 
+<?php include '../functions/getRatingData.php';?>
+
 <?php
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
