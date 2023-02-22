@@ -60,7 +60,7 @@ error_reporting(E_ALL);
 
     }catch(Exception $e){
       mysqli_rollback($conn);
-      echo("Rolling back...");
+      echo'alert("Rolling back...");';
       die($e);
     }
   }
