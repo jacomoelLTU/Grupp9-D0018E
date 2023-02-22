@@ -41,7 +41,7 @@ if(array_key_exists('purchase', $_POST)) {commit_purchase($conn);}
     function cancel_purchase($conn){
         try{
             mysqli_rollback($conn);
-           echo'alert("Rolling back...");';
+           echo'<script>alert("Rolling back...");</script>';
         }catch(Exception $e){
         die($e);
         }
@@ -50,7 +50,7 @@ if(array_key_exists('purchase', $_POST)) {commit_purchase($conn);}
     function commit_purchase($conn){
         try{
             mysqli_commit($conn);
-            echo'alert("Commiting purchase...");';
+            echo'<script>alert("Commiting purchase...");</script>';
         }catch(Exception $e){
         die($e);
         }
