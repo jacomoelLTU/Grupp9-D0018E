@@ -18,10 +18,41 @@ include "../functions/config.php";
 
     <!-- this two buttons should display after rows with items in the cart -->
     <div id = "buttons">
-        <button type = "button" onclick="alert('Continue to card payment (outside of the course goals)')" id="checkoutButton" >PayNow</button>
+        <button name="cancel" type = "button" onclick="alert('Continue to card payment (outside of the course goals)')" id="checkoutButton" >PayNow</button>
 
         <!-- Cancle button, initiates rollback of tables -->
-        <button type="button" id="cancelButton" value="Cancel">Cancel purchase</button>
+        <button name="purchase" type="button" id="cancelButton" value="Cancel">Cancel purchase</button>
     </div>
 
 </body>
+
+<!-- \/ \/ \/ \/ \/  PHP  \/ \/ \/ \/ \/ -->
+
+<?php
+
+//------------ When buttons are clicked -------
+if(array_key_exists('cancel', $_POST))   {cancel_purchase($conn);}
+if(array_key_exists('purchase', $_POST)) {commit_purchase($conn);}
+  
+  //Temporär gå till cart länk
+    echo"Click to go to cart: <a href ='cartPage.php'>To Cart</a><br>";
+
+    //--------------- functions ------------
+    function cancel_purchase($conn){
+        try{
+            mysqli_rollback($conn);
+           echo'alert("Rolling back...");';
+        }catch(Exception $e){
+        die($e);
+        }
+    }
+
+    function commit_purchase($conn){
+        try{
+            mysqli_commit($conn);
+            echo'alert("Commiting purchase...");';
+        }catch(Exception $e){
+        die($e);
+        }
+    }
+?>

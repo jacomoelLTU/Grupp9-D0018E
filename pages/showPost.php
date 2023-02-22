@@ -22,15 +22,17 @@
 </div>
 </center>
 
+<form method="post">
+  <input type="submit" name="insertToBasket" class="button" value="Add Item"/>
+</form>
+
 <?php
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
   include '../functions/config.php';
+
   $postId = $_GET['postId'];
-
-  //mysqli_autocommit($conn, FALSE);
-
   $query = mysqli_query($conn, "SELECT * FROM product WHERE product_postid='$postId'");
   if($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
     $url="pages/showPost.php?";
@@ -38,23 +40,15 @@ error_reporting(E_ALL);
     $productId = $row['product_id'];
   }
 
-  // mysqli_commit($conn, 1 ,$object);
+//---------- Button Add Item -------------
   if(array_key_exists('insertToBasket', $_POST)) {
     if(isset($productId)){
       insertToBasket($conn, $productId, $postId);    
     }
   }
-
-  ?>
-  <form method="post">
-      <input type="submit" name="insertToBasket" class="button" value="Add Item"/>
-    </form>
-  <?php
-
-    //Temporär gå till cart länk
-  echo"Click to go to cart: <a href ='cartPage.php'>To Cart</a><br>";
   
-
+  //Temporär gå till cart länk
+    echo"Click to go to cart: <a href ='cartPage.php'>To Cart</a><br>";
 //--------------- functions ------------
   
   function insertToBasket($conn, $productId, $postId) {
