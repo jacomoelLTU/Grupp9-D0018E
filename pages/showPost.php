@@ -42,6 +42,8 @@ error_reporting(E_ALL);
 
 //---------- Button Add Item -------------
   if(array_key_exists('insertToBasket', $_POST)) {
+    //DUMMY VARIABLE DURING TESTS
+    $productId = 1;
     if(isset($productId)){
       insertToBasket($conn, $productId, $postId);    
     }
