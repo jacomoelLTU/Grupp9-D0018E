@@ -51,7 +51,7 @@ error_reporting(E_ALL);
     echo"Click to go to cart: <a href ='cartPage.php'>To Cart</a><br>";
 //--------------- functions ------------
   
-  function insertToBasket($conn, $productId, $postId) {
+  function insertToBasket($conn, $productId, $postId): void {
     session_start();
     try{
       mysqli_begin_transaction($conn);
