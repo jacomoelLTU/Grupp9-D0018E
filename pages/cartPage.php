@@ -33,7 +33,7 @@ include "../functions/config.php";
 <?php
 
 //------------ When buttons are clicked -------
-if(array_key_exists('cancel', $_POST))   {cancel_purchase($conn);}
+if(array_key_exists('cancel', $_POST))   { echo'<script>alert("Rolling back...");</script>';cancel_purchase($conn);}
 if(array_key_exists('purchase', $_POST)) {commit_purchase($conn);}
   
   //Temporär gå till cart länk
