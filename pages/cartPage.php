@@ -19,10 +19,10 @@ include "../functions/config.php";
     <!-- this two buttons should display after rows with items in the cart -->
     <div id = "buttons">
         <form method="post">
-            <input name="cancel" type = "button" onclick="alert('Continue to card payment (outside of the course goals)')" id="checkoutButton" >PayNow</input>
+            <input name="cancel" type = "submit" onclick="alert('Continue to card payment (outside of the course goals)')" id="checkoutButton" value="PayNow"></input>
 
             <!-- Cancle button, initiates rollback of tables -->
-            <input name="purchase" type="button" id="cancelButton" value="Cancel">Cancel purchase</input>
+            <input name="purchase" type="submit" id="cancelButton" value="Cancel">Cancel purchase</input>
         </form>
     </div>
 
