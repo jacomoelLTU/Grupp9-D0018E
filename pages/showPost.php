@@ -58,11 +58,11 @@ error_reporting(E_ALL);
     try{
       mysqli_begin_transaction($conn);
       mysqli_query($conn, "DELETE FROM test ORDER BY test_id DESC LIMIT 1;");
-      echo'alert("Transaction started...");';
+      echo'<script>alert("Transaction started...");</script>';
 
     }catch(Exception $e){
       mysqli_rollback($conn);
-      echo'alert("Rolling back...");';
+      echo'<script>alert("Rolling back...");</script>';
       die($e);
     }
   }
