@@ -19,10 +19,10 @@ include "../functions/config.php";
     <!-- this two buttons should display after rows with items in the cart -->
     <div id = "buttons">
         <form method="post">
-            <input name="cancel" type = "submit" onclick="alert('Continue to card payment (outside of the course goals)')" id="checkoutButton" value="PayNow"></input>
+            <input name="purchase" type = "submit" onclick="alert('Continue to card payment (outside of the course goals)')" id="checkoutButton" value="PayNow"></input>
 
             <!-- Cancle button, initiates rollback of tables -->
-            <input name="purchase" type="submit" id="cancelButton" value="Cancel">Cancel purchase</input>
+            <input name="cancel" type="submit" id="cancelButton" value="Cancel Puchase"></input>
         </form>
     </div>
 
@@ -33,7 +33,7 @@ include "../functions/config.php";
 <?php
 
 //------------ When buttons are clicked -------
-if(array_key_exists('cancel', $_POST))   { echo'<script>alert("Rolling back...");</script>';cancel_purchase($conn);}
+if(array_key_exists('cancel', $_POST))   {cancel_purchase($conn);}
 if(array_key_exists('purchase', $_POST)) {commit_purchase($conn);}
   
   //Temporär gå till cart länk
