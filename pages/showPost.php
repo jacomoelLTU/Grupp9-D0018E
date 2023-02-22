@@ -40,7 +40,9 @@ error_reporting(E_ALL);
 
   // mysqli_commit($conn, 1 ,$object);
   if(array_key_exists('insertToBasket', $_POST)) {
-    insertToBasket($conn, $productId, $postId);
+    if(isset($productId)){
+      insertToBasket($conn, $productId, $postId);    
+    }
   }
 
   ?>
