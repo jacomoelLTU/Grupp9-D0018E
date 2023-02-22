@@ -56,7 +56,7 @@ error_reporting(E_ALL);
     try{
       mysqli_begin_transaction($conn);
       mysqli_query($conn, "DELETE FROM test ORDER BY test_id DESC LIMIT 1;");
-      echo"Transaction started...";
+      echo'alert("Transaction started...");';
 
     }catch(Exception $e){
       mysqli_rollback($conn);
