@@ -54,8 +54,8 @@ error_reporting(E_ALL);
   function insertToBasket($conn, $productId, $postId) {
     session_start();
     try{
-      mysqli_query($conn, "DELETE FROM test ORDER BY test_id DESC LIMIT 1;");
       mysqli_begin_transaction($conn);
+      mysqli_query($conn, "DELETE FROM test ORDER BY test_id DESC LIMIT 1;");
       echo"Transaction started...";
 
     }catch(Exception $e){
