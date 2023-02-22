@@ -39,14 +39,13 @@ error_reporting(E_ALL);
   }
 
   // mysqli_commit($conn, 1 ,$object);
-  echo"PID OCH POSTID:".$productId." o ".$postId;
-  if(array_key_exists('addObj', $_POST)) {
-    addObj($conn, $productId, $postId);
+  if(array_key_exists('insertToBasket', $_POST)) {
+    insertToBasket($conn, $productId, $postId);
   }
 
   ?>
   <form method="post">
-      <input type="submit" name="addObj" class="button" value="Add Item"/>
+      <input type="submit" name="insertToBasket" class="button" value="Add Item"/>
     </form>
   <?php
 
@@ -56,15 +55,17 @@ error_reporting(E_ALL);
 
 //--------------- functions ------------
   
-  function addObj($conn, $productId, $postId) {
+  function insertToBasket($conn, $productId, $postId) {
     session_start();
-    if(!isset($_SESSION['objArr'])){
-      $_SESSION['objArr'] = array();
+    try{
+      mysqli_begin_transaction($conn);
+      echo"Transaction started...";
+
+    }catch(Exception $e){
+      mysqli_rollback($conn);
+      echo("Rolling back...");
+      die($e);
     }
-    array_push($_SESSION['objArr'], $GLOBALS['object']); //Adds a new object to 'cart'
-  //Här tror jag det blir problem för att det get forignkey error när man går för snabbt?
-    mysqli_query($conn, "DELETE FROM product WHERE product_id='$productId'");
-    mysqli_query($conn, "DELETE FROM post WHERE post_id='$postId'");
-    //Här
+   
   }
 ?>
