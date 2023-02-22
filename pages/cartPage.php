@@ -35,6 +35,7 @@ include "../functions/config.php";
 //------------ When buttons are clicked -------
 if(array_key_exists('cancel', $_POST))   {cancel_purchase($conn);}
 if(array_key_exists('purchase', $_POST)) {commit_purchase($conn);}
+echo'<script>alert("Rolling back...");</script>';
   
   //Temporär gå till cart länk
     echo"Click to go to cart: <a href ='cartPage.php'>To Cart</a><br>";
@@ -43,7 +44,7 @@ if(array_key_exists('purchase', $_POST)) {commit_purchase($conn);}
     function cancel_purchase($conn){
         try{
             mysqli_rollback($conn);
-           echo'<script>alert("Rolling back...");</script>';
+            echo'<script>alert("Rolling back...");</script>';
         }catch(Exception $e){
         die($e);
         }
