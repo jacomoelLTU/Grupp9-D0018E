@@ -30,6 +30,8 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+
+  mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
   include '../functions/config.php';
 
   $postId = $_GET['postId'];
@@ -59,7 +61,7 @@ error_reporting(E_ALL);
       mysqli_query($conn, "INSERT INTO test(test_title) values('cake');");
       echo'<script>alert("Transaction started...");</script>';
 
-    }catch(Exception $e){
+    }catch(mysqli_sql_exception $e){
       mysqli_rollback($conn);
       echo'<script>alert("Rolling back...");</script>';
       throw $e;
