@@ -62,8 +62,9 @@ error_reporting(E_ALL);
         if(isset($_SESSION['userid'])){
           $usrid = $_SESSION['userid'];
         }
-        $usrid = 16;
-
+        else{
+          $usrid = 16;
+        }
         //Om inte en transaction existerar som är pågående... skapa en ny. State is set default as ongoing...       
         $query = mysqli_query($conn, "SELECT transaction_id, transaction_userid FROM `transaction` WHERE transaction_userid=$usrid AND NOT transaction_state='ongoing'");
         if((mysqli_num_rows($query) < 0)){
