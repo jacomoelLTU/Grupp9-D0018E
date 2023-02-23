@@ -75,7 +75,7 @@ error_reporting(E_ALL);
          
           $ongoing_transaction_id           = $row['transaction_id'];
           $_SESSION['ongoingtransactionid'] = $row['transaction_id'];
-          mysqli_query($conn, "INSERT INTO transactionitem(transaction_productid) values($productId) WHERE transactionitem_transactionid=$ongoing_transaction_id;");
+          mysqli_query($conn, "INSERT INTO transactionitem(transactionitem_transactionid, transactionitem_productid) VALUES($ongoing_transaction_id, $productId)");
           echo'<script>alert("Transaction started...");</script>';
         }
       mysqli_commit($conn);
