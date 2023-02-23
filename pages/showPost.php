@@ -55,7 +55,7 @@ error_reporting(E_ALL);
   
   function insertToBasket($conn, $productId, $postId): void {
     try{
-      mysqli_begin_transaction($conn, MYSQLI_TRANS_START_READ_ONLY);
+      mysqli_begin_transaction($conn);
       mysqli_query($conn, "INSERT INTO test(test_title) values('cake');");
       echo'<script>alert("Transaction started...");</script>';
 
