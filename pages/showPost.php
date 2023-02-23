@@ -72,6 +72,7 @@ error_reporting(E_ALL);
         else{
           $query = mysqli_query($conn, "SELECT transaction_id, transaction_userid FROM `transaction` WHERE transaction_userid=$usrid AND transaction_state='ongoing'");
           $row=mysqli_fetch_array($query, MYSQLI_ASSOC);
+         
           $ongoing_transaction_id           = $row['transaction_id'];
           $_SESSION['ongoingtransactionid'] = $row['transaction_id'];
           mysqli_query($conn, "INSERT INTO transactionitem(transaction_productid) values($productId) WHERE transactionitem_transactionid=$ongoing_transaction_id;");
