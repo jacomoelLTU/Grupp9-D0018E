@@ -59,8 +59,11 @@ error_reporting(E_ALL);
     try{
       mysqli_begin_transaction($conn);
         session_start();
-        $usrid = $_SESSION['userid'];
-        $transactionCheck=mysqli_query($conn, "SELECT * FROM 'transaction' WHERE transaction_id=$usrid AND NOT transaction_state='onggoing'"); 
+        if($_SESSION['userid']){
+          $usrid = $_SESSION['userid'];
+        }
+        $usrid = 16;
+        $transactionCheck=mysqli_query($conn, "SELECT * FROM 'transaction' WHERE transaction_id=$usrid AND NOT transaction_state='ongoing'"); 
         //Om inte en transaction existerar som är pågående... skapa en ny. 
         if(!$transactionCheck){
           //State is ongoing as default
