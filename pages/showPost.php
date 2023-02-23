@@ -54,9 +54,8 @@ error_reporting(E_ALL);
 //--------------- functions ------------
   
   function insertToBasket($conn, $productId, $postId): void {
-    session_start();
     try{
-      mysqli_begin_transaction($conn);
+      mysqli_begin_transaction($conn, MYSQLI_TRANS_START_READ_WRITE);
       mysqli_query($conn, "DELETE FROM test ORDER BY test_id DESC LIMIT 1;");
       echo'<script>alert("Transaction started...");</script>';
 
