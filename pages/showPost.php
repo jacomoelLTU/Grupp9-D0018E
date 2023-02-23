@@ -59,7 +59,7 @@ error_reporting(E_ALL);
     try{
       mysqli_begin_transaction($conn);
         session_start();
-        if($_SESSION['userid']){
+        if(isset($_SESSION['userid'])){
           $usrid = $_SESSION['userid'];
         }
         $usrid = 16;
