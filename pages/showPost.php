@@ -60,7 +60,7 @@ error_reporting(E_ALL);
       mysqli_begin_transaction($conn);
       mysqli_query($conn, "INSERT INTO test(test_title) values('cake');");
       echo'<script>alert("Transaction started...");</script>';
-
+      mysqli_commit($conn);
     }catch(mysqli_sql_exception $e){
       mysqli_rollback($conn);
       echo'<script>alert("Rolling back...");</script>';
