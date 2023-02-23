@@ -67,7 +67,7 @@ error_reporting(E_ALL);
         //Om inte en transaction existerar som är pågående... skapa en ny. State is set default as ongoing...       
         $query = mysqli_query($conn, "SELECT transaction_id, transaction_userid FROM `transaction` WHERE transaction_userid=$usrid AND NOT transaction_state='ongoing'");
         while($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
-          echo $row['transaction_id'];
+          echo "Transaction id is: ".$row['transaction_id'];
           if($row['transaction_userid']){
 
             mysqli_query($conn, "INSERT INTO `transaction`(transaction_userid) VALUES($usrid)"); 
