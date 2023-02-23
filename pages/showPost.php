@@ -71,7 +71,7 @@ error_reporting(E_ALL);
         }
         else{
           $result = mysqli_query($conn, "SELECT * FROM `transaction` WHERE transaction_id=$usrid");
-          mysqli_stmt_bind_result($conn, $ongoing_transaction_id);
+          mysqli_stmt_bind_result($conn, "i", $ongoing_transaction_id);
           mysqli_query($conn, "INSERT INTO transactionitem(transaction_productid) values($productId) WHERE transactionitem_transactionid=$ongoing_transaction_id;");
           echo'<script>alert("Transaction started...");</script>';
         }
