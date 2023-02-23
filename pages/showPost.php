@@ -55,12 +55,13 @@ error_reporting(E_ALL);
   
   function insertToBasket($conn, $productId, $postId): void {
     try{
-      mysqli_begin_transaction($conn, MYSQLI_TRANS_START_READ_WRITE);
+      mysqli_autocommit($conn, FALSE);
       mysqli_query($conn, "DELETE FROM test ORDER BY test_id DESC LIMIT 1;");
       echo'<script>alert("Transaction started...");</script>';
 
     }catch(Exception $e){
       mysqli_rollback($conn);
+      mysqli_autocommit($conn, TRUE);
       echo'<script>alert("Rolling back...");</script>';
       throw $e;
     }
