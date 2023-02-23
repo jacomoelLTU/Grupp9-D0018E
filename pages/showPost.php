@@ -58,10 +58,22 @@ error_reporting(E_ALL);
   function insertToBasket($conn, $productId, $postId): void {
     try{
       mysqli_begin_transaction($conn);
-      mysqli_query($conn, "INSERT INTO test(test_title) values('cake');");
-      echo'<script>alert("Transaction started...");</script>';
+        session_start();
+        $usrid = $_SESSION['userid'];
+        $transactionCheck=mysqli_query($conn, "SELECT * FROM 'transaction' WHERE transaction_id=$usrid AND NOT transaction_state='onggoing'"); 
+        //Om inte en transaction existerar som är pågående... skapa en ny. 
+        if(!$transactionCheck){
+          //State is ongoing as default
+          mysqli_query($conn, "INSERT INTO 'transaction'(transaction_userid) VALUES($usrid)"); 
+        }
+        else{
+          $result = mysqli_query($conn, "SELECT * FROM 'transaction' WHERE transaction_id=$usrid");
+          mysqli_stmt_bind_result($conn, $ongoing_transaction_id);
+          mysqli_query($conn, "INSERT INTO transactionitem(transaction_productid) values($productId) WHERE transactionitem_transactionid=$ongoing_transaction_id;");
+          echo'<script>alert("Transaction started...");</script>';
+        }
       mysqli_commit($conn);
-    }catch(mysqli_sql_exception $e){
+      }catch(mysqli_sql_exception $e){
       mysqli_rollback($conn);
       echo'<script>alert("Rolling back...");</script>';
       throw $e;
