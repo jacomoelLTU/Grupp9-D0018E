@@ -63,14 +63,14 @@ error_reporting(E_ALL);
           $usrid = $_SESSION['userid'];
         }
         $usrid = 16;
-        $transactionCheck=mysqli_query($conn, "SELECT * FROM [transaction] WHERE transaction_id=$usrid AND NOT transaction_state='ongoing'"); 
+        $transactionCheck=mysqli_query($conn, "SELECT * FROM `transaction` WHERE transaction_id=$usrid AND NOT transaction_state='ongoing'"); 
         //Om inte en transaction existerar som är pågående... skapa en ny. 
         if(!$transactionCheck){
           //State is ongoing as default
-          mysqli_query($conn, "INSERT INTO [transaction](transaction_userid) VALUES($usrid)"); 
+          mysqli_query($conn, "INSERT INTO `transaction`(transaction_userid) VALUES($usrid)"); 
         }
         else{
-          $result = mysqli_query($conn, "SELECT * FROM [transaction] WHERE transaction_id=$usrid");
+          $result = mysqli_query($conn, "SELECT * FROM `transaction` WHERE transaction_id=$usrid");
           mysqli_stmt_bind_result($conn, $ongoing_transaction_id);
           mysqli_query($conn, "INSERT INTO transactionitem(transaction_productid) values($productId) WHERE transactionitem_transactionid=$ongoing_transaction_id;");
           echo'<script>alert("Transaction started...");</script>';
