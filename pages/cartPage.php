@@ -42,19 +42,39 @@ if(array_key_exists('purchase', $_POST)) {commit_purchase($conn);}
     //--------------- functions ------------
     function cancel_purchase($conn): void{
         try{
-            mysqli_rollback($conn);
-            echo'<script>alert("Rolling back...");</script>';
+            if(isset($_SESSION['ongoingtransactionid'])){
+                //Places ongoing transaction as aborted and a user can start a new one...
+                mysqli_begin_transaction($conn);
+                mysqli_query($conn, "UPDATE `transaction` SET transaction_state='aborted'");
+                mysqli_commit($conn);
+            }
+            else{
+                echo"<div id='failedPurchase'>No active transaction...</div>";
+            }
         }catch(Exception $e){
-        die($e);
+            mysqli_rollbacK($conn);
+            echo'<script>alert("Rolling back...");</script>';
+            throw $e;
         }
     }
 
     function commit_purchase($conn): void{
         try{
-            mysqli_commit($conn);
-            echo'<script>alert("Commiting purchase...");</script>';
+            if(isset($_SESSION['ongoingtransactionid'])){
+                //Places ongoing transaction as aborted and a user can start a new one...
+                mysqli_begin_transaction($conn);
+                mysqli_query($conn, "UPDATE `transaction` SET transaction_state='successful'");
+                mysqli_commit($conn);
+
+                echo"<div id='failedPurchase'>Purchase successful! </div>";
+            }
+            else{
+                echo"<div id='failedPurchase'>Purchase failed...</div>";
+            }
         }catch(Exception $e){
-        die($e);
+            mysqli_rollbacK($conn);
+            echo'<script>alert("Rolling back...");</script>';
+            throw $e;
         }
     }
 ?>
