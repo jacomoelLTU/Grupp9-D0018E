@@ -57,46 +57,48 @@ error_reporting(E_ALL);
   
   function insertToBasket($conn, $productId): void {
     try{
-        session_start();
-        if(isset($_SESSION['userid'])){
-          $usrid = $_SESSION['userid'];
-        }
-        else{
-          $usrid = 16;
-        }
-        //Om inte en transaction existerar skapa en ny...   
+      session_start();
+      if(isset($_SESSION['userid'])){
+        $usrid = $_SESSION['userid'];
+      }
+      else{
+        $usrid = 16;
+      }
+      //Om inte en transaction existerar skapa en ny...   
+      $query = mysqli_query($conn, "SELECT transaction_id, transaction_userid FROM `transaction` WHERE transaction_userid='$usrid' AND transaction_state='ongoing'");
+      
+      switch(mysqli_num_rows($query)){
+      //Om det inte existerar en transaction... skapar en ny
+      case FALSE:
+        mysqli_begin_transaction($conn);
+        
+        mysqli_query($conn, "INSERT INTO `transaction`(transaction_userid) VALUES($usrid)"); 
+        mysqli_commit($conn);
+
+        mysqli_begin_transaction($conn);
         $query = mysqli_query($conn, "SELECT transaction_id, transaction_userid FROM `transaction` WHERE transaction_userid='$usrid' AND transaction_state='ongoing'");
-       
-       switch(mysqli_num_rows($query)){
-        //Om det inte existerar en transaction... skapar en ny
-        case FALSE:
-          mysqli_begin_transaction($conn);
-          
-          mysqli_query($conn, "INSERT INTO `transaction`(transaction_userid) VALUES($usrid)"); 
-          mysqli_commit($conn);
 
-          mysqli_begin_transaction($conn);
-          $row = mysqli_fetch_array($query, MYSQLI_ASSOC);
-          $ongoing_transaction_id           = $row['transaction_id'];
-          $_SESSION['ongoingtransactionid'] = $row['transaction_id'];
-          
-          mysqli_query($conn, "INSERT INTO transactionitem(transactionitem_transactionid, transactionitem_productid) VALUES($ongoing_transaction_id, $productId)");
-          echo'<script>alert("Transaction started...");</script>';
-          
-          mysqli_commit($conn);
-          break;
+        $row = mysqli_fetch_array($query, MYSQLI_ASSOC);
+        $ongoing_transaction_id           = $row['transaction_id'];
+        $_SESSION['ongoingtransactionid'] = $row['transaction_id'];
+        
+        mysqli_query($conn, "INSERT INTO transactionitem(transactionitem_transactionid, transactionitem_productid) VALUES($ongoing_transaction_id, $productId)");
+        echo'<script>alert("Transaction started...");</script>';
+        
+        mysqli_commit($conn);
+        break;
 
-        case TRUE:
-          mysqli_begin_transaction($conn);
-          //--- Queryn under måste finnas ifall det finns en ongoing transaction finns. Om det finns då hämtar vi dennes värden...
-          // ---
-          $row = mysqli_fetch_array($query, MYSQLI_ASSOC);
-          $ongoing_transaction_id           = $row['transaction_id'];
-          $_SESSION['ongoingtransactionid'] = $row['transaction_id'];
-          mysqli_query($conn, "INSERT INTO transactionitem(transactionitem_transactionid, transactionitem_productid) VALUES($ongoing_transaction_id, $productId)");
-          echo'<script>alert("Transaction started...");</script>';
+      case TRUE:
+        mysqli_begin_transaction($conn);
+        //--- Queryn under måste finnas ifall det finns en ongoing transaction finns. Om det finns då hämtar vi dennes värden...
+        // ---
+        $row = mysqli_fetch_array($query, MYSQLI_ASSOC);
+        $ongoing_transaction_id           = $row['transaction_id'];
+        $_SESSION['ongoingtransactionid'] = $row['transaction_id'];
+        mysqli_query($conn, "INSERT INTO transactionitem(transactionitem_transactionid, transactionitem_productid) VALUES($ongoing_transaction_id, $productId)");
+        echo'<script>alert("Transaction started...");</script>';
 
-          mysqli_commit($conn);
+        mysqli_commit($conn);
         break;
        }
       }catch(mysqli_sql_exception $e){
