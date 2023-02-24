@@ -10,7 +10,7 @@ while($row=mysqli_fetch_array($result, MYSQLI_ASSOC)){
 
     //echo $row['post_img'].$row['post_title'];
     $url = "$row[post_img]";
-    $image = file_get_contents("$url");
+    $image = base64_encode(file_get_contents("$url"));
     echo $row['post_title'];
     echo $image;
 
