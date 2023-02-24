@@ -1,0 +1,11 @@
+#printImage{
+    margin: 0;
+    padding: 0;
+}
+
+img {
+display: block;
+margin: 0 auto;
+max-height: 100%;
+max-width: 100%;
+}

@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="../CSS/printImage.css">
 <div id="printImage">
     <?php
     ini_set('display_errors', 1);
