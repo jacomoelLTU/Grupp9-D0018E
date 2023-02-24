@@ -73,7 +73,9 @@ error_reporting(E_ALL);
           mysqli_begin_transaction($conn);
           
           mysqli_query($conn, "INSERT INTO `transaction`(transaction_userid) VALUES($usrid)"); 
+          mysqli_commit($conn);
           
+          mysqli_begin_transaction($conn);
           $row = mysqli_fetch_array($query, MYSQLI_ASSOC);
           $ongoing_transaction_id           = $row['transaction_id'];
           $_SESSION['ongoingtransactionid'] = $row['transaction_id'];
