@@ -70,9 +70,9 @@ error_reporting(E_ALL);
         if((mysqli_num_rows($query) < 0)){
           mysqli_query($conn, "INSERT INTO `transaction`(transaction_userid) VALUES($usrid)"); 
         }
-        elseif((mysqli_num_rows($query) > 0) && $row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
+        elseif((mysqli_num_rows($query) > 0) && ((mysqli_fetch_array($query, MYSQLI_ASSOC))['transactionitem_transactionid']) != NULL){
           $query = mysqli_query($conn, "SELECT transaction_id, transaction_userid FROM `transaction` WHERE transaction_userid=$usrid AND transaction_state='ongoing'");
-         
+          $row = mysqli_fetch_array($query, MYSQLI_ASSOC);
           $ongoing_transaction_id           = $row['transaction_id'];
           $_SESSION['ongoingtransactionid'] = $row['transaction_id'];
           mysqli_query($conn, "INSERT INTO transactionitem(transactionitem_transactionid, transactionitem_productid) VALUES($ongoing_transaction_id, $productId)");
@@ -80,9 +80,9 @@ error_reporting(E_ALL);
         }
       mysqli_commit($conn);
       }catch(mysqli_sql_exception $e){
-      mysqli_rollback($conn);
-      echo'<script>alert("Rolling back...");</script>';
-      throw $e;
+        mysqli_rollback($conn);
+        echo'<script>alert("Rolling back...");</script>';
+        throw $e;
     }
   }
 ?>
