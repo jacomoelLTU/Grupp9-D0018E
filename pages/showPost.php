@@ -57,6 +57,7 @@ error_reporting(E_ALL);
   
   function insertToBasket($conn, $productId, $postId): void {
     try{
+        mysqli_begin_transaction($conn);
         session_start();
         if(isset($_SESSION['userid'])){
           $usrid = $_SESSION['userid'];
@@ -80,8 +81,10 @@ error_reporting(E_ALL);
           $row = mysqli_fetch_array($queryNoneExisting, MYSQLI_ASSOC);
           $ongoing_transaction_id           = $row['transaction_id'];
           $_SESSION['ongoingtransactionid'] = $row['transaction_id'];
+          
           mysqli_query($conn, "INSERT INTO transactionitem(transactionitem_transactionid, transactionitem_productid) VALUES($ongoing_transaction_id, $productId)");
           echo'<script>alert("Transaction started...");</script>';
+          
           mysqli_commit($conn);
         }
         //OM det finns en transaction som är ongoing... lägg till item till denna
