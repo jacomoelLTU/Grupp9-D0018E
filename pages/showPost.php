@@ -67,9 +67,9 @@ error_reporting(E_ALL);
         //Om inte en transaction existerar skapa en ny...   
         $query = mysqli_query($conn, "SELECT transaction_id, transaction_userid FROM `transaction` WHERE transaction_userid=$usrid AND transaction_state='ongoing'");
        
-       switch(true){
+       switch(mysqli_num_rows($query)){
         //Om det inte existerar en transaction... skapar en ny
-        case mysqli_num_rows($query):
+        case FALSE:
           mysqli_begin_transaction($conn);
           
           mysqli_query($conn, "INSERT INTO `transaction`(transaction_userid) VALUES($usrid)"); 
@@ -84,7 +84,7 @@ error_reporting(E_ALL);
           mysqli_commit($conn);
           break;
 
-        case !(mysqli_num_rows($query)):
+        case TRUE:
           mysqli_begin_transaction($conn);
           //--- Queryn under måste finnas ifall det finns en ongoing transaction finns. Om det finns då hämtar vi dennes värden...
           // ---
