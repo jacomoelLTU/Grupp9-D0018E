@@ -81,7 +81,7 @@ error_reporting(E_ALL);
         $row = mysqli_fetch_array($query, MYSQLI_ASSOC);
         $ongoing_transaction_id           = $row['transaction_id'];
         $_SESSION['ongoingtransactionid'] = $row['transaction_id'];
-        echo'<script>alert("'.$ongoing_transaction_id.'");</script>';
+        echo'<script>alert("'.$ongoing_transaction_id.' PRODUCTID ='.$productId.'");</script>';
         
         mysqli_query($conn, "INSERT INTO transactionitem(transactionitem_transactionid, transactionitem_productid) VALUES($ongoing_transaction_id, $productId)");
         echo'<script>alert("Transaction started...");</script>';
