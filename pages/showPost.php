@@ -27,9 +27,9 @@
 </form>
 
 <?php
-// ini_set('display_errors', 1);
-// ini_set('display_startup_errors', 1);
-// error_reporting(E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
   mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
   include '../functions/config.php';
@@ -60,7 +60,7 @@
 
       //Checks if there is a session active, if not set $usrid to null...
       $usrid = $_SESSION['userid'] ?? NULL;
-      if($usrid == NULL){throw new Exception('You need to be logged in...');}
+      if($usrid == NULL){echo "You need to be logged in"; throw new Exception('User needs to be logged in to add item...');}
 
       $query = mysqli_query($conn, "SELECT transaction_id, transaction_userid FROM `transaction` WHERE transaction_userid='$usrid' AND transaction_state='ongoing'");      
       switch(mysqli_num_rows($query)){
@@ -84,9 +84,9 @@
         $row = mysqli_fetch_array($query, MYSQLI_ASSOC);
         $ongoing_transaction_id           = $row['transaction_id'];
         $_SESSION['ongoingtransactionid'] = $row['transaction_id'];
+      
         mysqli_query($conn, "INSERT INTO transactionitem(transactionitem_transactionid, transactionitem_productid) VALUES($ongoing_transaction_id, $productId)");
         echo'<script>alert("Transaction started...");</script>';
-
         mysqli_commit($conn);
         break;
        }
