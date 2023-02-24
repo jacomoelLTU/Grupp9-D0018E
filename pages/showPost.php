@@ -57,7 +57,6 @@ error_reporting(E_ALL);
   
   function insertToBasket($conn, $productId, $postId): void {
     try{
-        mysqli_begin_transaction($conn);
         session_start();
         if(isset($_SESSION['userid'])){
           $usrid = $_SESSION['userid'];
@@ -71,14 +70,15 @@ error_reporting(E_ALL);
        
        
         if(!(mysqli_num_rows($queryNoneExisting))){
+          mysqli_begin_transaction($conn);
+
           //Det fungerar och den lägger till transaction nu om ingen finns!
           mysqli_query($conn, "INSERT INTO `transaction`(transaction_userid) VALUES($usrid)"); 
           mysqli_commit($conn);
 
           mysqli_begin_transaction($conn);
         
-          $queryNoneExisting = mysqli_query($conn, "SELECT transaction_id, transaction_userid FROM `transaction` WHERE transaction_userid=$usrid");
-          $row = mysqli_fetch_array($queryNoneExisting, MYSQLI_ASSOC);
+          $row = mysqli_fetch_array($queryExisting, MYSQLI_ASSOC);
           $ongoing_transaction_id           = $row['transaction_id'];
           $_SESSION['ongoingtransactionid'] = $row['transaction_id'];
           
