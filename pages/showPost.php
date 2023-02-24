@@ -65,7 +65,7 @@ error_reporting(E_ALL);
           $usrid = 16;
         }
         //Om inte en transaction existerar skapa en ny...   
-        $query = mysqli_query($conn, "SELECT transaction_id, transaction_userid FROM `transaction` WHERE transaction_userid=$usrid AND transaction_state='ongoing'");
+        $query = mysqli_query($conn, "SELECT transaction_id, transaction_userid FROM `transaction` WHERE transaction_userid='$usrid' AND transaction_state='ongoing'");
        
        switch(mysqli_num_rows($query)){
         //Om det inte existerar en transaction... skapar en ny
@@ -74,7 +74,7 @@ error_reporting(E_ALL);
           
           mysqli_query($conn, "INSERT INTO `transaction`(transaction_userid) VALUES($usrid)"); 
           mysqli_commit($conn);
-          
+
           mysqli_begin_transaction($conn);
           $row = mysqli_fetch_array($query, MYSQLI_ASSOC);
           $ongoing_transaction_id           = $row['transaction_id'];
