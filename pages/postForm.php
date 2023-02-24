@@ -1,6 +1,6 @@
 <?php 
 include '../functions/config.php';
-include '../functions/upload.php';
+// include '../functions/upload.php';
 ?>
 
 Click to go to <a href="../index.php">homepage</a>! 
