@@ -61,7 +61,7 @@
 
       //Checks if there is a session active, if not set $usrid to null...
       $usrid = $_SESSION['userid'] ?? NULL;
-      if($usrid == NULL){echo "You need to be logged in"; throw new Exception('User needs to be logged in to add item...');}
+      if($usrid == NULL){echo "You need to be logged in to add items..."; throw new Exception('User needs to be logged in to add item...');}
 
       $query = mysqli_query($conn, "SELECT transaction_id, transaction_userid FROM `transaction` WHERE transaction_userid='$usrid' AND transaction_state='ongoing'");      
       switch(mysqli_num_rows($query)){
