@@ -5,19 +5,17 @@ error_reporting(E_ALL);
 include 'config.php';
 $query = "SELECT post_title, post_img FROM post ORDER BY post_id DESC";
 $result = mysqli_query($conn, $query);
-?>
 
-<?php
-    while($record = mysqli_fetch_assoc($result))
-    {
+while($record = mysqli_fetch_assoc($result))
+{
 
-    $imageURL = $record["post_img"];
-    $image = file_get_contents($imageURL);
-    echo $image;
+$imageURL = $record["post_img"];
+$image = file_get_contents($imageURL);
+echo $image;
 
-    echo "this is typing";
-    echo "<h2>".$record['post_title']."</h1>";
-    echo "<img src=".$record['post_img']."</img>";
-    } 
+// echo "this is typing";
+// echo "<h2>".$record['post_title']."</h1>";
+// echo "<img src=".$record['post_img']."</img>";
+} 
 ?>
 
