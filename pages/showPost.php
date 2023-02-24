@@ -84,7 +84,7 @@ error_reporting(E_ALL);
           mysqli_commit($conn);
           break;
 
-        default:
+        case !(mysqli_num_rows($query)):
           mysqli_begin_transaction($conn);
           //--- Queryn under måste finnas ifall det finns en ongoing transaction finns. Om det finns då hämtar vi dennes värden...
           // ---
