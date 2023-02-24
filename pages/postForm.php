@@ -16,7 +16,7 @@ Click to go to <a href="../index.php">homepage</a>!
             <p id="description"> Description <br><textarea rows = "5" cols = "40" name = "post_description" placeholder="Enter description here..." required></textarea></p>
             <p id="price"> Quantity <input type="text" name="product_quantity" placeholder="Enter quantity" required></p> 
             <p id="price"> Price <input type="text" name="product_price" placeholder="Enter price" required></p> 
-            <p id="price"> Paste URL to image to upload <input type="text" name ="post_img" placeholder="Enter URL"></p>
+            <p id="price"> Paste URL to image <input type="text" name ="post_img" placeholder="Enter URL"></p>
             <input type="submit" class = "post_button" name = "upload" value="Upload Post"/><br> 
            
             <select name="post_type" id="post_type">
