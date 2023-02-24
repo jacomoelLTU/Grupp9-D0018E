@@ -3,7 +3,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 include '../functions/config.php';
-$query = "SELECT post_title, post_img FROM post ORDER BY post_id DESC";
+$query = "SELECT post_title, post_img FROM post WHERE ";
 $result = mysqli_query($conn, $query);
 
 while($row=mysqli_fetch_array($result, MYSQLI_ASSOC)){
@@ -12,6 +12,7 @@ while($row=mysqli_fetch_array($result, MYSQLI_ASSOC)){
     $url = "$row[post_img]";
     $image = base64_encode(file_get_contents("$url"));
     echo $row['post_title'];
+    echo '<img src="data:image/jpeg;base64,'.$image.'">';
     echo $image;
 
 }
