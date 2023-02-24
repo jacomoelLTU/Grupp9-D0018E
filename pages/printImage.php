@@ -11,7 +11,7 @@
     while($row=mysqli_fetch_array($result, MYSQLI_ASSOC)){
         
         //if post_img has value
-        if (empty($row['post_img'])) {
+        if (!empty($row['post_img'])) {
 
             //get url from post_img
             $url = "$row[post_img]";
