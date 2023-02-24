@@ -8,13 +8,14 @@ $result = mysqli_query($conn, $query);
 
 while($row=mysqli_fetch_array($result, MYSQLI_ASSOC)){
 
-    //echo $row['post_img'].$row['post_title'];
+    //get url from post_img
     $url = "$row[post_img]";
-    $image = base64_encode(file_get_contents("$url"));
+
+    //get content from the url and encode so we can see the image
+    $image = base64_encode(file_get_contents($url));
+
+    //print title and image
     echo $row['post_title'];
     echo '<img src="data:image/jpeg;base64,'.$image.'">';
 }
-
 ?>
-Testing
-<img src="$result['post_img']">
