@@ -65,21 +65,33 @@ error_reporting(E_ALL);
         else{
           $usrid = 16;
         }
-        //Om inte en transaction existerar som är pågående... skapa en ny. State is set default as ongoing...       
-        $query = mysqli_query($conn, "SELECT transaction_id, transaction_userid FROM `transaction` WHERE transaction_userid=$usrid AND NOT transaction_state='ongoing'");
-        if(!(mysqli_num_rows($query))){
+        //Om inte en transaction existerar skapa en ny...   
+        $queryNoneExisting = mysqli_query($conn, "SELECT transaction_id, transaction_userid FROM `transaction` WHERE transaction_userid=$usrid");
+        $queryExisting = mysqli_query($conn, "SELECT transaction_id, transaction_userid FROM `transaction` WHERE transaction_userid=$usrid AND transaction_state='ongoing'");
+       
+       
+        if(!(mysqli_num_rows($queryNoneExisting))){
           //Det fungerar och den lägger till transaction nu om ingen finns!
           mysqli_query($conn, "INSERT INTO `transaction`(transaction_userid) VALUES($usrid)"); 
+         
+          $row = mysqli_fetch_array($queryNoneExisting, MYSQLI_ASSOC);
+          $ongoing_transaction_id           = $row['transaction_id'];
+          $_SESSION['ongoingtransactionid'] = $row['transaction_id'];
+          mysqli_query($conn, "INSERT INTO transactionitem(transactionitem_transactionid, transactionitem_productid) VALUES($ongoing_transaction_id, $productId)");
+          echo'<script>alert("Transaction started...");</script>';
         }
-        //--- Queryn under måste finnas ifall det finns en ongoing transaction finns. Om det finns då hämtar vi dennes värden...
+        //OM det finns en transaction som är ongoing... lägg till item till denna
         $query = mysqli_query($conn, "SELECT transaction_id, transaction_userid FROM `transaction` WHERE transaction_userid=$usrid AND transaction_state='ongoing'");
-        // ---
-        $row = mysqli_fetch_array($query, MYSQLI_ASSOC);
-        $ongoing_transaction_id           = $row['transaction_id'];
-        $_SESSION['ongoingtransactionid'] = $row['transaction_id'];
-        mysqli_query($conn, "INSERT INTO transactionitem(transactionitem_transactionid, transactionitem_productid) VALUES($ongoing_transaction_id, $productId)");
-        echo'<script>alert("Transaction started...");</script>';
-       
+
+        if(mysqli_num_rows($queryExisting)){
+          //--- Queryn under måste finnas ifall det finns en ongoing transaction finns. Om det finns då hämtar vi dennes värden...
+          // ---
+          $row = mysqli_fetch_array($queryExisting, MYSQLI_ASSOC);
+          $ongoing_transaction_id           = $row['transaction_id'];
+          $_SESSION['ongoingtransactionid'] = $row['transaction_id'];
+          mysqli_query($conn, "INSERT INTO transactionitem(transactionitem_transactionid, transactionitem_productid) VALUES($ongoing_transaction_id, $productId)");
+          echo'<script>alert("Transaction started...");</script>';
+        }
         mysqli_commit($conn);
       }catch(mysqli_sql_exception $e){
         mysqli_rollback($conn);
