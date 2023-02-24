@@ -13,10 +13,8 @@ while($row=mysqli_fetch_array($result, MYSQLI_ASSOC)){
     $image = base64_encode(file_get_contents("$url"));
     echo $row['post_title'];
     echo '<img src="data:image/jpeg;base64,'.$image.'">';
-    echo $image;
-
 }
 
 ?>
-
+Testing
 <img src="$result['post_img']">
