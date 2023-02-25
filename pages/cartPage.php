@@ -13,7 +13,7 @@ include "../functions/config.php";
 <body>
 
     <!-- ROOM FO THE LIST OF ALL PRODUCTS IN THE CART -->
-    <?php include 'showcart.php'; ?>
+    <?php include 'showart.php'; ?>
 
 
     <!-- this two buttons should display after rows with items in the cart -->
