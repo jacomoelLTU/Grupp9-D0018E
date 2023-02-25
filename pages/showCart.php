@@ -8,6 +8,7 @@ session_start();
 echo"Here is you items:";
 
 $ongoingtransactionid = $_SESSION['ongoingtransactionid'];
+echo $ongoingtransactionid;
 $query = mysqli_query($conn, "SELECT product_id, product_title, product_price FROM product WHERE product_id='$ongoingtransactionid'");
 
     while($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
