@@ -9,11 +9,11 @@ echo"Here is you items:";
 
 $ongoingtransactionid = $_SESSION['ongoingtransactionid'];
 echo $ongoingtransactionid;
-$query = mysqli_query($conn, "SELECT transactionitem_productid FROM transactionitem WHERE transactionitem_transactionid='$ongoingtransactionid'");
-while($row=mysqli_fetch_array($product, MYSQLI_ASSOC)){
+$item = mysqli_query($conn, "SELECT transactionitem_productid FROM transactionitem WHERE transactionitem_transactionid='$ongoingtransactionid'");
+while($row=mysqli_fetch_array($item, MYSQLI_ASSOC)){
     $currentProduct = $row['transactionitem_productid'];
-    $query = mysqli_query($conn, "SELECT product_id, product_title, product_price FROM product WHERE product_id='$currentProduct'");
-    while($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
+    $product = mysqli_query($conn, "SELECT product_id, product_title, product_price FROM product WHERE product_id='$currentProduct'");
+    while($row=mysqli_fetch_array($product, MYSQLI_ASSOC)){
         echo "<div id='cartItem'>".$row['product_title'].
                 "<form method='post'>
                     <input type='submit' name='delObj' class='button' value='Del Item'/>
