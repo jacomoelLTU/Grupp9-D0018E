@@ -25,7 +25,7 @@ function showItems($conn): void{
                     </div><br>";   
             }
             if(array_key_exists('delObj', $_POST)) {
-                delObj($conn);
+                delObj($conn, $_POST['product_id']);
             }  
         }
     }catch(mysqli_sql_exception $e){
@@ -33,10 +33,10 @@ function showItems($conn): void{
     }
 }
 
-function delObj($conn): void{
+function delObj($conn, $pid): void{
     mysqli_begin_transaction($conn);
     try{
-        $pid = $_POST['product_id'];
+      //  $pid = $_POST['product_id'];
         $query = mysqli_query($conn, "DELETE FROM transactionitem WHERE transactionitem_productid='$pid'");
         mysqli_query($conn, $query);
 
