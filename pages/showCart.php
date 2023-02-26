@@ -38,7 +38,7 @@ function delObj($conn, $pid): void{
     mysqli_begin_transaction($conn);
     try{
       //  $pid = $_POST['product_id'];
-      
+
         $query = mysqli_query($conn, "DELETE FROM transactionitem WHERE transactionitem_productid='$pid'");
         mysqli_query($conn, $query);
 
@@ -46,7 +46,7 @@ function delObj($conn, $pid): void{
         echo'<script>alert("Transaction started...");</script>';
         mysqli_commit($conn);
     }catch(mysqli_sql_exception $e){
-        echo'<script>alert("Rolling back...");</script>';
+        echo'<script>alert("id='.$pid.'Rolling back...");</script>';
         mysqli_rollback($conn);
         throw $e;
 
