@@ -25,7 +25,7 @@ function showItems($conn): void{
                     </div><br>";   
             
                 if(array_key_exists('delObj', $_POST)) {
-                    delObj($conn, $row['transactionitem_productid']);
+                    delObj($conn, $row['product_id']);
                 }     
             } 
         }
