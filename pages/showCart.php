@@ -37,12 +37,8 @@ function showItems($conn): void{
 function delObj($conn, $pid): void{
     mysqli_begin_transaction($conn);
     try{
-      //  $pid = $_POST['product_id'];
-
-        $query = mysqli_query($conn, "DELETE FROM transactionitem WHERE transactionitem_productid='$pid'");
-        mysqli_query($conn, $query);
-
-        
+        //This is what deletes the chosen deleted item...
+        mysqli_query($conn, "DELETE FROM transactionitem WHERE transactionitem_productid='$pid'");
         echo'<script>alert("Transaction started...");</script>';
         mysqli_commit($conn);
     }catch(mysqli_sql_exception $e){
