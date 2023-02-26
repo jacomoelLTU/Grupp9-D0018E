@@ -38,6 +38,7 @@ function delObj($conn, $pid): void{
     mysqli_begin_transaction($conn);
     try{
       //  $pid = $_POST['product_id'];
+      
         $query = mysqli_query($conn, "DELETE FROM transactionitem WHERE transactionitem_productid='$pid'");
         mysqli_query($conn, $query);
 
