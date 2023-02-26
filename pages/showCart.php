@@ -46,6 +46,6 @@ function delObj($conn, $pid): void{
         throw $e;
 
     }
-    header("Refresh: '0'");
+    echo"<script>location.reload();</script>";
 }
 ?>
