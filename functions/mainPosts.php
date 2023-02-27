@@ -17,8 +17,8 @@ function showFiltered($conn): void{
           error_reporting(E_ALL);
 
           include 'config.php';
-
-          $option = $_POST['filterOption'];
+          $option = $_POST['filterOption'] ?? NULL;
+          if($option == NULL){ $option="";} //We let option be nothing which redierect to default option.
           switch($option){
                case "pro":
                     $query = mysqli_query($conn, "SELECT post_id, post_title, post_description, post_type FROM post ORDER BY post_type DESC");
