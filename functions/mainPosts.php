@@ -8,7 +8,7 @@
 </div>
 
 <?php 
-
+showFiltered($conn);
 function showFiltered($conn): void{
      ini_set('display_errors', 1);
      ini_set('display_startup_errors', 1);
