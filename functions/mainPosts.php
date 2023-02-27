@@ -4,6 +4,7 @@
                 <option value="me">Most Expensive</option>
                 <option value="le">Least Expensive</option>
             </select>
+            <input type="submit" name="filterSubmit" value="Filter!">
      </form>
 </div>
 
