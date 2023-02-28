@@ -5,7 +5,10 @@
   <div id="grid-Title">Post Title:       <?php echo $_GET['postTitle'];       ?></div>
   <div id="grid-Desc">Post Description: <?php echo $_GET['postDescription']; ?></div>
   <div id="grid-Image">
-    <?php getImage($conn,  $postId);?>
+    <link rel="stylesheet" type="text/css" href="../CSS/printImage.css">
+    <div id="printImage">
+      <?php getImage($conn,  $postId);?>
+    </div>
     <!-- För att lägga till alla bilder som är uppladdade på posten kan vi ha som whileloopen i php som printar ut img strängarna med rätt värden. -->
     <!-- <div id="img-container">
       <img src="../pictures/profilePictureTemplate.jpg" class="img1">
