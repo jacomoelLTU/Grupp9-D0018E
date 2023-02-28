@@ -1,5 +1,3 @@
-<?php
-?>
 <link rel="stylesheet" type="text/css" href="../CSS/showPost.css">
 <a href="../index.php">To home</a>
 <center>
@@ -7,6 +5,7 @@
   <div id="grid-Title">Post Title:       <?php echo $_GET['postTitle'];       ?></div>
   <div id="grid-Desc">Post Description: <?php echo $_GET['postDescription']; ?></div>
   <div id="grid-Image">
+    <?php getImage($conn,  $postId);?>
     <!-- För att lägga till alla bilder som är uppladdade på posten kan vi ha som whileloopen i php som printar ut img strängarna med rätt värden. -->
     <!-- <div id="img-container">
       <img src="../pictures/profilePictureTemplate.jpg" class="img1">
@@ -95,6 +94,32 @@ function insertToBasket($conn, $productId): void {
       mysqli_rollback($conn);
       echo'<script>alert("Rolling back...");</script>';
       throw $e;
+  }
+}
+
+
+function getImage($conn, $postId): void{
+  ini_set('display_errors', 1);
+  ini_set('display_startup_errors', 1);
+  error_reporting(E_ALL);
+  $query = "SELECT post_title, post_img FROM post WHERE post_id=$postId ";
+  $result = mysqli_query($conn, $query);
+
+  while($row=mysqli_fetch_array($result, MYSQLI_ASSOC)){
+      
+      //if post_img has value
+      if (!empty($row['post_img'])) {
+
+          //get url from post_img
+          $url = "$row[post_img]";
+
+          //get content from the url and encode so we can see the image
+          $image = base64_encode(file_get_contents($url));
+
+          //print title and image
+          echo $row['post_title'];
+          echo '<img src="data:image/jpeg;base64,'.$image.'">';
+      }
   }
 }
 ?>
