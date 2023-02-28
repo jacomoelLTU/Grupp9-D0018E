@@ -2,12 +2,11 @@
     margin: 0;
     padding: 0;
     max-height: 60%;
-max-width: 60%;
+    max-width: 60%;
 }
 
 img {
 display: block;
 margin: 0 auto;
-max-height: 60%;
-max-width: 60%;
+
 }
