@@ -10,15 +10,12 @@
 /* https://www.youtube.com/watch?v=KpuB7yFRHmg TILL CARUSELLEN MED BILDER, det är transitionen */
 
 #img-container {
-    display:block;
-    position: relative; /*Position relative makes it so > img can inherit width/height of parent div*/
+   margin: auto; 
+
 }
 #img-container > img{
-    position: absolute;
-    display: block;
-    max-height:100px;
-    z-index: 2;
-    transition: .4s;
+    height:100%;
+    width:100%;
 }
 
 
