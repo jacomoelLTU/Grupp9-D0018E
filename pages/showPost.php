@@ -76,7 +76,7 @@ function getImage($conn, $postId): void{
   ini_set('display_startup_errors', 1);
   error_reporting(E_ALL);
   echo $postId;
-  $query = "SELECT post_title, product_price, post_img FROM post WHERE post_id=$postId ";
+  $query = "SELECT post_title, post_img FROM post WHERE post_id=$postId ";
   $result = mysqli_query($conn, $query);
 
   while($row=mysqli_fetch_array($result, MYSQLI_ASSOC)){
