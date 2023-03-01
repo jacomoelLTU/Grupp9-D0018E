@@ -9,21 +9,21 @@
 }
 #grid-Image img{
     height:100%;
-    width:100%;
+    width:90%;
     object-fit: cover;
+    object-position: bottom;
 }
 
 /* https://www.youtube.com/watch?v=KpuB7yFRHmg TILL CARUSELLEN MED BILDER, det är transitionen */
-
+/* 
 #img-container {
    margin: auto; 
 
 }
 #img-container > img{
     height:100%;
-    width:90%;
-    object-position: bottom;
-}
+    width:100%;
+} */
 
 
 #grid-B { grid-area: B; }
