@@ -17,8 +17,10 @@ function showFiltered($conn): void{
           error_reporting(E_ALL);
 
           include 'config.php';
+          
           $option = $_POST['filterOption'] ?? NULL;
           if($option == NULL){ $option="";} //We let option be nothing which redierect to default option.
+         
           switch($option){
                case "pro":
                     $query = mysqli_query($conn, "SELECT post_id, post_title, post_description, post_type FROM post ORDER BY post_type DESC");
@@ -32,7 +34,7 @@ function showFiltered($conn): void{
                     $query = mysqli_query($conn, "SELECT post_id, post_title, post_description, post_type FROM post");
                break;
           }
-          
+
           while($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
           if($row['post_type'] == "informative"){
           $type = "<p style='color:goldenrod;'>[".$row['post_type']."]</p>"; 

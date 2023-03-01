@@ -120,10 +120,11 @@ function getImage($conn, $postId): void{
   <div id="grid-D">D</div>
   <div id="grid-E">E</div>
   <div id="grid-F">F</div>
-  <div id="grid-G">G</div>
+  <div id="grid-G">
+    <form method="post">
+      <input type="submit" name="insertToBasket" class="button" value="Add Item"/>
+    </form>
+  </div>
 </div>
 </center>
 
-<form method="post">
-  <input type="submit" name="insertToBasket" class="button" value="Add Item"/>
-</form>
