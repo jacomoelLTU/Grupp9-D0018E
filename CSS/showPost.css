@@ -50,6 +50,6 @@
 }
 #postContainer > div{ /* > div menar på att allt under diven får ...*/
     text-align: center;
-    background-color: lightblue;
+    background-color: rgb(222, 247, 255);
     border: 1px solid black;
 }
