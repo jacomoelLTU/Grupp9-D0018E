@@ -10,6 +10,7 @@
 #grid-Image img{
     height:100%;
     width:100%;
+    object-fit: cover;
 }
 
 /* https://www.youtube.com/watch?v=KpuB7yFRHmg TILL CARUSELLEN MED BILDER, det är transitionen */
