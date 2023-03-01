@@ -75,7 +75,6 @@ function getImage($conn, $postId): void{
   ini_set('display_errors', 1);
   ini_set('display_startup_errors', 1);
   error_reporting(E_ALL);
-  echo $postId;
   $query = "SELECT post_title, post_img FROM post WHERE post_id=$postId ";
   $result = mysqli_query($conn, $query);
 
@@ -91,7 +90,6 @@ function getImage($conn, $postId): void{
           $image = base64_encode(file_get_contents($url));
 
           //print title and image
-          echo $row['post_title'];
           echo '<img src="data:image/jpeg;base64,'.$image.'">';
       }
   }
