@@ -75,11 +75,11 @@ function getImage($conn, $postId): void{
   ini_set('display_errors', 1);
   ini_set('display_startup_errors', 1);
   error_reporting(E_ALL);
-  $query = "SELECT post_title, post_img FROM post WHERE post_id=$postId ";
+  $query = "SELECT post_title, post_price, post_img FROM post WHERE post_id=$postId ";
   $result = mysqli_query($conn, $query);
 
   while($row=mysqli_fetch_array($result, MYSQLI_ASSOC)){
-      
+    $price = $_POST['post_price'];
       //if post_img has value
       if (!empty($row['post_img'])) {
 
@@ -110,11 +110,11 @@ function getImage($conn, $postId): void{
       <img src="../pictures/img2.png" class="img2">
     </div> -->
   </div>
-  <div id="grid-B"></div>
+  <div id="grid-B">B</div>
   <div id="grid-C">C</div>
   <div id="grid-D">D</div>
   <div id="grid-E">E</div>
-  <div id="grid-F">F</div>
+  <div id="grid-F"><?php echo $price; ?></div>
   <div id="grid-G">
     <form method="post">
       <input type="submit" name="insertToBasket" class="button buttonAdd" value="Add Item"/>
