@@ -38,6 +38,8 @@
     align-items:center; 
     font-weight:bold;
     font-size: 15px;
+    border-radius: 3px;
+    border:2px solid black;
 
 }
 #grid-G { grid-area: G; display:grid;}
