@@ -42,9 +42,8 @@
     font-size: 15px;
     border-radius: 3px;
     border:3px dotted black;
-    padding: 6px;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding: 16px 32px;
+
 }
 #grid-G { grid-area: G; display:grid;}
 
