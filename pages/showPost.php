@@ -79,7 +79,6 @@ function getImage($conn, $postId): void{
   $result = mysqli_query($conn, $query);
 
   while($row=mysqli_fetch_array($result, MYSQLI_ASSOC)){
-    $price = $_POST['post_price'];
       //if post_img has value
       if (!empty($row['post_img'])) {
 
@@ -94,6 +93,11 @@ function getImage($conn, $postId): void{
       }
   }
 }
+
+$query = "SELECT product_price FROM product WHERE product_postid=$postId ";
+$result = mysqli_query($conn, $query);
+$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+$price = $row['product_price'];
 ?>
 
 <link rel="stylesheet" type="text/css" href="../CSS/showPost.css">
