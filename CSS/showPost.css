@@ -33,6 +33,7 @@
 #grid-F { grid-area: F; }
 #grid-G { grid-area: G; }
 .buttonAdd{
+        background-color: rgb(222, 247, 255); 
         border: none;
         color: white;
         padding: 16px 32px;
