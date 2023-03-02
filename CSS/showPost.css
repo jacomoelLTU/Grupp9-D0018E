@@ -13,7 +13,7 @@
     object-fit: cover;
     object-position: bottom;
     border:2px solid black;
-    border-radius: 6px;
+    border-radius: 3px;
 }
 
 /* https://www.youtube.com/watch?v=KpuB7yFRHmg TILL CARUSELLEN MED BILDER, det är transitionen */
@@ -81,7 +81,5 @@
 
 #postContainer > div{ /* > div menar på att allt under diven får ...*/
     text-align: center;
-    background-color: rgb(222, 247, 255);
-    border: 1px solid black;
 
 }
