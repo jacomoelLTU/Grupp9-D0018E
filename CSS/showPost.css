@@ -43,6 +43,8 @@
     border-radius: 3px;
     border:2px solid black;
     padding: 6px;
+    padding-left: 4px;
+    padding-right: 4px;
 }
 #grid-G { grid-area: G; display:grid;}
 
