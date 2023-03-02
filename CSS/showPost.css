@@ -42,7 +42,7 @@
     font-size: 15px;
     border-radius: 3px;
     background-color: rgb(222, 247, 255);
-    border-right:2px dotted black;
+    border-right:2px solid black;
     padding: 16px 32px;
 
 }
