@@ -34,7 +34,7 @@
 #grid-G { grid-area: G; }
 .buttonAdd{
         background-color: rgb(222, 247, 255); 
-        border: none;
+        border: 1px solid lightgray;
         color: white;
         padding: 16px 32px;
         text-align: center;
