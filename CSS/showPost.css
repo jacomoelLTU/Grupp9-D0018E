@@ -32,7 +32,7 @@
 #grid-E { grid-area: E; }
 #grid-F { grid-area: F; }
 #grid-G { grid-area: G; }
-.grid-G button{
+.grid-G .button{
         background-color: #4CAF50; /* Green */
         border: none;
         color: white;
@@ -45,6 +45,7 @@
         transition-duration: 0.4s;
         cursor: pointer;
 
+        
 }
 .buttonAdd:hover {
     background-color: #4CAF50;
