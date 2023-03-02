@@ -41,7 +41,8 @@
     font-weight:bold;
     font-size: 15px;
     border-radius: 3px;
-    border:2px dotted black;
+    background-color: rgb(222, 247, 255);
+    border-right:2px dotted black;
     padding: 16px 32px;
 
 }
