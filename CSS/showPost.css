@@ -46,7 +46,7 @@
         cursor: pointer;
 
 }
-.grid-g buttonAdd:hover {
+.buttonAdd:hover {
     background-color: #4CAF50;
     color: white;
   }
