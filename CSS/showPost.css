@@ -31,7 +31,7 @@
 #grid-D { grid-area: D; }
 #grid-E { grid-area: E; }
 #grid-F { grid-area: F; }
-#grid-G { grid-area: G; }
+#grid-G { grid-area: G; display:grid; }
 .buttonAdd{
         background-color: rgb(222, 247, 255); 
         border: 1px solid black;
@@ -44,10 +44,9 @@
         transition-duration: 0.4s;
         cursor: pointer;
 
-        display:flex;
-        justify-content: center;
-        align-items: center;
-
+        /* justify-content: center;
+        align-items: center; */
+        margin:auto;
 }
 .buttonAdd:hover {
     background-color: #7eece1;
