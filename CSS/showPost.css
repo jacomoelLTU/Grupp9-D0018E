@@ -1,4 +1,4 @@
-#grid-Title       { grid-area: PT; font-size: 20px;}
+#grid-Title       { grid-area: PT; font-size: 25px; font-weight: bold; text-decoration: black underline;}
 #grid-Desc        { grid-area: PD; font-style: italic;}
 #grid-Image{ grid-area: PI; 
              display:flex; 
@@ -61,7 +61,7 @@
   }
 #postContainer{
     padding:6px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width:100vw;                                 /*vw = relative to 1% of thw width of viewport*/
     display:inline-grid;                         /*Inline grid gör att bordern wrappar runt contentet*/
     grid-template-columns: auto auto auto;
@@ -81,5 +81,7 @@
 
 #postContainer > div{ /* > div menar på att allt under diven får ...*/
     text-align: center;
+    /* background-color: rgb(222, 247, 255);
+    border: 1px solid black; */
 
 }
