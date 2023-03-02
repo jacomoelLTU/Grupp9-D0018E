@@ -32,7 +32,9 @@
 #grid-C { grid-area: C; }
 #grid-D { grid-area: D; }
 #grid-E { grid-area: E; }
-#grid-F { grid-area: F; }
+#grid-F { grid-area: F; display:flex; 
+                        justify-content:center; 
+                        align-items:center; }
 #grid-G { grid-area: G; display:grid;}
 
 #grid-G form{
