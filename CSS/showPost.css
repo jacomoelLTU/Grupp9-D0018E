@@ -36,11 +36,13 @@
     display:flex; 
     justify-content:center; 
     align-items:center; 
+}
+#price{
     font-weight:bold;
     font-size: 15px;
     border-radius: 3px;
     border:2px solid black;
-
+    padding: 6px;
 }
 #grid-G { grid-area: G; display:grid;}
 

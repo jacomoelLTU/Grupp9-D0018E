@@ -118,7 +118,11 @@ $price = $row['product_price'];
   <div id="grid-C">C</div>
   <div id="grid-D">D</div>
   <div id="grid-E">E</div>
-  <div id="grid-F"><?php echo $price."kr"; ?></div>
+  <div id="grid-F">
+    <div id="price">
+      <?php echo $price."kr"; ?>
+    </div>
+</div>
   <div id="grid-G">
     <form method="post">
       <input type="submit" name="insertToBasket" class="button buttonAdd" value="Add Item"/>
