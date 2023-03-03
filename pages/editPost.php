@@ -41,8 +41,8 @@ function submitEdit($conn, $newTitle, $newDesc, $newPrice, $postId):void{
     $query2=mysqli_query($conn, "UPDATE product SET product_price=$newPrice WHERE product_postid=$postId");
    $row =mysqli_fetch_array($query1, MYSQLI_ASSOC);
    $row3 =mysqli_fetch_array($query2, MYSQLI_ASSOC);
-    echo $newTitle, $newDesc, $newPrice;
-   echo $row['post_title'], $row['post_description'],$row3['product_price'];
+    echo $newTitle.$newDesc.$newPrice;
+   echo $row['post_title'].$row['post_description'].$row3['product_price'];
     mysqli_commit($conn);
     echo"<script>alert('Sker commit');</script>";
 
