@@ -3,7 +3,7 @@
 function productRating($userId, $productId, $conn)
 {
     $average = 0;
-    $avgQuery = "SELECT rating FROM rating WHERE rating_productid = '" . $productId . "'";
+    $avgQuery = "SELECT rating FROM rating WHERE rating_productid = '" . $productId . "' and user_id = '" . $userId . "'";
     $total_row = 0;
     
     if ($result = mysqli_query($conn, $avgQuery)) {
