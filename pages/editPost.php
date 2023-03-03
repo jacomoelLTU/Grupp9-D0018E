@@ -1,3 +1,4 @@
+<h href="../index.php">To home</a>
 <?php
 
 ini_set('display_errors', 1);
