@@ -17,10 +17,6 @@ Example how a post could look
     </div>
 </div> 
 
-<script type="text/javascript">
-    <?php include '../ratingFunctions.js'?> 
-</script>
-
 <body onload="getRating('../functions/getRatingData.php')">
     <div class="container">
         <h2>Rating System</h2>
@@ -29,7 +25,7 @@ Example how a post could look
 </body>
 
 <!-- Har detta script här medans jag testar -->
-<!-- <script type="text/javascript">
+<script type="text/javascript">
 
     function getRating(url) {
         var xhttp = new XMLHttpRequest();
@@ -105,4 +101,4 @@ Example how a post could look
 
 
 
- -->
+
