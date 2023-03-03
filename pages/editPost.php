@@ -66,7 +66,7 @@ if(autorization($conn)){
             <input type="text" name="updateTitle" value="newTitle" placeholder="newTitle"/>
             <input type="text" name="updateDescription" value="newDescription" placeholder="newDescription"/>
             <input type="text" name="updatePrice" value="newPrice" placeholder="newPrice"/>
-            <input type="hidden" name="postId" valute="'.$postId.'">
+            <input type="hidden" name="postId" value="'.$postId.'">
             <input type="submit" name="submitEdit" value="submitEdit"/>   
          </form>
          <br>Current Title: '.$row['post_title'].'<br>Current Description: '.$row['post_description'].'<br>Current Price: '.$rowPro['product_price'].'kr
