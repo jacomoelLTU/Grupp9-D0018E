@@ -17,7 +17,7 @@ Example how a post could look
     </div>
 </div> 
 <script type="text/javascript">
-    <?php require_once('../JS/ratingFunctions.js')?>
+    <?php include('../JS/ratingFunctions.js')?>
 </script>
 
 <body onload="getRating('../functions/getRatingData.php')">
