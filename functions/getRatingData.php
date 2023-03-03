@@ -42,6 +42,7 @@ foreach ($result as $row) {
     for ($count = 1; $count <= 5; $count ++) {
         $starRatingId = $productId . '_' . $count;
         
+        //kan vara här felet är, jämför med guiden, där använder dem ratingen current user har lagt istället för average på hela produkten
         if ($count <= $productRating) {
             
             $outputString .= '<li value="' . $count . '" product_id="' . $starRatingId . '" class="star selected">&#9733;</li>';
