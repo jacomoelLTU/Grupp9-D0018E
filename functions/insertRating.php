@@ -8,7 +8,7 @@ $userId = $_SESSION['userid'];
 if (isset($_POST["rating"])) {
     
     //$productId = $_POST["productId"];
-    $productId = '33';
+    $productId = '35';
     $rating = $_POST["rating"];
     
     $checkIfExistQuery = "SELECT * FROM rating WHERE user_id = '" . $userId . "' AND rating_productid = '" . $productId . "'";
