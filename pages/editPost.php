@@ -1,4 +1,6 @@
 <?php
+include '../functions/config.php';
+
 /*   ---------------  Functions  --------------- */
 function autorization($conn){
     session_start();
@@ -16,6 +18,18 @@ function autorization($conn){
     return $validated;
 }
 
+//---------- Button SubmitEdit -------------
+if(array_key_exists('submitEdit', $_POST)) {
+    if(isset($_GET['postId'])){
+        echo"<script>alert('klickade på submit knapp');</script>";
+        $uT=$_POST['updateTitle']; 
+        $uD=$_POST['updateDescription']; 
+        $uP=$_POST['updatePrice'];
+        $pI=$_POST['post_id'];
+      submitEdit($conn, $uT, $uD, $uP, $pI);    
+    }
+  }
+  
 function submitEdit($conn, $newTitle, $newDesc, $newPrice, $postId):void{
    try{
     mysqli_begin_transaction($conn);
@@ -24,7 +38,7 @@ function submitEdit($conn, $newTitle, $newDesc, $newPrice, $postId):void{
     mysqli_query($conn, "UPDATE product SET product_price=$newPrice WHERE product_postid=$postId");
    
     mysqli_commit($conn);
-    echo"<script>alert(SKer commit);</script>";
+    echo"<script>alert('Sker commit');</script>";
 
     }catch(mysqli_sql_exception $e){
     mysqli_rollback($conn);
@@ -33,14 +47,7 @@ function submitEdit($conn, $newTitle, $newDesc, $newPrice, $postId):void{
     }
 }
 
-//---------- Button SubmitEdit -------------
-if(array_key_exists('submitEdit', $_POST)) {
-    if(isset($_GET['postId'])){
-        echo"<script>alert(klickade på submit knapp);</script>";
-      submitEdit($conn, $_POST['updateTitle'], $_POST['updateDescription'], $_POST['updatePrice'], $_POST['post_id']);    
-    }
-  }
-  
+
 /*   --------------- ^^^^^ Functions ^^^^ --------------- */
 
 
@@ -48,7 +55,6 @@ if(array_key_exists('submitEdit', $_POST)) {
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-include '../functions/config.php';
 
 if(autorization($conn)){
     $usrid = $_SESSION['userid'];
