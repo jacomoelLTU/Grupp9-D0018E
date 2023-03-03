@@ -22,7 +22,7 @@ body{
 #postContainer{
     display: grid;
     gap: 1px;
-    grid-template-columns: repeat(3, (150+10)px);
+    grid-template-columns: repeat(3, 160px);
 }
 #postItem{
     background-color: rgb(222, 247, 255);
