@@ -26,8 +26,8 @@ foreach ($result as $row) {
     // $userRating = "SELECT rating FROM rating WHERE user_id='19'";
     // $ratingQuery = mysqli_query($conn, $userRating);
 
-    $userRating = userRating($userId, $row['id'], $conn);
-    $totalRating = totalRating($row['id'], $conn);
+    $userRating = userRating($userId, $productId, $conn);
+    $totalRating = totalRating($productId, $conn);
 
     // $totalRating = totalRating($row['id'], $conn);
     //hardcode to test

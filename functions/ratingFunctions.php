@@ -3,7 +3,7 @@
 function userRating($userId, $productId, $conn)
 {
     $average = 0;
-    $avgQuery = "SELECT rating FROM rating WHERE user_id = '" . $userId . "' and product_id = '" . $productId . "'";
+    $avgQuery = "SELECT rating FROM rating WHERE user_id = '" . $userId . "' and rating_productid = '" . $productId . "'";
     $total_row = 0;
     
     if ($result = mysqli_query($conn, $avgQuery)) {
@@ -21,7 +21,7 @@ function userRating($userId, $productId, $conn)
  // endFunction
 function totalRating($productId, $conn)
 {
-    $totalVotesQuery = "SELECT * FROM rating WHERE product_id = '" . $productId . "'";
+    $totalVotesQuery = "SELECT * FROM rating WHERE rating_productid = '" . $productId . "'";
     
     if ($result = mysqli_query($conn, $totalVotesQuery)) {
         // Return the number of rows in result set
