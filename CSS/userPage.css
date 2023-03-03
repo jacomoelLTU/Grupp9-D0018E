@@ -19,3 +19,17 @@ body{
     width:100px;
     height:100px;
 }
+#postContainer{
+    /* border: 1px solid black; */
+    width:100vw;                                 /*vw = relative to 1% of thw width of viewport*/
+    display:inline-grid;                         /*Inline grid gör att bordern wrappar runt contentet*/
+    grid-template-columns: auto auto auto auto;
+    column-gap: 4px;
+    row-gap   : 4px;
+
+    grid-template-columns: repeat(4, 150px);  /* Väljer hur många cols på griden*/
+    grid-template-rows:    repeat(auto, 150px);     /* VÄLJER HUR MÅNGA ROWS */
+}
+#postItem{
+    background-color: blue;
+}
