@@ -2,31 +2,36 @@
     include 'config.php';
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
-        
+        //stripslashes removes backslashes, some protection agains injection i guess
         $userName = $_POST['userName'];
-        $passWord = password_hash("$passWord", PASSWORD_BCRYPT, $options);
+        $passWord = $_POST['passWord'];
         $userEmailAdress = $_POST['userEmailAdress'];
         $userFirstName = $_POST['userFirstname'];
         $userSurName = $_POST['userSurname'];
+
+        // https://onlinephp.io/password-hash/examples , follow for modification documentation of $options
+        $options = ['cost' => 12,]; 
+
+        $password = password_hash("$passWord", PASSWORD_BCRYPT, $options);
 
         if(!(isset($userName) || isset($passWord) || isset($userEmailAdress) || isset($userFirstName) || isset($userSurName))){
                 echo 'To register you need to provide information for all the fields in the registrationform!';
         }
 
         
-        //theese foure lines retrives all userNames and userEmails from the DB, to be used for duplicate check later
-     /* $sql_userCheck = "SELECT user_name FROM user WHERE user_name = '$userName'";
-        $sql_emailCheck = "SELECT user_email FROM user WHERE user_email = '$userEmailAdress'";
-        $res_userCheck = mysqli_query($conn, $sql_userCheck);
-        $res_emailCheck = mysqli_query($conn, $sql_emailCheck);
-    */
-        //commented code above works fine but lack security, below its replaced with prepared statements
+            //theese foure lines retrives all userNames and userEmails from the DB, to be used for duplicate check later
+            /* $sql_userCheck = "SELECT user_name FROM user WHERE user_name = '$userName'";
+                $sql_emailCheck = "SELECT user_email FROM user WHERE user_email = '$userEmailAdress'";
+                $res_userCheck = mysqli_query($conn, $sql_userCheck);
+                $res_emailCheck = mysqli_query($conn, $sql_emailCheck);
+            */
+            //commented code above works fine but lack security, below its replaced with prepared statements
 
         //$conn->autocommit(FALSE);
         $stmt_Ucheck = $conn->prepare("SELECT user_name FROM user WHERE user_name = ?");
         $stmt_Echeck = $conn->prepare("SELECT user_email FROM user WHERE user_email = ?");
         $stmt_Ucheck->bind_param('s', $userName);
-        $stmt_Ucheck->bind_param('s', $userEmailAdress);
+        $stmt_Echeck->bind_param('s', $userEmailAdress);
         $stmt_Ucheck->execute();
         $stmt_Echeck->execute();
 
@@ -43,7 +48,7 @@
         else {
 
 
-            ///////////// this code works fine but is not secure  ///////////////////////
+            ///////////// this code works fine but its not secure  ///////////////////////
             // $userName = mysqli_real_escape_string($conn, $userName);
             // $passWord = mysqli_real_escape_string($conn, $passWord);
             // $userEmailAdress = mysqli_real_escape_string($conn, $userEmailAdress);

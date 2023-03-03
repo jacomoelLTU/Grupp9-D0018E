@@ -1,14 +1,15 @@
 <?php
 include 'config.php';
 include '../pages/loginCheck.php';
+include 'updateAvgProductRating.php';
 
 $userId = $_SESSION['userid'];
 //$productId = $_GET['productid'];
 
 if (isset($_POST["rating"])) {
-    
-    //$productId = $_POST["productId"];
     $productId = '33';
+    //updateAvgProductRating($productId);
+    //$productId = $_POST["productId"];
     $rating = $_POST["rating"];
     
     $checkIfExistQuery = "SELECT * FROM rating WHERE user_id = '" . $userId . "' AND rating_productid = '" . $productId . "'";

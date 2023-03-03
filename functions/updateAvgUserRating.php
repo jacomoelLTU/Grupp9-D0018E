@@ -5,7 +5,7 @@ include 'config.php';
 session_start();
 $userId = $_SESSION['userid'];
 $productId = $_GET['productid']; //this might be wrong way to get this, temp "solution" to move on
-$productId = '35';
+$productId = '33';
 
 //Behöver vi lägga till ett userid för product? 
 //Så vi kopplar varje product till varje user och inte bara kopplar varje product till en post.
