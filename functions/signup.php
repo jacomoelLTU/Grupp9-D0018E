@@ -19,6 +19,7 @@
         $res_emailCheck = mysqli_query($conn, $sql_emailCheck);
     */
         //commented code above works fine but lack security, below its replaced with prepared statements
+
         //$conn->autocommit(FALSE);
         $stmt_Ucheck = $conn->prepare("SELECT user_name FROM user WHERE user_name = ?");
         $stmt_Echeck = $conn->prepare("SELECT user_email FROM user WHERE user_email = ?");
@@ -52,13 +53,13 @@
             // mysqli_query($conn, $sql_insertUser);
             /////////////////                                      //////////////////////
 
-            $conn->autocommit(FALSE);
+            //$conn->autocommit(FALSE);
             $stmt_UserCredinsert = "INSERT into user (user_name, user_pwd, user_firstname, user_surname, user_email)
                                     VALUES (?, ?, ?, ?, ?)";
             $stmt_UserCredinsert->bind_param('sssss', $userName, $passWord, $userFirstName, $userSurName, $userEmailAdress);
             $stmt_UserCredinsert->execute();
-            $conn->commit();
-            $conn->autocommit(TRUE);
+            //$conn->commit();
+            //$conn->autocommit(TRUE);
 
             header('Location:../pages/loginForm.php?msg'); 
         }
