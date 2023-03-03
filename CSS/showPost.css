@@ -64,6 +64,9 @@
         transition-duration: 0.4s;
         cursor: pointer;
 
+        margin:0;
+        border:0;
+
         /* justify-content: center;
         align-items: center; */
 }
@@ -71,6 +74,7 @@
     background-color: #7eece1;
     color: white;
   }
+
 #postContainer{
     padding:6px;
     /* border: 1px solid black; */
