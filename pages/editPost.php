@@ -12,6 +12,7 @@ function autorization($conn){
     }
     else{
         $validated = false;
+        header('Location: ../index.php');
     }
     return $validated;
 }
