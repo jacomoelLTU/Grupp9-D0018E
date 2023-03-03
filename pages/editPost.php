@@ -4,9 +4,9 @@ function autorization($conn){
     session_start();
     $validated = false;
     if($usrid = $_SESSION['userid']){
-        $row = mysqli_query($conn, "SELECT product_id FROM product WHERE product_userid=$usrid");
+        $row = mysqli_query($conn, "SELECT post_id FROM post WHERE post_userid=$usrid");
         //If there is a product id with this user that is logged in then validated is true;
-        $postId = $row['product_id'] ?? NULL;
+        $postId = $row['post_id'] ?? NULL;
         if($postId != NULL){$validated=true;}
     }
     else{
