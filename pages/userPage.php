@@ -14,6 +14,6 @@
         }
     ?>
     <form method="post">
-        <input type="submit" name="submit", value="Submit">
+        <input class="prfilePicture" type="submit" name="submit", value="Submit">
     </form>
 </body>

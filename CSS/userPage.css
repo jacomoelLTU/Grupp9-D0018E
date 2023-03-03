@@ -9,4 +9,10 @@ body{
     width:60vw;
     height:100vh;
     background-color:white;
+    
+    margin:auto;
+}
+.profilePicture{
+    border-radius: 50%;
+    border:1px solid darkslategray;
 }
