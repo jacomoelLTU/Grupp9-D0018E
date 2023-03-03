@@ -54,10 +54,9 @@ function submitEdit($conn, $newTitle, $newDesc, $newPrice, $postId):void{
 /*   --------------- ^^^^^ Functions ^^^^ --------------- */
 
 if(autorization($conn)){
-    $usrid = $_SESSION['userid'];
-    $query = mysqli_query($conn, "SELECT post_id, post_title, post_description FROM post WHERE post_userid=$usrid");
+    $postId=$_GET['postId'];
+    $query = mysqli_query($conn, "SELECT post_title, post_description FROM post WHERE post_id=$postId");
     $row = mysqli_fetch_array($query, MYSQLI_ASSOC);
-    $postId = $row['post_id'];
     $query = mysqli_query($conn, "SELECT product_price FROM product WHERE product_postid=$postId");
     $rowPro = mysqli_fetch_array($query, MYSQLI_ASSOC);
     echo"Validated! The post that is beeing edited is: ".$row['post_title']."";
