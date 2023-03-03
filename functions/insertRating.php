@@ -1,6 +1,7 @@
 <?php
 include 'config.php';
 include '../pages/loginCheck.php';
+include 'updateAvgProductRating.php';
 
 $userId = $_SESSION['userid'];
 //$productId = $_GET['productid'];
