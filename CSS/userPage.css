@@ -1,6 +1,9 @@
 body{
     width:100vw;
     background-color: rgb(222, 247, 255);
+    margin:0;
+    padding:0;
+    border:0;
 }
 #profileContainer{
     width:60vw;
