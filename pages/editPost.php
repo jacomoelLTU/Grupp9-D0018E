@@ -27,7 +27,7 @@ include '../functions/config.php';
 
 if(autorization($conn)){
     $usrid = $_SESSION['userid'];
-    $query = mysqli_query($conn, "SELECT post_title, post_desciption FROM post WHERE post_userid=$usrid");
+    $query = mysqli_query($conn, "SELECT post_title, post_description FROM post WHERE post_userid=$usrid");
     $row = mysqli_fetch_array($query, MYSQLI_ASSOC);
     $postId = $row['post_id'];
     $query = mysqli_query($conn, "SELECT product_price FROM product WHERE product_postid=$postId");
