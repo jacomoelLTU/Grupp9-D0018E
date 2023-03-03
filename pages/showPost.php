@@ -125,7 +125,7 @@ $price = $row['product_price'];
 </div>
   <div id="grid-G">
     <form method="post">
-      <input type="submit" name="insertToBasket" class="button buttonAdd" value="Add Item"/>
+      <input styke="border:0; "type="submit" name="insertToBasket" class="button buttonAdd" value="Add Item"/>
     </form>
   </div>
 </div>
