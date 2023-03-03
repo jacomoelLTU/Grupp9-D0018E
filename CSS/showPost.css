@@ -69,11 +69,8 @@
         align-items: center; */
 }
 .buttonAdd:hover {
-    background-color: #7eece1;
+    background-color: #dcfdf9;
     color: white;
-  }
-  .buttonAdd > input {
-   border :0;
   }
 
 #postContainer{
