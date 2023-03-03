@@ -5,6 +5,7 @@ include 'config.php';
 session_start();
 $userId = $_SESSION['userid'];
 $productId = $_GET['productid']; //this might be wrong way to get this, temp "solution" to move on
+$productId = '35';
 
 //Behöver vi lägga till ett userid för product? 
 //Så vi kopplar varje product till varje user och inte bara kopplar varje product till en post.
@@ -14,9 +15,10 @@ $productId = $_GET['productid']; //this might be wrong way to get this, temp "so
 $query = "SELECT product_rating FROM product WHERE product_userid='$userId'"; //product_userid finns ej i product ännu
 $result = mysqli_query($conn, $query);
 
-while($result){ //you might wanna use mysqli_fetch_array here or similar function, example: $result = mysqli_fetch_array($query, MYSQLI_ASSOC));
+while($row = mysqli_fetch_array($result)){ //you might wanna use mysqli_fetch_array here or similar function, example: $result = mysqli_fetch_array($query, MYSQLI_ASSOC));
     $iterations .= 1;
-    $totalRating .= $result;
+    $totalRating .= $row;
+    echo $iterations . $totalRating;
 }
 
 //calculate average rating
