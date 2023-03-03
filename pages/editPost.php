@@ -16,7 +16,7 @@ function autorization($conn){
     return $validated;
 }
 
-function submitEdit($conn, $newTitle, $newDesc, $newPrice, $postId){
+function submitEdit($conn, $newTitle, $newDesc, $newPrice, $postId):void{
    try{
     mysqli_begin_transaction($conn);
    
