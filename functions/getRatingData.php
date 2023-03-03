@@ -1,10 +1,7 @@
-<!-- <script>
-    <?php require_once("../JS/ratingfunctions.js");?>
-</script> -->
-
-<?php include '../functions/getRatingData.php';?>
-
 <?php
+require_once "ratingFunctions.php";
+require_once "config.php";
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -12,9 +9,13 @@ include 'config.php';
 
 echo "Hello world!<br>";
 
-session_start();
-$userId = $_SESSION['userId'];
-$productId = $_GET['productId']; //this might be wrong way to get this, temp "solution" to move on
+// session_start();
+// $userId = $_SESSION['userId'];
+// $productId = $_GET['productId']; //this might be wrong way to get this, temp "solution" to move on
+$userId = '19';
+$productId = '33';
+
+
 
 $query = "SELECT * FROM product ORDER BY product_id DESC";
 $result = mysqli_query($conn, $query);
@@ -22,14 +23,17 @@ $result = mysqli_query($conn, $query);
 $outputString = 'outputstring:';
 
 foreach ($result as $row) {
-    $userRating = "SELECT rating FROM rating WHERE user_id='19'";
-    $ratingQuery = mysqli_query($conn, $userRating);
+    // $userRating = "SELECT rating FROM rating WHERE user_id='19'";
+    // $ratingQuery = mysqli_query($conn, $userRating);
+
+    $userRating = userRating($userId, $row['id'], $conn);
+    $totalRating = totalRating($row['id'], $conn);
 
     // $totalRating = totalRating($row['id'], $conn);
     //hardcode to test
-    $averageRating = "SELECT product_rating FROM product WHERE product_id='33'";
-    $avgRatingQuery = mysqli_query($conn, $averageRating);
-    $totalReviews = "";
+    // $averageRating = "SELECT product_rating FROM product WHERE product_id='33'";
+    // $avgRatingQuery = mysqli_query($conn, $averageRating);
+    // $totalReviews = "";
 
     $outputString .= '
         <div class="row-item">
@@ -50,7 +54,7 @@ foreach ($result as $row) {
     $outputString .= '
         </ul>
         
-        <p class="review-note">Total Reviews: ' . $totalReviews . '</p>
+        <p class="review-note">Total Reviews: ' . $totalRating . '</p>
         <p class="text-address">' . $row["address"] . '</p>
         some text
         </div>

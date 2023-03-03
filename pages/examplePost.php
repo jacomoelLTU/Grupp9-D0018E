@@ -1,4 +1,7 @@
 <link rel="stylesheet" type="text/css" href="../CSS/examplePost.css">
+<script type="text/javascript">
+    <?php require_once("../JS/ratingFunctions.js")?>
+</script>
 
 Example how a post could look 
 <div id="preview">
@@ -25,7 +28,7 @@ Example how a post could look
 </body>
 
 <!-- Har detta script här medans jag testar -->
-<script type="text/javascript">
+<!-- <script type="text/javascript">
     function getRating(url) {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
@@ -36,4 +39,7 @@ Example how a post could look
         xhttp.open("GET", url, true);
         xhttp.send();
     }
-</script>
+</script> -->
+
+
+

@@ -1,10 +1,10 @@
-function mouseOverRating(postId, rating) {
+function mouseOverRating(productId, rating) {
 
-    resetRatingStars(postId)
+    resetRatingStars(productId)
 
     for (var i = 1; i <= rating; i++)
     {
-        var ratingId = postId + "_" + i;
+        var ratingId = productId + "_" + i;
         document.getElementById(ratingId).style.color = "#ff6e00";
 
     }
@@ -14,7 +14,7 @@ function resetRatingStars(productId)
 {
     for (var i = 1; i <= 5; i++)
     {
-        var ratingId = postId + "_" + i;
+        var ratingId = productId + "_" + i;
         document.getElementById(ratingId).style.color = "#9E9E9E";
     }
 }
@@ -23,14 +23,48 @@ function mouseOutRating(productId, userRating) {
     var ratingId;
     if(userRating !=0) {
             for (var i = 1; i <= userRating; i++) {
-                    ratingId = restaurantId + "_" + i;
+                    ratingId = productId + "_" + i;
                 document.getElementById(ratingId).style.color = "#ff6e00";
             }
     }
     if(userRating <= 5) {
             for (var i = (userRating+1); i <= 5; i++) {
-                ratingId = postId + "_" + i;
+                ratingId = productId + "_" + i;
             document.getElementById(ratingId).style.color = "#9E9E9E";
         }
     }
+}
+
+function getRating(url) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("post_list").innerHTML = this.responseText;
+        }
+    };
+    xhttp.open("GET", url, true);
+    xhttp.send();
+
+}
+
+function addRating(productId, ratingValue) {
+    var xhttp = new XMLHttpRequest();
+
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+
+            getRating('../functions/getRating.php');
+
+            if (this.responseText != "success") {
+                alert(this.responseText);
+            }
+        }
+    };
+
+    xhttp.open("POST", "../functions/insertRating.php", true);
+    xhttp.setRequestHeader("Content-type",
+            "application/x-www-form-urlencoded");
+    var parameters = "rating=" + ratingValue + "&post_id="
+            + productId;
+    xhttp.send(parameters);
 }
