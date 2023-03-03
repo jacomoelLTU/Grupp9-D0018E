@@ -16,6 +16,14 @@ function autorization($conn){
     return $validated;
 }
 
+//---------- Button SubmitEdit -------------
+if(array_key_exists('submitEdit', $_POST)) {
+    if(isset($_GET['postId'])){
+        echo"<script>alert('klickade på submit knapp');</script>";
+      submitEdit($conn, $_POST['updateTitle'], $_POST['updateDescription'], $_POST['updatePrice'], $_POST['post_id']);    
+    }
+  }
+  
 function submitEdit($conn, $newTitle, $newDesc, $newPrice, $postId):void{
    try{
     mysqli_begin_transaction($conn);
@@ -33,14 +41,7 @@ function submitEdit($conn, $newTitle, $newDesc, $newPrice, $postId):void{
     }
 }
 
-//---------- Button SubmitEdit -------------
-if(array_key_exists('submitEdit', $_POST)) {
-    if(isset($_GET['postId'])){
-        echo"<script>alert('klickade på submit knapp');</script>";
-      submitEdit($conn, $_POST['updateTitle'], $_POST['updateDescription'], $_POST['updatePrice'], $_POST['post_id']);    
-    }
-  }
-  
+
 /*   --------------- ^^^^^ Functions ^^^^ --------------- */
 
 
