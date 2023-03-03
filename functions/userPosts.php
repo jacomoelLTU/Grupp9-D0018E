@@ -13,4 +13,5 @@ while($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
     $row['post_description']."'>Show post</a>
     <a href='../pages/editPost?postId=".$row['post_id']."'> Edit</a><br>";
 }
+
 ?>
