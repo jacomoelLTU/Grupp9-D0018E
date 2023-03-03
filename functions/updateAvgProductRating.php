@@ -3,8 +3,8 @@
 include 'config.php';
 
 session_start();
-$userId = $_SESSION['userId'];
-$productId = $_GET['productId']; //this might be wrong way to get this, temp "solution" to move on
+$userId = $_SESSION['userid'];
+$productId = $_GET['productid']; //this might be wrong way to get this, temp "solution" to move on
 
 $query = "SELECT rating FROM rating WHERE rating_productid='$productId'";
 $result = mysqli_query($conn, $query);
