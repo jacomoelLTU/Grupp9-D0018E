@@ -10,7 +10,7 @@ include 'config.php';
 echo "Hello world!<br>";
 
 session_start();
-$userId = $_SESSION['userId'];
+$userId = $_SESSION['userid'];
 // $productId = $_GET['productId']; //this might be wrong way to get this, temp "solution" to move on
 //$userId = '19';
 $productId = '33';
