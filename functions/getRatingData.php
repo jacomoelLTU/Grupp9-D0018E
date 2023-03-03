@@ -13,7 +13,7 @@ session_start();
 $userId = $_SESSION['userid'];
 // $productId = $_GET['productId']; //this might be wrong way to get this, temp "solution" to move on
 //$userId = '19';
-$productId = '35';
+$productId = '33';
 
 //$postId = $_GET['postId'];
 $query = "SELECT * FROM product WHERE product_id=$productId";
@@ -25,7 +25,7 @@ foreach ($result as $row) {
     // $userRating = "SELECT rating FROM rating WHERE user_id='19'";
     // $ratingQuery = mysqli_query($conn, $userRating);
 
-    $userRating = userRating($userId, $row['product_id'], $conn);
+    $productRating = productRating($userId, $row['product_id'], $conn);
     $totalRating = totalRating($row['product_id'], $conn);
 
     // $totalRating = totalRating($row['id'], $conn);
@@ -37,12 +37,12 @@ foreach ($result as $row) {
     $outputString .= '
         <div class="row-item">
         <div class="row-title">' . $row['product_title'] . '</div> <div class="response" id="response-' . $row['product_id'] . '"></div>
-        <ul class="list-inline"  onMouseLeave="mouseOutRating(' . $row['product_id'] . ',' . $userRating . ');"> ';
+        <ul class="list-inline"  onMouseLeave="mouseOutRating(' . $row['product_id'] . ',' . $productRating . ');"> ';
     
     for ($count = 1; $count <= 5; $count ++) {
         $starRatingId = $row['product_id'] . '_' . $count;
         
-        if ($count <= $userRating) {
+        if ($count <= $productRating) {
             
             $outputString .= '<li value="' . $count . '" product_id="' . $starRatingId . '" class="star selected">&#9733;</li>';
         } else {

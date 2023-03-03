@@ -1,9 +1,9 @@
 <?php
 
-function userRating($userId, $productId, $conn)
+function productRating($userId, $productId, $conn)
 {
     $average = 0;
-    $avgQuery = "SELECT rating FROM rating WHERE user_id = '" . $userId . "' and rating_productid = '" . $productId . "'";
+    $avgQuery = "SELECT rating FROM product WHERE product_userid = '" . $userId . "' and product_id = '" . $productId . "'";
     $total_row = 0;
     
     if ($result = mysqli_query($conn, $avgQuery)) {
