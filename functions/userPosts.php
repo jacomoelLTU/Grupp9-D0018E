@@ -11,6 +11,6 @@ while($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
     ": <a href ='showPost.php?postId=".$row['post_id'].
     "&postTitle=".$row['post_title']."&postDescription=".
     $row['post_description']."'>Show post</a>
-    <a href='editPost?postId=".$row['post_id']."'> Edit</a><br>";
+    <a href='../pages/editPost?postId=".$row['post_id']."'> Edit</a><br>";
 }
 ?>
