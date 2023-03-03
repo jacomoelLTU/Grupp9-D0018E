@@ -1,7 +1,4 @@
 <link rel="stylesheet" type="text/css" href="../CSS/examplePost.css">
-<script type="text/javascript">
-    <?php require_once("../JS/ratingFunctions.js")?>
-</script>
 
 Example how a post could look 
 <div id="preview">
@@ -28,7 +25,8 @@ Example how a post could look
 </body>
 
 <!-- Har detta script här medans jag testar -->
-<!-- <script type="text/javascript">
+<script type="text/javascript">
+    
     function getRating(url) {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
@@ -39,7 +37,68 @@ Example how a post could look
         xhttp.open("GET", url, true);
         xhttp.send();
     }
-</script> -->
+
+    function mouseOverRating(productId, rating) {
+
+        resetRatingStars(productId)
+
+        for (var i = 1; i <= rating; i++)
+        {
+            var ratingId = productId + "_" + i;
+            document.getElementById(ratingId).style.color = "#ff6e00";
+
+        }
+    }
+
+    function resetRatingStars(productId)
+        {
+        for (var i = 1; i <= 5; i++)
+        {
+            var ratingId = productId + "_" + i;
+            document.getElementById(ratingId).style.color = "#9E9E9E";
+        }
+    }
+
+    function mouseOutRating(productId, userRating) {
+        var ratingId;
+        if(userRating !=0) {
+                for (var i = 1; i <= userRating; i++) {
+                        ratingId = productId + "_" + i;
+                    document.getElementById(ratingId).style.color = "#ff6e00";
+                }
+        }
+        if(userRating <= 5) {
+                for (var i = (userRating+1); i <= 5; i++) {
+                    ratingId = productId + "_" + i;
+                document.getElementById(ratingId).style.color = "#9E9E9E";
+            }
+        }
+    }
+
+    function addRating(productId, ratingValue) {
+        var xhttp = new XMLHttpRequest();
+
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+
+                getRating('../functions/getRating.php');
+
+                if (this.responseText != "success") {
+                    alert(this.responseText);
+                }
+            }
+        };
+
+        xhttp.open("POST", "../functions/insertRating.php", true);
+        xhttp.setRequestHeader("Content-type",
+                "application/x-www-form-urlencoded");
+        var parameters = "rating=" + ratingValue + "&post_id="
+                + productId;
+        xhttp.send(parameters);
+    }
+</script>
+
+
 
 
 

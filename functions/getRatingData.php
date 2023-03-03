@@ -56,7 +56,6 @@ foreach ($result as $row) {
         
         <p class="review-note">Total Reviews: ' . $totalRating . '</p>
         <p class="text-address">' . $row["address"] . '</p>
-        some text
         </div>
         ';
 }
