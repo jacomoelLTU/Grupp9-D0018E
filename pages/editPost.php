@@ -1,4 +1,4 @@
-<a href="../index.php">To home</a>
+<a href="../index.php">To home</a><br>
 <?php
 
 ini_set('display_errors', 1);
@@ -40,7 +40,6 @@ function submitEdit($conn, $newTitle, $newDesc, $newPrice, $postId):void{
    
     mysqli_query($conn, "UPDATE post SET post_title='$newTitle', post_description='$newDesc' WHERE post_id=$postId");
     mysqli_query($conn, "UPDATE product SET product_price=$newPrice WHERE product_postid=$postId");
-    echo $newTitle;
     mysqli_commit($conn);
     echo"<script>alert('Sker commit');</script>";
 
@@ -60,7 +59,7 @@ if(autorization($conn)){
     $row = mysqli_fetch_array($query, MYSQLI_ASSOC);
     $query = mysqli_query($conn, "SELECT product_price FROM product WHERE product_postid=$postId");
     $rowPro = mysqli_fetch_array($query, MYSQLI_ASSOC);
-    echo"Validated! The post that is beeing edited is: ".$row['post_title']."";
+    echo"Validated!<br>The post that is beeing edited is: ".$row['post_title']."";
     echo'
     <div id ="editForm">
         <form method="post">
