@@ -33,7 +33,7 @@
                     <p>
                     Click here to <a href="../pages/postForm.php">Make a post</a>!
                     Click here to <a href="../pages/printImage.php">view image</a>!
-                    Click here for <a href="../pages/examplePost.php">post example</a>!
+                    Click here to see rating for current hardcoded <a href="../pages/ratingForm.php">product </a>!
                     </p>
 
                 </div>
