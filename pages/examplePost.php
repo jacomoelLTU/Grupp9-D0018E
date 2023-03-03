@@ -81,7 +81,7 @@ Example how a post could look
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
 
-                getRating('../functions/getRating.php');
+                getRating('../functions/getRatingData.php');
 
                 if (this.responseText != "success") {
                     alert(this.responseText);
@@ -92,7 +92,7 @@ Example how a post could look
         xhttp.open("POST", "../functions/insertRating.php", true);
         xhttp.setRequestHeader("Content-type",
                 "application/x-www-form-urlencoded");
-        var parameters = "rating=" + ratingValue + "&post_id="
+        var parameters = "rating=" + ratingValue + "&rating_productid="
                 + productId;
         xhttp.send(parameters);
     }
