@@ -1,3 +1,14 @@
+function getRating(url) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("post_list").innerHTML = this.responseText;
+        }
+    };
+    xhttp.open("GET", url, true);
+    xhttp.send();
+}
+
 function mouseOverRating(productId, rating) {
 
     resetRatingStars(productId)
@@ -11,7 +22,7 @@ function mouseOverRating(productId, rating) {
 }
 
 function resetRatingStars(productId)
-{
+    {
     for (var i = 1; i <= 5; i++)
     {
         var ratingId = productId + "_" + i;
@@ -35,25 +46,13 @@ function mouseOutRating(productId, userRating) {
     }
 }
 
-function getRating(url) {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("post_list").innerHTML = this.responseText;
-        }
-    };
-    xhttp.open("GET", url, true);
-    xhttp.send();
-
-}
-
 function addRating(productId, ratingValue) {
     var xhttp = new XMLHttpRequest();
 
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
 
-            getRating('../functions/getRating.php');
+            getRating('../functions/getRatingData.php');
 
             if (this.responseText != "success") {
                 alert(this.responseText);
@@ -64,7 +63,12 @@ function addRating(productId, ratingValue) {
     xhttp.open("POST", "../functions/insertRating.php", true);
     xhttp.setRequestHeader("Content-type",
             "application/x-www-form-urlencoded");
-    var parameters = "rating=" + ratingValue + "&post_id="
+    var parameters = "rating=" + ratingValue + "&rating_productid="
             + productId;
     xhttp.send(parameters);
 }
+
+
+
+
+
