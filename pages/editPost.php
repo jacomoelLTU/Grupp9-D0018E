@@ -16,6 +16,28 @@ function autorization($conn){
     return $validated;
 }
 
+function submitEdit($conn, $newTitle, $newDesc, $newPrice, $postId){
+   try{
+    mysqli_begin_transaction($conn);
+   
+    mysqli_query($conn, "UPDATE post SET post_title=$newTitle, post_description=$newDesc WHERE post_id=$postId");
+    mysqli_query($conn, "UPDATE product SET product_price=$newPrice WHERE product_postid=$postId");
+   
+    mysqli_commit($conn);
+    }catch(mysqli_sql_exception $e){
+    mysqli_rollback($conn);
+    echo'<script>alert("Rolling back...");</script>';
+    throw $e;
+    }
+}
+
+//---------- Button SubmitEdit -------------
+if(array_key_exists('submitEdit', $_POST)) {
+    if(isset($_GET['postId'])){
+      submitEdit($conn, $_POST['updateTitle'], $_POST['updateDescription'], $_POST['updatePrice'], $_POST['post_id']);    
+    }
+  }
+  
 /*   --------------- ^^^^^ Functions ^^^^ --------------- */
 
 
