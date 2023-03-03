@@ -25,11 +25,10 @@ function autorization($conn){
 //---------- Button SubmitEdit -------------
 if(array_key_exists('submitEdit', $_POST)) {
     if(isset($_GET['postId'])){
-        echo"<script>alert('klickade på submit knapp');</script>";
         $uT=$_POST['updateTitle']; 
         $uD=$_POST['updateDescription']; 
         $uP=$_POST['updatePrice'];
-        $pI=$_POST['post_id'];
+        $pI=$_POST['postId'];
       submitEdit($conn, $uT, $uD, $uP, $pI);    
     }
   }
@@ -66,8 +65,9 @@ if(autorization($conn)){
     <div id ="editForm">
         <form method="post">
             <input type="text" name="updateTitle" value="newTitle" placeholder="newTitle"/>
-            <input type="text" name="updateDscription" value="newDescription" placeholder="newDescription"/>
+            <input type="text" name="updateDescription" value="newDescription" placeholder="newDescription"/>
             <input type="text" name="updatePrice" value="newPrice" placeholder="newPrice"/>
+            <input type="none" name="postId" valute="'.$postId.'">
             <input type="submit" name="submitEdit" value="submitEdit"/>   
          </form>
          <br>Current Title: '.$row['post_title'].'<br>Current Description: '.$row['post_description'].'<br>Current Price: '.$rowPro['product_price'].'kr
