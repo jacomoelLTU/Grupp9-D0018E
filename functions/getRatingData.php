@@ -21,7 +21,7 @@ $result = mysqli_query($conn, $query);
 
 $outputString = 'outputstring:';
 
-//foreach ($result as $row) {
+foreach ($result as $row) {
     $userRating = "SELECT rating FROM rating WHERE user_id='19'";
     $ratingQuery = mysqli_query($conn, $userRating);
 
@@ -55,7 +55,7 @@ $outputString = 'outputstring:';
         some text
         </div>
         ';
-//}
+}
 
 echo $outputString;
 
