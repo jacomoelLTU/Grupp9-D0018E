@@ -1,4 +1,6 @@
 <?php
+include '../functions/config.php';
+
 /*   ---------------  Functions  --------------- */
 function autorization($conn){
     session_start();
@@ -36,7 +38,7 @@ function submitEdit($conn, $newTitle, $newDesc, $newPrice, $postId):void{
     mysqli_query($conn, "UPDATE product SET product_price=$newPrice WHERE product_postid=$postId");
    
     mysqli_commit($conn);
-    echo"<script>alert('SKer commit');</script>";
+    echo"<script>alert('Sker commit');</script>";
 
     }catch(mysqli_sql_exception $e){
     mysqli_rollback($conn);
@@ -53,7 +55,6 @@ function submitEdit($conn, $newTitle, $newDesc, $newPrice, $postId):void{
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-include '../functions/config.php';
 
 if(autorization($conn)){
     $usrid = $_SESSION['userid'];
