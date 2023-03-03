@@ -16,6 +16,9 @@ Example how a post could look
         Price: 12000kr 
     </div>
 </div> 
+<script type="text/javascript">
+    <?php require_once('../JS/ratingFunctions.js')?>
+</script>
 
 <body onload="getRating('../functions/getRatingData.php')">
     <div class="container">
@@ -25,7 +28,7 @@ Example how a post could look
 </body>
 
 <!-- Har detta script här medans jag testar -->
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 
     function getRating(url) {
         var xhttp = new XMLHttpRequest();
@@ -101,4 +104,4 @@ Example how a post could look
 
 
 
-
+ -->
