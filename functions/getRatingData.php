@@ -27,7 +27,7 @@ $outputString = 'outputstring:';
 
     // $totalRating = totalRating($row['id'], $conn);
     //hardcode to test
-    $averageRating = "SELECT product_rating FROM product WHERE product_id='9'";
+    $averageRating = "SELECT product_rating FROM product WHERE product_id='33'";
     $avgRatingQuery = mysqli_query($conn, $averageRating);
     $totalReviews = "";
 
