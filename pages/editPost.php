@@ -27,6 +27,7 @@ include '../functions/config.php';
 
 if(autorization($conn)){
     echo"Validated!";
+    $usrid = $_SESSION['userid'];
     $query = mysqli_query($conn, "SELECT * FROM post WHERE post_userid=$usrid");
     $row = mysqli_fetch_array($query, MYSQLI_ASSOC);
     echo'
