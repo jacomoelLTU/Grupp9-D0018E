@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="CSS/userPage.css">
+<link rel="stylesheet" type="text/css" href="../CSS/userPage.css">
 <body>
     Click to go to <a href="../index.php">homepage</a>! 
     <div id="profileContainer">
