@@ -20,7 +20,7 @@ $productId = '33';
 $query = "SELECT * FROM product ORDER BY product_id DESC";
 $result = mysqli_query($conn, $query);
 
-$outputString = 'outputstring:';
+$outputString = '';
 
 foreach ($result as $row) {
     // $userRating = "SELECT rating FROM rating WHERE user_id='19'";

@@ -26,7 +26,7 @@ Example how a post could look
 
 <!-- Har detta script här medans jag testar -->
 <script type="text/javascript">
-    
+
     function getRating(url) {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
