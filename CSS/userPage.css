@@ -12,7 +12,10 @@ body{
     
     margin:auto;
 }
-.profilePicture{
+.profilePicture {
     border-radius: 50%;
     border:1px solid darkslategray;
+
+    width:100px;
+    height:100px;
 }
