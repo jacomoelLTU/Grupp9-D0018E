@@ -1,5 +1,7 @@
     <?php
     include 'config.php';
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
         //stripslashes removes backslashes, some protection agains injection i guess
         $userName = stripslashes($_POST['userName']);
         $passWord = stripslashes(bcrypt($_POST['passWord']));
