@@ -2,15 +2,16 @@
 include 'config.php';
 include '../pages/loginCheck.php';
 
-$userId = $_SESSION['userId'];
-$productId = $_GET['productId'];
+$userId = $_SESSION['userid'];
+//$productId = $_GET['productid'];
 
-if (isset($_POST["rating"], $_POST["rating_productid"])) {
+if (isset($_POST["rating"])) {
     
-    $productId = $_POST["productId"];
+    //$productId = $_POST["productId"];
+    $productId = '35';
     $rating = $_POST["rating"];
     
-    $checkIfExistQuery = "SELECT * FROM rating WHERE userId = '" . $userId . "' AND rating_productid = '" . $productId . "'";
+    $checkIfExistQuery = "SELECT * FROM rating WHERE user_id = '" . $userId . "' AND rating_productid = '" . $productId . "'";
     if ($result = mysqli_query($conn, $checkIfExistQuery)) {
         $rowcount = mysqli_num_rows($result);
     }
