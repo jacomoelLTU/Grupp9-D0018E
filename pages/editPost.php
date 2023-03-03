@@ -38,6 +38,7 @@ if(autorization($conn)){
             <input type="text" name="updatePrice" value="newPrice" placeholder="newPrice"/>
             <input type="submit" name="submitEdit" value="submitEdit"/>   
          </form>
+         Current Title: '.$row['post_title'].' Current Description: '.$row['post_description'].' Current Price: '.$row['post_price'].'
     </div>
     ';
 
