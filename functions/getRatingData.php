@@ -1,5 +1,4 @@
 <?php
-require_once "ratingFunctions.php";
 require_once "config.php";
 
 ini_set('display_errors', 1);
