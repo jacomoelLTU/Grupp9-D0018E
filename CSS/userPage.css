@@ -20,15 +20,14 @@ body{
     height:100px;
 }
 #postContainer{
-    /* border: 1px solid black; */
-    width:100%;                                 /*vw = relative to 1% of thw width of viewport*/
-    display:grid;                         /*Inline grid gör att bordern wrappar runt contentet*/
+    width:100%;                           
+    display:grid;                         
     grid-gap: 4px;
 
-    margin: auto;
+    margin: 0 auto;
 }
 #postItem{
-    background-color: blue;
+    background-color: rgb(222, 247, 255);
     height:150px;
     width:150px;
 
@@ -36,10 +35,10 @@ body{
 
   /* Screen larger than 600px? 2 columns */
 @media (min-width: 200px) {
-    .cards { grid-template-columns: repeat(2, 1fr); }
+    #postContainer { grid-template-columns: repeat(2, 1fr); }
   }
   
   /* Screen larger than 900px? 3 columns */
   @media (min-width: 400px) {
-    .cards { grid-template-columns: repeat(3, 1fr); }
+    #postContainer { grid-template-columns: repeat(3, 1fr); }
   }
