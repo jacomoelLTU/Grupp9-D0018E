@@ -38,11 +38,11 @@ function updateAvgProductRating(){
 
     $query = "SELECT rating FROM rating WHERE rating_productid='$productId'";
     $result = mysqli_query($conn, $query);
-
+    $outputstring = "Outputstring: ";
     while($row = mysqli_fetch_array($result)){ //you might wanna use mysqli_fetch_array here or similar function, example: $result = mysqli_fetch_array($query, MYSQLI_ASSOC));
         $iterations .= 1;
         $totalRating .= $row;
-        echo $iterations . $totalRating;
+        $outputstring .= $iterations . $totalRating;
     }
 
     //calculate average rating
@@ -50,5 +50,6 @@ function updateAvgProductRating(){
 
     $productRating = "UPDATE product SET product_rating=$averageRating WHERE product_id ='$productId'";
     mysqli_query($conn, $productRating);
+    echo $outputstring;
 }
 ?>
