@@ -2,12 +2,12 @@
     include 'config.php';
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
-        //stripslashes removes backslashes, some protection agains injection i guess
-        $userName = stripslashes($_POST['userName']);
-        $passWord = stripslashes(bcrypt($_POST['passWord']));
-        $userEmailAdress = stripslashes($_POST['userEmailAdress']);
-        $userFirstName = stripslashes($_POST['userFirstname']);
-        $userSurName = stripslashes($_POST['userSurname']);
+        
+        $userName = $_POST['userName'];
+        $passWord = password_hash("$passWord", PASSWORD_BCRYPT, $options);
+        $userEmailAdress = $_POST['userEmailAdress'];
+        $userFirstName = $_POST['userFirstname'];
+        $userSurName = $_POST['userSurname'];
 
         if(!(isset($userName) || isset($passWord) || isset($userEmailAdress) || isset($userFirstName) || isset($userSurName))){
                 echo 'To register you need to provide information for all the fields in the registrationform!';
