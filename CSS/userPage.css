@@ -34,12 +34,12 @@ body{
 
 }
 
-  /* Screen larger than 600px? 3 columns */
-@media (min-width: 600px) {
+  /* Screen larger than 600px? 2 columns */
+@media (min-width: 200px) {
     .cards { grid-template-columns: repeat(2, 1fr); }
   }
   
   /* Screen larger than 900px? 3 columns */
-  @media (min-width: 900px) {
+  @media (min-width: 400px) {
     .cards { grid-template-columns: repeat(3, 1fr); }
   }
