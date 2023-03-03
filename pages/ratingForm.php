@@ -1,4 +1,5 @@
 <link rel="stylesheet" type="text/css" href="../CSS/ratingForm.css">
+<?php include '../functions/updateAvgProductRating.php'?>
 <body onload="getRating('../functions/getRatingData.php')">
     <div class="container">
         <h2>Rating System</h2>
