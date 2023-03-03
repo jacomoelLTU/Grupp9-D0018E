@@ -46,7 +46,7 @@ foreach ($result as $row) {
             
             $outputString .= '<li value="' . $count . '" product_id="' . $starRatingId . '" class="star selected">&#9733;</li>';
         } else {
-            $outputString .= '<li value="' . $count . '"  product_id="' . $starRatingId . '" class="star" onclick="addRating(' . $productId . ',' . $count . ');" onMouseOver="mouseOverRating(' . $productId . ',' . $count . ');">&#9733;</li>';
+            $outputString .= '<li value="' . $count . '"  product_id="' . $starRatingId . '" class="star" onclick="addRating(' . $productId . ',' . $count . ');" onmouseover="mouseOverRating(' . $productId . ',' . $count . ');">&#9733;</li>';
         }
     } // endFor
     
