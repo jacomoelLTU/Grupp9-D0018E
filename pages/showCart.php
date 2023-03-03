@@ -12,7 +12,8 @@ function showItems($conn): void{
     echo"Here is you items:";
     try{
     session_start();
-    if(isset($_SESSION['ongoingtransactionid'])){
+    $otId = $_SESSION['ongoingtransactionid'] ?? NULL;
+    if($otId != NULL){
         $ongoingtransactionid = $_SESSION['ongoingtransactionid'];
         $item = mysqli_query($conn, "SELECT transactionitem_productid FROM transactionitem WHERE transactionitem_transactionid='$ongoingtransactionid'");
         while($row=mysqli_fetch_array($item, MYSQLI_ASSOC)){
@@ -31,9 +32,6 @@ function showItems($conn): void{
                 }     
             } 
         }
-    }
-    else{
-        echo"Need an ongoing transaction to view items...";
     }
     }catch(mysqli_sql_exception $e){
         throw $e;
