@@ -24,7 +24,7 @@ function submitEdit($conn, $newTitle, $newDesc, $newPrice, $postId):void{
     mysqli_query($conn, "UPDATE product SET product_price=$newPrice WHERE product_postid=$postId");
    
     mysqli_commit($conn);
-    echo"<script>alert(SKer commit);</script>";
+    echo"<script>alert('SKer commit');</script>";
 
     }catch(mysqli_sql_exception $e){
     mysqli_rollback($conn);
@@ -36,7 +36,7 @@ function submitEdit($conn, $newTitle, $newDesc, $newPrice, $postId):void{
 //---------- Button SubmitEdit -------------
 if(array_key_exists('submitEdit', $_POST)) {
     if(isset($_GET['postId'])){
-        echo"<script>alert(klickade på submit knapp);</script>";
+        echo"<script>alert('klickade på submit knapp');</script>";
       submitEdit($conn, $_POST['updateTitle'], $_POST['updateDescription'], $_POST['updatePrice'], $_POST['post_id']);    
     }
   }
