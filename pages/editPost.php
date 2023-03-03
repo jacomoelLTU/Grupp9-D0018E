@@ -57,7 +57,7 @@ if(autorization($conn)){
     echo"Validated! The post that is beeing edited is: ".$row['post_title']."";
     echo'
     <div id ="editForm">
-        <form action="post">
+        <form method="post">
             <input type="text" name="updateTitle" value="newTitle" placeholder="newTitle"/>
             <input type="text" name="updateDscription" value="newDescription" placeholder="newDescription"/>
             <input type="text" name="updatePrice" value="newPrice" placeholder="newPrice"/>
