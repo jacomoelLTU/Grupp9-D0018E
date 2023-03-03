@@ -7,9 +7,9 @@ $userId = $_SESSION['userid'];
 //$productId = $_GET['productid'];
 
 if (isset($_POST["rating"])) {
-    //$updatethisshit = updateAvgProductRating();
-    //$productId = $_POST["productId"];
     $productId = '35';
+    updateAvgProductRating($productId);
+    //$productId = $_POST["productId"];
     $rating = $_POST["rating"];
     
     $checkIfExistQuery = "SELECT * FROM rating WHERE user_id = '" . $userId . "' AND rating_productid = '" . $productId . "'";

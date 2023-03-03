@@ -1,12 +1,11 @@
 <!-- This function updates the average rating of a product in the product table -->
 <?php
-function updateAvgProductRating(){
+function updateAvgProductRating($productId){
     include 'config.php';
 
     session_start();
     //$userId = $_SESSION['userid'];
     //$productId = $_GET['productid']; //this might be wrong way to get this, temp "solution" to move on
-    $productId = '35';
 
     $query = "SELECT rating FROM rating WHERE rating_productid='$productId'";
     $result = mysqli_query($conn, $query);
@@ -22,6 +21,6 @@ function updateAvgProductRating(){
 
     $productRating = "UPDATE product SET product_rating='1' WHERE product_id ='35'";
     $insert = mysqli_query($conn, $productRating);
-    return $outputstring;
+    echo $outputstring;
 }
 ?>
