@@ -20,7 +20,11 @@ function autorization($conn){
 if(array_key_exists('submitEdit', $_POST)) {
     if(isset($_GET['postId'])){
         echo"<script>alert('klickade på submit knapp');</script>";
-      submitEdit($conn, $_POST['updateTitle'], $_POST['updateDescription'], $_POST['updatePrice'], $_POST['post_id']);    
+        $uT=$_POST['updateTitle']; 
+        $uD=$_POST['updateDescription']; 
+        $uP=$_POST['updatePrice'];
+        $pI=$_POST['post_id'];
+      submitEdit($conn, $uT, $uD, $uP, $pI);    
     }
   }
   
