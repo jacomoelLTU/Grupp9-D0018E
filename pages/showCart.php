@@ -11,7 +11,6 @@ showItems($conn);
 function showItems($conn): void{
     echo"Here is you items:";
     try{
-    session_start();
     $otId = $_SESSION['ongoingtransactionid'] ?? NULL;
     if($otId != NULL){
         $ongoingtransactionid = $_SESSION['ongoingtransactionid'];
