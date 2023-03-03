@@ -31,7 +31,7 @@
         $stmt_Ucheck = $conn->prepare("SELECT user_name FROM user WHERE user_name = ?");
         $stmt_Echeck = $conn->prepare("SELECT user_email FROM user WHERE user_email = ?");
         $stmt_Ucheck->bind_param('s', $userName);
-        $stmt_Ucheck->bind_param('s', $userEmailAdress);
+        $stmt_Echeck->bind_param('s', $userEmailAdress);
         $stmt_Ucheck->execute();
         $stmt_Echeck->execute();
 
