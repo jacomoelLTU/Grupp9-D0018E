@@ -12,7 +12,6 @@ function autorization($conn){
     }
     else{
         $validated = false;
-        header('Location: ../index.php');
     }
     return $validated;
 }
@@ -25,8 +24,12 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 include '../functions/config.php';
+
 if(autorization($conn)){
     echo"Validated!";
+}
+else{
+    header('Location: ../index.php');
 }
 
 
