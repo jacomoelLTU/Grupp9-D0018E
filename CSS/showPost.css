@@ -72,6 +72,9 @@
     background-color: #7eece1;
     color: white;
   }
+  .buttonAdd > input {
+   border :0;
+  }
 
 #postContainer{
     padding:6px;
