@@ -11,7 +11,7 @@
                 echo 'To register you need to provide information for all the fields in the registrationform!';
         }
 
-        $conn->autocommit(FALSE);
+        
         //theese foure lines retrives all userNames and userEmails from the DB, to be used for duplicate check later
      /* $sql_userCheck = "SELECT user_name FROM user WHERE user_name = '$userName'";
         $sql_emailCheck = "SELECT user_email FROM user WHERE user_email = '$userEmailAdress'";
@@ -19,7 +19,7 @@
         $res_emailCheck = mysqli_query($conn, $sql_emailCheck);
     */
         //commented code above works fine but lack security, below its replaced with prepared statements
-        
+        //$conn->autocommit(FALSE);
         $stmt_Ucheck = $conn->prepare("SELECT user_name FROM user WHERE user_name = ?");
         $stmt_Echeck = $conn->prepare("SELECT user_email FROM user WHERE user_email = ?");
         $stmt_Ucheck->bind_param('s', $userName);
@@ -29,7 +29,7 @@
 
         $Ucheck_result = $stmt_Ucheck->get_result();
         $Echeck_result = $stmt_Echeck->get_result();
-        $conn->autocommit(TRUE);
+        //$conn->autocommit(TRUE);
 
         if($Ucheck_result->mysqli_num_rows > 0){
             echo 'Unfortunatly the username is already taken.';
@@ -40,7 +40,7 @@
         else {
 
 
-            ///////////// FUNGERAR MEN ÄR EJ SAFE OR CONCORRENCY GOOD ///////////////////////
+            ///////////// this code works fine but is not secure  ///////////////////////
             // $userName = mysqli_real_escape_string($conn, $userName);
             // $passWord = mysqli_real_escape_string($conn, $passWord);
             // $userEmailAdress = mysqli_real_escape_string($conn, $userEmailAdress);
@@ -49,19 +49,17 @@
 
             // $sql_insertUser = "INSERT into user (user_name, user_pwd, user_firstname, user_surname, user_email)
             //                 VALUES ('$userName', '". md5($passWord)."', '$userFirstName', '$userSurName','$userEmailAdress')";
-            
             // mysqli_query($conn, $sql_insertUser);
-            /////////////////FUNGERAR MEN ÄR EJ SAFE OR CONCORRENCY GOOD//////////////////////
+            /////////////////                                      //////////////////////
 
-
+            $conn->autocommit(FALSE);
             $stmt_UserCredinsert = "INSERT into user (user_name, user_pwd, user_firstname, user_surname, user_email)
                                     VALUES (?, ?, ?, ?, ?)";
-            
-            
+            $stmt_UserCredinsert->bind_param('sssss', $userName, $passWord, $userFirstName, $userSurName, $userEmailAdress);
+            $stmt_UserCredinsert->execute();
+            $conn->commit();
+            $conn->autocommit(TRUE);
 
-            
-
-            header('Location:../pages/loginForm.php?msg');
-            
+            header('Location:../pages/loginForm.php?msg'); 
         }
         ?>
