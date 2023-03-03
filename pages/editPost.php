@@ -27,6 +27,19 @@ include '../functions/config.php';
 
 if(autorization($conn)){
     echo"Validated!";
+    $query = mysqli_query($conn, "SELECT * FROM post WHERE post_userid=$usrid");
+    $row = mysqli_fetch_array($query, MYSQLI_ASSOC);
+    echo'
+    <div id ="editForm">
+        <form action="post">
+            <input type="text" name="updateTitle" value="newTitle" placeholder="newTitle"/>
+            <input type="text" name="updateDscription" value="newDescription" placeholder="newDescription"/>
+            <input type="text" name="updatePrice" value="newPrice" placeholder="newPrice"/>
+            <input type="submit" name="submitEdit" value="submitEdit"/>   
+         </form>
+    </div>
+    ';
+
 }
 else{
     header('Location: ../index.php');
