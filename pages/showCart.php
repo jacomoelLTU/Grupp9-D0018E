@@ -5,13 +5,13 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 session_start();
-if(isset($_SESSION['ongoingtransactionid'])){
-    showItems($conn);
-}
-    //Functions ----------
+showItems($conn);
+
+//Functions ----------
 function showItems($conn): void{
     echo"Here is you items:";
     try{
+        if(isset($_SESSION['ongoingtransactionid'])){
     $ongoingtransactionid = $_SESSION['ongoingtransactionid'];
     $item = mysqli_query($conn, "SELECT transactionitem_productid FROM transactionitem WHERE transactionitem_transactionid='$ongoingtransactionid'");
     while($row=mysqli_fetch_array($item, MYSQLI_ASSOC)){
@@ -30,6 +30,10 @@ function showItems($conn): void{
                 }     
             } 
         }
+    }
+    else{
+        echo"Need an ongoing transaction to view items...";
+    }
     }catch(mysqli_sql_exception $e){
         throw $e;
     }
