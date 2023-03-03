@@ -4,5 +4,6 @@ body{
 }
 #profileContainer{
     width:60vw;
-    background-color:whitesmoke;
+    height:100vh;
+    background-color:white;
 }
