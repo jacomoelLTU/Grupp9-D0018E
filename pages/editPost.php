@@ -1,6 +1,7 @@
 <?php
 /*   ---------------  Functions  --------------- */
 function autorization($conn){
+    session_start();
     $validated = false;
     if($usrid = $_SESSION['userid']){
         $row = mysqli_query($conn, "SELECT product_id FROM product WHERE product_userid=$usrid");
