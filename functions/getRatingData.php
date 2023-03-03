@@ -13,11 +13,11 @@ session_start();
 $userId = $_SESSION['userid'];
 // $productId = $_GET['productId']; //this might be wrong way to get this, temp "solution" to move on
 //$userId = '19';
-//$productId = '33';
+$productId = '35';
 
 
 
-$query = "SELECT * FROM product ORDER BY product_id DESC";
+$query = "SELECT * FROM product WHERE product_id=$productId";
 $result = mysqli_query($conn, $query);
 
 $outputString = '';
