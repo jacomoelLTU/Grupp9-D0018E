@@ -4,7 +4,7 @@
     ini_set('display_startup_errors', 1);
         //stripslashes removes backslashes, some protection agains injection i guess
         $userName = $_POST['userName'];
-        $passWord = bcrypt($_POST['passWord']);
+        $passWord = $_POST['passWord'];
         $userEmailAdress = $_POST['userEmailAdress'];
         $userFirstName = $_POST['userFirstname'];
         $userSurName = $_POST['userSurname'];
