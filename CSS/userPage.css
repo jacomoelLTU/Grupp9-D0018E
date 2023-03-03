@@ -20,24 +20,12 @@ body{
     height:100px;
 }
 #postContainer{
-    width:100%;                           
-    display:grid;                         
-    grid-gap: 4px;
-    grid-template-columns: auto auto auto;
-    margin: 0 auto;
+    display: grid;
+    gap: 1px;
+    grid-template-columns: repeat(3, 1fr);
 }
 #postItem{
     background-color: rgb(222, 247, 255);
     height:150px;
     width:150px;
 }
-
-  /* Screen larger than 600px? 2 columns */
-@media (min-width: 200px) {
-    #postContainer { grid-template-columns: repeat(2, 150px); }
-  }
-  
-  /* Screen larger than 900px? 3 columns */
-  @media (min-width: 400px) {
-    #postContainer { grid-template-columns: repeat(3, 150px); }
-  }
