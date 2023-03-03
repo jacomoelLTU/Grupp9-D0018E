@@ -26,8 +26,8 @@ foreach ($result as $row) {
     // $userRating = "SELECT rating FROM rating WHERE user_id='19'";
     // $ratingQuery = mysqli_query($conn, $userRating);
 
-    $userRating = userRating($userId, $productId, $conn);
-    $totalRating = totalRating($productId, $conn);
+    $userRating = userRating($userId, $row['product_id'], $conn);
+    $totalRating = totalRating($row['product_id'], $conn);
 
     // $totalRating = totalRating($row['id'], $conn);
     //hardcode to test
@@ -37,17 +37,17 @@ foreach ($result as $row) {
 
     $outputString .= '
         <div class="row-item">
-        <div class="row-title">' . $row['name'] . '</div> <div class="response" id="response-' . $row['id'] . '"></div>
-        <ul class="list-inline"  onMouseLeave="mouseOutRating(' . $row['id'] . ',' . $userRating . ');"> ';
+        <div class="row-title">' . $row['product_title'] . '</div> <div class="response" id="response-' . $row['product_id'] . '"></div>
+        <ul class="list-inline"  onMouseLeave="mouseOutRating(' . $row['product_id'] . ',' . $userRating . ');"> ';
     
     for ($count = 1; $count <= 5; $count ++) {
-        $starRatingId = $row['id'] . '_' . $count;
+        $starRatingId = $row['product_id'] . '_' . $count;
         
         if ($count <= $userRating) {
             
-            $outputString .= '<li value="' . $count . '" id="' . $starRatingId . '" class="star selected">&#9733;</li>';
+            $outputString .= '<li value="' . $count . '" product_id="' . $starRatingId . '" class="star selected">&#9733;</li>';
         } else {
-            $outputString .= '<li value="' . $count . '"  id="' . $starRatingId . '" class="star" onclick="addRating(' . $row['id'] . ',' . $count . ');" onMouseOver="mouseOverRating(' . $row['id'] . ',' . $count . ');">&#9733;</li>';
+            $outputString .= '<li value="' . $count . '"  product_id="' . $starRatingId . '" class="star" onclick="addRating(' . $row['product_id'] . ',' . $count . ');" onMouseOver="mouseOverRating(' . $row['product_id'] . ',' . $count . ');">&#9733;</li>';
         }
     } // endFor
     
@@ -55,7 +55,7 @@ foreach ($result as $row) {
         </ul>
         
         <p class="review-note">Total Reviews: ' . $totalRating . '</p>
-        <p class="text-address">' . $row["address"] . '</p>
+        <p class="text-address">' . $row["product_state"] . '</p>
         </div>
         ';
 }
