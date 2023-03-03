@@ -23,8 +23,7 @@ body{
     /* border: 1px solid black; */
     width:100%;                                 /*vw = relative to 1% of thw width of viewport*/
     display:grid;                         /*Inline grid gör att bordern wrappar runt contentet*/
-    grid-template-columns: auto auto auto auto;
-    gap: 4px;
+    grid-gap: 4px;
 
     margin: auto;
 }
