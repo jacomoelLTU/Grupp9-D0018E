@@ -6,8 +6,10 @@
         <p>
         This is <?php session_start(); echo$_SESSION['username']." Med id: ".$_SESSION['userid'];?>'s page. 
         </p>
-        <div id="postContainer">
-            <?php include '../functions/userPosts.php'; ?>
-        </div>
+        <center>
+            <div id="postContainer">
+                <?php include '../functions/userPosts.php'; ?>
+            </div>
+        </center>
     </div>
 </body>
