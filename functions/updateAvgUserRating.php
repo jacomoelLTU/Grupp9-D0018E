@@ -1,30 +1,27 @@
 <!-- This function updates the average rating for a user in the user table -->
 <?php
-include 'config.php';
+function updateAvgUserRating($userId, $conn){
+    $query = "SELECT product_rating, product_postid FROM product WHERE product_userid='$userId'";
+    $result = mysqli_query($conn, $query);
 
-session_start();
-$userId = $_SESSION['userid'];
-$productId = $_GET['productid']; //this might be wrong way to get this, temp "solution" to move on
-$productId = '33';
+    $outputstring = "Outputstring: ";
+    $iterations = 0;
+    $totalRating = 0;
 
-//Behöver vi lägga till ett userid för product? 
-//Så vi kopplar varje product till varje user och inte bara kopplar varje product till en post.
-//Det borde bli lättare att hämta data från product då för varje user
-//Det kan man ju bara länka till post_userid isf
+    $join = mysqli_query($conn, "SELECT post.post_userid, post.post_id, product.product_rating FROM post WHERE post_userid=$userId INNER JOIN product ON post.post_id=product.product_postid;");
+    while($row = mysqli_fetch_array($join, MYSQLI_ASSOC)){
+        if($row['post_userid']==$userId){
+            $iterations += 1;
+            $totalRating += $row['product_rating'];
+            $outputstring .= "iteration: $iterations " . " totalrating: $totalRating";
+        }
+    }
 
-$query = "SELECT product_rating FROM product WHERE product_userid='$userId'"; //product_userid finns ej i product ännu
-$result = mysqli_query($conn, $query);
+    //calculate average rating for user
+    $averageRating = round($totalRating / $iterations);
 
-while($row = mysqli_fetch_array($result)){ //you might wanna use mysqli_fetch_array here or similar function, example: $result = mysqli_fetch_array($query, MYSQLI_ASSOC));
-    $iterations .= 1;
-    $totalRating .= $row;
-    echo $iterations . $totalRating;
+    $productRating = "UPDATE user SET user_rating=$averageRating WHERE user_id =$userId";
+    mysqli_query($conn, $productRating);
+    echo $outputstring;
 }
-
-//calculate average rating
-$userRating = $totalRating / $iterations;
-
-$userRating = "UPDATE user SET user_rating=$userRating WHERE user_id ='$userId'"; //average_rating finns ej i user ännu
-$insert = mysqli_query($conn, $productRating);
-
 ?>
