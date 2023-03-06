@@ -10,7 +10,7 @@ function updateAvgUserRating($userId, $conn){
     
     while($row = mysqli_fetch_array($joinquery, MYSQLI_ASSOC)){
         $outputstring .= "rowuserid:". $row['user_id'] . "userid: $userId";
-        if($row['user_id']==$userId){
+        if($row['post_userid']==$userId){
             $iterations += 1;
             $totalRating += $row['product_rating'];
             $outputstring .= "iteration: $iterations " . " totalrating: $totalRating";
