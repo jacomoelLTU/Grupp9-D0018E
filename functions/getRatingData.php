@@ -11,9 +11,9 @@ echo "Hello world!<br>";
 
 session_start();
 $userId = $_SESSION['userid'];
-// $productId = $_GET['productId']; //this might be wrong way to get this, temp "solution" to move on
-//$userId = '19';
-$productId = '40';
+$postId = $_GET['postId'];
+$productIdquery = mysqli_query($conn, "SELECT product_id FROM product WHERE product_postid=$postId;");
+$productId = mysqli_fetch_assoc($productIdquery);
 
 //$postId = $_GET['postId'];
 $query = "SELECT * FROM product WHERE product_id=$productId";
