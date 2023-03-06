@@ -11,7 +11,6 @@ function updateAvgProductRating($productId, $conn){
         $totalRating += $row['rating'];
         $outputstring .= "iteration: $iterations " . " totalrating: $totalRating";
     }
-
     //calculate average rating for product
     $averageRating = round($totalRating / $iterations);
 
