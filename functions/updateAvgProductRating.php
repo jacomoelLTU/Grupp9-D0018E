@@ -10,10 +10,10 @@ function updateAvgProductRating($productId, $conn){
     $outputstring = "Outputstring: ";
     $iterations = 0;
     $totalRating = 0;
-    while($row = mysqli_fetch_array($result)){ //you might wanna use mysqli_fetch_array here or similar function, example: $result = mysqli_fetch_array($query, MYSQLI_ASSOC));
-        $iterations .= 1;
-        $totalRating .= $row;
-        $outputstring .= "iteration: $iterations " . " totalrating: $totalRating";
+    foreach($result as $row){ //you might wanna use mysqli_fetch_array here or similar function, example: $result = mysqli_fetch_array($query, MYSQLI_ASSOC));
+        $iterations += 1;
+        $totalRating += $row;
+        $outputstring .= "iteration: $iterations \n " . " totalrating: $totalRating";
     }
 
     //calculate average rating
