@@ -21,7 +21,7 @@ function updateAvgUserRating($productId, $userId, $conn){
             if($row['post_userid']==$postowner['post_userid'] && !empty($row['product_rating'])){
                 $iterations += 1;
                 $totalRating += $row['product_rating'];
-                $outputstring .= "iteration: $iterations " . " totalrating: $totalRating";
+                $outputstring .= "iterationuser: $iterations " . " totalratinguser: $totalRating";
             }
         }
     }
