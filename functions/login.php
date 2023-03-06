@@ -1,5 +1,9 @@
 <?php 
     include 'config.php';
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+
     
     //First we need to check that all values of the form is given.
     if(!isset($_POST['username']) || !isset($_POST['password'])){
@@ -36,6 +40,4 @@
             }
         }
     }
-    header('Location:../index.php');
-
 ?>
