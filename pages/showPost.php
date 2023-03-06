@@ -148,8 +148,9 @@ $price = $row['product_price'];
                 document.getElementById("post_list").innerHTML = this.responseText;
             }
         };
+        var parameters = "postId=" + postId;
         xhttp.open("GET", url, true);
-        xhttp.send(postId);
+        xhttp.send(parameters);
     }
 
     function mouseOverRating(productId, rating) {
