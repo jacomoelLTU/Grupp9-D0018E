@@ -3,7 +3,7 @@
 function updateAvgProductRating($productId){
     include 'config.php';
 
-    session_start();
+    //session_start();
     //$userId = $_SESSION['userid'];
     //$productId = $_GET['productid']; //this might be wrong way to get this, temp "solution" to move on
 
@@ -13,7 +13,7 @@ function updateAvgProductRating($productId){
     while($row = mysqli_fetch_array($result)){ //you might wanna use mysqli_fetch_array here or similar function, example: $result = mysqli_fetch_array($query, MYSQLI_ASSOC));
         $iterations .= 1;
         $totalRating .= $row;
-        $outputstring .= $iterations . $totalRating;
+        $outputstring .= "iteration: $iterations " . " totalrating: $totalRating";
     }
 
     //calculate average rating
