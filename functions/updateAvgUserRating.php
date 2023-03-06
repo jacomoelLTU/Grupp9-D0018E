@@ -1,6 +1,9 @@
 <!-- This function updates the average rating for a user in the user table -->
 <?php
 function updateAvgUserRating($userId, $conn){
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
     //$query = "SELECT product_rating, product_postid FROM product WHERE product_userid='$userId'";
     //$result = mysqli_query($conn, $query);
     $outputstring = "";
