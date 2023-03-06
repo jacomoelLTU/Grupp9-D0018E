@@ -11,8 +11,8 @@ function updateAvgProductRating($productId, $conn){
     $iterations = 0;
     $totalRating = 0;
     foreach($result as $row){ //you might wanna use mysqli_fetch_array here or similar function, example: $result = mysqli_fetch_array($query, MYSQLI_ASSOC));
-        $iterations += 1;
-        $totalRating += $row;
+        $iterations .= 1;
+        $totalRating .= $row;
         $outputstring .= "iteration: $iterations " . " totalrating: $totalRating";
     }
 
@@ -20,7 +20,7 @@ function updateAvgProductRating($productId, $conn){
     $averageRating = round($totalRating / $iterations);
 
     $productRating = "UPDATE product SET product_rating='1' WHERE product_id ='35'";
-    mysqli_query($conn, $productRating);
+    $insert = mysqli_query($conn, $productRating);
     echo $outputstring;
 }
 ?>
