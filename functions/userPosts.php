@@ -25,7 +25,7 @@ function getImage($conn, $postId): void{
   
             //print title and image
             echo '<img src="data:image/jpeg;base64,'.$image.'">';
-            echo '<script>alert('.$image.')</script>';
+            echo $image;
         }
     }
 }
