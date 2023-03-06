@@ -33,7 +33,9 @@
         $stmt_Ucheck->bind_param('s', $userName);
         $stmt_Echeck->bind_param('s', $userEmailAdress);
         $stmt_Ucheck->execute();
+        $stmt_Ucheck->store_result();
         $stmt_Echeck->execute();
+        $stmt_Echeck->store_result();
 
         $Ucheck_result = $stmt_Ucheck->get_result();
         $Echeck_result = $stmt_Echeck->get_result();
@@ -42,7 +44,7 @@
         if($Ucheck_result->mysqli_num_rows() > 0){
             echo 'Unfortunatly the username is already taken.';
         }
-        else if ($Echeck_result->mysqli_num_rows() > 0){
+        else if ($Echeck_result->num_rows() > 0){
             echo 'Emailadress is already beeing used for an existing account.';
         }
         else {
