@@ -9,6 +9,7 @@ $userId = $_SESSION['userid'];
 
 if (isset($_POST["rating"])) {
     $productId = '40';
+    $postId = '1244';
 
     //$productId = $_POST["productId"];
     $rating = $_POST["rating"];
@@ -22,11 +23,11 @@ if (isset($_POST["rating"])) {
         $insertQuery = "INSERT INTO rating(user_id, rating_productid, rating) VALUES ('" . $userId . "','" . $productId . "','" . $rating . "') ";
         $result = mysqli_query($conn, $insertQuery);
         updateAvgProductRating($productId, $conn);
-        updateAvgUserRating($productId, $userId, $conn);
+        updateAvgUserRating($postId, $userId, $conn);
         echo "Success";
     } else {
         updateAvgProductRating($productId, $conn);
-        updateAvgUserRating($productId, $userId, $conn);
+        updateAvgUserRating($postId, $userId, $conn);
         echo "Already Voted!";
     }
 }
