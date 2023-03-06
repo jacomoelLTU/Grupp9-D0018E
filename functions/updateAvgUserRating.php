@@ -1,6 +1,6 @@
 <!-- This function updates the average rating for a user in the user table -->
 <?php
-function updateAvgUserRating($postId, $userId, $conn){
+function updateAvgUserRating($postId, $conn){
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
