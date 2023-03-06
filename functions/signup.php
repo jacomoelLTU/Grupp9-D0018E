@@ -28,13 +28,15 @@
         if(mysqli_num_rows($check_result) > 0){
             echo 'Username or Email address is already in use, please try other credentials!';
         }
+        else{
 
-        //insert prepared statement
-        $stmt_UserCredinsert = $conn->prepare("INSERT into user (user_name, user_pwd, user_firstname, user_surname, user_email)
-                                VALUES (?, ?, ?, ?, ?)");
-        $stmt_UserCredinsert->bind_param('sssss', $userName, $passWord, $userFirstName, $userSurName, $userEmailAdress);
-        $stmt_UserCredinsert->execute();
+            //insert prepared statement
+            $stmt_UserCredinsert = $conn->prepare("INSERT into user (user_name, user_pwd, user_firstname, user_surname, user_email)
+                                    VALUES (?, ?, ?, ?, ?)");
+            $stmt_UserCredinsert->bind_param('sssss', $userName, $passWord, $userFirstName, $userSurName, $userEmailAdress);
+            $stmt_UserCredinsert->execute();
 
-        header('Location:../pages/loginForm.php?msg'); 
+            header('Location:../pages/loginForm.php?msg'); 
+        }
     
         ?>
