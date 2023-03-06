@@ -28,8 +28,8 @@ body{
 }
 /*  Could not be postItem img for some reason so just do attributes on container for all img in the container*/
 #postContainer img{
-    max-width:  150px;
-    max-height: 150px;
+    width:  150px;
+    height: 150px;
     object-fit: cover;
     object-position: bottom;
 }
