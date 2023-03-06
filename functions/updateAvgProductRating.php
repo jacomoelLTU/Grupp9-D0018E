@@ -20,7 +20,7 @@ function updateAvgProductRating($productId, $conn){
     $averageRating = round($totalRating / $iterations);
 
     $productRating = "UPDATE product SET product_rating='1' WHERE product_id ='35'";
-    $insert = mysqli_query($conn, $productRating);
+    mysqli_query($conn, $productRating);
     echo $outputstring;
 }
 ?>

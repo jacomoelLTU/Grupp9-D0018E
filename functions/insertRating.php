@@ -23,6 +23,7 @@ if (isset($_POST["rating"])) {
         updateAvgProductRating($productId, $conn);
         echo "Success";
     } else {
+        updateAvgProductRating($productId, $conn);
         echo "Already Voted!";
     }
 }
