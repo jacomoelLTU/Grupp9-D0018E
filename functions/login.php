@@ -9,12 +9,13 @@
         $usrn = $_POST['username'];
         $pwd  = $_POST['password'];
 
-        $stmt = $conn->prepare("SELECT password from user where username = ?");
+        $stmt = $conn->prepare("SELECT user_pwd from user where user_name = ?");
         $stmt->bind_param('s', $username);
         $stmt->execute();
         $pwdHash = mysqli_stmt_get_result($stmt);
 
-        $query = mysqli_query($conn,"SELECT user_name, user_pwd, user_id FROM user WHERE user_name='$usrn' AND user_pwd='$pwd'");
+        $query = mysqli_query($conn,"SELECT user_name, user_pwd, user_id FROM user WHERE user_name='$usrn'");
+
         while($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
             if(password_verify($pwd, $pwdHash)){
                 $usrn_db   = $row['user_name'];
