@@ -1,10 +1,6 @@
 <!-- This function updates the average rating of a product in the product table -->
 <?php
 function updateAvgProductRating($productId, $conn){
-    //session_start();
-    //$userId = $_SESSION['userid'];
-    //$productId = $_GET['productid']; //this might be wrong way to get this, temp "solution" to move on
-
     $query = "SELECT rating FROM rating WHERE rating_productid='$productId'";
     $result = mysqli_query($conn, $query);
     $outputstring = "Outputstring: ";
@@ -16,7 +12,7 @@ function updateAvgProductRating($productId, $conn){
         $outputstring .= "iteration: $iterations " . " totalrating: $totalRating";
     }
 
-    //calculate average rating
+    //calculate average rating for product
     $averageRating = round($totalRating / $iterations);
 
     $productRating = "UPDATE product SET product_rating=$averageRating WHERE product_id =$productId";

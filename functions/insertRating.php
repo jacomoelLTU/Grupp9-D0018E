@@ -2,6 +2,7 @@
 include 'config.php';
 include '../pages/loginCheck.php';
 include 'updateAvgProductRating.php';
+include 'updateAvgUserRating.php';
 
 $userId = $_SESSION['userid'];
 //$productId = $_GET['productid'];
@@ -21,9 +22,11 @@ if (isset($_POST["rating"])) {
         $insertQuery = "INSERT INTO rating(user_id, rating_productid, rating) VALUES ('" . $userId . "','" . $productId . "','" . $rating . "') ";
         $result = mysqli_query($conn, $insertQuery);
         updateAvgProductRating($productId, $conn);
+        updateAvgUserRating($userId, $conn);
         echo "Success";
     } else {
         updateAvgProductRating($productId, $conn);
+        updateAvgUserRating($userId, $conn);
         echo "Already Voted!";
     }
 }
