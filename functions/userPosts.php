@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 include 'config.php';
 
 
-function getImage($conn, $postId): void{
+function getImage($conn, $postId): string{
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
@@ -24,7 +24,7 @@ function getImage($conn, $postId): void{
             $image = base64_encode(file_get_contents($url));
   
             //print title and image
-            echo "style='background-image:url(data:image/jpeg;base64,".$image.");'";
+            return "style='background-image:url(data:image/jpeg;base64,".$image.");'";
         }
     }
 }
