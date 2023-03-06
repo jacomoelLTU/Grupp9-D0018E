@@ -17,7 +17,7 @@ function updateAvgUserRating($postId, $userId, $conn){
     
     while($row = mysqli_fetch_array($joinquery, MYSQLI_ASSOC)){
         if(!empty($postowner['post_userid'])){
-            $outputstring .= "postownerid:". $postowner['post_userid'] . "userid: $userId";
+            $outputstring .= "postownerid:". $postowner['post_userid'] . "rowpostuserid: $row[post_userid]";
             if($row['post_userid']==$postowner['post_userid'] && !empty($row['product_rating'])){
                 $iterations += 1;
                 $totalRating += $row['product_rating'];
