@@ -13,7 +13,7 @@ session_start();
 $userId = $_SESSION['userid'];
 // $productId = $_GET['productId']; //this might be wrong way to get this, temp "solution" to move on
 //$userId = '19';
-$productId = '33';
+$productId = '38';
 
 //$postId = $_GET['postId'];
 $query = "SELECT * FROM product WHERE product_id=$productId";
@@ -24,7 +24,7 @@ $outputString = '';
 foreach ($result as $row) {
     // $userRating = "SELECT rating FROM rating WHERE user_id='19'";
     // $ratingQuery = mysqli_query($conn, $userRating);
-
+    $postId = $row['product_postid'];
     $productRating = productRating($userId, $productId, $conn);
     $totalRating = totalRating($productId, $conn);
 

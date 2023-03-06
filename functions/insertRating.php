@@ -7,8 +7,8 @@ $userId = $_SESSION['userid'];
 //$productId = $_GET['productid'];
 
 if (isset($_POST["rating"])) {
-    $productId = '33';
-    //updateAvgProductRating($productId);
+    $productId = '38';
+
     //$productId = $_POST["productId"];
     $rating = $_POST["rating"];
     
@@ -18,11 +18,12 @@ if (isset($_POST["rating"])) {
     }
     
     if ($rowcount == 0) {
-        //query below is wrong cause you cant update a childs row, gonna look into this
         $insertQuery = "INSERT INTO rating(user_id, rating_productid, rating) VALUES ('" . $userId . "','" . $productId . "','" . $rating . "') ";
         $result = mysqli_query($conn, $insertQuery);
-        echo "success";
+        updateAvgProductRating($productId, $conn);
+        echo "Success";
     } else {
+        updateAvgProductRating($productId, $conn);
         echo "Already Voted!";
     }
 }
