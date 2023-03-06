@@ -21,8 +21,9 @@ function updateAvgUserRating($userId, $conn){
     }
 
     //calculate average rating for user
+    if($iterations!=0){
     $averageRating = round($totalRating / $iterations);
-
+    }
     $userRating = "UPDATE user SET user_rating=$averageRating WHERE user_id =$userId";
     mysqli_query($conn, $userRating);
     echo $outputstring;
