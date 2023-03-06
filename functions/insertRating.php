@@ -7,7 +7,7 @@ $userId = $_SESSION['userid'];
 //$productId = $_GET['productid'];
 
 if (isset($_POST["rating"])) {
-    $productId = '33';
+    $productId = '38';
 
     //$productId = $_POST["productId"];
     $rating = $_POST["rating"];
