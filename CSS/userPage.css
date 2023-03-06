@@ -21,11 +21,12 @@ body{
 }
 #postContainer{
     display: grid;
-    gap: 1px;
-    grid-template-columns: repeat(3, 160px);
+    grid-template-columns: repeat(3, 150px);
+    gap: 10px;
 }
 #postItem{
     background-color: rgb(222, 247, 255);
     height:150px;
     width:150px;
+    margin:0 auto;
 }
