@@ -32,7 +32,7 @@
         $stmt_check->bind_param('ss', $userName, $userEmailAdress);
         $stmt_check->execute();
         $check_result = mysqli_stmt_get_result($stmt_check);
-        
+
 
         //$conn->autocommit(TRUE);
 
@@ -53,8 +53,10 @@
         /////////////////                                      //////////////////////
 
         //$conn->autocommit(FALSE);
-        $stmt_UserCredinsert = "INSERT into user (user_name, user_pwd, user_firstname, user_surname, user_email)
-                                VALUES (?, ?, ?, ?, ?)";
+
+        //insert prepared statement
+        $stmt_UserCredinsert = $conn->prepare("INSERT into user (user_name, user_pwd, user_firstname, user_surname, user_email)
+                                VALUES (?, ?, ?, ?, ?)");
         $stmt_UserCredinsert->bind_param('sssss', $userName, $passWord, $userFirstName, $userSurName, $userEmailAdress);
         $stmt_UserCredinsert->execute();
         //$conn->commit();
