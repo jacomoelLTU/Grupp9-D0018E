@@ -24,7 +24,7 @@ function getImage($conn, $postId): void{
             $image = base64_encode(file_get_contents($url));
   
             //print title and image
-            echo 'style="background-image:url(data:image/jpeg;base64,'.$image.')">';
+            echo 'style="background-image:url(data:image/jpeg;base64,'.$image.');"';
         }
     }
 }
