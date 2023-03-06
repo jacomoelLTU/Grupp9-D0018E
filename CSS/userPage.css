@@ -30,7 +30,7 @@ body{
     background-color: rgb(222, 247, 255);
     height:150px;
     width:150px;
-    margin:0 auto
+    display:flex;
 }
 #postItem img{
     max-width:100%;
