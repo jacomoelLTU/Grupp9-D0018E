@@ -9,6 +9,7 @@ function updateAvgUserRating($userId, $conn){
     $joinquery = mysqli_query($conn, "SELECT post.post_userid, post.post_id, product.product_rating FROM post INNER JOIN product ON post.post_id=product.product_postid;");
     
     while($row = mysqli_fetch_array($joinquery, MYSQLI_ASSOC)){
+        $outputstring .= "rowuserid:". $row['user_id'] . "userid: $userId";
         if($row['user_id']==$userId){
             $iterations += 1;
             $totalRating += $row['product_rating'];
