@@ -11,14 +11,13 @@ function updateAvgUserRating($productId, $userId, $conn){
     $totalRating = 0;
 
     $getpostowner = mysqli_query($conn, "SELECT post_userid FROM post WHERE post_id=$productId");
-    $postowner = mysqli_fetch_array($getpostowner, MYSQLI_ASSOC);
 
     $joinquery = mysqli_query($conn, "SELECT post.post_userid, post.post_id, product.product_rating FROM post INNER JOIN product ON post.post_id=product.product_postid;");
     
     while($row = mysqli_fetch_array($joinquery, MYSQLI_ASSOC)){
-        while($result = $postowner['post_userid']){
-            $outputstring .= "postownerid:". $result['post_userid'] . "userid: $userId";
-            if($row['post_userid']==$result['post_userid'] && !empty($row['product_rating'])){
+        while($postowner = mysqli_fetch_array($getpostowner, MYSQLI_ASSOC)){
+            $outputstring .= "postownerid:". $postowner['post_userid'] . "userid: $userId";
+            if($row['post_userid']==$postowner['post_userid'] && !empty($row['product_rating'])){
                 $iterations += 1;
                 $totalRating += $row['product_rating'];
                 $outputstring .= "iterationuser: $iterations " . " totalratinguser: $totalRating";
