@@ -3,11 +3,9 @@
 function updateAvgUserRating($userId, $conn){
     //$query = "SELECT product_rating, product_postid FROM product WHERE product_userid='$userId'";
     //$result = mysqli_query($conn, $query);
-
-    $outputstring = "Outputstring: ";
+    $outputstring = "";
     $iterations = 0;
     $totalRating = 0;
-
     $joinquery = mysqli_query($conn, "SELECT post.post_userid, post.post_id, product.product_rating FROM post INNER JOIN product ON post.post_id=product.product_postid;");
     
     while($row = mysqli_fetch_array($joinquery, MYSQLI_ASSOC)){

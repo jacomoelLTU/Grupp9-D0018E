@@ -1,11 +1,11 @@
 <!-- This function updates the average rating of a product in the product table -->
 <?php
 function updateAvgProductRating($productId, $conn){
-    $query = "SELECT rating FROM rating WHERE rating_productid='$productId'";
-    $result = mysqli_query($conn, $query);
-    $outputstring = "Outputstring: ";
+    $outputstring = "";
     $iterations = 0;
     $totalRating = 0;
+    $result = mysqli_query($conn, "SELECT rating FROM rating WHERE rating_productid='$productId'");
+    
     while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){ //you might wanna use mysqli_fetch_array here or similar function, example: $result = mysqli_fetch_array($query, MYSQLI_ASSOC));
         $iterations += 1;
         $totalRating += $row['rating'];
