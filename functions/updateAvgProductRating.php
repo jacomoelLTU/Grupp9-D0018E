@@ -1,8 +1,6 @@
 <!-- This function updates the average rating of a product in the product table -->
 <?php
-function updateAvgProductRating($productId){
-    include 'config.php';
-
+function updateAvgProductRating($productId, $conn){
     //session_start();
     //$userId = $_SESSION['userid'];
     //$productId = $_GET['productid']; //this might be wrong way to get this, temp "solution" to move on
@@ -10,6 +8,8 @@ function updateAvgProductRating($productId){
     $query = "SELECT rating FROM rating WHERE rating_productid='$productId'";
     $result = mysqli_query($conn, $query);
     $outputstring = "Outputstring: ";
+    $iterations = 0;
+    $totalRating = 0;
     while($row = mysqli_fetch_array($result)){ //you might wanna use mysqli_fetch_array here or similar function, example: $result = mysqli_fetch_array($query, MYSQLI_ASSOC));
         $iterations .= 1;
         $totalRating .= $row;
