@@ -10,7 +10,7 @@
         $pwd  = $_POST['password'];
 
         $stmt = $conn->prepare("SELECT user_pwd from user where user_name = ?");
-        $stmt->bind_param('s', $username);
+        $stmt->bind_param('s', $usrn);
         $stmt->execute();
         $pwdHash = mysqli_stmt_get_result($stmt);
 
