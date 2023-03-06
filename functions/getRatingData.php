@@ -5,11 +5,9 @@ require_once "config.php";
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-include 'config.php';
 
 echo "Hello world!<br>";
 
-session_start();
 $userId = $_SESSION['userid'];
 $postId = $_GET['postId'];
 $productIdquery = mysqli_query($conn, "SELECT product_id FROM product WHERE product_postid=$postId;");
