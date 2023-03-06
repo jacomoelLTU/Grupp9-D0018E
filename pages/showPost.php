@@ -116,7 +116,7 @@ $price = $row['product_price'];
   </div>
   <div id="grid-B">
     <link rel="stylesheet" type="text/css" href="../CSS/ratingForm.css">
-    <body onload="getRating('../functions/getRatingData.php?postId=<?php echo $postId; ?>')">
+    <body onload="getRating('../functions/getRatingData.php',$postId)">
     <div class="container">
         <h2>Rating</h2>
         <span id="post_list"></span>
@@ -141,7 +141,7 @@ $price = $row['product_price'];
 
 <script type="text/javascript">
 
-    function getRating(url) {
+    function getRating(url, postId) {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
