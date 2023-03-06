@@ -148,7 +148,7 @@ $price = $row['product_price'];
                 document.getElementById("post_list").innerHTML = this.responseText;
             }
         };
-        xhttp.open("GET", url, true, $postId);
+        xhttp.open("GET", url, true, postId);
         xhttp.send();
     }
 
