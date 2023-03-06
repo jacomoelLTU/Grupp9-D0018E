@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 include 'config.php';
 
 
-function getImage($conn, $postId): void{
+function getImage($conn, $postId): string{
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
@@ -24,7 +24,7 @@ function getImage($conn, $postId): void{
             $image = base64_encode(file_get_contents($url));
   
             //print title and image
-            echo "style='background-image:url(data:image/jpeg;base64,".$image.");'";
+            return "style='background-image:url(data:image/jpeg;base64,".$image."');";
         }
     }
 }
@@ -41,7 +41,7 @@ $userid = $_SESSION['userid'];
 
 $query = mysqli_query($conn, "SELECT * FROM post WHERE post_userid='$userid'");
 while($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
-    echo"<div id='postItem" .getImage($conn, $row['post_id'])."'>".$row['post_title'].
+    echo"<div id='postItem' " .getImage($conn, $row['post_id'])."'>".$row['post_title'].
     ": <a href ='showPost.php?postId=".$row['post_id'].
     "&postTitle=".$row['post_title']."&postDescription=".
     $row['post_description']."'>Show post</a>
