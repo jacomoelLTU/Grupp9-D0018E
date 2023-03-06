@@ -20,7 +20,8 @@ body{
     height:100px;
 }
 #postContainer{
-    display: grid;
+    padding-top:100px;
+    display: inline-grid;
     grid-template-columns: repeat(3, 150px);
     gap: 10px;
     justify-self: center;
