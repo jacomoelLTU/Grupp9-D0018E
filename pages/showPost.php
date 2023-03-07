@@ -119,7 +119,7 @@ $price = $row['product_price'];
   </div>
   <div id="grid-B">
     <link rel="stylesheet" type="text/css" href="../CSS/ratingForm.css">
-    <?php echo "<body onload='getRating('../functions/getRatingData.php?postId=".$postId."')'>"?>
+    <?php echo "<body onload='getRating('../functions/getRatingData.php?postId=.$postId.')'>"?>
     <div class="container">
         <h2>Rating</h2>
         <span id="post_list"></span>
