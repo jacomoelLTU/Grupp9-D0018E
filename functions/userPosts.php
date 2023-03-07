@@ -3,7 +3,8 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 include 'config.php';
-
+//Requier = import library but not include i.e print out. content.
+require 'showPost.php';
 
 function getImage($conn, $postId): string{
     ini_set('display_errors', 1);
@@ -43,8 +44,8 @@ $query = mysqli_query($conn, "SELECT * FROM post WHERE post_userid='$userid'");
 while($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
     echo"
     <div id='postItem' " .getImage($conn, $row['post_id'])."'> 
-        <div class='showItemText'></div>
-        <a class='addItemIcon' href ='showPost.php?postId=".$row['post_id']."&postTitle=".$row['post_title']."&postDescription=".$row['post_description']."'><i class='bi bi-bag-plus'></i></a>
+        <a class='showItemText'  href ='showPost.php?postId=".$row['post_id']."&postTitle=".$row['post_title']."&postDescription=".$row['post_description']."'></div>
+        <a class='addItemIcon' href='".insertToBasket($conn, $postId)."'><i class='bi bi-bag-plus'></i></a>
         <a class='editItemIcon' href='../pages/editPost.php?postId=".$row['post_id']."'><i class='bi bi-three-dots-vertical'></i></a>
     </div>";
 }
