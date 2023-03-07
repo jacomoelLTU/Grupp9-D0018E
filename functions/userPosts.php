@@ -78,7 +78,7 @@ function insertToBasket($conn, $productId): void {
 //echo insertToBasket($conn, $row['post_id']) 
 ?>
 <script>
-    document.getElementByClass("showItemText").onclick = function() {insert()};
+    document.getElementById("clickme").onclick = function() {insert()};
     function insert(){
         alert("inne i insert");
     }
@@ -91,7 +91,7 @@ $userid = $_SESSION['userid'];
 
 $query = mysqli_query($conn, "SELECT * FROM post WHERE post_userid='$userid'");
 while($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
-    echo"
+    echo"<div id='clickme'>CLICK MEE</div>
     <div id='postItem' " .getImage($conn, $row['post_id'])."'> 
         <div class='showItemText'></div>
         <a class='addItemIcon' href ='showPost.php?postId=".$row['post_id']."&postTitle=".$row['post_title']."&postDescription=".$row['post_description']."'><i class='bi bi-bag-plus'></i></a>
