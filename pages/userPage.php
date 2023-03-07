@@ -1,4 +1,5 @@
 <link rel="stylesheet" type="text/css" href="../CSS/userPage.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 <body>
 
     Click to go to <a href="../index.php"><i class="bi bi-house-door"></i></a>! 
