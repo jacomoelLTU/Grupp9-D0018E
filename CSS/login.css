@@ -6,3 +6,7 @@ body{
     text-align: center;
     border: black 1px solid;
 }
+
+#loginForm{
+    margin: auto;
+}
