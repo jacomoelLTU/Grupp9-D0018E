@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 <body>
 <?php
+include '../functions/config.php';
 session_start();
 $userId = $_SESSION['userid'];
 $userRating = mysqli_query($conn, "SELECT user_rating FROM user WHERE user_id=$userId;");
