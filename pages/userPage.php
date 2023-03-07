@@ -1,7 +1,5 @@
 <link rel="stylesheet" type="text/css" href="../CSS/userPage.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 <body>
-    <h1><i class="bi-globe"></i> Hello, world!</h1>
 
     Click to go to <a href="../index.php"><i class="bi bi-house-door"></i></a>! 
     <div id="profileContainer">
