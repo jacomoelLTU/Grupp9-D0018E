@@ -33,7 +33,6 @@ function getImage($conn, $postId): string{
 
 function insertToBasket($conn, $productId): void {
     try{
-      session_start();
       mysqli_begin_transaction($conn);
   
       //Checks if there is a session active, if not set $usrid to null...
@@ -91,7 +90,7 @@ $query = mysqli_query($conn, "SELECT * FROM post WHERE post_userid='$userid'");
 while($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
     echo"
     <div id='postItem' " .getImage($conn, $row['post_id'])."'> 
-        <a class='showItemText'  href ='showPost.php?postId=".$row['post_id']."&postTitle=".$row['post_title']."&postDescription=".$row['post_description']."'></div>
+        <a class='showItemText' href ='showPost.php?postId=".$row['post_id']."&postTitle=".$row['post_title']."&postDescription=".$row['post_description']."'></div>
         <a class='addItemIcon' href='". insertToBasket($conn, $row['post_id']) ."'><i class='bi bi-bag-plus'></i></a>
         <a class='editItemIcon' href='../pages/editPost.php?postId=".$row['post_id']."'><i class='bi bi-three-dots-vertical'></i></a>
     </div>";
