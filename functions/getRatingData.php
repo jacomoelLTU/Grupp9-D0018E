@@ -5,13 +5,15 @@ require_once "config.php";
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 echo "Hello world!<br>";
 
 session_start();
 $userId = $_SESSION['userid'];
-//$postId = $_GET['postId'];
-$postId = '1244';
+$postId = $_GET['postId'];
+//$postId = '1244';
+
 
 //get product id from product table
 $productIdquery = mysqli_query($conn, "SELECT product_id FROM product WHERE product_postid=$postId;");
