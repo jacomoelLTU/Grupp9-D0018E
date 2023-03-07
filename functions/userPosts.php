@@ -78,7 +78,7 @@ function insertToBasket($conn, $productId): void {
 ?>
 <script>
 function myFunction() {
-  document.getElementByClass("addItemIcon").innerHTML = "YOU CLICKED ME!";
+  alert("Hej");
 }
 </script>
 <?php
