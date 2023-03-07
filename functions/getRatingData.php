@@ -15,7 +15,8 @@ $postId = '1244';
 
 //get product id from product table
 $productIdquery = mysqli_query($conn, "SELECT product_id FROM product WHERE product_postid=$postId;");
-$productId = mysqli_fetch_assoc($productIdquery);
+$productrow = mysqli_fetch_assoc($productIdquery);
+$productId = $productrow['product_id'];
 
 // product query
 $query = "SELECT * FROM product WHERE product_id=$productId";
