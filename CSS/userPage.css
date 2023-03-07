@@ -61,7 +61,7 @@ body{
 
 /* Media queries */
 
-@media screen and (min-width: 820px) {
+@media screen and (max-width: 800px) {
     #postContainer{
         grid-template-columns: repeat(2, 150px);
     }
