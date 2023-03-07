@@ -123,8 +123,8 @@ $price = $row['product_price'];
   </div>
   <div id="grid-B">
     <link rel="stylesheet" type="text/css" href="../CSS/ratingForm.css">
-    <!-- <?php //echo "<body onload='getRating('../functions/getRatingData.php?postId=1244')'>"?> -->
-    <body onload='getRating("../functions/getRatingData.php?postId=<?php echo "$postId"?>")'>
+    <!-- <?php //echo "<body onload='getRating('../functions/rating/getRatingData.php?postId=1244')'>"?> -->
+    <body onload='getRating("../functions/rating/getRatingData.php?postId=<?php echo "$postId"?>")'>
     <div class="container">
         <h2>Rating</h2>
         <span id="post_list"></span>
@@ -205,7 +205,7 @@ $price = $row['product_price'];
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
 
-                getRating('../functions/getRatingData.php?postId=<?php echo "$postId"?>');
+                getRating('../functions/rating/getRatingData.php?postId=<?php echo "$postId"?>');
 
                 if (this.responseText != "success") {
                     alert(this.responseText);
@@ -213,7 +213,7 @@ $price = $row['product_price'];
             }
         };
 
-        xhttp.open("POST", "../functions/insertRating.php?postId=<?php echo "$postId"?>", true);
+        xhttp.open("POST", "../functions/rating/insertRating.php?postId=<?php echo "$postId"?>", true);
         xhttp.setRequestHeader("Content-type",
                 "application/x-www-form-urlencoded");
         var parameters = "rating=" + ratingValue + "&rating_productid="
