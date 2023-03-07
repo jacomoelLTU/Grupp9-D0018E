@@ -6,7 +6,7 @@ function updateAvgProductRating($productId, $conn){
     $totalRating = 0;
     $result = mysqli_query($conn, "SELECT rating FROM rating WHERE rating_productid='$productId'");
     
-    while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){ //you might wanna use mysqli_fetch_array here or similar function, example: $result = mysqli_fetch_array($query, MYSQLI_ASSOC));
+    while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){ 
         $iterations += 1;
         $totalRating += $row['rating'];
         $outputstring .= "iteration: $iterations " . " totalrating: $totalRating";
