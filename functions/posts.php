@@ -44,6 +44,7 @@ require 'config.php';
     catch(mysqli_sql_exception $e){
         mysqli_rollback($conn);
         echo'<script>alert("Rolling back...");</script>';
+        header('Location: ../index.php');
         throw $e;
     }
     header('Location: ../index.php');
