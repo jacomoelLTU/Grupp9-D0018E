@@ -1,6 +1,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="../CSS/ratingForm.css">
-<body onload="getRating('../functions/getRatingData.php?postId=1244')">
+<body onload="getRating('../functions/getRatingData.php')">
     <div class="container">
         <h2>Rating System</h2>
         <span id="post_list"></span>
