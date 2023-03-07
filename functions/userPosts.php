@@ -85,7 +85,7 @@ function insertToBasket($conn, $productId): void {
 ?>
 <script>
 function myFunction() {
-    <?php echo insertToBasket($conn, $row['post_id']) ?>;
+    <?php echo "KÖr min func" ?>;
 }
 </script>
 <?php
