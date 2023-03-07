@@ -57,3 +57,12 @@ body{
     color: black;
     font-size: 23;
 }
+
+
+/* Media queries */
+
+@media screen and (min-width: 820px) {
+    #postContainer{
+        grid-template-columns: repeat(2, 150px);
+    }
+  }
