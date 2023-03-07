@@ -25,12 +25,12 @@ if (isset($_POST["rating"])) {
     if ($rowcount == 0) {
         $insertQuery = "INSERT INTO rating(user_id, rating_productid, rating) VALUES ('" . $userId . "','" . $productId . "','" . $rating . "') ";
         $result = mysqli_query($conn, $insertQuery);
-        updateAvgProductRating($productId, $conn);
-        updateAvgUserRating($postId, $conn);
+        //updateAvgProductRating($productId, $conn);
+        //updateAvgUserRating($postId, $conn);
         echo "Success";
     } else {
-        updateAvgProductRating($productId, $conn);
-        updateAvgUserRating($postId, $conn);
+        //updateAvgProductRating($productId, $conn);
+        //updateAvgUserRating($postId, $conn);
         echo "Already Voted!";
     }
 }
