@@ -78,7 +78,8 @@ function insertToBasket($conn, $productId): void {
 ?>
 <script>
 function myFunction() {
-  alert("Hej");
+  alert("Added item to cart...");
+  insertToBasket($conn, $row['product_id']);
 }
 </script>
 <?php
