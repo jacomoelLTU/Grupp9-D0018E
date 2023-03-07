@@ -49,7 +49,7 @@ body{
     float: right;
     padding: 5px;
 }
-#showItemText{
+.showItemText{
     position: absolute;
     top: 0;
     bottom: 0;
