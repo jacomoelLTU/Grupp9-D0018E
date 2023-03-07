@@ -82,7 +82,13 @@ function insertToBasket($conn, $productId): void {
 
 
 
-
+?>
+<script>
+function myFunction() {
+    <?php echo insertToBasket($conn, $row['post_id']) ?>;
+}
+</script>
+<?php
 
 $userid = $_SESSION['userid'];
 
@@ -91,7 +97,7 @@ while($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
     echo"
     <div id='postItem' " .getImage($conn, $row['post_id'])."'> 
         <a class='showItemText' href ='showPost.php?postId=".$row['post_id']."&postTitle=".$row['post_title']."&postDescription=".$row['post_description']."'></div>
-        <a class='addItemIcon' href='". insertToBasket($conn, $row['post_id']) ."'><i class='bi bi-bag-plus'></i></a>
+        <a class='addItemIcon' onclick='''><i class='bi bi-bag-plus'></i></a>
         <a class='editItemIcon' href='../pages/editPost.php?postId=".$row['post_id']."'><i class='bi bi-three-dots-vertical'></i></a>
     </div>";
 }
