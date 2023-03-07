@@ -1,6 +1,8 @@
 body{
     padding: 0px;
     margin: auto;
+    font-family: "Lucida Console", "Courier New", monospace;
+    border: black 2px solid;
 }
 #login{
     text-align: center;
