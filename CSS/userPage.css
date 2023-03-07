@@ -50,8 +50,8 @@ body{
     padding: 5px;
 }
 .showItemText{
+    position: absolute;
     text-align: center;
-    vertical-align: center;
     align-self: center;
     width:150px;
     height:150px;
