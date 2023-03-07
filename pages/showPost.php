@@ -146,10 +146,6 @@ $price = $row['product_price'];
 
 <script type="text/javascript">
 
-    function getRating(){
-      getRatingData();
-      document.getElementById("post_list").innerHTML = this.responseText;
-    }
     function getRating(url) {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
