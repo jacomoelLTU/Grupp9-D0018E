@@ -116,7 +116,7 @@ $price = $row['product_price'];
   </div>
   <div id="grid-B">
     <link rel="stylesheet" type="text/css" href="../CSS/ratingForm.css">
-    <body onload="getRating('../functions/getRatingData.php',$postId)">
+    <body onload="getRating('../functions/getRatingData.php')">
     <div class="container">
         <h2>Rating</h2>
         <span id="post_list"></span>
@@ -141,16 +141,15 @@ $price = $row['product_price'];
 
 <script type="text/javascript">
 
-    function getRating(url, postId) {
+    function getRating(url) {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 document.getElementById("post_list").innerHTML = this.responseText;
             }
         };
-        var parameters = "postId=" + postId;
         xhttp.open("GET", url, true);
-        xhttp.send(parameters);
+        xhttp.send();
     }
 
     function mouseOverRating(productId, rating) {
