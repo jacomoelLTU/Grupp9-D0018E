@@ -81,7 +81,7 @@ function myFunction() {
   alert("Added item to cart...");
   <?php insertToBasket($conn, $row['product_id']); ?>
 }
-document.getElementByClass("addItemICon").onclick=function(){insertToBasket($conn, $row['product_id'])};
+document.getElementByClass("addItemIcon").onclick=myFunction();
 </script>
 <?php
 
