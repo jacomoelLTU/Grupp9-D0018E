@@ -119,7 +119,7 @@ $price = $row['product_price'];
   </div>
   <div id="grid-B">
     <link rel="stylesheet" type="text/css" href="../CSS/ratingForm.css">
-    <body onload="getRating('../functions/getRatingData.php?postId=<?php echo $postId; ?>')">
+    <body onload="getRating()">
     <div class="container">
         <h2>Rating</h2>
         <span id="post_list"></span>
@@ -146,6 +146,10 @@ $price = $row['product_price'];
 
 <script type="text/javascript">
 
+    function getRating(){
+      getRatingData();
+      document.getElementById("post_list").innerHTML = this.responseText;
+    }
     function getRating(url) {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
@@ -217,3 +221,73 @@ $price = $row['product_price'];
     }
 </script>
 
+<?php 
+function getRatingData(){
+  require_once "ratingFunctions.php";
+  require_once "config.php";
+  
+  ini_set('display_errors', 1);
+  ini_set('display_startup_errors', 1);
+  error_reporting(E_ALL);
+  mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+  
+  echo "Hello world!<br>";
+  
+  session_start();
+  $userId = $_SESSION['userid'];
+  $postId = $_GET['postId'];
+  //$postId = '1244';
+  
+  
+  //get product id from product table
+  $productIdquery = mysqli_query($conn, "SELECT product_id FROM product WHERE product_postid=$postId;");
+  $productrow = mysqli_fetch_assoc($productIdquery);
+  $productId = $productrow['product_id'];
+  
+  // product query
+  $query = "SELECT * FROM product WHERE product_id=$productId";
+  $result = mysqli_query($conn, $query);
+  
+  $outputString = '';
+  
+  foreach ($result as $row) {
+      // $userRating = "SELECT rating FROM rating WHERE user_id='19'";
+      // $ratingQuery = mysqli_query($conn, $userRating);
+      $postId = $row['product_postid'];
+      $productRating = productRating($userId, $productId, $conn);
+      $totalRating = totalRating($productId, $conn);
+  
+      // $totalRating = totalRating($row['id'], $conn);
+      //hardcode to test
+      // $averageRating = "SELECT product_rating FROM product WHERE product_id='33'";
+      // $avgRatingQuery = mysqli_query($conn, $averageRating);
+      // $totalReviews = "";
+  
+      $outputString .= '
+          <div class="row-item">
+          <div class="row-title">' . $row['product_title'] . '</div> <div class="response" id="response-' . $productId . '"></div>
+          <ul class="list-inline"  onMouseLeave="mouseOutRating(' . $productId . ',' . $productRating . ');"> ';
+      
+      for ($count = 1; $count <= 5; $count ++) {
+          $starRatingId = $productId . '_' . $count;
+          
+          //kan vara här felet är, jämför med guiden, där använder dem ratingen current user har lagt istället för average på hela produkten
+          if ($count <= $productRating) {
+              
+              $outputString .= '<li value="' . $count . '" product_id="' . $starRatingId . '" class="star selected">&#9733;</li>';
+          } else {
+              $outputString .= '<li value="' . $count . '"  product_id="' . $starRatingId . '" class="star" onclick="addRating(' . $productId . ',' . $count . ');" onmouseover="mouseOverRating(' . $productId . ',' . $count . ');">&#9733;</li>';
+          }
+      } // endFor
+      
+      $outputString .= '
+          </ul>
+          
+          <p class="review-note">Total Reviews: ' . $totalRating . '</p>
+          <p class="text-address">' . $row["product_state"] . '</p>
+          </div>
+          ';
+  }
+  echo $outputString;
+}
+?>
