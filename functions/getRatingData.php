@@ -11,9 +11,9 @@ session_start();
 $userId = $_SESSION['userid'];
 $postId = $_GET['postId'];
 //$postId = '1244';
-//$postId = getPostId();
 
 //get product id from product table
+if(!empty($postId)){
 $productIdquery = mysqli_query($conn, "SELECT product_id FROM product WHERE product_postid=$postId;");
 $productrow = mysqli_fetch_assoc($productIdquery);
 $productId = $productrow['product_id'];
@@ -45,7 +45,6 @@ foreach ($result as $row) {
     for ($count = 1; $count <= 5; $count ++) {
         $starRatingId = $productId . '_' . $count;
         
-        //kan vara här felet är, jämför med guiden, där använder dem ratingen current user har lagt istället för average på hela produkten
         if ($count <= $productRating) {
             
             $outputString .= '<li value="' . $count . '" product_id="' . $starRatingId . '" class="star selected">&#9733;</li>';
@@ -61,6 +60,10 @@ foreach ($result as $row) {
         <p class="text-address">' . $row["product_state"] . '</p>
         </div>
         ';
+}
+}
+else{
+    $outputString = "test";
 }
 
 echo $outputString;
