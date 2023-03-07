@@ -5,8 +5,8 @@ include 'updateAvgProductRating.php';
 include 'updateAvgUserRating.php';
 
 $userId = $_SESSION['userid'];
-//$postId = $_GET['postId'];
-$postId = '1244';
+$postId = $_GET['postId'];
+//$postId = '1244';
 if (isset($_POST["rating"])) {
     $productIdquery = mysqli_query($conn, "SELECT product_id FROM product WHERE product_postid=$postId;");
     $productId = mysqli_fetch_assoc($productIdquery);
