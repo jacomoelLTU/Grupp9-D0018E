@@ -87,6 +87,8 @@ document.getElementByClass("addItemIcon").onclick=myFunction();
 
 $userid = $_SESSION['userid'];
 
+//we have to implement if post_img is not empty below
+
 $query = mysqli_query($conn, "SELECT * FROM post WHERE post_userid='$userid'");
 while($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
     echo"
