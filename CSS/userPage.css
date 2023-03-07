@@ -10,6 +10,8 @@ body{
     width:60vw;
     height:100%;
     background-color:white;
+    /* Added display table to get container to stretched down when more items is added */
+    display:table;
     
     margin:auto;
 }
