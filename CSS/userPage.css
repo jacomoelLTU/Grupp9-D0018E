@@ -38,6 +38,14 @@ body{
     background-position: center;
     background-repeat: no-repeat;
 }
+#postItem .addItemIcon{
+    float: left;
+    padding: 5px;
+}
+#postItem .editItemIcon{
+    float: right;
+    padding: 5px;
+}
 
 /* For icons */
 
