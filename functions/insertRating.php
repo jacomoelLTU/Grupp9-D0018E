@@ -4,7 +4,7 @@ include '../pages/loginCheck.php';
 include 'updateAvgProductRating.php';
 include 'updateAvgUserRating.php';
 
-echo "Hello worldddd!<br>";
+echo "<script> alert{'Hello worldddd!'};</script>";
 $outputString = 'hello world';
 
 $userId = $_SESSION['userid'];
