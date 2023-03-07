@@ -92,7 +92,7 @@ while($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
     echo"
     <div id='postItem' " .getImage($conn, $row['post_id'])."'> 
         <div class='showItemText'></div>
-        <li class='addItemIcon' onclick='myFunction();'><i class='bi bi-bag-plus'></i></a>
+        <p class='addItemIcon' onclick='myFunction();'><i class='bi bi-bag-plus'></i></p>
         <a class='editItemIcon' href='../pages/editPost.php?postId=".$row['post_id']."'><i class='bi bi-three-dots-vertical'></i></a>
     </div>";
 }
