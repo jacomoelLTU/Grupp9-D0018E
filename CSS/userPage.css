@@ -57,6 +57,7 @@ body{
     position: absolute;
     text-align: center;
     align-self: center;
+
     width:150px;
     height:150px;
     background: rgba(29, 106, 154, 0.72);
@@ -65,6 +66,11 @@ body{
 
     transition: opacity .6s, visibility .2s;
 
+}
+.showItemText p{
+    display: flex;
+    vertical-align: center;
+    align-self: center;
 }
 #postItem:hover .showItemText {
     visibility: visible;

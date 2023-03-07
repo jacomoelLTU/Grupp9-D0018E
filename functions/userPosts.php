@@ -43,7 +43,7 @@ $query = mysqli_query($conn, "SELECT * FROM post WHERE post_userid='$userid'");
 while($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
     echo"
     <div id='postItem' " .getImage($conn, $row['post_id'])."'> 
-        <div class='showItemText'>Show</div>
+        <div class='showItemText'><p>Show</p></div>
         <a class='addItemIcon' href ='showPost.php?postId=".$row['post_id']."&postTitle=".$row['post_title']."&postDescription=".$row['post_description']."'><i class='bi bi-bag-plus'></i></a>
         <a class='editItemIcon' href='../pages/editPost.php?postId=".$row['post_id']."'><i class='bi bi-three-dots-vertical'></i></a>
     </div>";
