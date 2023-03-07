@@ -209,7 +209,7 @@ $price = $row['product_price'];
             }
         };
 
-        xhttp.open("POST", "../functions/insertRating.php", true);
+        xhttp.open("POST", "../functions/insertRating.php?postId=<?php echo "$postId"?>", true);
         xhttp.setRequestHeader("Content-type",
                 "application/x-www-form-urlencoded");
         var parameters = "rating=" + ratingValue + "&rating_productid="
