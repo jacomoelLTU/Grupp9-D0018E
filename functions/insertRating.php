@@ -4,12 +4,16 @@ include '../pages/loginCheck.php';
 include 'updateAvgProductRating.php';
 include 'updateAvgUserRating.php';
 
+echo "Hello worldddd!<br>";
+$outputString = 'hello world';
+
 $userId = $_SESSION['userid'];
 $postId = $_GET['postId'];
 //$postId = '1244';
 if (isset($_POST["rating"])) {
     $productIdquery = mysqli_query($conn, "SELECT product_id FROM product WHERE product_postid=$postId;");
     $productId = mysqli_fetch_assoc($productIdquery);
+    $outputString = "inside if isset";
 
     $rating = $_POST["rating"];
     
@@ -30,4 +34,6 @@ if (isset($_POST["rating"])) {
         echo "Already Voted!";
     }
 }
+
+echo $outputString;
 ?>

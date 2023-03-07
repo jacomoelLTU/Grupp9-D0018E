@@ -201,7 +201,7 @@ $price = $row['product_price'];
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
 
-                getRating('../functions/getRatingData.php?postId=<?php echo "$postId"?>');
+                getRating('../functions/getRatingData.php');
 
                 if (this.responseText != "success") {
                     alert(this.responseText);
