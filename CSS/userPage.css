@@ -42,10 +42,14 @@ body{
     background-repeat: no-repeat;
 }
 #postItem .addItemIcon{
+    position: relative;
+    z-index: 100;
     float: left;
     padding: 5px;
 }
 #postItem .editItemIcon{
+    position: relative;
+    z-index: 100;
     float: right;
     padding: 5px;
 }
