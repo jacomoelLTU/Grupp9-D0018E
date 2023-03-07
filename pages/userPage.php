@@ -1,8 +1,7 @@
 <link rel="stylesheet" type="text/css" href="../CSS/userPage.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 <body>
-<button type="submit" class="btn btn-primary"><span class="fa fa-search"></span> Search</button>
-<button type="submit" class="btn btn-secondary"><span class="fa fa-search"></span> Search</button>
+<h1><i class="bi-globe"></i> Hello, world!</h1>
     Click to go to <a href="../index.php">homepage</a>! 
     <div id="profileContainer">
         <img class="profilePicture" src="../pictures/profilePictureTemplate.jpg">
