@@ -39,6 +39,8 @@ function insertToBasket($conn, $productId): void {
     switch(mysqli_num_rows($query)){
     //Code under is run when a transaction with current user does not exist...
     case FALSE:
+
+      /////// HÄÄÄR och i nästa case måste minskingen i product table komma
       mysqli_query($conn, "INSERT INTO `transaction`(transaction_userid) VALUES($usrid)"); 
 
       $query = mysqli_query($conn, "SELECT transaction_id, transaction_userid FROM `transaction` WHERE transaction_userid='$usrid' AND transaction_state='ongoing'");
@@ -53,6 +55,8 @@ function insertToBasket($conn, $productId): void {
       mysqli_commit($conn);
       break;
     case TRUE:
+
+      //////////// här och i case ovan måste minsking i product implementeras 
       //Code under is run when a transaction is already existing on currrent user...
       $row = mysqli_fetch_array($query, MYSQLI_ASSOC);
       $ongoing_transaction_id           = $row['transaction_id'];
@@ -201,7 +205,7 @@ $price = $row['product_price'];
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
 
-                getRating('../functions/getRatingData.php');
+                getRating('../functions/getRatingData.php?postId=<?php echo "$postId"?>');
 
                 if (this.responseText != "success") {
                     alert(this.responseText);
