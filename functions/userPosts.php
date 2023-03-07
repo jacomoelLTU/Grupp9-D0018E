@@ -80,7 +80,7 @@ function insertToBasket($conn, $productId): void {
 <script>
     document.getElementById("clickme").onclick = function() {insert()};
     function insert(){
-        alert("inne i insert");
+        document.getElementById("clickme").innerHTML ="CLICKEEEED";
     }
 </script>
 <?php 
