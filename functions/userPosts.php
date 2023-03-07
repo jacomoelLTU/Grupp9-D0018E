@@ -30,6 +30,8 @@ function getImage($conn, $postId): string{
 }
 
 function insertToBasket($conn, $productId): void {
+    echo'<script>alert("EEEEE started...");</script>';        
+    
     try{
       session_start();
       mysqli_begin_transaction($conn);
