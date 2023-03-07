@@ -12,7 +12,7 @@ $row = mysqli_fetch_array($userRating, MYSQLI_ASSOC);
     <div id="profileContainer">
         <img class="profilePicture" src="../pictures/profilePictureTemplate.jpg">
         <p>
-        This is <?php echo$_SESSION['username']."s page. Med användarid: ".$_SESSION['userid']." och average product rating: ".$row['user_rating'];?>.
+        Hi <?php echo$_SESSION['username']."! This is your page. Your user id is: ".$_SESSION['userid']." and your average product rating is: ".$row['user_rating'];?>.
         </p>
         <center>
             <div id="postContainer">
