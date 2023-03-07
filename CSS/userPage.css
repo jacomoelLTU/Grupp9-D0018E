@@ -39,7 +39,12 @@ body{
     background-repeat: no-repeat;
 }
 #postItem .addItemIcon{
-    font-weight: bold;
+    float: left;
+    padding: 5px;
+}
+#postItem .editItemIcon{
+    float: right;
+    padding: 5px;
 }
 
 /* For icons */
