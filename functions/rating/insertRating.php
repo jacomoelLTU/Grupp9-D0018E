@@ -1,6 +1,6 @@
 <?php
-include 'config.php';
-include '../pages/loginCheck.php';
+include '../config.php';
+include '../../pages/loginCheck.php';
 include 'updateAvgProductRating.php';
 include 'updateAvgUserRating.php';
 ini_set('display_errors', 1);
