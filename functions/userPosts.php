@@ -28,7 +28,14 @@ function getImage($conn, $postId): string{
         }
     }
 }
-
+?>
+<script>
+function myFunction() {
+  alert("Added item to cart...");
+  insertToBasket($conn, $row['product_id']);
+}
+</script>
+<?php
 function insertToBasket($conn, $productId): void {
     echo'<script>alert("EEEEE started...");</script>';        
     try{
@@ -74,16 +81,6 @@ function insertToBasket($conn, $productId): void {
     }
   }
 // --- ^^^ FUNCTIONS ^^^ ---
-
-
-?>
-<script>
-function myFunction() {
-  alert("Added item to cart...");
-  insertToBasket($conn, $row['product_id']);
-}
-</script>
-<?php
 
 
 $userid = $_SESSION['userid'];
