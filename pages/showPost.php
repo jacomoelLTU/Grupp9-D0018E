@@ -70,10 +70,10 @@ function insertToBasket($conn, $productId): void {
   }
 }
 
-function getPostId(){
-  global $postId;
-  return $postId;
-}
+// function getPostId(){
+//   global $postId;
+//   return $postId;
+// }
 
 function getImage($conn, $postId): void{
   ini_set('display_errors', 1);
