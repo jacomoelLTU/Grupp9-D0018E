@@ -1,7 +1,6 @@
 <?php
 require_once "ratingFunctions.php";
 require_once "config.php";
-include 'showPost.php';
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -13,7 +12,7 @@ session_start();
 $userId = $_SESSION['userid'];
 //$postId = $_GET['postId'];
 //$postId = '1244';
-
+'auto_prepend_file = "../pages/showPost.php"';
 $postId = getPostId();
 
 //get product id from product table

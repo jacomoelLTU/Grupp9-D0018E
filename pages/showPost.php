@@ -69,7 +69,6 @@ function insertToBasket($conn, $productId): void {
       throw $e;
   }
 }
-
 function getPostId():int{
   global $postId;
   return $postId;
