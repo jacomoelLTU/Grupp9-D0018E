@@ -70,7 +70,7 @@ function insertToBasket($conn, $productId): void {
   }
 }
 
-function getPostId(){
+function getPostId():int{
   global $postId;
   return $postId;
 }
