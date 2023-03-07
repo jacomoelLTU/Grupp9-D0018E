@@ -18,6 +18,7 @@
                 echo 'To register you need to provide information for all the fields in the registrationform!';
         }
 
+
         //prepare statement for user credential check
         $stmt_check = $conn->prepare("SELECT user_name, user_email from user WHERE user_name = ? OR user_email = ?");
         $stmt_check->bind_param('ss', $userName, $userEmailAdress);
@@ -26,15 +27,18 @@
 
 
         if(mysqli_num_rows($check_result) > 0){
-            echo 'Username or Email address is already in use, please try other credentials!';
+            echo 'Username or Email address is already in use, please try with other credentials!';
         }
         else{
 
+            mysqli_query($conn, "LOCK TABLES product WRITE, user WRITE");
             //insert prepared statement
             $stmt_UserCredinsert = $conn->prepare("INSERT into user (user_name, user_pwd, user_firstname, user_surname, user_email)
                                     VALUES (?, ?, ?, ?, ?)");
             $stmt_UserCredinsert->bind_param('sssss', $userName, $passWord, $userFirstName, $userSurName, $userEmailAdress);
             $stmt_UserCredinsert->execute();
+            mysqli_query($conn, "UNLOCK TABLES");
+
 
             header('Location:../pages/loginForm.php?msg'); 
         }
