@@ -41,7 +41,7 @@ body{
     background-position: center;
     background-repeat: no-repeat;
 }
-#postItem .addItemIcon{
+#postItem #addItemIcon{
     position: relative;
     z-index: 100;
     float: left;
