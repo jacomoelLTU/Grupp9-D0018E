@@ -79,7 +79,6 @@ function insertToBasket($conn, $productId): void {
 <script>
 function myFunction() {
   alert("Added item to cart...");
-  <?php insertToBasket($conn, $row['product_id']); ?>
 }
 document.getElementByClass("addItemIcon").onclick=myFunction();
 </script>
