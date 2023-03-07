@@ -38,3 +38,14 @@ body{
     background-position: center;
     background-repeat: no-repeat;
 }
+
+/* For icons */
+
+#postItem i.bi.bi-three-dots-vertical {
+    color: black;
+    font-size: 23px;
+}
+#postItem i.bi.bi-bag-plus {
+    color: black;
+    font-size: 23;
+}
