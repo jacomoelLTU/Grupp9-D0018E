@@ -59,7 +59,7 @@ body{
     color: #fff;
     opacity: 0;
 
-    transition: opacity .6s, visibility .2;
+    transition: opacity .6s, visibility .2s;
 
 }
 #postItem:hover .showItemText {
