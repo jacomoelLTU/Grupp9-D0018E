@@ -12,7 +12,7 @@ body{
     background-color:white;
     /* Added display table to get container to stretched down when more items is added */
     display:table;
-    
+
     margin:auto;
 }
 .profilePicture {
@@ -49,6 +49,22 @@ body{
     float: right;
     padding: 5px;
 }
+#showItemText{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(29, 106, 154, 0.72);
+    color: #fff;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .2s, visibility .2s;
+}
+.postItem:hover .showItemText {
+    visibility: visible;
+    opacity: 1;
+  }
 
 /* For icons */
 
