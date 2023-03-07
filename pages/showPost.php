@@ -70,6 +70,10 @@ function insertToBasket($conn, $productId): void {
   }
 }
 
+function getPostId(){
+  global $postId;
+  return $postId;
+}
 
 function getImage($conn, $postId): void{
   ini_set('display_errors', 1);
@@ -138,6 +142,8 @@ $price = $row['product_price'];
   </div>
 </div>
 </center>
+
+
 
 <script type="text/javascript">
 
