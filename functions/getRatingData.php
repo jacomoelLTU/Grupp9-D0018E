@@ -10,11 +10,14 @@ echo "Hello world!<br>";
 
 session_start();
 $userId = $_SESSION['userid'];
-$postId = $_GET['postId'];
+//$postId = $_GET['postId'];
+$postId = '1244';
+
+//get product id from product table
 $productIdquery = mysqli_query($conn, "SELECT product_id FROM product WHERE product_postid=$postId;");
 $productId = mysqli_fetch_assoc($productIdquery);
 
-//$postId = $_GET['postId'];
+// product query
 $query = "SELECT * FROM product WHERE product_id=$productId";
 $result = mysqli_query($conn, $query);
 
