@@ -26,12 +26,17 @@ function getImage($conn, $postId): string{
             //print title and image
             return "style='background-image:url(data:image/jpeg;base64,".$image."');";
         }
+        else {
+          return "style='background-image:url('../pictures/No-image-Placeholder.png');";
+        }
     }
 }
 // --- ^^^ FUNCTIONS ^^^ ---
 
 
 $userid = $_SESSION['userid'];
+
+//we have to implement if post_img is not empty below
 
 $query = mysqli_query($conn, "SELECT * FROM post WHERE post_userid='$userid'");
 while($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){

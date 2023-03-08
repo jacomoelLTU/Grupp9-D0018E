@@ -7,17 +7,23 @@
     }
 
 ?>
+<link rel="stylesheet" type="text/css" href="../CSS/login.css">
+<body>
+    <div id="login">
+        <h2>Login</h2>
+    </div>
 
-<div id="loginForm">
-    <form action="../functions/login.php" method="POST">
-        <input type="text" id="username" name="username" placeholder="User Name...">
-        <input type="text" id="password" name="password" placeholder= "Password...">
-        <input type="submit">
-    </form>
-</div>
+    <div id="loginForm">
+        <form action="../functions/login.php" method="POST">
+            <input type="text" id="username" name="username" placeholder="User Name...">
+            <input type="text" id="password" name="password" placeholder= "Password...">
+            <input type="submit">
+        </form>
+    </div>
 
-<ul id="login"> 
-    <p>
-    No account? Click here to <a href="../pages/signUpForm.php" >Sign Up</a>!
-    </p>
-</ul>
+    <ul id="createaccount"> 
+        <p>
+        No account? Click here to <a href="../pages/signUpForm.php" >Sign Up</a>!
+        </p>
+    </ul>
+</body>
