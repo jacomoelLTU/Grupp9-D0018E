@@ -28,61 +28,7 @@ function getImage($conn, $postId): string{
         }
     }
 }
-
-function insertToBasket($conn, $productId): void {
-    try{
-      session_start();
-      mysqli_begin_transaction($conn);
-  
-      //Checks if there is a session active, if not set $usrid to null...
-      $usrid = $_SESSION['userid'] ?? NULL;
-      if($usrid == NULL){echo "You need to be logged in to add items..."; throw new Exception('User needs to be logged in to add item...');}
-  
-      $query = mysqli_query($conn, "SELECT transaction_id, transaction_userid FROM `transaction` WHERE transaction_userid='$usrid' AND transaction_state='ongoing'");      
-      switch(mysqli_num_rows($query)){
-      //Code under is run when a transaction with current user does not exist...
-      case FALSE:
-        mysqli_query($conn, "INSERT INTO `transaction`(transaction_userid) VALUES($usrid)"); 
-  
-        $query = mysqli_query($conn, "SELECT transaction_id, transaction_userid FROM `transaction` WHERE transaction_userid='$usrid' AND transaction_state='ongoing'");
-  
-        $row = mysqli_fetch_array($query, MYSQLI_ASSOC);
-        $ongoing_transaction_id           = $row['transaction_id'];
-        $_SESSION['ongoingtransactionid'] = $row['transaction_id'];
-        echo'<script>alert("'.$ongoing_transaction_id.' PRODUCTID ='.$productId.'");</script>';
-        
-        mysqli_query($conn, "INSERT INTO transactionitem(transactionitem_transactionid, transactionitem_productid) VALUES($ongoing_transaction_id, $productId)");
-        echo'<script>alert("Transaction started...");</script>';        
-        mysqli_commit($conn);
-        break;
-      case TRUE:
-        //Code under is run when a transaction is already existing on currrent user...
-        $row = mysqli_fetch_array($query, MYSQLI_ASSOC);
-        $ongoing_transaction_id           = $row['transaction_id'];
-        $_SESSION['ongoingtransactionid'] = $row['transaction_id'];
-      
-        mysqli_query($conn, "INSERT INTO transactionitem(transactionitem_transactionid, transactionitem_productid) VALUES($ongoing_transaction_id, $productId)");
-        echo'<script>alert("Transaction started...");</script>';
-        mysqli_commit($conn);
-        break;
-        }
-      }catch(mysqli_sql_exception $e){
-        mysqli_rollback($conn);
-        echo'<script>alert("Rolling back...");</script>';
-        throw $e;
-    }
-  }
 // --- ^^^ FUNCTIONS ^^^ ---
-
-
-?>
-<script>
-function myFunction() {
-  alert("Added item to cart...");
-}
-document.getElementById("addItemIcon").onclick=myFunction();
-</script>
-<?php
 
 
 $userid = $_SESSION['userid'];
