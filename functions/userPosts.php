@@ -30,6 +30,7 @@ function getImage($conn, $postId): string{
           return "style='background-image:url('../pictures/No-image-Placeholder.png');";
         }
     }
+    return "";
 }
 
 function insertToBasket($conn, $productId): void {
