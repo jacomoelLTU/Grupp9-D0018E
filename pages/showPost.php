@@ -150,7 +150,7 @@ $price = $row['product_price'];
     </body>
   </div>
   <div id="grid-C">C</div>
-  <div id="grid-D">D</div>
+  <div id="grid-D"></div>
   <div id="grid-E">E</div>
   <div id="grid-F">
     <div id="price">
