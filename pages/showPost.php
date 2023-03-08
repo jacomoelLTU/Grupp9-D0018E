@@ -39,8 +39,6 @@ function insertToBasket($conn, $productId): void {
     switch(mysqli_num_rows($query)){
     //Code under is run when a transaction with current user does not exist...
     case FALSE:
-
-      /////// HÄÄÄR och i nästa case måste minskingen i product table komma
       mysqli_query($conn, "INSERT INTO `transaction`(transaction_userid) VALUES($usrid)"); 
 
       $query = mysqli_query($conn, "SELECT transaction_id, transaction_userid FROM `transaction` WHERE transaction_userid='$usrid' AND transaction_state='ongoing'");
@@ -48,25 +46,40 @@ function insertToBasket($conn, $productId): void {
       $row = mysqli_fetch_array($query, MYSQLI_ASSOC);
       $ongoing_transaction_id           = $row['transaction_id'];
       $_SESSION['ongoingtransactionid'] = $row['transaction_id'];
-      echo'<script>alert("'.$ongoing_transaction_id.' PRODUCTID ='.$productId.'");</script>';
-      
+
+      $productAmount = mysqli_query($conn, "SELECT product_quantity FROM product WHERE product_id=$productId");
+      if(mysqli_num_rows($productAmount) >=1){
+      //Decrements amount of products left in table by 1
+      mysqli_query($conn, "UPDATE product SET product_quantity = product_quantity-1 WHERE product_id=$productId");
       mysqli_query($conn, "INSERT INTO transactionitem(transactionitem_transactionid, transactionitem_productid) VALUES($ongoing_transaction_id, $productId)");
-      echo'<script>alert("Transaction started...");</script>';        
+        echo'<script>alert("Transaction started...");</script>';        
+      }
+      else{
+        mysqli_rollback($conn);
+        echo'<script>alert("Seller lacks product...");</script>'; 
+      }
       mysqli_commit($conn);
       break;
     case TRUE:
-
-      //////////// här och i case ovan måste minsking i product implementeras 
       //Code under is run when a transaction is already existing on currrent user...
       $row = mysqli_fetch_array($query, MYSQLI_ASSOC);
       $ongoing_transaction_id           = $row['transaction_id'];
       $_SESSION['ongoingtransactionid'] = $row['transaction_id'];
     
-      mysqli_query($conn, "INSERT INTO transactionitem(transactionitem_transactionid, transactionitem_productid) VALUES($ongoing_transaction_id, $productId)");
-      echo'<script>alert("Transaction started...");</script>';
+      $productAmount = mysqli_query($conn, "SELECT product_quantity FROM product WHERE product_id=$productId");
+      if(mysqli_num_rows($productAmount) >=1){
+        //Decrements amount of products left in table by 1
+        mysqli_query($conn, "INSERT INTO transactionitem(transactionitem_transactionid, transactionitem_productid) VALUES($ongoing_transaction_id, $productId)");
+        echo'<script>alert("Transaction started...");</script>';
+      }
+      else{
+        mysqli_rollback($conn);
+        echo'<script>alert("Seller lacks product...");</script>'; 
+      }
       mysqli_commit($conn);
       break;
       }
+
     }catch(mysqli_sql_exception $e){
       mysqli_rollback($conn);
       echo'<script>alert("Rolling back...");</script>';
