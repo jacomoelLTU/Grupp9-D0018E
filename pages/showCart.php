@@ -42,6 +42,7 @@ function delObj($conn, $pid): void{
     try{
         //This is what deletes the chosen deleted item...
         mysqli_query($conn, "DELETE FROM transactionitem WHERE transactionitem_productid='$pid'");
+        mysqli_query($conn, "UPDATE product SET product_quantity = product_quantity+1 WHERE produtc_id=$pid");
         mysqli_commit($conn);
     }catch(mysqli_sql_exception $e){
         echo'<script>alert("id='.$pid.'Rolling back...");</script>';
