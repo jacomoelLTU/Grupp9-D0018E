@@ -27,7 +27,7 @@ function getImage($conn, $postId): string{
             return "style='background-image:url(data:image/jpeg;base64,".$image."');";
         }
         else {
-          return "style='background-image:url(data:image/jpeg;base64, '../pictures/No-image-Placeholder.png');";
+          return "";
         }
     }
     return "";
