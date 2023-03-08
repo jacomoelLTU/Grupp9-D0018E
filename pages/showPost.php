@@ -95,10 +95,6 @@ function insertToBasket($conn, $productId): void {
       throw $e;
   }
 }
-function getPostId():int{
-  global $postId;
-  return $postId;
-}
 
 function getImage($conn, $postId): void{
   ini_set('display_errors', 1);
