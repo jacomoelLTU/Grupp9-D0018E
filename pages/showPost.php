@@ -61,7 +61,7 @@ function insertToBasket($conn, $productId): void {
       mysqli_commit($conn);
       break;
     case TRUE:
-      //Code under is run when a transaction is already existing on currrent user...
+      //Code under is run when a transaction is already existing on currrent user ...
       $row = mysqli_fetch_array($query, MYSQLI_ASSOC);
       $ongoing_transaction_id           = $row['transaction_id'];
       $_SESSION['ongoingtransactionid'] = $row['transaction_id'];
