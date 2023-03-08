@@ -14,8 +14,8 @@
     object-position: bottom;
     border:2px solid black;
     border-radius: 3px;
-    max-width: 40%;
-    max-height: 40%;
+    max-width: 600px;
+    max-height: 600px;
 }
 
 /* https://www.youtube.com/watch?v=KpuB7yFRHmg TILL CARUSELLEN MED BILDER, det är transitionen */
