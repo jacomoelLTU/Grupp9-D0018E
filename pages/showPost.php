@@ -229,9 +229,6 @@ $price = $row['product_price'];
 
                 getRating('../functions/rating/getRatingData.php?postId=<?php echo "$postId"?>');
 
-                if (this.responseText != "success") {
-                    alert(this.responseText);
-                }
             }
         };
 
