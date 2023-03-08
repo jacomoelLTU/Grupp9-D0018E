@@ -9,11 +9,12 @@
 }
 #grid-Image img{
     height:100%;
-    width:100%;
+    width:90%;
     object-fit: cover;
     object-position: bottom;
     border:2px solid black;
     border-radius: 3px;
+    vertical-align: middle;
 }
 
 /* https://www.youtube.com/watch?v=KpuB7yFRHmg TILL CARUSELLEN MED BILDER, det är transitionen */
