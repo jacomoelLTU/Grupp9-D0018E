@@ -26,6 +26,9 @@ function getImage($conn, $postId): string{
             //print title and image
             return "style='background-image:url(data:image/jpeg;base64,".$image."');";
         }
+        else {
+          return "";
+        }
     }
 }
 
