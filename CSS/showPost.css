@@ -1,7 +1,7 @@
 #grid-Title       { grid-area: PT; font-size: 25px; font-weight: bold; text-decoration: black underline;}
 #grid-Desc        { grid-area: PD; font-style: italic;}
 #grid-Image{ grid-area: PI; 
-             display:flex; 
+             display:grid; 
              justify-content:center; 
              align-items:center;
              
@@ -14,7 +14,6 @@
     object-position: bottom;
     border:2px solid black;
     border-radius: 3px;
-    vertical-align: middle;
 }
 
 /* https://www.youtube.com/watch?v=KpuB7yFRHmg TILL CARUSELLEN MED BILDER, det är transitionen */
