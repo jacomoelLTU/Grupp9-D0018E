@@ -1,7 +1,7 @@
 #grid-Title       { grid-area: PT; font-size: 25px; font-weight: bold; text-decoration: black underline;}
 #grid-Desc        { grid-area: PD; font-style: italic;}
 #grid-Image{ grid-area: PI; 
-             display:grid; 
+             display:flex; 
              justify-content:center; 
              align-items:center;
              
@@ -35,7 +35,7 @@
 #grid-D { grid-area: D; }
 #grid-E { grid-area: E; }
 #grid-F { grid-area: F; 
-    display:grid; 
+    display:flex; 
     justify-content:center; 
     align-items:center; 
 }
