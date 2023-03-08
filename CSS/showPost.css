@@ -35,7 +35,7 @@
 #grid-D { grid-area: D; }
 #grid-E { grid-area: E; }
 #grid-F { grid-area: F; 
-    display:flex; 
+    display:grid; 
     justify-content:center; 
     align-items:center; 
 }
