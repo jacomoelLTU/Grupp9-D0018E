@@ -25,6 +25,7 @@ input[type=text], select{
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
+    box-sizing: border-box;
 }
 
 input[type=text], select{
@@ -75,7 +76,7 @@ input[type=text], select{
 .post_button {
     float: middle;
     height: 50px;
-    width: 150px;
+    width: fit-content;
     margin-right: 5px;
     margin-bottom: 5px;
     border: 1px rgb(53, 141, 53) solid;
