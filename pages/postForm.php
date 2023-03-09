@@ -17,12 +17,13 @@ Click to go to <a href="../index.php">homepage</a>!
             <p id="price"> Quantity <br><input type="text" name="product_quantity" placeholder="Enter quantity" required></p> 
             <p id="price"> Price <br><input type="text" name="product_price" placeholder="Enter price" required></p> 
             <p id="price"> Paste URL to image <br><input type="text" name ="post_img" placeholder="Enter URL"></p>
-            <input type="submit" class = "post_button" name = "upload" value="Upload Post"/><br> 
-           
             <select name="post_type" id="post_type">
                 <option value="informative">Informative</option>
                 <option value="product">Product</option>
             </select>
+            <input type="submit" class = "post_button" name = "upload" value="Upload Post"/><br> 
+           
+            
             <!-- Images -->
             <!-- <div id="images"><form action="../functions/upload.php" method="post" enctype="multipart/form-data">
                 Select image to upload
