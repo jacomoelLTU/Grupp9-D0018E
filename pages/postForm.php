@@ -12,7 +12,7 @@ Click to go to <a href="../index.php">homepage</a>!
         <!-- Text Fields -->
         <form action="../functions/posts.php" method="post">
             <p id="title"> Title <br><input type="text" name="post_title" placeholder="Enter title" required></p> 
-            <p id="description"> Description <br><textarea rows = "5" cols = "40" name = "post_description" placeholder="Enter description here..." required></textarea></p>
+            <p id="description"> Description <br><input type="text" textarea rows = "5" cols = "40" name = "post_description" placeholder="Enter description here..." required></textarea></p>
             <p id="price"> Quantity <br><input type="text" name="product_quantity" placeholder="Enter quantity" required></p> 
             <p id="price"> Price <br><input type="text" name="product_price" placeholder="Enter price" required></p> 
             <p id="price"> Paste URL to image <br><input type="text" name ="post_img" placeholder="Enter URL"></p>
