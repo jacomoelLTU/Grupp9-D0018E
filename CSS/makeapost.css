@@ -76,7 +76,7 @@ input[type=text], select{
 .post_button {
     float: middle;
     height: 50px;
-    width: fit-content;
+    width: 40%;
     margin-right: 5px;
     margin-bottom: 5px;
     border: 1px rgb(53, 141, 53) solid;
