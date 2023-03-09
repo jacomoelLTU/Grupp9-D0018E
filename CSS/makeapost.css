@@ -1,5 +1,5 @@
 body{
-    background: white;
+    background: rgb(222, 247, 255);
     font-family: "Lucida Console", "Courier New", monospace;
 }
 
@@ -26,13 +26,13 @@ h1{
 
 #price{
     padding: 15px;
-    display: inline-block;
+    display: block;
     border: 0px #c6dde8 solid;
     border-radius: 8px;
 }
 
 #images{
-    display: inline-block;
+    display: block;
     padding: 15px;
 }
 
