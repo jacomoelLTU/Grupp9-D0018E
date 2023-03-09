@@ -8,8 +8,8 @@ h1{
     text-align: center;
     background-color: rgb(175, 177, 176);
     align-self: center;
-    margin: 0px;
-    padding: 10px;
+    margin: auto;
+    padding-bottom: 10px;
 }
 
 #title{
@@ -48,6 +48,7 @@ h1{
     color: #3f494d;
     padding: 10px;
     width: fit-content;
+    min-width: 300px;
 }
 
 .post_button {
