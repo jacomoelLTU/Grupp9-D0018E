@@ -37,7 +37,7 @@ h1{
 }
 
 .posts{
-    border: 2x solid;
+    border: 2px solid;
     border-radius: 3px;
     display: flex;
     justify-content: center;
