@@ -1,6 +1,7 @@
 body{
     background: rgb(222, 247, 255);
     font-family: "Lucida Console", "Courier New", monospace;
+    align-self: middle;
 }
 
 h1{  
