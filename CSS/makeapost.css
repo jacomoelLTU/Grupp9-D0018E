@@ -41,7 +41,7 @@ h1{
     border: 2px solid;
     border-radius: 3px;
     display: flex;
-    justify-content: center;
+    justify-content:right;
     background-color: white;
     font-size: 15px;
     font-weight: bold;
