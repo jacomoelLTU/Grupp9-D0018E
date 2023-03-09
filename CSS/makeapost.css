@@ -29,8 +29,18 @@ input[type=text], select{
     box-sizing: border-box;
 }
 
-#description{
+input[type=text], select{
+    width: 100%;
     padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#description{
+    padding: 3px;
     border: 0px #2091c1 solid;
     border-radius: 8px;
 }
