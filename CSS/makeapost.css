@@ -30,7 +30,7 @@ input[type=text], select{
 }
 
 #description{
-    padding: 3px;
+    padding: 12px 20px;
     border: 0px #2091c1 solid;
     border-radius: 8px;
 }
