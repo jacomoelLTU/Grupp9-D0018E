@@ -9,23 +9,23 @@ h1{
     background-color: rgb(175, 177, 176);
     align-self: center;
     margin: 0px;
-    padding: 0px;
+    padding: 10px;
 }
 
 #title{
-    padding: 10px;
+    padding: 3px;
     border: 0px #2091c1 solid;
     border-radius: 8px;
 }
 
 #description{
-    padding: 10px;
+    padding: 3px;
     border: 0px #2091c1 solid;
     border-radius: 8px;
 }
 
 #price{
-    padding: 5px;
+    padding: 3px;
     display: block;
     border: 0px #c6dde8 solid;
     border-radius: 8px;
