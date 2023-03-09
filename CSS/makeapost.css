@@ -19,7 +19,7 @@ h1{
 }
 
 input[type=text], select{
-    width: 100%;
+    width: 200%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
