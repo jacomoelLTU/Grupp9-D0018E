@@ -20,7 +20,7 @@ Click to go to <a href="../index.php">homepage</a>!
             <select name="post_type" id="post_type">
                 <option value="informative">Informative</option>
                 <option value="product">Product</option>
-            </select><br>
+            </select><br><br>
             <input type="submit" class = "post_button" name = "upload" value="Upload Post"/><br> 
            
             

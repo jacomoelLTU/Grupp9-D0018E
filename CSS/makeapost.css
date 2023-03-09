@@ -8,7 +8,7 @@ h1{
     text-align: center;
     background-color: rgb(175, 177, 176);
     align-self: center;
-    margin: auto;
+    margin-bottom: 10px;
     padding-bottom: 10px;
 }
 
@@ -37,10 +37,10 @@ h1{
 }
 
 .posts{
-    border: 3px solid;
+    border: 1px solid;
     border-radius: 3px;
     display: flex;
-    justify-content: left;
+    justify-content: center;
     background-color: white;
     font-size: 15px;
     font-weight: bold;
