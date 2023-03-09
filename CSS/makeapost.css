@@ -67,7 +67,7 @@ input[type=text], select{
     font-size: 15px;
     font-weight: bold;
     color: #3f494d;
-    padding: 5px;
+    padding: 10px;
     width: fit-content;
     margin:auto;
 }
