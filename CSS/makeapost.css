@@ -43,7 +43,7 @@ h1{
     display: flex;
     position: relative;
     float: middle;
-    justify-content: center;
+    justify-content: left;
     background-color: white;
     font-size: 15px;
     font-weight: bold;
