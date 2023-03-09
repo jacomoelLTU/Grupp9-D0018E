@@ -7,7 +7,7 @@ Click to go to <a href="../index.php">homepage</a>!
 <body>
     <h1>Make a Post</h1>
 
-    <link rel="stylesheet" type="text/css" href="../CSS/posts.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/makeapost.css">
     <div class="posts">
         
         <!-- Text Fields -->
