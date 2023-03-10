@@ -11,9 +11,10 @@ $postId = $_POST['post_id'];
 //get product id to be able to delete from rating table
 $productIdQuery = mysqli_query($conn,"SELECT product_id FROM product WHERE product_postid='$postId'");
 $productIdRow = mysqli_fetch_array($productIdQuery, MYSQLI_ASSOC);
+$productId = $productIdRow['product_id'];
 
 //delete rating
-$ratingQuery = mysqli_query($conn,"DELETE FROM rating WHERE rating_productid='$productIdRow[product_id]");
+$ratingQuery = mysqli_query($conn,"DELETE FROM rating WHERE rating_productid='$productId'");
 
 //delete product
 $productQuery = mysqli_query($conn,"DELETE FROM product WHERE product_postid='$postId'");
