@@ -73,9 +73,9 @@ if(array_key_exists('purchase', $_POST)) {commit_purchase($conn);}
                     $productid = $row['transactionitem_productid'];
                     mysqli_query($conn, "UPDATE `product` SET product_quantity = product_quantity - 1 WHERE product_id = $productid");
                 }
-    
+                //gotta remove everything from transaction item
+                mysqli_query($conn, "DELETE from transactionitem WHERE transactionitem_transactionid = $ongoing_id");
                 mysqli_commit($conn);
-
                 echo"<div id='failedPurchase'>Purchase successful! </div>";
             }
             else{
