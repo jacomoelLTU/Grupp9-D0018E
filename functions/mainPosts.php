@@ -11,7 +11,9 @@
 <?php 
 showFiltered($conn);
 function showFiltered($conn): void{
-
+     ini_set('display_errors', 1);
+     ini_set('display_startup_errors', 1);
+     error_reporting(E_ALL);
      session_start();
      $userId = $_SESSION['userid'];
      $userRoleQuery = mysqli_query($conn, "SELECT user_role FROM user WHERE user_id=$userId");
