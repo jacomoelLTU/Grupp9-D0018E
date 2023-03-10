@@ -62,7 +62,7 @@ function showFiltered($conn): void{
 
                          </div>
                     </center>";
-          }else{
+          }else if($userRoleRow['user_role']=="role" || empty($userid)){
                echo "<center>
                          <div id='postItem'>"
                               .$type." Click for post: ".$row['post_title']
