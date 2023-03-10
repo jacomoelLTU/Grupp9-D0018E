@@ -14,6 +14,7 @@ function showFiltered($conn): void{
      ini_set('display_errors', 1);
      ini_set('display_startup_errors', 1);
      error_reporting(E_ALL);
+     include '../pages/printImage.php';
  
      try{
           ini_set('display_errors', 1);
@@ -59,14 +60,14 @@ function showFiltered($conn): void{
                                    .": <a href ='pages/showPost.php?postId=".$row['post_id']
                                    ."&postTitle=".$row['post_title']."&postDescription="
                                    .$row['post_description']."'>Show post</a> 
-     
+                                   
                                    <form action='../functions/deletePost.php' method='post'>
                                         <input type='hidden' name='post_id' value='$row[post_id]' />
                                         <input type='submit' class='delete_button' value='DELETE POST'/><br>
                                    </form>
-     
                               </div>
                          </center>";  
+                         printImage();
                } else {
                     echo "<center>
                               <div id='postItem'>"
