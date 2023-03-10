@@ -70,7 +70,7 @@ if(array_key_exists('purchase', $_POST)) {commit_purchase($conn);}
                 $cart_ids = mysqli_query($conn, "SELECT transactionitem_productid FROM transactionitem WHERE transactionitem_transactionid = $ongoing_id");
                 
                 while($row = mysqli_fetch_array($cart_ids, MYSQLI_ASSOC)){
-                    $productid = $row['transaction_productid'];
+                    $productid = $row['transactionitem_productid'];
                     mysqli_query($conn, "UPDATE `product` SET product_quantity = product_quantity - 1 WHERE product_id = $productid");
                 }
     
