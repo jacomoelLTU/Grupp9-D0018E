@@ -53,7 +53,13 @@ function showFiltered($conn): void{
                               .$type." ADMINADMINADMINClick for post: ".$row['post_title']
                               .": <a href ='pages/showPost.php?postId=".$row['post_id']
                               ."&postTitle=".$row['post_title']."&postDescription="
-                              .$row['post_description']."'>Show post</a>
+                              .$row['post_description']."'>Show post</a> 
+
+                              <form action='../functions/deletePost.php' method='post'>
+                                   <input type='hidden' name='post_id' value='$row[post_id]' />
+                                   <input type='submit' class='delete_button' value='DELETE POST'/><br>
+                              </form>
+
                          </div>
                     </center>";
           }else{
