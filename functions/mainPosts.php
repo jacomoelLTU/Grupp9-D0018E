@@ -11,6 +11,10 @@
 <?php 
 showFiltered($conn);
 function showFiltered($conn): void{
+
+     $userId = $_SESSION['userid'];
+     $userRoleQuery = mysqli_query($conn, "SELECT user_role FROM user WHERE user_id=$userId");
+     $userRoleRow=mysqli_fetch_array($query, MYSQLI_ASSOC);
      try{
           ini_set('display_errors', 1);
           ini_set('display_startup_errors', 1);
@@ -42,14 +46,25 @@ function showFiltered($conn): void{
           else{
                $type = "<p style='color:lightseagreen;'>[".$row['post_type']."]</p>"; 
           }
-          echo "<center>
-                    <div id='postItem'>"
-                         .$type." Click for post: ".$row['post_title']
-                         .": <a href ='pages/showPost.php?postId=".$row['post_id']
-                         ."&postTitle=".$row['post_title']."&postDescription="
-                         .$row['post_description']."'>Show post</a>
-                    </div>
-               </center>";
+          if ($userRoleRow['user_role']=="admin"){
+               echo "<center>
+                         <div id='postItem'>"
+                              .$type." ADMINADMINADMINClick for post: ".$row['post_title']
+                              .": <a href ='pages/showPost.php?postId=".$row['post_id']
+                              ."&postTitle=".$row['post_title']."&postDescription="
+                              .$row['post_description']."'>Show post</a>
+                         </div>
+                    </center>";
+          }else{
+               echo "<center>
+                         <div id='postItem'>"
+                              .$type." Click for post: ".$row['post_title']
+                              .": <a href ='pages/showPost.php?postId=".$row['post_id']
+                              ."&postTitle=".$row['post_title']."&postDescription="
+                              .$row['post_description']."'>Show post</a>
+                         </div>
+                    </center>";
+               }
           }
      }catch(Exception $e){
            echo'<script>alert("Chosen filter option not provided...");</script>';        
