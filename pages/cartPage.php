@@ -61,9 +61,19 @@ if(array_key_exists('purchase', $_POST)) {commit_purchase($conn);}
     function commit_purchase($conn): void{
         try{
             if(isset($_SESSION['ongoingtransactionid'])){
-                //Places ongoing transaction as aborted and a user can start a new one...
+                //Places ongoing transaction as successful and a user can start a new one...
                 mysqli_begin_transaction($conn);
                 mysqli_query($conn, "UPDATE `transaction` SET transaction_state='successful'");
+
+                //query to get product id to decrease quantity on.
+                $ongoing_id = $_SESSION['ongoingtransactionid'];
+                $cart_ids = mysqli_query("SELECT transaction_productid FROM transactionitem WHERE transactionitem_transactionid = $ongoing_id");
+                
+                while($row = mysqli_fetch_array($cart_ids, MYSQLI_ASSOC)){
+                    $productid = $row['transaction_productid'];
+                    mysqli_query($conn, "UPDATE `product` SET product_quantity = product_quantity - 1 WHERE product_id = $productid");
+                }
+    
                 mysqli_commit($conn);
 
                 echo"<div id='failedPurchase'>Purchase successful! </div>";
@@ -77,4 +87,6 @@ if(array_key_exists('purchase', $_POST)) {commit_purchase($conn);}
             throw $e;
         }
     }
+
+    
 ?>

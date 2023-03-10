@@ -18,13 +18,11 @@
                 echo 'To register you need to provide information for all the fields in the registrationform!';
         }
 
-
         //prepare statement for user credential check
         $stmt_check = $conn->prepare("SELECT user_name, user_email from user WHERE user_name = ? OR user_email = ?");
         $stmt_check->bind_param('ss', $userName, $userEmailAdress);
         $stmt_check->execute();
         $check_result = mysqli_stmt_get_result($stmt_check);
-
 
         if(mysqli_num_rows($check_result) > 0){
             echo 'Username or Email address is already in use, please try with other credentials!';
@@ -42,5 +40,4 @@
 
             header('Location:../pages/loginForm.php?msg'); 
         }
-    
         ?>
