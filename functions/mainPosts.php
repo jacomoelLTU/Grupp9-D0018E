@@ -67,6 +67,16 @@ function showFiltered($conn): void{
      
                               </div>
                          </center>";  
+               } else {
+                    echo "<center>
+                              <div id='postItem'>"
+                                   .$type." Click for post: ".$row['post_title']
+                                   .": <a href ='pages/showPost.php?postId=".$row['post_id']
+                                   ."&postTitle=".$row['post_title']."&postDescription="
+                                   .$row['post_description']."'>Show post</a>
+                              </div>
+                         </center>";
+
                }
          
           }else {
