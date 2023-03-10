@@ -18,7 +18,7 @@
 //---------- Button Add Item -------------
   if(array_key_exists('insertToBasket', $_POST)) {
     if(isset($productId)){
-      insertToBasket($conn, $productId);    
+      insertToBasket2($conn, $productId);    
     }
   }
   
@@ -95,6 +95,75 @@ function insertToBasket($conn, $productId): void {
       throw $e;
   }
 }
+
+function insertToBasket2($conn, $productId): void{
+  try{
+    session_start();
+    mysqli_begin_transaction($conn);
+
+    //Checks if there is a session active, if not set $usrid to null...
+    $usrid = $_SESSION['userid'] ?? NULL;
+    if($usrid == NULL){echo "You need to be logged in to add items..."; throw new Exception('User needs to be logged in to add item...');}
+
+    $query = mysqli_query($conn, "SELECT transaction_id, transaction_userid FROM `transaction` WHERE transaction_userid='$usrid' AND transaction_state='ongoing'");      
+    switch(mysqli_num_rows($query)){
+    //Code under is run when a transaction with current user does not exist...
+    case FALSE:
+      mysqli_query($conn, "INSERT INTO `transaction`(transaction_userid) VALUES($usrid)"); 
+
+      $query = mysqli_query($conn, "SELECT transaction_id, transaction_userid FROM `transaction` WHERE transaction_userid='$usrid' AND transaction_state='ongoing'");
+
+      $row = mysqli_fetch_array($query, MYSQLI_ASSOC);
+      $ongoing_transaction_id           = $row['transaction_id'];
+      $_SESSION['ongoingtransactionid'] = $row['transaction_id'];
+
+      $queryAmount = mysqli_query($conn, "SELECT product_quantity FROM product WHERE product_id=$productId");
+      $amount = mysqli_fetch_array($queryAmount, MYSQLI_ASSOC);
+
+      if($amount['product_quantity'] >=1){
+          //inserts into transactionitem table here
+          mysqli_query($conn, "INSERT INTO transactionitem(transactionitem_transactionid, transactionitem_productid) VALUES($ongoing_transaction_id, $productId)");
+          echo'<script>alert("Transaction started...");</script>';  
+          mysqli_commit($conn);
+        }
+      else{
+        mysqli_rollback($conn);
+        echo'<script>alert("Seller lacks quantity...");</script>'; 
+      }
+      break;
+
+    case TRUE:
+      //Code under is run when a transaction is already existing on currrent user ...
+      $row = mysqli_fetch_array($query, MYSQLI_ASSOC);
+      $ongoing_transaction_id           = $row['transaction_id'];
+      $_SESSION['ongoingtransactionid'] = $row['transaction_id'];
+    
+      $queryAmount = mysqli_query($conn, "SELECT product_quantity FROM product WHERE product_id=$productId");
+      $amount = mysqli_fetch_array($queryAmount, MYSQLI_ASSOC);
+      if($amount['product_quantity'] >=1){
+        if($amount['product_quantity'] - 1 <= 0){
+          mysqli_query($conn, "UPDATE product SET product_state='soldout' WHERE product_id=$productId");
+        }
+        //Decrements amount of products left in table by 1
+        mysqli_query($conn, "UPDATE product SET product_quantity = product_quantity-1 WHERE product_id=$productId");
+        mysqli_query($conn, "INSERT INTO transactionitem(transactionitem_transactionid, transactionitem_productid) VALUES($ongoing_transaction_id, $productId)");
+        echo'<script>alert("Transaction started...");</script>';
+      }
+      else{
+        mysqli_rollback($conn);
+        echo'<script>alert("Seller lacks product...");</script>'; 
+      }
+      mysqli_commit($conn);
+      break;
+      }
+
+    }catch(mysqli_sql_exception $e){
+      mysqli_rollback($conn);
+      echo'<script>alert("Rolling back...");</script>';
+      throw $e;
+  }
+}
+
 
 function getImage($conn, $postId): void{
   ini_set('display_errors', 1);
