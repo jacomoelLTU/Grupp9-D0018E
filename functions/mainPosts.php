@@ -14,12 +14,7 @@ function showFiltered($conn): void{
      ini_set('display_errors', 1);
      ini_set('display_startup_errors', 1);
      error_reporting(E_ALL);
-     session_start();
-     if (!empty($_SESSION)){
-          $userId = $_SESSION['userid'];
-          $userRoleQuery = mysqli_query($conn, "SELECT user_role FROM user WHERE user_id=$userId");
-          $userRoleRow=mysqli_fetch_array($userRoleQuery, MYSQLI_ASSOC);
-     }    
+ 
      try{
           ini_set('display_errors', 1);
           ini_set('display_startup_errors', 1);
@@ -51,21 +46,28 @@ function showFiltered($conn): void{
           else{
                $type = "<p style='color:lightseagreen;'>[".$row['post_type']."]</p>"; 
           }
-          if ($userRoleRow['user_role']=="admin"){
-               echo "<center>
-                         <div id='postItem'>"
-                              .$type." Logged in as ADMIN: Click for post: ".$row['post_title']
-                              .": <a href ='pages/showPost.php?postId=".$row['post_id']
-                              ."&postTitle=".$row['post_title']."&postDescription="
-                              .$row['post_description']."'>Show post</a> 
-
-                              <form action='../functions/deletePost.php' method='post'>
-                                   <input type='hidden' name='post_id' value='$row[post_id]' />
-                                   <input type='submit' class='delete_button' value='DELETE POST'/><br>
-                              </form>
-
-                         </div>
-                    </center>";
+          session_start();
+          if (!empty($_SESSION)){
+               $userId = $_SESSION['userid'];
+               $userRoleQuery = mysqli_query($conn, "SELECT user_role FROM user WHERE user_id=$userId");
+               $userRoleRow=mysqli_fetch_array($userRoleQuery, MYSQLI_ASSOC);
+          }
+               if ($userRoleRow['user_role']=="admin"){
+                    echo "<center>
+                              <div id='postItem'>"
+                                   .$type." Logged in as ADMIN: Click for post: ".$row['post_title']
+                                   .": <a href ='pages/showPost.php?postId=".$row['post_id']
+                                   ."&postTitle=".$row['post_title']."&postDescription="
+                                   .$row['post_description']."'>Show post</a> 
+     
+                                   <form action='../functions/deletePost.php' method='post'>
+                                        <input type='hidden' name='post_id' value='$row[post_id]' />
+                                        <input type='submit' class='delete_button' value='DELETE POST'/><br>
+                                   </form>
+     
+                              </div>
+                         </center>";  
+         
           }else {
                echo "<center>
                          <div id='postItem'>"
