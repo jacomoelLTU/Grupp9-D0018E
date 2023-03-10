@@ -71,7 +71,7 @@ if(autorization($conn)){
          </form>
 
         <form action="../functions/deletePost.php" method="post">
-            <input type="hidden" name="post_id" value="$row[post_id]" />
+            <input type="hidden" name="post_id" value="'.$postId.'" />
             <input type="submit" class="delete_button" value="DELETE POST"/><br>
         </form>
         
