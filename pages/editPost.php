@@ -69,6 +69,13 @@ if(autorization($conn)){
             <input type="hidden" name="postId" value="'.$postId.'">
             <input type="submit" name="submitEdit" value="submitEdit"/>   
          </form>
+
+        <form action="../functions/deletePost.php" method="post">
+            <input type="hidden" name="post_id" value="$row[post_id]" />
+            <input type="submit" class="delete_button" value="DELETE POST"/><br>
+        </form>
+        
+
          <br>Current Title: '.$row['post_title'].'<br>Current Description: '.$row['post_description'].'<br>Current Price: '.$rowPro['product_price'].'kr
     </div>
     ';
