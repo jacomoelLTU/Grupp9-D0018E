@@ -33,11 +33,14 @@ require 'config.php';
         //insert into mysql
         $rs_post = mysqli_query($conn, $sql_post);
 
-        //lägger till insert till product table med det nyss tillagda POST ID vi har
-        $query_lastPostid = mysqli_query($conn,"SELECT MAX(post_id) AS maximum FROM post");  //satement gets the just added postID
-        $maxID = $query_lastPostid->fetch_array()[0] ?? '';
-        $sql_queryProduct = "INSERT INTO product (product_postid, product_title, product_price, product_quantity) VALUES ($maxID, '$post_title', $product_price, $product_quantity)";
-        $product_insert = mysqli_query($conn, $sql_queryProduct);
+        //if product add to product table
+        if($post_type="product"){
+            //lägger till insert till product table med det nyss tillagda POST ID vi har
+            $query_lastPostid = mysqli_query($conn,"SELECT MAX(post_id) AS maximum FROM post");  //satement gets the just added postID
+            $maxID = $query_lastPostid->fetch_array()[0] ?? '';
+            $sql_queryProduct = "INSERT INTO product (product_postid, product_title, product_price, product_quantity) VALUES ($maxID, '$post_title', $product_price, $product_quantity)";
+            $product_insert = mysqli_query($conn, $sql_queryProduct);
+        }
         mysqli_query($conn, "UNLOCK TABLES");
         mysqli_commit($conn);
     }
