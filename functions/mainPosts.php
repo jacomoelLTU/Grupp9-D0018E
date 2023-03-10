@@ -14,7 +14,7 @@ function showFiltered($conn): void{
 
      $userId = $_SESSION['userid'];
      $userRoleQuery = mysqli_query($conn, "SELECT user_role FROM user WHERE user_id=$userId");
-     $userRoleRow=mysqli_fetch_array($query, MYSQLI_ASSOC);
+     $userRoleRow=mysqli_fetch_array($userRoleQuery, MYSQLI_ASSOC);
      try{
           ini_set('display_errors', 1);
           ini_set('display_startup_errors', 1);
