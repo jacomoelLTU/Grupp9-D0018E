@@ -15,9 +15,11 @@ function showFiltered($conn): void{
      ini_set('display_startup_errors', 1);
      error_reporting(E_ALL);
      session_start();
-     $userId = $_SESSION['userid'];
-     $userRoleQuery = mysqli_query($conn, "SELECT user_role FROM user WHERE user_id=$userId");
-     $userRoleRow=mysqli_fetch_array($userRoleQuery, MYSQLI_ASSOC);
+     if (!empty($_SESSION)){
+          $userId = $_SESSION['userid'];
+          $userRoleQuery = mysqli_query($conn, "SELECT user_role FROM user WHERE user_id=$userId");
+          $userRoleRow=mysqli_fetch_array($userRoleQuery, MYSQLI_ASSOC);
+     }    
      try{
           ini_set('display_errors', 1);
           ini_set('display_startup_errors', 1);
@@ -64,7 +66,7 @@ function showFiltered($conn): void{
 
                          </div>
                     </center>";
-          }else if($userRoleRow['user_role']=="role" || empty($userid)){
+          }else {
                echo "<center>
                          <div id='postItem'>"
                               .$type." Click for post: ".$row['post_title']
