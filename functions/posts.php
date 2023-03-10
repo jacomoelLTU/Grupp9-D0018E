@@ -40,6 +40,7 @@ require 'config.php';
             $maxID = $query_lastPostid->fetch_array()[0] ?? '';
             $sql_queryProduct = "INSERT INTO product (product_postid, product_title, product_price, product_quantity) VALUES ($maxID, '$post_title', $product_price, $product_quantity)";
             $product_insert = mysqli_query($conn, $sql_queryProduct);
+            //wtf
         }
         mysqli_query($conn, "UNLOCK TABLES");
         mysqli_commit($conn);
