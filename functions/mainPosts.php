@@ -50,7 +50,7 @@ function showFiltered($conn): void{
           if ($userRoleRow['user_role']=="admin"){
                echo "<center>
                          <div id='postItem'>"
-                              .$type." ADMINADMINADMINClick for post: ".$row['post_title']
+                              .$type." Logged in as ADMIN: Click for post: ".$row['post_title']
                               .": <a href ='pages/showPost.php?postId=".$row['post_id']
                               ."&postTitle=".$row['post_title']."&postDescription="
                               .$row['post_description']."'>Show post</a> 
