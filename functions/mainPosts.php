@@ -51,7 +51,7 @@ function showFiltered($conn): void{
                $userId = $_SESSION['userid'];
                $userRoleQuery = mysqli_query($conn, "SELECT user_role FROM user WHERE user_id=$userId");
                $userRoleRow=mysqli_fetch_array($userRoleQuery, MYSQLI_ASSOC);
-          }
+               
                if ($userRoleRow['user_role']=="admin"){
                     echo "<center>
                               <div id='postItem'>"
