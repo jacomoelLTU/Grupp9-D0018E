@@ -46,6 +46,11 @@ if(array_key_exists('purchase', $_POST)) {commit_purchase($conn);}
                 //Places ongoing transaction as aborted and a user can start a new one...
                 mysqli_begin_transaction($conn);
                 mysqli_query($conn, "UPDATE `transaction` SET transaction_state='aborted'");
+
+                //deletes all products from the cart display and the corresponding tables in DB
+                $ongoing_id = $_SESSION['ongoingtransactionid'];
+                mysqli_query($conn, "DELETE from transactionitem WHERE transactionitem_transactionid = $ongoing_id");
+
                 mysqli_commit($conn);
             }
             else{
@@ -73,7 +78,7 @@ if(array_key_exists('purchase', $_POST)) {commit_purchase($conn);}
                     $productid = $row['transactionitem_productid'];
                     mysqli_query($conn, "UPDATE `product` SET product_quantity = product_quantity - 1 WHERE product_id = $productid");
                 }
-                //gotta remove everything from transaction item
+                //gotta remove everything from transactionitem
                 mysqli_query($conn, "DELETE from transactionitem WHERE transactionitem_transactionid = $ongoing_id");
                 mysqli_commit($conn);
                 echo"<div id='failedPurchase'>Purchase successful! </div>";

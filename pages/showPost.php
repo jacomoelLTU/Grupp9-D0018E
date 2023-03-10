@@ -121,10 +121,13 @@ function insertToBasket2($conn, $productId): void{
       $amount = mysqli_fetch_array($queryAmount, MYSQLI_ASSOC);
 
       if($amount['product_quantity'] >=1){
-          //inserts into transactionitem table here
-          mysqli_query($conn, "INSERT INTO transactionitem(transactionitem_transactionid, transactionitem_productid) VALUES($ongoing_transaction_id, $productId)");
-          echo'<script>alert("Transaction started...");</script>';  
-          mysqli_commit($conn);
+        if($amount['product_quantity'] - 1 <= 0){
+          mysqli_query($conn, "UPDATE product SET product_state='soldout' WHERE product_id=$productId");
+        }
+        //inserts into transactionitem table here
+        mysqli_query($conn, "INSERT INTO transactionitem(transactionitem_transactionid, transactionitem_productid) VALUES($ongoing_transaction_id, $productId)");
+        echo'<script>alert("Transaction started...");</script>';  
+        mysqli_commit($conn);
         }
       else{
         mysqli_rollback($conn);
@@ -144,16 +147,14 @@ function insertToBasket2($conn, $productId): void{
         if($amount['product_quantity'] - 1 <= 0){
           mysqli_query($conn, "UPDATE product SET product_state='soldout' WHERE product_id=$productId");
         }
-        //Decrements amount of products left in table by 1
-        mysqli_query($conn, "UPDATE product SET product_quantity = product_quantity-1 WHERE product_id=$productId");
         mysqli_query($conn, "INSERT INTO transactionitem(transactionitem_transactionid, transactionitem_productid) VALUES($ongoing_transaction_id, $productId)");
         echo'<script>alert("Transaction started...");</script>';
+        mysqli_commit($conn);
       }
       else{
         mysqli_rollback($conn);
         echo'<script>alert("Seller lacks product...");</script>'; 
       }
-      mysqli_commit($conn);
       break;
       }
 
