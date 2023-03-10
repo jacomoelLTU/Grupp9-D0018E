@@ -14,7 +14,6 @@ function showFiltered($conn): void{
      ini_set('display_errors', 1);
      ini_set('display_startup_errors', 1);
      error_reporting(E_ALL);
-     include '../pages/printImage.php';
  
      try{
           ini_set('display_errors', 1);
@@ -67,7 +66,6 @@ function showFiltered($conn): void{
                                    </form>
                               </div>
                          </center>";  
-                         printImage();
                } else {
                     echo "<center>
                               <div id='postItem'>"
