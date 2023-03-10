@@ -67,7 +67,7 @@ if(array_key_exists('purchase', $_POST)) {commit_purchase($conn);}
 
                 //query to get product id to decrease quantity on.
                 $ongoing_id = $_SESSION['ongoingtransactionid'];
-                $cart_ids = mysqli_query("SELECT transaction_productid FROM transactionitem WHERE transactionitem_transactionid = $ongoing_id");
+                $cart_ids = mysqli_query($conn, "SELECT transaction_productid FROM transactionitem WHERE transactionitem_transactionid = $ongoing_id");
                 
                 while($row = mysqli_fetch_array($cart_ids, MYSQLI_ASSOC)){
                     $productid = $row['transaction_productid'];
