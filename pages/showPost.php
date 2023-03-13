@@ -199,7 +199,7 @@ function publishComment($conn, $postId, $userId){
   ini_set('display_startup_errors', 1);
   error_reporting(E_ALL);
   $comment = $_POST['comment'];
-  $query = "INSERT INTO comment(comment_userid, comment_postid, comment) VALUES ($userId, $postId, 'so nice')";
+  $query = "INSERT INTO comment(comment_userid, comment_postid, comment) VALUES ('$userId', '$postId', '$comment')";
   mysqli_query($conn, $query);
 }
 
