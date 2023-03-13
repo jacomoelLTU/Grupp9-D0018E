@@ -7,7 +7,7 @@
   mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
   include '../functions/config.php';
 
-  $userId =$_SESSION['userId'];
+  $userId = $_SESSION['userid'];
   $postId = $_GET['postId'];
   $query = mysqli_query($conn, "SELECT * FROM product WHERE product_postid='$postId'");
   if($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
