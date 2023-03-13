@@ -10,15 +10,12 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 session_start();
 $userId = $_SESSION['userid'];
 $postId = $_GET['postId'];
-//$postId = '1244';
-//nice
 
+$typeQuery = mysqli_query($conn,"SELECT post_type FROM post WHERE post_id=$postId");
+$typeRow = mysqli_fetch_array($typeQuery, MYSQLI_ASSOC);
+$postType = $typeRow['post_type'];
 
-// $typeQuery = mysqli_query($conn,"SELECT post_type FROM post WHERE post_id=$postId");
-// $typeRow = mysqli_fetch_array($typeQuery, MYSQLI_ASSOC);
-// $postType = $typeRow['post_type'];
-
-// if($postType=="product"){
+if($postType=="product"){
     if(!empty($postId)){
     //get product id from product table
     $productIdquery = mysqli_query($conn, "SELECT product_id FROM product WHERE product_postid=$postId;");
@@ -74,5 +71,5 @@ $postId = $_GET['postId'];
     }
 
     echo $outputString;
-// }
+}
 ?>
