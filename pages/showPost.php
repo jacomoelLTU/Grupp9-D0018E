@@ -168,11 +168,13 @@ function insertToBasket2($conn, $productId): void{
       $ongoing_transaction_id           = $row['transaction_id'];
       $_SESSION['ongoingtransactionid'] = $row['transaction_id'];
 
+      // join query for transaction_id, user_id, product_id
       $numberOfCurrentProductAdded = 0;
-      // Query to transactionitem table to get how many of current product you have added to your cart
-      $transQuery = mysqli_query($conn, "SELECT * FROM transactionitem WHERE transactionitem_productid=$productId");
-      while($row = mysqli_fetch_array($transQuery, MYSQLI_ASSOC)){
-        $numberOfCurrentProductAdded += 1;
+      $joinquery = mysqli_query($conn, "SELECT transaction.transaction_id, transaction.transaction_userid, transactionitem.transactionitem_productid FROM transaction INNER JOIN transactionitem ON transaction.transaction_id=transactionitem.transactionitem_transactionid");
+      while($row = mysqli_fetch_array($joinquery, MYSQLI_ASSOC)){
+        if($row['transaction_userid']==$usrid && $row['transactionitem_productid']==$productId){
+          $numberOfCurrentProductAdded += 1;
+        }
       }
 
       $queryAmount = mysqli_query($conn, "SELECT product_quantity FROM product WHERE product_id=$productId");
