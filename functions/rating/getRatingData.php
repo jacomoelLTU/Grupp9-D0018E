@@ -15,7 +15,8 @@ $postId = $_GET['postId'];
 //get product id from product table
 
 
-$type = mysqli_query($conn,"SELECT post_type FROM post WHERE post_id=$postId");
+$typeQuery = mysqli_query($conn,"SELECT post_type FROM post WHERE post_id=$postId");
+$type = mysqli_fetch_field($typeQuery);
 
 if($type=="product"){
     if(!empty($postId)){
