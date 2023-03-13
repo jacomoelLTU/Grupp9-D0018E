@@ -7,6 +7,7 @@
   mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
   include '../functions/config.php';
 
+  $userId =$_SESSION['userId'];
   $postId = $_GET['postId'];
   $query = mysqli_query($conn, "SELECT * FROM product WHERE product_postid='$postId'");
   if($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
@@ -19,6 +20,13 @@
   if(array_key_exists('insertToBasket', $_POST)) {
     if(isset($productId)){
       insertToBasket2($conn, $productId);    
+    }
+  }
+
+  if(array_key_exists('postComment', $_POST)) {
+    if(isset($userId)){
+      $comment = $_POST['comment'];
+      publishComment($conn, $userId, $postId, $comment);    
     }
   }
   
@@ -189,6 +197,30 @@ function getImage($conn, $postId): void{
   }
 }
 
+function publishComment($conn, $postId, $userId, $comment){
+  mysqli_query($conn,"INSERT INTO comment(comment_userid, comment_postid, comment, created_at) VALUES ($userId, $postId, $comment, NOW())");
+}
+
+function getComments($conn, $postId){
+  $result = mysqli_query($conn, "SELECT comment_userid, comment, created_at FROM comment WHERE comment_postid=$postId");
+  while($row=mysqli_fetch_array($result, MYSQLI_ASSOC)){
+    $username = mysqli_query($conn, "SELECT user_name FROM user WHERE user_id=$row[comment_userid]");
+    echo
+        "<div id='commentsection'>
+          User: ".$username."<br>
+          Comment: ".$row['comment']."<br>
+          Published: ".$row['created_at']."
+        </div><br>";
+  }
+}
+
+echo "<div id='cartItem'>".$row['product_title'].$row['product_id'].
+"<form method='post'>
+    <input type='submit' name='delObj' class='button' value='Del Item'/>
+    <input type='hidden' name='item' value=".$row['product_id'].">
+</form>
+</div><br>";   
+
 $query = "SELECT product_price FROM product WHERE product_postid=$postId ";
 $result = mysqli_query($conn, $query);
 $row=mysqli_fetch_array($result, MYSQLI_ASSOC);
@@ -235,7 +267,8 @@ $price = $row['product_price'];
 </div>
 <div id ="commentsection">
   <p id="comment"> Comment <br><br><textarea rows = "5" cols = "40" name = "comment" placeholder="Say something nice :)" required></textarea></p>
-  <input type="submit" class = "comment_button" name = "publish" value="Publish"/><br> 
+  <input type="submit" class = "comment_button" name = "publishComment" value="Publish"/><br> 
+  <p id="comments"> <?php getComments($conn, $postId); ?> </p>
 </div>
 
 </center>
