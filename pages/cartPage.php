@@ -69,6 +69,8 @@ if(array_key_exists('purchase', $_POST)) {commit_purchase($conn);}
                 //Places ongoing transaction as successful and a user can start a new one...
                 mysqli_begin_transaction($conn);
                 mysqli_query($conn, "UPDATE `transaction` SET transaction_state='successful'");
+                session_start();
+                $userId = $_SESSION['userid'];
 
                 //query to get product id
                 $ongoing_id = $_SESSION['ongoingtransactionid'];
@@ -79,23 +81,37 @@ if(array_key_exists('purchase', $_POST)) {commit_purchase($conn);}
                 while($row = mysqli_fetch_array($cart_ids, MYSQLI_ASSOC)){
                     $productId = $row['transactionitem_productid'];
 
+                    // join query for transaction_id, user_id, product_id
+                    // we need this because we want to see how many of this product are in this users cart
+                    // and then see if there exists that many
+                    $numberOfCurrentProductAdded = 0;
+                    $joinquery = mysqli_query($conn, "SELECT transaction.transaction_id, transaction.transaction_userid, transactionitem.transactionitem_productid FROM transaction INNER JOIN transactionitem ON transaction.transaction_id=transactionitem.transactionitem_transactionid");
+                    while($row = mysqli_fetch_array($joinquery, MYSQLI_ASSOC)){
+                        if($row['transaction_userid']==$userId && $row['transactionitem_productid']==$productId){
+                        $numberOfCurrentProductAdded += 1;
+                        }
+                    }
+
                     //query to check if product still in stock
                     $productQuantityQuery = mysqli_query($conn, "SELECT product_quantity FROM product WHERE product_id=$productId");
                     $productQuantityRow = mysqli_fetch_array($productQuantityQuery, MYSQLI_ASSOC);
-                    if($productQuantityRow['product_quantity']<=0){
+                    if($productQuantityRow['product_quantity'] < 1){ // we wanna compare with numberofcurrentproductadded but if we do it now it will only iterate once, next iteration wont go through cause numberofproductadded will be higher than product_quantity, since we are decreasing product_quantity below 
                         mysqli_rollback($conn);
                         echo'<script>alert("Rolling back...");</script>';
+                        break;
                     }
-                    
-                    //decrease quantity
-                    mysqli_query($conn, "UPDATE `product` SET product_quantity = product_quantity - 1 WHERE product_id = $productId");
+                    else {
+                        //decrease quantity
+                        mysqli_query($conn, "UPDATE `product` SET product_quantity = product_quantity - 1 WHERE product_id = $productId");
+                        //HERE we would like to delete 1 product of this kind from transactionitem
 
-                    // sold out query to product table
-                    $queryAmount = mysqli_query($conn, "SELECT product_quantity FROM product WHERE product_id=$productId");
-                    $amount = mysqli_fetch_array($queryAmount, MYSQLI_ASSOC);
-                    if($amount['product_quantity'] <= 0){
-                        mysqli_query($conn, "UPDATE product SET product_state='soldout' WHERE product_id=$productId");
-                    }
+                        // sold out query to product table
+                        $queryAmount = mysqli_query($conn, "SELECT product_quantity FROM product WHERE product_id=$productId");
+                        $amount = mysqli_fetch_array($queryAmount, MYSQLI_ASSOC);
+                        if($amount['product_quantity'] <= 0){
+                            mysqli_query($conn, "UPDATE product SET product_state='soldout' WHERE product_id=$productId");
+                        }
+                    }                   
                 }
                 
                 //gotta remove everything from transactionitem
