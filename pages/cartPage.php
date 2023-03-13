@@ -69,7 +69,6 @@ if(array_key_exists('purchase', $_POST)) {commit_purchase($conn);}
                 //Places ongoing transaction as successful and a user can start a new one...
                 mysqli_begin_transaction($conn);
                 mysqli_query($conn, "UPDATE `transaction` SET transaction_state='successful'");
-                session_start();
                 $userId = $_SESSION['userid'];
 
                 //query to get product id
