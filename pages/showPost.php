@@ -194,10 +194,6 @@ function getImage($conn, $postId): void{
 }
 
 function publishComment($conn, $postId){
-  ini_set('display_errors', 1);
-  ini_set('display_startup_errors', 1);
-  error_reporting(E_ALL);
-  mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
   session_start();
   $userId = $_SESSION['userid'];
   $comment = $_POST['comment'];
@@ -205,9 +201,6 @@ function publishComment($conn, $postId){
 }
 
 function getComments($conn, $postId){
-  ini_set('display_errors', 1);
-  ini_set('display_startup_errors', 1);
-  error_reporting(E_ALL);
   $result = mysqli_query($conn, "SELECT comment_userid, comment, created_at FROM comment WHERE comment_postid=$postId");
   while($row=mysqli_fetch_array($result, MYSQLI_ASSOC)){
     $userQuery = mysqli_query($conn, "SELECT user_name FROM user WHERE user_id=$row[comment_userid]");
@@ -219,6 +212,12 @@ function getComments($conn, $postId){
           Published: ".$row['created_at']."
         </div><br>";
   }
+}
+
+function getPostType($conn): string{
+  $postId = $_GET['postId'];
+  $type = mysqli_query($conn,"SELECT post_type FROM post WHERE post_id=$postId");
+  return $type;
 }
 
 echo "<div id='cartItem'>".$row['product_title'].$row['product_id'].
@@ -287,14 +286,17 @@ $price = $row['product_price'];
 <script type="text/javascript">
 
     function getRating(url) {
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("post_list").innerHTML = this.responseText;
-            }
-        };
-        xhttp.open("GET", url, true);
-        xhttp.send();
+      $post_type = getPostType($conn);
+      if($post_type=="product"){
+          var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+              if (this.readyState == 4 && this.status == 200) {
+                  document.getElementById("post_list").innerHTML = this.responseText;
+              }
+          };
+          xhttp.open("GET", url, true);
+          xhttp.send();
+      }
     }
 
     function mouseOverRating(productId, rating) {
