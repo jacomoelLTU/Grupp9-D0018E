@@ -7,7 +7,6 @@
   mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
   include '../functions/config.php';
 
-  $userId = $_SESSION['userid'];
   $postId = $_GET['postId'];
   $query = mysqli_query($conn, "SELECT * FROM product WHERE product_postid='$postId'");
   if($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
@@ -24,7 +23,7 @@
   }
 
   if(array_key_exists('publishComment', $_POST)) {
-      publishComment($conn, $userId, $postId);    
+      publishComment($conn, $postId);    
   }
   
   //Temporär gå till cart länk
@@ -194,13 +193,14 @@ function getImage($conn, $postId): void{
   }
 }
 
-function publishComment($conn, $userId, $postId){
+function publishComment($conn, $postId){
   ini_set('display_errors', 1);
   ini_set('display_startup_errors', 1);
   error_reporting(E_ALL);
   mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+  $userId = $_SESSION['userid'];
   $comment = $_POST['comment'];
-  mysqli_query($conn, "INSERT INTO comment(comment_userid, comment_postid, comment) VALUES (32, $postId, '$comment')");
+  mysqli_query($conn, "INSERT INTO comment(comment_userid, comment_postid, comment) VALUES ($userId, $postId, '$comment')");
 }
 
 function getComments($conn, $postId){
