@@ -201,7 +201,6 @@ function publishComment($conn, $userId, $postId){
   mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
   $comment = $_POST['comment'];
   mysqli_query($conn, "INSERT INTO comment(comment_userid, comment_postid, comment) VALUES ($userId, $postId, '$comment')");
-  printf("Table myCity successfully created.\n");
 }
 
 function getComments($conn, $postId){
