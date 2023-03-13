@@ -212,7 +212,7 @@ function getComments($conn, $postId){
     $username = mysqli_fetch_array($userQuery, MYSQLI_ASSOC);
     echo
         "<div id='commentsection'>
-          User: ".$username."<br>
+          User: ".$username['user_name']."<br>
           Comment: ".$row['comment']."<br>
           Published: ".$row['created_at']."
         </div><br>";
