@@ -144,7 +144,7 @@ function insertToBasket2($conn, $productId): void{
       }
 
 
-      if($amount['product_quantity'] >=1 || $numberOfCurrentProductAdded>= $amount['product_quantity']){
+      if($amount['product_quantity'] >=1 || $numberOfCurrentProductAdded<= $amount['product_quantity']){
         if($amount['product_quantity'] - 1 <= 0){
           mysqli_query($conn, "UPDATE product SET product_state='soldout' WHERE product_id=$productId");
         }
