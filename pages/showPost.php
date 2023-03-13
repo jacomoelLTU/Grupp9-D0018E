@@ -24,10 +24,8 @@
   }
 
   if(array_key_exists('publishComment', $_POST)) {
-    if(isset($userId)){
       $comment = $_POST['comment'];
       publishComment($conn, $userId, $postId, $comment);    
-    }
   }
   
   //Temporär gå till cart länk
