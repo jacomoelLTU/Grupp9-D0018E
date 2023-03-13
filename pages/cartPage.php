@@ -81,7 +81,7 @@ if(array_key_exists('purchase', $_POST)) {commit_purchase($conn);}
                     // sold out query to product table
                     $queryAmount = mysqli_query($conn, "SELECT product_quantity FROM product WHERE product_id=$productId");
                     $amount = mysqli_fetch_array($queryAmount, MYSQLI_ASSOC);
-                    if($amount['product_quantity'] - 1 <= 0){
+                    if($amount['product_quantity'] <= 0){
                         mysqli_query($conn, "UPDATE product SET product_state='soldout' WHERE product_id=$productId");
                     }
                 }
