@@ -34,7 +34,7 @@ require 'config.php';
         $rs_post = mysqli_query($conn, $sql_post);
 
         //if product add to product table
-        if($post_type="product"){
+        if($post_type=="product"){
             //lägger till insert till product table med det nyss tillagda POST ID vi har
             $query_lastPostid = mysqli_query($conn,"SELECT MAX(post_id) AS maximum FROM post");  //satement gets the just added postID
             $maxID = $query_lastPostid->fetch_array()[0] ?? '';
