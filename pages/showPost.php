@@ -272,8 +272,10 @@ $price = $row['product_price'];
   </div>
 </div>
 <div id ="commentsection">
+  <form method="post">
   <p id="comment"> Comment <br><br><textarea rows = "5" cols = "40" name = "comment" placeholder="Say something nice :)" required></textarea></p>
   <input type="submit" class = "comment_button" name = "publishComment" value="Publish"/><br> 
+  </form>
   <p id="comments"> <?php getComments($conn, $postId); ?> </p>
 </div>
 
