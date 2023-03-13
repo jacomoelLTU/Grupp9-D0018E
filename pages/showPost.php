@@ -208,7 +208,8 @@ function getComments($conn, $postId){
   error_reporting(E_ALL);
   $result = mysqli_query($conn, "SELECT comment_userid, comment, created_at FROM comment WHERE comment_postid=$postId");
   while($row=mysqli_fetch_array($result, MYSQLI_ASSOC)){
-    $username = mysqli_query($conn, "SELECT user_name FROM user WHERE user_id=$row[comment_userid]");
+    $userQuery = mysqli_query($conn, "SELECT user_name FROM user WHERE user_id=$row[comment_userid]");
+    $username = mysqli_fetch_array($userQuery, MYSQLI_ASSOC);
     echo
         "<div id='commentsection'>
           User: ".$username."<br>
