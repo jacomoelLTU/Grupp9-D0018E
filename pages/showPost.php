@@ -198,6 +198,7 @@ function publishComment($conn, $postId){
   ini_set('display_startup_errors', 1);
   error_reporting(E_ALL);
   mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+  session_start();
   $userId = $_SESSION['userid'];
   $comment = $_POST['comment'];
   mysqli_query($conn, "INSERT INTO comment(comment_userid, comment_postid, comment) VALUES ($userId, $postId, '$comment')");
