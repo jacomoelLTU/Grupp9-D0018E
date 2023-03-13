@@ -84,6 +84,7 @@ if(array_key_exists('purchase', $_POST)) {commit_purchase($conn);}
                     $productQuantityRow = mysqli_fetch_array($productQuantityQuery, MYSQLI_ASSOC);
                     if($productQuantityRow['product_quantity']<=0){
                         mysqli_rollback($conn);
+                        echo'<script>alert("Rolling back...");</script>';
                     }
                     
                     //decrease quantity
