@@ -215,9 +215,6 @@ function getComments($conn, $postId){
 }
 
 function getPostType($conn): string{
-  ini_set('display_errors', 1);
-  ini_set('display_startup_errors', 1);
-  error_reporting(E_ALL);
   $postId = $_GET['postId'];
   $type = mysqli_query($conn,"SELECT post_type FROM post WHERE post_id=$postId");
   return $type;
@@ -289,11 +286,6 @@ $price = $row['product_price'];
 <script type="text/javascript">
 
   function getRating(url) {
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
-    $post_type = getPostType($conn);
-    if($post_type=="product"){
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
@@ -302,7 +294,6 @@ $price = $row['product_price'];
         };
         xhttp.open("GET", url, true);
         xhttp.send();
-    }
   }
 
   function mouseOverRating(productId, rating) {
