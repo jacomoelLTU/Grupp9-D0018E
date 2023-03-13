@@ -70,12 +70,23 @@ if(array_key_exists('purchase', $_POST)) {commit_purchase($conn);}
                 mysqli_begin_transaction($conn);
                 mysqli_query($conn, "UPDATE `transaction` SET transaction_state='successful'");
 
-                //query to get product id to decrease quantity on.
+                //query to get product id
                 $ongoing_id = $_SESSION['ongoingtransactionid'];
                 $cart_ids = mysqli_query($conn, "SELECT transactionitem_productid FROM transactionitem WHERE transactionitem_transactionid = $ongoing_id");
+
                 
+
                 while($row = mysqli_fetch_array($cart_ids, MYSQLI_ASSOC)){
                     $productId = $row['transactionitem_productid'];
+
+                    //query to check if product still in stock
+                    $productQuantityQuery = mysqli_query($conn, "SELECT product_quantity FROM product WHERE product_id=$productId");
+                    $productQuantityRow = mysqli_fetch_array($productQuantityQuery, MYSQLI_ASSOC);
+                    if($productQuantityRow['product_quantity']<=0){
+                        mysqli_rollback($conn);
+                    }
+                    
+                    //decrease quantity
                     mysqli_query($conn, "UPDATE `product` SET product_quantity = product_quantity - 1 WHERE product_id = $productId");
 
                     // sold out query to product table
