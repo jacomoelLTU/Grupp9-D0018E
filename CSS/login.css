@@ -23,7 +23,11 @@ input[type=text], select{
 }
 
 #loginForm {
+    text-align: center;
     align-self: middle;
+    display: flex;
+    position: relative;
+    width: fit-content;
     float: middle;
     margin: auto;
     border: 1px solid black;
