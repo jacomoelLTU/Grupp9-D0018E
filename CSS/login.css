@@ -23,8 +23,8 @@ input[type=text], select{
 }
 
 #loginForm {
+    align-self: middle;
     float: middle;
     margin: auto;
-    justify-content: middle;
     border: 1px solid black;
 }
