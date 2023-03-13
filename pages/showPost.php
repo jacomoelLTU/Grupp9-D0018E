@@ -24,8 +24,7 @@
   }
 
   if(array_key_exists('publishComment', $_POST)) {
-      $comment = $_POST['comment'];
-      publishComment($conn, $userId, $postId, $comment);    
+      publishComment($conn, $userId, $postId);    
   }
   
   //Temporär gå till cart länk
@@ -195,10 +194,11 @@ function getImage($conn, $postId): void{
   }
 }
 
-function publishComment($conn, $postId, $userId, $comment){
+function publishComment($conn, $postId, $userId){
   ini_set('display_errors', 1);
   ini_set('display_startup_errors', 1);
   error_reporting(E_ALL);
+  $comment = $_POST['comment'];
   $query = "INSERT INTO comment(comment_userid, comment_postid, comment) VALUES ($userId, $postId, '$comment')";
   mysqli_query($conn, $query);
 }
