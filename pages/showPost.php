@@ -200,7 +200,7 @@ function publishComment($conn, $userId, $postId){
   error_reporting(E_ALL);
   mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
   $comment = $_POST['comment'];
-  mysqli_query($conn, "INSERT INTO comment(comment_userid, comment_postid, comment) VALUES (32, 1262, '$comment')");
+  mysqli_query($conn, "INSERT INTO comment(comment_userid, comment_postid, comment) VALUES (32, $postId, '$comment')");
 }
 
 function getComments($conn, $postId){
