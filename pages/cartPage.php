@@ -75,9 +75,17 @@ if(array_key_exists('purchase', $_POST)) {commit_purchase($conn);}
                 $cart_ids = mysqli_query($conn, "SELECT transactionitem_productid FROM transactionitem WHERE transactionitem_transactionid = $ongoing_id");
                 
                 while($row = mysqli_fetch_array($cart_ids, MYSQLI_ASSOC)){
-                    $productid = $row['transactionitem_productid'];
-                    mysqli_query($conn, "UPDATE `product` SET product_quantity = product_quantity - 1 WHERE product_id = $productid");
+                    $productId = $row['transactionitem_productid'];
+                    mysqli_query($conn, "UPDATE `product` SET product_quantity = product_quantity - 1 WHERE product_id = $productId");
+
+                    // sold out query to product table
+                    $queryAmount = mysqli_query($conn, "SELECT product_quantity FROM product WHERE product_id=$productId");
+                    $amount = mysqli_fetch_array($queryAmount, MYSQLI_ASSOC);
+                    if($amount['product_quantity'] - 1 <= 0){
+                        mysqli_query($conn, "UPDATE product SET product_state='soldout' WHERE product_id=$productId");
+                    }
                 }
+                
                 //gotta remove everything from transactionitem
                 mysqli_query($conn, "DELETE from transactionitem WHERE transactionitem_transactionid = $ongoing_id");
                 mysqli_commit($conn);

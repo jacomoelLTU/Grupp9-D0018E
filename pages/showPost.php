@@ -145,9 +145,6 @@ function insertToBasket2($conn, $productId): void{
 
 
       if($amount['product_quantity'] >=1 && $numberOfCurrentProductAdded < $amount['product_quantity']){
-        if($amount['product_quantity'] - 1 <= 0){
-          mysqli_query($conn, "UPDATE product SET product_state='soldout' WHERE product_id=$productId");
-        }
         //inserts into transactionitem table here
         mysqli_query($conn, "INSERT INTO transactionitem(transactionitem_transactionid, transactionitem_productid) VALUES($ongoing_transaction_id, $productId)");
         echo'<script>alert("Transaction started...");</script>';  
@@ -164,9 +161,6 @@ function insertToBasket2($conn, $productId): void{
       $row = mysqli_fetch_array($query, MYSQLI_ASSOC);
       $ongoing_transaction_id           = $row['transaction_id'];
       $_SESSION['ongoingtransactionid'] = $row['transaction_id'];
-    
-      $queryAmount = mysqli_query($conn, "SELECT product_quantity FROM product WHERE product_id=$productId");
-      $amount = mysqli_fetch_array($queryAmount, MYSQLI_ASSOC);
 
       $numberOfCurrentProductAdded = 0;
       // Query to transactionitem table to get how many of current product you have added to your cart
@@ -175,11 +169,10 @@ function insertToBasket2($conn, $productId): void{
         $numberOfCurrentProductAdded += 1;
       }
 
-      
+      $queryAmount = mysqli_query($conn, "SELECT product_quantity FROM product WHERE product_id=$productId");
+      $amount = mysqli_fetch_array($queryAmount, MYSQLI_ASSOC);
+
       if($amount['product_quantity'] >=1 && $numberOfCurrentProductAdded < $amount['product_quantity']){
-        if($amount['product_quantity'] - 1 <= 0){
-          mysqli_query($conn, "UPDATE product SET product_state='soldout' WHERE product_id=$productId");
-        }
         mysqli_query($conn, "INSERT INTO transactionitem(transactionitem_transactionid, transactionitem_productid) VALUES($ongoing_transaction_id, $productId)");
         echo'<script>alert("Transaction started...");</script>';
         mysqli_commit($conn);
