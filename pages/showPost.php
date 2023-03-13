@@ -223,6 +223,7 @@ function publishComment($conn, $postId){
   $userId = $_SESSION['userid'];
   $comment = $_POST['comment'];
   mysqli_query($conn, "INSERT INTO comment(comment_userid, comment_postid, comment) VALUES ($userId, $postId, '$comment')");
+  echo"<script>location.reload();</script>";
 }
 function getComments($conn, $postId){
   $result = mysqli_query($conn, "SELECT comment_userid, comment, created_at FROM comment WHERE comment_postid=$postId");
@@ -236,11 +237,6 @@ function getComments($conn, $postId){
           Published: ".$row['created_at']."
         </div><br>";
   }
-}
-function getPostType($conn): string{
-  $postId = $_GET['postId'];
-  $type = mysqli_query($conn,"SELECT post_type FROM post WHERE post_id=$postId");
-  return $type;
 }
 ?>
 

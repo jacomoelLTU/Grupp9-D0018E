@@ -22,4 +22,5 @@ $productQuery = mysqli_query($conn,"DELETE FROM product WHERE product_postid='$p
 //delete post
 $postQuery = mysqli_query($conn,"DELETE FROM post WHERE post_id='$postId'");
 
+echo"<script>location.reload();</script>";
 ?>
