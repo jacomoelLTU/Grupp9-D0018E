@@ -25,5 +25,6 @@ input[type=text], select{
 #loginForm {
     float: middle;
     margin: auto;
+    justify-content: middle;
     border: 1px solid black;
 }
