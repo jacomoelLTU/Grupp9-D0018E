@@ -96,7 +96,7 @@ if(array_key_exists('purchase', $_POST)) {commit_purchase($conn);}
                     $productQuantityRow = mysqli_fetch_array($productQuantityQuery, MYSQLI_ASSOC);
                     if($productQuantityRow['product_quantity'] < 1){ // we wanna compare with numberofcurrentproductadded but if we do it now it will only iterate once, next iteration wont go through cause numberofproductadded will be higher than product_quantity, since we are decreasing product_quantity below 
                         mysqli_rollback($conn);
-                        echo'<script>alert("Rolling back...");</script>';
+                        echo'<script>alert("Product out of stock. Rolling back...");</script>';
                         break;
                     }
                     else {
