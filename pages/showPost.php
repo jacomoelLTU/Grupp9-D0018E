@@ -167,7 +167,16 @@ function insertToBasket2($conn, $productId): void{
     
       $queryAmount = mysqli_query($conn, "SELECT product_quantity FROM product WHERE product_id=$productId");
       $amount = mysqli_fetch_array($queryAmount, MYSQLI_ASSOC);
-      if($amount['product_quantity'] >=1){
+
+      $numberOfCurrentProductAdded = 0;
+      // Query to transactionitem table to get how many of current product you have added to your cart
+      $transQuery = mysqli_query($conn, "SELECT * FROM transactionitem WHERE transactionitem_productid=$productId");
+      while($row = mysqli_fetch_array($transQuery, MYSQLI_ASSOC)){
+        $numberOfCurrentProductAdded += 1;
+      }
+
+      
+      if($amount['product_quantity'] >=1 && $numberOfCurrentProductAdded < $amount['product_quantity']){
         if($amount['product_quantity'] - 1 <= 0){
           mysqli_query($conn, "UPDATE product SET product_state='soldout' WHERE product_id=$productId");
         }
