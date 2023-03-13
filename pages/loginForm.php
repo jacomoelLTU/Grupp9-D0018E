@@ -15,9 +15,9 @@
 
     <div id="loginForm">
         <form action="../functions/login.php" method="POST">
-            <input type="text" id="username" name="username" placeholder="User Name...">
-            <input type="text" id="password" name="password" placeholder= "Password...">
-            <input type="submit">
+            <input type="text" id="username" name="username" placeholder="User Name..."><br>
+            <input type="text" id="password" name="password" placeholder= "Password..."><br>
+            <input type="submit" value="Log in">
         </form>
     </div>
 
