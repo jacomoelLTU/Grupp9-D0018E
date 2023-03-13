@@ -102,10 +102,6 @@
 }
 
 #commentsection {
-    max-width: 800px;
-    margin: 30px auto;
-    background: #fff;
     border-radius: 8px;
-    border-color: 1px black solid;
-    padding: 20px;
+    border: 1px solid #eee;
 }
