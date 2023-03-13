@@ -24,8 +24,7 @@ function showItems($conn): void{
                             <input type='hidden' name='item' value=".$currentProduct.">
                             <input type='submit' name='delObj' class='button' value='Del Item'/>
                         </form>
-                        </div><br>";
-                              
+                        </div><br>";                 
             } 
             if(array_key_exists('delObj', $_POST)) {
                 $item = $_POST['item'];
