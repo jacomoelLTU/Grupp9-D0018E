@@ -153,12 +153,12 @@ function insertToBasket2($conn, $productId): void{
       if($amount['product_quantity'] >=1 && $numberOfCurrentProductAdded < $amount['product_quantity']){
         //inserts into transactionitem table here
         mysqli_query($conn, "INSERT INTO transactionitem(transactionitem_transactionid, transactionitem_productid) VALUES($ongoing_transaction_id, $productId)");
-        echo'<script>alert("Transaction started...");</script>';  
+        echo'<script>alert("Transaction started...".$numberOfCurrentProductAdded."");</script>';  
         mysqli_commit($conn);
         }
       else{
         mysqli_rollback($conn);
-        echo'<script>alert("Seller lacks quantity...");</script>'; 
+        echo'<script>alert("Seller lacks quantity...".$numberOfCurrentProductAdded."");</script>'; 
       }
       break;
 
