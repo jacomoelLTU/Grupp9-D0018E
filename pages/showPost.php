@@ -23,7 +23,7 @@
     }
   }
 
-  if(array_key_exists('postComment', $_POST)) {
+  if(array_key_exists('publishComment', $_POST)) {
     if(isset($userId)){
       $comment = $_POST['comment'];
       publishComment($conn, $userId, $postId, $comment);    
@@ -198,10 +198,16 @@ function getImage($conn, $postId): void{
 }
 
 function publishComment($conn, $postId, $userId, $comment){
+  ini_set('display_errors', 1);
+  ini_set('display_startup_errors', 1);
+  error_reporting(E_ALL);
   mysqli_query($conn,"INSERT INTO comment(comment_userid, comment_postid, comment, created_at) VALUES ($userId, $postId, $comment, NOW())");
 }
 
 function getComments($conn, $postId){
+  ini_set('display_errors', 1);
+  ini_set('display_startup_errors', 1);
+  error_reporting(E_ALL);
   $result = mysqli_query($conn, "SELECT comment_userid, comment, created_at FROM comment WHERE comment_postid=$postId");
   while($row=mysqli_fetch_array($result, MYSQLI_ASSOC)){
     $username = mysqli_query($conn, "SELECT user_name FROM user WHERE user_id=$row[comment_userid]");
