@@ -30,6 +30,18 @@
     echo"Click to go to cart: <a href ='cartPage.php'>To Cart</a><br>";
 //--------------- functions ------------
 
+echo "<div id='cartItem'>".$row['product_title'].$row['product_id'].
+"<form method='post'>
+    <input type='submit' name='delObj' class='button' value='Del Item'/>
+    <input type='hidden' name='item' value=".$row['product_id'].">
+</form>
+</div><br>";   
+
+$query = "SELECT product_price FROM product WHERE product_postid=$postId ";
+$result = mysqli_query($conn, $query);
+$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+$price = $row['product_price'];
+
 function insertToBasket($conn, $productId): void {
   try{
     session_start();
@@ -99,7 +111,6 @@ function insertToBasket($conn, $productId): void {
       throw $e;
   }
 }
-
 function insertToBasket2($conn, $productId): void{
   try{
     session_start();
@@ -168,8 +179,6 @@ function insertToBasket2($conn, $productId): void{
       throw $e;
   }
 }
-
-
 function getImage($conn, $postId): void{
   ini_set('display_errors', 1);
   ini_set('display_startup_errors', 1);
@@ -192,14 +201,12 @@ function getImage($conn, $postId): void{
       }
   }
 }
-
 function publishComment($conn, $postId){
   session_start();
   $userId = $_SESSION['userid'];
   $comment = $_POST['comment'];
   mysqli_query($conn, "INSERT INTO comment(comment_userid, comment_postid, comment) VALUES ($userId, $postId, '$comment')");
 }
-
 function getComments($conn, $postId){
   $result = mysqli_query($conn, "SELECT comment_userid, comment, created_at FROM comment WHERE comment_postid=$postId");
   while($row=mysqli_fetch_array($result, MYSQLI_ASSOC)){
@@ -213,24 +220,11 @@ function getComments($conn, $postId){
         </div><br>";
   }
 }
-
 function getPostType($conn): string{
   $postId = $_GET['postId'];
   $type = mysqli_query($conn,"SELECT post_type FROM post WHERE post_id=$postId");
   return $type;
 }
-
-echo "<div id='cartItem'>".$row['product_title'].$row['product_id'].
-"<form method='post'>
-    <input type='submit' name='delObj' class='button' value='Del Item'/>
-    <input type='hidden' name='item' value=".$row['product_id'].">
-</form>
-</div><br>";   
-
-$query = "SELECT product_price FROM product WHERE product_postid=$postId ";
-$result = mysqli_query($conn, $query);
-$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
-$price = $row['product_price'];
 ?>
 
 <link rel="stylesheet" type="text/css" href="../CSS/showPost.css">
@@ -280,6 +274,8 @@ $price = $row['product_price'];
 </div>
 
 </center>
+
+
 
 
 
