@@ -19,17 +19,18 @@ function showItems($conn): void{
             $currentProduct = $row['transactionitem_productid'];
             $product = mysqli_query($conn, "SELECT product_title, product_price FROM product WHERE product_id='$currentProduct'");
             while($productRow=mysqli_fetch_array($product, MYSQLI_ASSOC)){
-                echo "<div id='cartItem'>".$productRow['product_title']."product_id:".$currentProduct.
+                echo "<div id='cartItem'>".$productRow['product_title']." Product id:".$currentProduct.
                         "<form method='post'>
-                            <input type='submit' name='delObj' class='button' value='Del Item'/>
                             <input type='hidden' name='item' value=".$currentProduct.">
+                            <input type='submit' name='delObj' class='button' value='Del Item'/>
                         </form>
                         </div><br>";
-                if(array_key_exists('delObj', $_POST)) {
-                    delObj($conn, $currentProduct);
-                }            
-                    
+                              
             } 
+            if(array_key_exists('delObj', $_POST)) {
+                $item = $_POST['item'];
+                delObj($conn, $item);
+            }  
         }
     }
     
