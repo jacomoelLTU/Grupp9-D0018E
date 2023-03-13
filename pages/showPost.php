@@ -226,13 +226,18 @@ $price = $row['product_price'];
     <div id="price">
       <?php echo $price."kr"; ?>
     </div>
-</div>
+  </div>
   <div id="grid-G">
     <form method="post">
       <input type="submit" name="insertToBasket" class="button buttonAdd" value="Add Item"/>
     </form>
   </div>
 </div>
+<div id ="commentsection">
+  <p id="comment"> Comment <br><br><textarea rows = "5" cols = "40" name = "comment" placeholder="Say something nice :)" required></textarea></p>
+  <input type="submit" class = "comment_button" name = "publish" value="Publish"/><br> 
+</div>
+
 </center>
 
 
