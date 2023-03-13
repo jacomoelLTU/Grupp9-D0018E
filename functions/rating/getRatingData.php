@@ -12,15 +12,15 @@ $userId = $_SESSION['userid'];
 $postId = $_GET['postId'];
 //$postId = '1244';
 //nice
-//get product id from product table
 
 
 $typeQuery = mysqli_query($conn,"SELECT post_type FROM post WHERE post_id=$postId");
-$type = mysqli_fetch_array($typeQuery, MYSQLI_ASSOC);
+$typeRow = mysqli_fetch_array($typeQuery, MYSQLI_ASSOC);
+$postType = $typeRow['post_type'];
 
-
-if($type['post_type']=="product"){
+if($postType=="product"){
     if(!empty($postId)){
+    //get product id from product table
     $productIdquery = mysqli_query($conn, "SELECT product_id FROM product WHERE product_postid=$postId;");
     $productrow = mysqli_fetch_assoc($productIdquery);
     $productId = $productrow['product_id'];
