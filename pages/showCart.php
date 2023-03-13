@@ -25,13 +25,14 @@ function showItems($conn): void{
                             <input type='hidden' name='item' value=".$row['product_id'].">
                         </form>
                         </div><br>";   
-                
-                if(array_key_exists('delObj', $_POST)) {
-                    delObj($conn, $row['product_id']);
-                }     
+                    
             } 
         }
+        if(array_key_exists('delObj', $_POST)) {
+            delObj($conn, $row['product_id']);
+        } 
     }
+    
     }catch(mysqli_sql_exception $e){
         throw $e;
     }
