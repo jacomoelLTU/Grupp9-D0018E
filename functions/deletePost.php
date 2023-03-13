@@ -10,6 +10,9 @@ $productIdQuery = mysqli_query($conn,"SELECT product_id FROM product WHERE produ
 $productIdRow = mysqli_fetch_array($productIdQuery, MYSQLI_ASSOC);
 $productId = $productIdRow['product_id'];
 
+//delete transactionitem
+$ratingQuery = mysqli_query($conn,"DELETE FROM transactionitem WHERE transactionitem_productid='$productId'");
+
 //delete rating
 $ratingQuery = mysqli_query($conn,"DELETE FROM rating WHERE rating_productid='$productId'");
 
