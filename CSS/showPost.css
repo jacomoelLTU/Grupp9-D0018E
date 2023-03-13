@@ -100,3 +100,11 @@
     border: 1px solid black; */
 
 }
+
+#commentsection {
+    max-width: 800px;
+    margin: 30px auto;
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+}
