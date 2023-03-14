@@ -25,7 +25,7 @@
                         ?>
                         <?php 
                         $userId = $_SESSION['user_id'] ?? NULL;
-                        if($userid == NULL){
+                        if($userId == NULL){
                             echo "";
                         }else{
                             $cartItemAmount = 0;
