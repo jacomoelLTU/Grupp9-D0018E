@@ -24,7 +24,7 @@
                             echo '<a id = "cartIconLink" href = "pages/cartPage.php'.$_SESSION["cartURL"].'"><img src = "pictures/cartIcon.png" width="40" height="40"/></a>';
                         ?>
                         <?php 
-                        $userId = $_SESSION['userid'] ?? NULL;
+                        $userId = $_SESSION['user_id'] ?? NULL;
                         if($userid == NULL){
                             echo "";
                         }else{
