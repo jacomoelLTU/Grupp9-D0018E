@@ -32,6 +32,13 @@
                 $_SESSION['userid']   = $usrid_db;
                 $_SESSION['loggedin'] = true;
 
+                // If ongoing transaction
+                $query = mysqli_query($conn, "SELECT transaction_id FROM `transaction` WHERE transaction_userid='$usrid_db' AND transaction_state='ongoing'");   
+                $row = mysqli_fetch_array($query, MYSQLI_ASSOC);
+                if(!empty($row)){
+                    $_SESSION['ongoingtransactionid'] = $row['transaction_id'];
+                }
+                
                 header('Location:../index.php');
             }
             else{
