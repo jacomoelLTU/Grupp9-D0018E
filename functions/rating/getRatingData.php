@@ -74,11 +74,37 @@ if (!empty($_SESSION)){
         echo $outputString;
     }
     else{
-        $outputString = "<div class='login'>
-                            Log in to see rating
-                        </div>";
+        $postId = $_GET['postId'];
+
+        $typeQuery = mysqli_query($conn,"SELECT post_type FROM post WHERE post_id=$postId");
+        $typeRow = mysqli_fetch_array($typeQuery, MYSQLI_ASSOC);
+        $postType = $typeRow['post_type'];
+
+        if($postType=="product"){
+            if(!empty($postId)){
+            //get product id from product table
+            $productIdquery = mysqli_query($conn, "SELECT product_id FROM product WHERE product_postid=$postId;");
+            $productrow = mysqli_fetch_assoc($productIdquery);
+            $productId = $productrow['product_id'];
+
+            // product query
+            $query = "SELECT * FROM product WHERE product_id=$productId";
+            $result = mysqli_query($conn, $query);
+
+            $outputString = '';
+
+            foreach ($result as $row) {
+                // $userRating = "SELECT rating FROM rating WHERE user_id='19'";
+                // $ratingQuery = mysqli_query($conn, $userRating);
+                $postId = $row['product_postid'];
+                $outputString .= "<div class='login'>
+                                    Log in to see rating
+                                </div>";
+            }
         echo $outputString;
 
+            }
+        }
     }
-}
+}   
 ?>
