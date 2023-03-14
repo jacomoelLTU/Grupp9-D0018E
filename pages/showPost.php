@@ -30,12 +30,12 @@
     echo"Click to go to cart: <a href ='cartPage.php'>To Cart</a><br>";
 //--------------- functions ------------
 
-echo "<div id='cartItem'>".$row['product_title'].$row['product_id'].
-"<form method='post'>
-    <input type='submit' name='delObj' class='button' value='Del Item'/>
-    <input type='hidden' name='item' value=".$row['product_id'].">
-</form>
-</div><br>";   
+// echo "<div id='cartItem'>".$row['product_title'].$row['product_id'].
+// "<form method='post'>
+//     <input type='submit' name='delObj' class='button' value='Del Item'/>
+//     <input type='hidden' name='item' value=".$row['product_id'].">
+// </form>
+// </div><br>";   
 
 $query = "SELECT product_price FROM product WHERE product_postid=$postId ";
 $result = mysqli_query($conn, $query);
