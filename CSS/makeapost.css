@@ -46,7 +46,7 @@ input[type=text], select{
 
 #price{
     padding: 3px;
-    display: block;
+    /* display: block; */
     border: 0px #c6dde8 solid;
     border-radius: 8px;
 }
@@ -67,7 +67,6 @@ input[type=text], select{
     color: #3f494d;
     padding: 10px;
     margin:auto;
-    text-align: center;
     align-self: center;
     justify-content: center;
     max-width: 50%;
