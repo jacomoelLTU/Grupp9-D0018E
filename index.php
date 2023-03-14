@@ -23,7 +23,22 @@
                             session_start();
                             echo '<a id = "cartIconLink" href = "pages/cartPage.php'.$_SESSION["cartURL"].'"><img src = "pictures/cartIcon.png" width="40" height="40"/></a>';
                         ?>
-                        <?php echo 'cart items var'?>       
+                        <?php 
+                        $userId = $_SESSION['userid'] ?? NULL;
+                        if($usrid == NULL){
+                            echo "";
+                        }else{
+                            $cartItemAmount = 0;
+                            $joinquery = mysqli_query($conn, "SELECT transaction.transaction_id, transaction.transaction_userid, transactionitem.transactionitem_productid FROM transaction INNER JOIN transactionitem ON transaction.transaction_id=transactionitem.transactionitem_transactionid");
+                            while($row = mysqli_fetch_array($joinquery, MYSQLI_ASSOC)){
+                                if($row['transaction_userid']==$userId){
+                                $cartItemAmount += 1;
+                                }
+                            }
+                            echo 'Cart items: '.$cartItemAmount;
+                        }
+                        
+                        ?>       
                     </div> 
                 </ul> 
 
