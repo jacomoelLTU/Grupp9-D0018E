@@ -3,7 +3,7 @@ body{
     padding:0;
     border:0;
     /* background: rgb(177, 184, 186); */
-    font-family: "Lucida Console", "Courier New", monospace;
+    /* font-family: "Lucida Console", "Courier New", monospace; */
 }
 #header{
     font-size:20px;
