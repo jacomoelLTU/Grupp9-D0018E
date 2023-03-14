@@ -46,7 +46,7 @@ if(array_key_exists('purchase', $_POST)) {commit_purchase($conn);}
                 //Places ongoing transaction as aborted and a user can start a new one...
                 mysqli_begin_transaction($conn);
                 $ongoing_id = $_SESSION['ongoingtransactionid'];
-                mysqli_query($conn, "UPDATE `transactio` SET transaction_state='aborted' WHERE transaction_id='$ongoing_id'");
+                mysqli_query($conn, "UPDATE `transaction` SET transaction_state='aborted' WHERE transaction_id='$ongoing_id'");
 
                 //deletes all products from the cart display and the corresponding tables in DB
                 
