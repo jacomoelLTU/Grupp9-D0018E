@@ -7,15 +7,15 @@
     
 //--------------INSERT COMMENTED CODE TO ADD ADMIN CHECK------------------
 
-    // session_start();
-    // $usr = $_SESSION['username'];
-    // $query = mysqli_query($conn,"SELECT user_role, user_name FROM user WHERE user_name = '$usr'");
-    // while($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
-    //     if(($row['user_name'] == $usr)){
-    //         $role = $row['user_role'];
-    //     }
-    // }
-    // if($role =='admin'){
+    session_start();
+    $usr = $_SESSION['username'];
+    $query = mysqli_query($conn,"SELECT user_role, user_name FROM user WHERE user_name = '$usr'");
+    while($row=mysqli_fetch_array($query, MYSQLI_ASSOC)){
+        if(($row['user_name'] == $usr)){
+            $role = $row['user_role'];
+        }
+    }
+    if($role =='admin'){
     echo'
         <form class = "SignUpStyle" action ="../functions/signup.php" method = "post">
 
@@ -32,5 +32,5 @@
 
         </form>
     ';
-    // }
+    }
 ?>
