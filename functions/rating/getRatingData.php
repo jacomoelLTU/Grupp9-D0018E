@@ -75,7 +75,6 @@ if (!empty($_SESSION)){
     }
     else{
         $postId = $_GET['postId'];
-
         $typeQuery = mysqli_query($conn,"SELECT post_type FROM post WHERE post_id=$postId");
         $typeRow = mysqli_fetch_array($typeQuery, MYSQLI_ASSOC);
         $postType = $typeRow['post_type'];
@@ -97,14 +96,16 @@ if (!empty($_SESSION)){
                 // $userRating = "SELECT rating FROM rating WHERE user_id='19'";
                 // $ratingQuery = mysqli_query($conn, $userRating);
                 $postId = $row['product_postid'];
-                $outputString .= "<div class='login'>
-                                    Log in to see rating
-                                </div>";
+                $totalRating = totalRating($productId, $conn);
+                $outputString .= '
+                                <p class="review-note">Total Reviews: ' . $totalRating . '</p>
+                                <h3>' . $row["product_state"] . '</h3>
+                                </div>
+                                ';
             }
-        echo $outputString;
-
             }
         }
+        echo $outputString;
     }
 }   
 ?>
