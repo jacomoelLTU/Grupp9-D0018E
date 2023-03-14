@@ -45,10 +45,11 @@ if(array_key_exists('purchase', $_POST)) {commit_purchase($conn);}
             if(isset($_SESSION['ongoingtransactionid'])){
                 //Places ongoing transaction as aborted and a user can start a new one...
                 mysqli_begin_transaction($conn);
-                mysqli_query($conn, "UPDATE `transaction` SET transaction_state='aborted'");
+                $ongoing_id = $_SESSION['ongoingtransactionid'];
+                mysqli_query($conn, "UPDATE `transactio` SET transaction_state='aborted' WHERE transaction_id='$ongoing_id'");
 
                 //deletes all products from the cart display and the corresponding tables in DB
-                $ongoing_id = $_SESSION['ongoingtransactionid'];
+                
                 mysqli_query($conn, "DELETE from transactionitem WHERE transactionitem_transactionid = $ongoing_id");
 
                 mysqli_commit($conn);
@@ -68,14 +69,14 @@ if(array_key_exists('purchase', $_POST)) {commit_purchase($conn);}
             if(isset($_SESSION['ongoingtransactionid'])){
                 //Places ongoing transaction as successful and a user can start a new one...
                 mysqli_begin_transaction($conn);
-                mysqli_query($conn, "UPDATE `transaction` SET transaction_state='successful'");
+                $ongoing_id = $_SESSION['ongoingtransactionid'];
                 $userId = $_SESSION['userid'];
 
-                //query to get product id
-                $ongoing_id = $_SESSION['ongoingtransactionid'];
-                $cart_ids = mysqli_query($conn, "SELECT transactionitem_productid FROM transactionitem WHERE transactionitem_transactionid = $ongoing_id");
-
+                //update transaction to successful
+                mysqli_query($conn, "UPDATE `transaction` SET transaction_state='successful' WHERE transaction_id='$ongoing_id'");
                 
+                //query to get product id
+                $cart_ids = mysqli_query($conn, "SELECT transactionitem_productid FROM transactionitem WHERE transactionitem_transactionid = $ongoing_id");
 
                 while($row = mysqli_fetch_array($cart_ids, MYSQLI_ASSOC)){
                     $productId = $row['transactionitem_productid'];
