@@ -1,4 +1,5 @@
 <a href="../index.php">Home</a>
+<link rel="stylesheet" type="text/css" href="../CSS/signup.css">
 <?php
     include '../functions/config.php';
     ini_set('display_errors', 1);
