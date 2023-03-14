@@ -73,5 +73,10 @@ if (!empty($_SESSION)){
 
         echo $outputString;
     }
+    else{
+        $outputString = "Log in to see rating";
+        echo $outputString;
+
+    }
 }
 ?>
