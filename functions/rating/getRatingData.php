@@ -79,7 +79,7 @@ if (!empty($_SESSION)){
         $typeQuery = mysqli_query($conn,"SELECT post_type FROM post WHERE post_id=$postId");
         $typeRow = mysqli_fetch_array($typeQuery, MYSQLI_ASSOC);
         $postType = $typeRow['post_type'];
-
+        $outputString = '';
         if($postType=="product"){
             if(!empty($postId)){
             //get product id from product table
@@ -91,7 +91,6 @@ if (!empty($_SESSION)){
             $query = "SELECT * FROM product WHERE product_id=$productId";
             $result = mysqli_query($conn, $query);
 
-            $outputString = '';
 
             foreach ($result as $row) {
                 // $userRating = "SELECT rating FROM rating WHERE user_id='19'";
