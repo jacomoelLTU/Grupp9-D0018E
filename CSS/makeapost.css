@@ -70,6 +70,7 @@ input[type=text], select{
     text-align: center;
     align-self: center;
     justify-content: center;
+    max-width: 50%;
 }
 
 
