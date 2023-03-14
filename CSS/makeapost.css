@@ -62,14 +62,17 @@ input[type=text], select{
     display: flex;
     position: relative;
     float: middle;
-    justify-content: left;
+    justify-content: middle;
     background-color: white;
     font-size: 15px;
     font-weight: bold;
     color: #3f494d;
     padding: 10px;
     margin:auto;
+    text-align: center;
+    align-self: center;
 }
+
 
 .post_button {
     float: middle;
