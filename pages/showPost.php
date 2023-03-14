@@ -260,7 +260,6 @@ function getComments($conn, $postId){
   </div>
   <div id="grid-B">
     <link rel="stylesheet" type="text/css" href="../CSS/ratingForm.css">
-    <!-- <?php //echo "<body onload='getRating('../functions/rating/getRatingData.php?postId=1244')'>"?> -->
     <body onload='getRating("../functions/rating/getRatingData.php?postId=<?php echo "$postId"?>")'>
     <div class="container">
         <h2>Rating</h2>
