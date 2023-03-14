@@ -73,6 +73,7 @@ if (!empty($_SESSION)){
 
         echo $outputString;
     }
+}
     else{
         $postId = $_GET['postId'];
         $typeQuery = mysqli_query($conn,"SELECT post_type FROM post WHERE post_id=$postId");
@@ -106,6 +107,5 @@ if (!empty($_SESSION)){
             }
         }
         echo $outputString;
-    }
-}   
+    }  
 ?>
