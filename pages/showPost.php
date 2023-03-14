@@ -227,7 +227,6 @@ function publishComment($conn, $postId){
   $userId = $_SESSION['userid'];
   $comment = $_POST['comment'];
   mysqli_query($conn, "INSERT INTO comment(comment_userid, comment_postid, comment) VALUES ($userId, $postId, '$comment')");
-  echo"<script>location.reload();</script>";
 }
 function getComments($conn, $postId){
   $result = mysqli_query($conn, "SELECT comment_userid, comment, created_at FROM comment WHERE comment_postid=$postId");
