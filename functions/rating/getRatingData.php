@@ -74,7 +74,9 @@ if (!empty($_SESSION)){
         echo $outputString;
     }
     else{
-        $outputString = "Log in to see rating";
+        $outputString = "<div class='login'>
+                            Log in to see rating
+                        </div>"
         echo $outputString;
 
     }
